@@ -11,20 +11,22 @@ informação.
 
 ## Desenvolvimento
 
-- [X ] Salva em arquivos `.csv` os projetos de pesquisa e extensão de
-cada pesquisador em arquivos individuais. Para cada tipo de produção foi
-criado uma pasta específica.
+- [X] Salva em pastas específicas arquivos `.csv` individuais para cada
+pesquisador:
+    - os projetos de pesquisa e extensão;
+    - cursos de curta duração
+    - orientações (tcc, ic, mestrado)
 - [X] Capturar os projetos de pesquisa, e extensão, com seus respectivos
 participantes, classificação do tipo de projeto (pesquisa ou extensão)
 organizando os dados em um `DataFrame`; 
 - [X] Capturar produção técnica de cada pesquisador
 - [X] Capturar as atividades de orientação;
+- [X] Ler o `.xml` direto do `.zip`;
+- [X ] Realizar um looping para caturar uma série de currículos.
 - [ ] Capturar produção em periódicos;
 - [ ] Associar produção em periódico com capes qualis;
 - [ ] Capturar as atividades dos projetos de extensão;
-- [ ] Ler o `.xml` direto do `.zip`;
 - [ ] Gerar um `.json` file para cada currículo;
-- [ ] Realizar um looping para caturar uma série de currículos.
 
 ## Histórico
 
