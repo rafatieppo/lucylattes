@@ -27,6 +27,7 @@ import zipfile
 
 # ------------------------------------------------------------
 # lendo a lista dos IDs e nome dos pesquisadores
+
 from readidlist import readIdList
 df_idlist = readIdList()
 df_idlist
@@ -38,6 +39,7 @@ len(df_idlist)
 from parserlattes import getprojpesqext
 from parserlattes import getprodtec
 from parserlattes import getorient
+from parserlattes import getperiod
 
 # ------------------------------------------------------------
 # roda as funcoes para pegar dados de cada pesquisador
@@ -47,6 +49,7 @@ for nid in range(len(df_idlist)):
     getprojpesqext(zipfilename)
     getprodtec(zipfilename)
     getorient(zipfilename)
+    getperiod(zipfilename)
 
 z
 # ------------------------------------------------------------

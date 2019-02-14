@@ -17,7 +17,8 @@ import zipfile
 
 def getprojpesqext(zipname):
     # lendo do zipfile
-    archive = zipfile.ZipFile(str(zipname), 'r')
+    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
@@ -125,7 +126,8 @@ def getprojpesqext(zipname):
 
 def getprodtec(zipname):
     # lendo do zipfile
-    archive = zipfile.ZipFile(str(zipname), 'r')
+    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
@@ -191,7 +193,8 @@ def getprodtec(zipname):
 
 def getorient(zipname):
     # lendo do zipfile
-    archive = zipfile.ZipFile(str(zipname), 'r')
+    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
@@ -358,7 +361,7 @@ def getorient(zipname):
     # DataFrame orientacoes
     df_advis = pd.DataFrame({'YEAR': ls_adv_year,
                              'NATURE': ls_adv_nat,
-                             'INTITUTION': ls_adv_inst,
+                             'INSTITUTION': ls_adv_inst,
                              'COURSE': ls_adv_curso,
                              'STUDENT': ls_adv_student,
                              'TYPE': ls_adv_type,
@@ -366,3 +369,153 @@ def getorient(zipname):
     latid = zipname.split('.')[0]
     pathfilename = str('./csv_advis/' + latid + '_advis'  '.csv')
     df_advis.to_csv(pathfilename, index=False)
+
+
+# ------------------------------------------------------------
+# Periodicos
+# ------------------------------------------------------------
+
+
+def getperiod(zipname):
+    # lendo do zipfile
+    # zipname = '3275865819287843.zip'
+    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    archive = zipfile.ZipFile(zipfilepath, 'r')
+    lattesxmldata = archive.open('curriculo.xml')
+    soup = BeautifulSoup(lattesxmldata, 'lxml',
+                         from_encoding='ISO-8859-1')
+    # extrair todas as producoes bibliograficas
+    pb = soup.find_all('producao-bibliografica')
+    len(pb)
+    # listas para armazenamento de dados PERIODICOS
+    ls_per_title = []
+    ls_per_year = []
+    ls_per_doi = []
+    ls_per_lang = []
+    ls_per_journal = []
+    ls_per_issn = []
+    ls_per_qualis = []
+    ls_per_authors = []
+    ls_per_authororder = []
+    # Da producao bibliografica extrair o grupo de artigos publicados
+    artspubs = pb[0].find_all('artigos-publicados')
+    len(artspubs)
+    # A partir do grupo de artigos publicados extrair os artigos
+    # publicados
+    artpub = artspubs[0].find_all('artigo-publicado')
+    len(artpub)
+    # a partir de cada artigo publicado extrair inf de interesse
+    for i in range(len(artpub)):
+        # dados basicos do paper
+        dba = artpub[i].find_all('dados-basicos-do-artigo')
+        paperdb = str(dba)
+        # definindo o nome do paper
+        result = re.search('titulo-do-artigo=\"(.*)\" titulo-do-artigo-i',
+                           paperdb)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+        ls_per_title.append(cc)
+        print(cc)
+        # definindo ano do paper
+        result = re.search('ano-do-artigo=\"(.*)\" doi',
+                           paperdb)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+        ls_per_year.append(cc)
+        print(cc)
+        # definindo doi do paper
+        result = re.search('doi=\"(.*)\" flag-divulgacao-c',
+                           paperdb)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+        ls_per_doi.append(cc)
+        print(cc)
+        # definindo idioma do paper
+        result = re.search('idioma=\"(.*)\" meio-de-divulgacao=',
+                           paperdb)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+        ls_per_lang.append(cc)
+        print(cc)
+        # detalhamento do paper
+        dda = artpub[i].find_all('detalhamento-do-artigo')
+        paperdt = str(dda)
+        # definindo titulo do periodico
+        result = re.search('titulo-do-periodico-ou-revista=\"(.*)\" volume',
+                           paperdt)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+        ls_per_journal.append(cc)
+        print(cc)
+        # definindo issn
+        result = re.search('issn=\"(.*)\" local-de-public',
+                           paperdt)
+        if result is None:
+            cc = 'VAZIO'
+        else:
+            cc = result.group(1)
+            cc = str(cc[0:4]) + '-' + str(cc[4:])
+        ls_per_issn.append(cc)
+        print(cc)
+        # autores do paper
+        aut = artpub[i].find_all('autores')
+        ls_allauthors = []
+        ls_allauthororder = []
+        for j in range(len(aut)):
+            auth = str(aut[j])
+            result = re.search(
+                'nome-completo-do-autor=\"(.*)\" nome-para-citacao',
+                auth)
+            if result is None:
+                cc = 'VAZIO'
+            else:
+                cc = result.group(1)
+            ls_allauthors.append(cc)
+            print(cc)
+            # order de autoria
+            result = re.search(
+                'ordem-de-autoria=\"(.*)\"',
+                auth)
+            if result is None:
+                cc = 'VAZIO'
+            else:
+                cc = result.group(1)
+            ls_allauthororder.append(cc)
+            print(cc)
+        ls_per_authors.append(ls_allauthors)
+        ls_per_authororder.append(ls_allauthororder)
+    # Qualis
+    for k in range(len(ls_per_issn)):
+        df_qualis = pd.read_csv('qualis_agrarias_periodicos_2016.csv',
+                                header=0, sep='\t')
+        result = df_qualis[df_qualis['ISSN']
+                           == ls_per_issn[k]].reset_index(drop=True)
+        if len(result) == 0:
+            cc = 'VAZIO'
+        else:
+            cc = result.iloc[0, 2]
+        ls_per_qualis.append(cc)
+        print(cc)
+    # DataFrame periodicos
+    df_papers = pd.DataFrame({'TITLE': ls_per_title,
+                              'YEAR': ls_per_year,
+                              'DOI': ls_per_doi,
+                              'LANG': ls_per_lang,
+                              'JOURNAL': ls_per_journal,
+                              'QUALIS': ls_per_qualis,
+                              'ISSN': ls_per_issn,
+                              'AUTHOR': ls_per_authors,
+                              'ORDER': ls_per_authororder})
+    latid = zipname.split('.')[0]
+    pathfilename = str('./csv_periodicos/' + latid + '_period'  '.csv')
+    df_papers.to_csv(pathfilename, index=False)

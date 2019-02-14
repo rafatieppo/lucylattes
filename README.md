@@ -16,19 +16,23 @@ pesquisador:
     - os projetos de pesquisa e extensão;
     - cursos de curta duração
     - orientações (tcc, ic, mestrado)
+    - publicações em periódico com qualis, revista
 - [X] Capturar os projetos de pesquisa, e extensão, com seus respectivos
 participantes, classificação do tipo de projeto (pesquisa ou extensão)
 organizando os dados em um `DataFrame`; 
 - [X] Capturar produção técnica de cada pesquisador
 - [X] Capturar as atividades de orientação;
 - [X] Ler o `.xml` direto do `.zip`;
-- [X ] Realizar um looping para caturar uma série de currículos.
-- [ ] Capturar produção em periódicos;
-- [ ] Associar produção em periódico com capes qualis;
+- [X] Realizar um looping para caturar uma série de currículos.
+- [X] Capturar produção em periódicos;
+- [X] Associar produção em periódico com capes qualis;
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
 
 ## Histórico
+
+- 20190213: função para capturar os periódicos com qualis foi concluída,
+os arquivos `.xlm` foram movidos para a pasta `xlm_zip`.
 
 - 20190212: os arquivos `.xlm` são lidos diretamente do arquivo
 `.zip`. Foi criado um arquivo **lista** no formato `.csv`, neste arquivo
