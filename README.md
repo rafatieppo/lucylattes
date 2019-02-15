@@ -31,6 +31,9 @@ organizando os dados em um `DataFrame`;
 
 ## Histórico
 
+- 20190214: foi criado um arquivo `config.txt` com objetivos de:
+    - especificar o arquivo `.csv` que será utilizado no qualis.
+
 - 20190213: função para capturar os periódicos com qualis foi concluída,
 os arquivos `.xlm` foram movidos para a pasta `xlm_zip`.
 
@@ -47,6 +50,7 @@ projeto, tipo do projeto, ano de início, e integrantes, etc
 necessárias e geram os `.csv`
 - `readidlist.py`: faz a leitura da lista que contém o **id** dos pesquisadores 
 - `scriptLattes.py`: funciona como o executável
+- `config.txt`: cpnfigurações para funcionamento do script
 
 ## Autor
 

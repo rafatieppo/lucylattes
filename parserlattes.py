@@ -52,7 +52,7 @@ def getprojpesqext(zipname):
                 else:
                     cc = result.group(1)
                 ls_proj.append(cc)
-                print(cc)
+                # print(cc)
                 # definindo o ano inicial
                 # result = re.search('ano-inicio=\"(.*)\" data-certificacao', proj)
                 result = re.search('ano-inicio="(.*)" da',
@@ -103,8 +103,8 @@ def getprojpesqext(zipname):
                         else:
                             cc = result.group(1)
                         ls_allcoordsn.append(cc)
-                        print(ls_allintproj)
-                        print(ls_allcoordsn)
+                        # print(ls_allintproj)
+                        # print(ls_allcoordsn)
                 ls_intproj.append(ls_allintproj)
                 ls_coord_sn.append(ls_allcoordsn)
     # DataFrame para os dados
@@ -117,6 +117,7 @@ def getprojpesqext(zipname):
     latid = zipname.split('.')[0]
     pathfilename = str('./csv_ppe/' + latid + '_ppe'  '.csv')
     df_ppe.to_csv(pathfilename, index=False)
+    print(pathfilename, ' gravado com', len(df_ppe['PROJ']), ' projetos')
 
 
 # ------------------------------------------------------------
@@ -151,7 +152,7 @@ def getprodtec(zipname):
             else:
                 cc = result.group(1)
             ls_curscd_name.append(cc)
-            print(cc)
+            # print(cc)
             # definindo o ano do curso
             curso = str(ccdm[j])
             result = re.search('ano=\"(.*)\" doi',
@@ -161,7 +162,7 @@ def getprodtec(zipname):
             else:
                 cc = result.group(1)
             ls_curscd_year.append(cc)
-            print(cc)
+            # print(cc)
             # Integrante do curso
             ccdm_aut = ccdm[j].find_all('autores')
             ls_all_autor = []
@@ -175,7 +176,7 @@ def getprodtec(zipname):
                 else:
                     cc = result.group(1)
                 ls_all_autor.append(cc)
-            print(ls_all_autor)
+            # print(ls_all_autor)
             ls_curscd_integ.append(ls_all_autor)
     # DataFrame para cursos de curta duracao
     df_ccd = pd.DataFrame({'COURSE': ls_curscd_name,
@@ -184,7 +185,7 @@ def getprodtec(zipname):
     latid = zipname.split('.')[0]
     pathfilename = str('./csv_ccd/' + latid + '_ccd'  '.csv')
     df_ccd.to_csv(pathfilename, index=False)
-
+    print(pathfilename, ' gravado com', len(df_ccd['COURSE']), ' cursos')
 
 # ------------------------------------------------------------
 # iniciando funcao para orientacoes do pesquisador
@@ -226,7 +227,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_year.append(cc)
-        print(cc)
+        # print(cc)
         # natureza da orientacao
         result = re.search('natureza=\"(.*)\" pais',
                            dadobasico)
@@ -235,7 +236,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_nat.append(cc)
-        print(cc)
+        # print(cc)
         # detalhes da orientacao ###
         detalhe = orienconc_mest[i].find_all(
             'detalhamento-de-orientacoes-concluidas-para-mestrado')
@@ -248,7 +249,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_inst.append(cc)
-        print(cc)
+        # print(cc)
         # nome do curso
         result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
                            detalhe)
@@ -257,7 +258,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_curso.append(cc)
-        print(cc)
+        # print(cc)
         # nome orientado
         result = re.search('nome-do-orientado=\"(.*)\" nome-orgao',
                            detalhe)
@@ -266,7 +267,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_student.append(cc)
-        print(cc)
+        # print(cc)
         # tipo de orientacao
         result = re.search('tipo-de-orientacao=\"(.*)\">',
                            detalhe)
@@ -275,7 +276,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_type.append(cc)
-        print(cc)
+        # print(cc)
         # Bolsa
         result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
                            detalhe)
@@ -284,7 +285,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_suppo.append(cc)
-        print(cc)
+        # print(cc)
     # outras orientacoes concluidas
     orienconc_out = op[0].find_all('outras-orientacoes-concluidas')
     for j in range(len(orienconc_out)):
@@ -299,7 +300,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_year.append(cc)
-        print(cc)
+        # print(cc)
         # natureza da orientacao
         result = re.search('natureza=\"(.*)\" pais',
                            dadobasico)
@@ -308,7 +309,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_nat.append(cc)
-        print(cc)
+        # print(cc)
         # detalhes da orientacao ######
         detalhe = orienconc_out[j].find_all(
             'detalhamento-de-outras-orientacoes-concluidas')
@@ -321,7 +322,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_inst.append(cc)
-        print(cc)
+        # print(cc)
         # nome do curso
         result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
                            detalhe)
@@ -330,7 +331,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_curso.append(cc)
-        print(cc)
+        # print(cc)
         # nome orientado
         result = re.search('nome-do-orientado=\"(.*)\" numero-de-paginas',
                            detalhe)
@@ -339,7 +340,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_student.append(cc)
-        print(cc)
+        # print(cc)
         # tipo de orientacao
         result = re.search('tipo-de-orientacao-concluida=\"(.*)\">',
                            detalhe)
@@ -348,7 +349,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_type.append(cc)
-        print(cc)
+        # print(cc)
         # Bolsa
         result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
                            detalhe)
@@ -357,7 +358,7 @@ def getorient(zipname):
         else:
             cc = result.group(1)
         ls_adv_suppo.append(cc)
-        print(cc)
+        # print(cc)
     # DataFrame orientacoes
     df_advis = pd.DataFrame({'YEAR': ls_adv_year,
                              'NATURE': ls_adv_nat,
@@ -367,9 +368,9 @@ def getorient(zipname):
                              'TYPE': ls_adv_type,
                              'SPONSOR': ls_adv_suppo})
     latid = zipname.split('.')[0]
-    pathfilename = str('./csv_advis/' + latid + '_advis'  '.csv')
+    pathfilename = str('./csv_orientacoes/' + latid + '_advis'  '.csv')
     df_advis.to_csv(pathfilename, index=False)
-
+    print(pathfilename, ' gravado com', len(df_advis['YEAR']), ' orientações')
 
 # ------------------------------------------------------------
 # Periodicos
@@ -417,7 +418,7 @@ def getperiod(zipname):
         else:
             cc = result.group(1)
         ls_per_title.append(cc)
-        print(cc)
+        # print(cc)
         # definindo ano do paper
         result = re.search('ano-do-artigo=\"(.*)\" doi',
                            paperdb)
@@ -426,7 +427,7 @@ def getperiod(zipname):
         else:
             cc = result.group(1)
         ls_per_year.append(cc)
-        print(cc)
+        # print(cc)
         # definindo doi do paper
         result = re.search('doi=\"(.*)\" flag-divulgacao-c',
                            paperdb)
@@ -435,7 +436,7 @@ def getperiod(zipname):
         else:
             cc = result.group(1)
         ls_per_doi.append(cc)
-        print(cc)
+        # print(cc)
         # definindo idioma do paper
         result = re.search('idioma=\"(.*)\" meio-de-divulgacao=',
                            paperdb)
@@ -444,7 +445,7 @@ def getperiod(zipname):
         else:
             cc = result.group(1)
         ls_per_lang.append(cc)
-        print(cc)
+        # print(cc)
         # detalhamento do paper
         dda = artpub[i].find_all('detalhamento-do-artigo')
         paperdt = str(dda)
@@ -456,7 +457,7 @@ def getperiod(zipname):
         else:
             cc = result.group(1)
         ls_per_journal.append(cc)
-        print(cc)
+        # print(cc)
         # definindo issn
         result = re.search('issn=\"(.*)\" local-de-public',
                            paperdt)
@@ -466,7 +467,7 @@ def getperiod(zipname):
             cc = result.group(1)
             cc = str(cc[0:4]) + '-' + str(cc[4:])
         ls_per_issn.append(cc)
-        print(cc)
+        # print(cc)
         # autores do paper
         aut = artpub[i].find_all('autores')
         ls_allauthors = []
@@ -481,7 +482,7 @@ def getperiod(zipname):
             else:
                 cc = result.group(1)
             ls_allauthors.append(cc)
-            print(cc)
+            # print(cc)
             # order de autoria
             result = re.search(
                 'ordem-de-autoria=\"(.*)\"',
@@ -491,13 +492,18 @@ def getperiod(zipname):
             else:
                 cc = result.group(1)
             ls_allauthororder.append(cc)
-            print(cc)
+            # print(cc)
         ls_per_authors.append(ls_allauthors)
         ls_per_authororder.append(ls_allauthororder)
-    # Qualis
+    # Qualis file
+    config_file = open('./config.txt', 'r')
+    qf = config_file.readlines()[4].split(':')[1]
+    qf = qf.rstrip('\n')
+    qf = qf.strip(' ')
+    config_file.close()
+    df_qualis = pd.read_csv(qf,
+                            header=0, sep='\t')
     for k in range(len(ls_per_issn)):
-        df_qualis = pd.read_csv('qualis_agrarias_periodicos_2016.csv',
-                                header=0, sep='\t')
         result = df_qualis[df_qualis['ISSN']
                            == ls_per_issn[k]].reset_index(drop=True)
         if len(result) == 0:
@@ -505,7 +511,7 @@ def getperiod(zipname):
         else:
             cc = result.iloc[0, 2]
         ls_per_qualis.append(cc)
-        print(cc)
+        # print(cc)
     # DataFrame periodicos
     df_papers = pd.DataFrame({'TITLE': ls_per_title,
                               'YEAR': ls_per_year,
@@ -519,3 +525,5 @@ def getperiod(zipname):
     latid = zipname.split('.')[0]
     pathfilename = str('./csv_periodicos/' + latid + '_period'  '.csv')
     df_papers.to_csv(pathfilename, index=False)
+    print(pathfilename, ' gravado com', len(
+        df_papers['YEAR']), 'publicações em periódicos')

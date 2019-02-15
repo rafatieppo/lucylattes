@@ -1,0 +1,5 @@
+# Não altere o texto das respectivas linhas
+# digite o texto sempre em minúsculo sem acento
+# nao use espaço no nome de arquivos
+# configuracoes inicia na linha 5
+arquivo qualis : qualis_agrarias_periodicos_2016.csv
