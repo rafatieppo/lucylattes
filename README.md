@@ -11,12 +11,12 @@ informação.
 
 ## Desenvolvimento
 
-- [X] Salva em pastas específicas arquivos `.csv` individuais para cada
+- [X] Salva em pasta específica arquivos `.csv` individuais para cada
 pesquisador:
     - os projetos de pesquisa e extensão;
-    - cursos de curta duração
-    - orientações (tcc, ic, mestrado)
-    - publicações em periódico com qualis, revista
+    - cursos de curta duração;
+    - orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
+    - publicações em periódico com qualis, revista;
 - [X] Capturar os projetos de pesquisa, e extensão, com seus respectivos
 participantes, classificação do tipo de projeto (pesquisa ou extensão)
 organizando os dados em um `DataFrame`; 
@@ -26,10 +26,17 @@ organizando os dados em um `DataFrame`;
 - [X] Realizar um looping para caturar uma série de currículos.
 - [X] Capturar produção em periódicos;
 - [X] Associar produção em periódico com capes qualis;
+- [ ] Relatório;
+    - Síntese de artigos publicados em periódicos;
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
 
 ## Histórico
+
+- 20190216: foi inserido uma verificação no scraperlattes, caso o
+comprimento da lista seja zero é informado. Há um arquivo `.csv` com o
+nome completo, sobrenome, e id do pesquisador. Foi iniciado a análise de
+dados para o reatório.
 
 - 20190214: foi criado um arquivo `config.txt` com objetivos de:
     - especificar o arquivo `.csv` que será utilizado no qualis.
@@ -46,11 +53,11 @@ projeto, tipo do projeto, ano de início, e integrantes, etc
 
 ## Arquivos
 
-- `parserlattes.py`: contém as funções que extraem as informações
+- `scraperlattes.py`: contém as funções que extraem as informações
 necessárias e geram os `.csv`
 - `readidlist.py`: faz a leitura da lista que contém o **id** dos pesquisadores 
 - `scriptLattes.py`: funciona como o executável
-- `config.txt`: cpnfigurações para funcionamento do script
+- `config.txt`: configurações para funcionamento do script
 
 ## Autor
 

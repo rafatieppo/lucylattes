@@ -36,10 +36,13 @@ len(df_idlist)
 # ------------------------------------------------------------
 # carregar funções
 
-from parserlattes import getprojpesqext
-from parserlattes import getprodtec
-from parserlattes import getorient
-from parserlattes import getperiod
+from scraperlattes import getprojpesqext
+from scraperlattes import getprodtec
+from scraperlattes import getorient
+from scraperlattes import getperiod
+from scraperlattes import getlivro
+from scraperlattes import getcapit
+from scraperlattes import getnomecompleto
 
 # ------------------------------------------------------------
 # roda as funcoes para pegar dados de cada pesquisador
@@ -50,8 +53,11 @@ for nid in range(len(df_idlist)):
     getprodtec(zipfilename)
     getorient(zipfilename)
     getperiod(zipfilename)
+    getlivro(zipfilename)
+    getcapit(zipfilename)
+    getnomecompleto(zipfilename)
 
-z
+# z
 # ------------------------------------------------------------
 # lendo arquivo gerado pelo script lattes
 # ------------------------------------------------------------
