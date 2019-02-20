@@ -4,4 +4,4 @@
 # configuracoes inicia na linha 5
 arquivo qualis : qualis_agrarias_periodicos_2016.csv
 ano inicial para tabulacao de dados : 2010
-ano final para tabulacao de dados : 2020
+ano final para tabulacao de dados : 2018

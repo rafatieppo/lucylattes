@@ -26,12 +26,20 @@ organizando os dados em um `DataFrame`;
 - [X] Realizar um looping para caturar uma série de currículos.
 - [X] Capturar produção em periódicos;
 - [X] Associar produção em periódico com capes qualis;
-- [ ] Relatório;
+- [ ] Relatório em `.html`;
     - Síntese de artigos publicados em periódicos;
+    - Gráficos por período e por qualis;
+    - Extrato de produção por pesquisador;
+- [X] Gerar um arquivo `.csv` com o extrato de produção na pasta
+relatório;
+- [ ] Grafo de interação entre pesquisadores
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
 
 ## Histórico
+
+- 20190219: relatório `.html` foi iniciado, mas não foi implementado na
+função ainda. 
 
 - 20190216: foi inserido uma verificação no scraperlattes, caso o
 comprimento da lista seja zero é informado. Há um arquivo `.csv` com o

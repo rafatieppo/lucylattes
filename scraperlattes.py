@@ -551,7 +551,7 @@ def getperiod(zipname):
                 result = df_qualis[df_qualis['ISSN']
                                    == ls_per_issn[k]].reset_index(drop=True)
                 if len(result) == 0:
-                    cc = 'VAZIO'
+                    cc = 'XX'
                 else:
                     cc = result.iloc[0, 2]
                 ls_per_qualis.append(cc)
