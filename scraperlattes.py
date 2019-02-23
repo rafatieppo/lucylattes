@@ -808,7 +808,7 @@ def getcapit(zipname):
 
 
 # ------------------------------------------------------------
-# Nome completo
+# Nome completo e bio
 # ------------------------------------------------------------
 
 
@@ -830,6 +830,9 @@ def getnomecompleto(zipname):
         ls_name_full = []
         ls_name_last = []
         ls_name_id = []
+        ls_city = []
+        ls_state = []
+        ls_abstrac = []
         for i in range(len(cv)):
             dg = cv[i].find_all('dados-gerais')
             # VERIFICANDO se ha dados gerais
@@ -850,10 +853,46 @@ def getnomecompleto(zipname):
                     ls_name_last.append(lastname)
                     idd = zipname.split('.')[0]
                     ls_name_id.append(idd)
+                    # definindo cidade
+                    gendata = str(dg[j])
+                    result = re.search('cidade-nascimento=\"(.*)\" data-faleci',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_city.append(cc)
+                    # definindo estado
+                    gendata = str(dg[j])
+                    result = re.search('uf-nascimento=\"(.*)\"><res',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_state.append(cc)
+            rescv = cv[i].find_all('resumo-cv')
+            # VERIFICANDO se ha resumo
+            if len(rescv) == 0:
+                print('Resumo cv nao encontrados para', zipname)
+            else:
+                for j in range(len(rescv)):
+                    # definindo resumo
+                    abstdata = str(rescv[j])
+                    result = re.search('texto-resumo-cv-rh=\"(.*)\" texto',
+                                       abstdata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_abstrac.append(cc)
         # DataFrame nome completo e sobrenome
         df_fullname = pd.DataFrame({'ID': ls_name_id,
                                     'FULL_NAME': ls_name_full,
-                                    'LAST_NAME': ls_name_last})
+                                    'LAST_NAME': ls_name_last,
+                                    'CITY': ls_city,
+                                    'STATE': ls_state,
+                                    'RESUME': ls_abstrac})
         latid = zipname.split('.')[0]
         pathfilename = str('./csv_producao/' + latid + '_fullname'  '.csv')
         df_fullname.to_csv(pathfilename, index=False)

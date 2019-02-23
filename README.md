@@ -11,12 +11,6 @@ informação.
 
 ## Desenvolvimento
 
-- [X] Salva em pasta específica arquivos `.csv` individuais para cada
-pesquisador:
-    - os projetos de pesquisa e extensão;
-    - cursos de curta duração;
-    - orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
-    - publicações em periódico com qualis, revista;
 - [X] Capturar os projetos de pesquisa, e extensão, com seus respectivos
 participantes, classificação do tipo de projeto (pesquisa ou extensão)
 organizando os dados em um `DataFrame`; 
@@ -26,12 +20,20 @@ organizando os dados em um `DataFrame`;
 - [X] Realizar um looping para caturar uma série de currículos.
 - [X] Capturar produção em periódicos;
 - [X] Associar produção em periódico com capes qualis;
+- [X] Salva em pasta específica arquivos `.csv` individuais para cada
+pesquisador:
+    - os projetos de pesquisa e extensão;
+    - cursos de curta duração;
+    - orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
+    - publicações em periódico com qualis, revista;
+- [X] Gerar um arquivo `.csv` com o extrato de produção na pasta
+relatório;
 - [ ] Relatório em `.html`;
+    - Relação de pesquisadores, cidade, estado, link lattes
+    - Lista de projetos de pesquisa e extensão;
     - Síntese de artigos publicados em periódicos;
     - Gráficos por período e por qualis;
     - Extrato de produção por pesquisador;
-- [X] Gerar um arquivo `.csv` com o extrato de produção na pasta
-relatório;
 - [ ] Grafo de interação entre pesquisadores
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
