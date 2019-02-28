@@ -9,6 +9,25 @@ Organiza os dados dos currículos da plataforma *Lattes* em arquivos de
 texto organizados que proporcionam rapidez para a geração de
 informação. 
 
+## Instalação
+
+- Requerimentos:
+    - Sistema operacional Linux;
+    - Python 3 ou superior;
+    - Navegador para visualizar relatório
+
+- Se não possuir *Python3* ou superior instaladas executar no terminal: 
+
+```sudo apt-get install python3```
+
+- Caso não tenhas as bibliotecas *Python* instaladas executar no
+terminal:
+
+```pip3 install pandas```
+
+## Como executar o programa
+
+
 ## Desenvolvimento
 
 - [X] Capturar os projetos de pesquisa, e extensão, com seus respectivos
@@ -28,17 +47,23 @@ pesquisador:
     - publicações em periódico com qualis, revista;
 - [X] Gerar um arquivo `.csv` com o extrato de produção na pasta
 relatório;
-- [ ] Relatório em `.html`;
-    - Relação de pesquisadores, cidade, estado, link lattes
+- [X] Relatório em `.html`:
+    - Relação de pesquisadores, cidade, estado, link lattes;
     - Lista de projetos de pesquisa e extensão;
     - Síntese de artigos publicados em periódicos;
     - Gráficos por período e por qualis;
     - Extrato de produção por pesquisador;
-- [ ] Grafo de interação entre pesquisadores
+- [X] Grafo de interação entre pesquisadores;
+    - realiza interações somente entre artigos
+    - **o método de verificação deve ser melhorado**
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
 
 ## Histórico
+
+- 20190228: relatório está implementado, como produto um arquivo `.html`
+é gerado. Para verificar a interação entre os integrantes um Grafo é
+gerado, assumindo somente as interações entre os artigos em periódicos.
 
 - 20190219: relatório `.html` foi iniciado, mas não foi implementado na
 função ainda. 

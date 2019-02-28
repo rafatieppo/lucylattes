@@ -1,0 +1,19 @@
+# Mantenha como separador a vígula
+# Não altere o nome das colunas (linha 5)
+# Não altere a ordem das colunas e das 5 primeiras linhas
+# Insira o nome ABREVIADO do pesquisador
+ID_LATTES,NAME,GROUP
+2300099357169820,AdalbertoS,fito
+4424202101438667,AnisioN,fito
+3826330763207301,DejaniaA,fito
+3081310059418227,GilmarL,ext
+8190371175828378,JoseR,ext
+2983090572389946,MarcioM,solo
+4978624837017712,MariceV,solo
+5603582678388704,MiriamI,fito
+8517616658016914,MonicaP,fito
+3275865819287843,RafaelT,eng
+1292986021348016,RivanildoD,eng
+5976153237961978,RobertoS,fito
+6679312852796625,RonicelyR,eng
+5771714793271696,WillianK,fito

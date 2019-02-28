@@ -30,7 +30,7 @@ import zipfile
 
 from readidlist import readIdList
 df_idlist = readIdList()
-df_idlist
+# df_idlist
 len(df_idlist)
 
 # ------------------------------------------------------------
@@ -43,6 +43,11 @@ from scraperlattes import getperiod
 from scraperlattes import getlivro
 from scraperlattes import getcapit
 from scraperlattes import getnomecompleto
+from grapho import getgrapho
+from report import getrelatorio
+
+from extrafuns import *
+from tidydf import *
 
 # ------------------------------------------------------------
 # roda as funcoes para pegar dados de cada pesquisador
@@ -56,6 +61,10 @@ for nid in range(len(df_idlist)):
     getlivro(zipfilename)
     getcapit(zipfilename)
     getnomecompleto(zipfilename)
+
+gettidydf()
+getgrapho()
+getrelatorio()
 
 # z
 # ------------------------------------------------------------

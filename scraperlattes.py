@@ -808,7 +808,7 @@ def getcapit(zipname):
 
 
 # ------------------------------------------------------------
-# Nome completo e bio
+# Nome completo, nome citacao, e bio
 # ------------------------------------------------------------
 
 
@@ -832,6 +832,7 @@ def getnomecompleto(zipname):
         ls_name_id = []
         ls_city = []
         ls_state = []
+        ls_citado = []
         ls_abstrac = []
         for i in range(len(cv)):
             dg = cv[i].find_all('dados-gerais')
@@ -871,6 +872,16 @@ def getnomecompleto(zipname):
                     else:
                         cc = result.group(1)
                     ls_state.append(cc)
+
+                    # definindo nome em citacoes
+                    gendata = str(dg[j])
+                    result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" pais-de-nacional',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_citado.append(cc)
             rescv = cv[i].find_all('resumo-cv')
             # VERIFICANDO se ha resumo
             if len(rescv) == 0:
@@ -890,6 +901,7 @@ def getnomecompleto(zipname):
         df_fullname = pd.DataFrame({'ID': ls_name_id,
                                     'FULL_NAME': ls_name_full,
                                     'LAST_NAME': ls_name_last,
+                                    'CITADO': ls_citado,
                                     'CITY': ls_city,
                                     'STATE': ls_state,
                                     'RESUME': ls_abstrac})
