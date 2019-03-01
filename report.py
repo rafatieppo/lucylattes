@@ -218,7 +218,7 @@ def getrelatorio():
     htmlfile.write(
         '<h2>Produção individual de periódicos por ano e qualis</h2> \n')
     for idd in range(len(dffullname)):
-        b = dfpaper[dfpaper['ID'] == dffullname.iloc[0, 0]]
+        b = dfpaper[dfpaper['ID'] == dffullname.iloc[idd, 0]]
         b = b.groupby(['FULL_NAME', 'YEAR', 'QUALIS'])[
             'TITLE'].size().unstack().reset_index(drop=False)
         b = b.fillna(0)

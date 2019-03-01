@@ -23,7 +23,18 @@ informação.
 - Caso não tenhas as bibliotecas *Python* instaladas executar no
 terminal:
 
-```pip3 install pandas```
+```
+pip3 install pandas
+pip3 install numpy
+pip3 install os
+pip3 install requests
+pip3 install BeautifulSoup
+pip3 install re
+pip3 install zipfile
+pip3 install glob
+pip3 install matplotlib.pyplot
+pip3 install networkx
+```
 
 ## Como executar o programa
 
@@ -55,7 +66,10 @@ relatório;
     - Extrato de produção por pesquisador;
 - [X] Grafo de interação entre pesquisadores;
     - realiza interações somente entre artigos
-    - **o método de verificação deve ser melhorado**
+    - como **observação**, deve-se atentar que os integrantes que não
+    possuem interação(s) não aparecem no grafo.
+- [ ] Verificas as interações nos projetos de pesquisa e extensão;
+- [ ] Calcular o peso das interações dos membros no grafo;
 - [ ] Capturar as atividades dos projetos de extensão;
 - [ ] Gerar um `.json` file para cada currículo;
 
@@ -89,10 +103,14 @@ projeto, tipo do projeto, ano de início, e integrantes, etc
 ## Arquivos
 
 - `scraperlattes.py`: contém as funções que extraem as informações
-necessárias e geram os `.csv`
-- `readidlist.py`: faz a leitura da lista que contém o **id** dos pesquisadores 
-- `scriptLattes.py`: funciona como o executável
-- `config.txt`: configurações para funcionamento do script
+necessárias e geram os `.csv`;
+- `readidlist.py`: faz a leitura da lista que contém o **id** dos pesquisadores ;
+- `scriptLattes.py`: funciona como o executável;
+- `config.txt`: configurações para funcionamento do script;
+- `tidydf.py`: organiza os `DataFrame`;
+- `report.py`: gerador do relatório;
+- `grapho.py`: gerador do gráfico com as interações entre os membros.
+
 
 ## Autor
 

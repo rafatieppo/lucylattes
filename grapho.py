@@ -80,9 +80,9 @@ def getgrapho():
     for m in range(len(df_idlist)):
         idd = df_idlist.iloc[m, 0]
         lname = dffullname[dffullname['ID'] == idd]
-        lname = lname.iloc[0, 3]
+        lname = lname.iloc[0, 1]
         lname = lname.upper()
-        lname = lname.split(';')
+        # lname = lname.split(';')
         # print(lname)
         dfids_tocompare = dffullname[dffullname['ID'] != str(idd)]
         for n in range(len(dfids_tocompare)):
@@ -90,18 +90,33 @@ def getgrapho():
             dd = dfpaper[dfpaper['ID'] == idd_tocompare]
             lsid.append(str(idd))
             lsid_tocompare.append(idd_tocompare)
+            # DANGER ATTENTION FIX lname deve ser o nome completo
+            # removendo caract desnecessarios
             interac = 0
             for o in range(len(dd)):
                 authors = dd.iloc[o, 7].upper()
-                for p in range(len(lname)):
-                    test = lname[p] in authors
-                    if test == True:
-                        interac = interac + 1
+                authors = authors.replace('[', '')
+                authors = authors.replace(']', '')
+                authors = authors.replace("'", '')
+                authors = authors.split(',')
+                # print(authors)
+                for op in range(len(authors)):
+                    # print(authors[op])
+                    if authors[op][0] == ' ':
+                        authors[op] = authors[op][1:]
+                # interac = 0
+                inpaper = list(set([lname]) & set(authors))
+                if len(inpaper) >= 1:
+                    interac = interac + 1
+                    # print(interac)
+                    # print(lname)
+                    # print(authors)
             lsinter_qtd.append(interac)
     dfinterac = pd.DataFrame({'IDD': lsid,
                               'IDD_COMP': lsid_tocompare,
                               'WEIGHT': lsinter_qtd})
-    # dfinterac.to_csv('test.csv', index=False)
+    # DANGER ATTENTION
+    #dfinterac.to_csv('test.csv', index=False)
     # eliminando linhas sem interacao
     indexremove = []
     for i in range(len(lsid)):
@@ -119,7 +134,7 @@ def getgrapho():
         diclabel[lsid_uniq[i]] = x.iloc[0, 1]
     # ------------------------------------------------------------
     # Grapho
-    plt.figure(figsize=(9, 5))
+    plt.figure(figsize=(10, 6))
     G = nx.Graph()
     for i in range(len(lsid)):
         G.add_edge(lsid[i],
