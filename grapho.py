@@ -102,8 +102,9 @@ def getgrapho():
                 # print(authors)
                 for op in range(len(authors)):
                     # print(authors[op])
-                    if authors[op][0] == ' ':
-                        authors[op] = authors[op][1:]
+                    if len(authors[op]) > 0:
+                        if authors[op][0] == ' ':
+                            authors[op] = authors[op][1:]
                 # interac = 0
                 inpaper = list(set([lname]) & set(authors))
                 if len(inpaper) >= 1:
@@ -142,7 +143,9 @@ def getgrapho():
                    weight=lsinter_qtd[0])
     pos = nx.spring_layout(G)
     # colors for nodes
-    colours = ['red', 'green', 'yellow', 'gray', 'orange', 'blue', 'magenta']
+    colours = ['#5a7d9a', 'red', 'green', 'yellow',
+               'gray', 'orange', 'blue', 'magenta',
+               '#00555a', '#f7d560', 'cyan']
     lsgroup_uniq = df_idlist['GROUP'].unique()
     dic_colours = {}
     for i in range(len(lsgroup_uniq)):
