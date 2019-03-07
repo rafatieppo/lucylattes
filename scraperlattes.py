@@ -418,12 +418,35 @@ def getorient(zipname):
 
 def getperiod(zipname):
     # lendo do zipfile
-    # zipname = '3275865819287843.zip'
+    #zipname = '3275865819287843.zip'
     zipfilepath = './xlm_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
+    # capturando nome completo para ordem de autoria
+    cv = soup.find_all('curriculo-vitae')
+    if len(cv) == 0:
+        print('curriculo vitae nao encontrado para', zipname)
+    else:
+        # listas para armazenamento de dados producao tecnica
+        for i in range(len(cv)):
+            dg = cv[i].find_all('dados-gerais')
+            # VERIFICANDO se ha dados gerais
+            if len(dg) == 0:
+                print('Dados gerais nao encontrados para', zipname)
+            else:
+                for j in range(len(dg)):
+                    # definindo nome completo
+                    gendata = str(dg[j])
+                    result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    fullname = cc
+    # ------------------------------------------------------------
     # extrair todas as producoes bibliograficas
     pb = soup.find_all('producao-bibliografica')
     # VERIFICANDO se ha demais tipos de producao
@@ -446,6 +469,7 @@ def getperiod(zipname):
             ls_per_qualis = []
             ls_per_authors = []
             ls_per_authororder = []
+            ls_per_orders = []
             # A partir do grupo de artigos publicados extrair os artigos
             # publicados
             artpub = artspubs[0].find_all('artigo-publicado')
@@ -516,6 +540,7 @@ def getperiod(zipname):
                 aut = artpub[i].find_all('autores')
                 ls_allauthors = []
                 ls_allauthororder = []
+                ls_authororder = []
                 for j in range(len(aut)):
                     auth = str(aut[j])
                     result = re.search(
@@ -525,6 +550,7 @@ def getperiod(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        nca = result.group(1)  # nomecompletoautor
                     ls_allauthors.append(cc)
                     # print(cc)
                     # order de autoria
@@ -535,10 +561,15 @@ def getperiod(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        ncao = result.group(1)
                     ls_allauthororder.append(cc)
+                    if fullname == nca:
+                        ls_authororder.append(ncao)
+                        print(fullname + ' ' + ncao)
                     # print(cc)
                 ls_per_authors.append(ls_allauthors)
                 ls_per_authororder.append(ls_allauthororder)
+                ls_per_orders.append(ls_authororder)
             # Qualis file
             config_file = open('./config.txt', 'r')
             qf = config_file.readlines()[4].split(':')[1]
@@ -565,7 +596,8 @@ def getperiod(zipname):
                                       'QUALIS': ls_per_qualis,
                                       'ISSN': ls_per_issn,
                                       'AUTHOR': ls_per_authors,
-                                      'ORDER': ls_per_authororder})
+                                      'ORDER': ls_per_authororder,
+                                      'ORDER_OK': ls_per_orders})
             latid = zipname.split('.')[0]
             pathfilename = str('./csv_producao/' + latid + '_period'  '.csv')
             df_papers.to_csv(pathfilename, index=False)
@@ -769,6 +801,7 @@ def getcapit(zipname):
                 aut = cappuborg[i].find_all('autores')
                 ls_allauthors = []
                 ls_allauthororder = []
+                ls_allorders = []
                 for j in range(len(aut)):
                     auth = str(aut[j])
                     result = re.search(
@@ -872,7 +905,6 @@ def getnomecompleto(zipname):
                     else:
                         cc = result.group(1)
                     ls_state.append(cc)
-
                     # definindo nome em citacoes
                     gendata = str(dg[j])
                     result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" pais-de-nacional',

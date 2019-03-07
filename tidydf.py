@@ -111,24 +111,26 @@ def gettidydf():
     dffullname = dffullname.reset_index(drop=True)
     # processo para excluir PAPER repetido busca o sobrenome do autor no
     # dffullname por meio do id lattes. divide a coluna autores do
-    # paper. verifica a ordem do sobrenome no author_split
-    lsauthor_order = []
-    order = -99
-    for i in range(len(dfpaper['ID'])):
-        lastname = dffullname[dffullname['ID']
-                              == (dfpaper.iloc[i, 9])]
-        lastname = lastname.iloc[0, 2]
-        author_split = dfpaper.iloc[i, 7].split(',')
-        # print(lastname)
-        # print(len(author_split))
-        for aa in range(len(author_split)):
-            test = lastname in author_split[aa]
-            if test == True:
-                order = aa + 1
-        lsauthor_order.append(order)
-    dfpaper['OR'] = lsauthor_order
+    # paper.
+    # atual: a ordem já vem no dfpaper
+    # antiga: verifica a ordem do sobrenome no author_split
+    #lsauthor_order = []
+    #order = -99
+    # for i in range(len(dfpaper['ID'])):
+    #     lastname = dffullname[dffullname['ID']
+    #                           == (dfpaper.iloc[i, 9])]
+    #     lastname = lastname.iloc[0, 2]
+    #     author_split = dfpaper.iloc[i, 7].split(',')
+    #     # print(lastname)
+    #     # print(len(author_split))
+    #     for aa in range(len(author_split)):
+    #         test = lastname in author_split[aa]
+    #         if test == True:
+    #             order = aa + 1
+    #     lsauthor_order.append(order)
+    #dfpaper['OR'] = lsauthor_order
     # retirando paper repetido, fica para o author com maior importancia
-    dfpaper_uniq = dfpaper.sort_values(['OR'])
+    dfpaper_uniq = dfpaper.sort_values(['ORDER_OK'])
     dfpaper_uniq.drop_duplicates(['TITLE'], inplace=True)
     pathfilename = str('./csv_producao/periodicos_all.csv')
     dfpaper.to_csv(pathfilename, index=False)

@@ -1,7 +1,7 @@
-# Não altere o texto das respectivas linhas
+# Não altere o texto das linhas 1,2,3,4
 # digite o texto sempre em minúsculo sem acento
-# nao use espaço no nome de arquivos
-# configuracoes inicia na linha 5
+# nao use espaço ou acentos no nome de arquivos
+# configuracoes iniciam na linha 5
 arquivo qualis : qualis_agrarias_periodicos_2016.csv
 ano inicial para tabulacao de dados : 2010
 ano final para tabulacao de dados : 2019
