@@ -21,6 +21,7 @@ informação.
 *UBUNTU 18*
 
 ```sudo apt-get install python3```
+
 ```sudo apt-get install python3-pip```
 
 - Caso não tenha as bibliotecas *Python* instaladas executar no
@@ -73,24 +74,34 @@ arquivos do diretório `csv_prdoucao`.
 * DONE Capturar os projetos de pesquisa, e extensão, com seus
 respectivos participantes, classificação do tipo de projeto (pesquisa ou
 extensão) organizando os dados em um `DataFrame`; 
+
 * DONE Capturar produção técnica de cada pesquisador
+
 * DONE Capturar as atividades de orientação;
+
 * DONE Ler o `.xml` direto do `.zip`;
+
 * DONE Realizar um looping para caturar uma série de currículos.
+
 * DONE Capturar produção em periódicos;
+
 * DONE Associar produção em periódico com capes qualis;
+
 * TODO Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[75%] 
 - [X] os projetos de pesquisa e extensão;
 - [X] cursos de curta duração;
 - [X] publicações em periódico com qualis, revista;
 - [ ] orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
+
 * DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
-* DONE Relatório em `.html` [100%]
+
+* **DONE** Relatório em `.html` [100%]
 - [X] Relação de pesquisadores, cidade, estado, link lattes;
 - [X] Lista de projetos de pesquisa e extensão;
 - [X] Síntese de artigos publicados em periódicos;
 - [X] Gráficos por período e por qualis;
 - [X] Extrato de produção por pesquisador;
+
 * TODO Grafo de interação entre pesquisadores [33%]
 - [X] realiza interações somente entre artigos
 - [X] como **observação**, deve-se atentar que os integrantes que não possuem interação(s) não aparecem no grafo.
