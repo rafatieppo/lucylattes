@@ -4,17 +4,27 @@
 
 O CNPq por meio do currículo Lattes agrega dados do registro da vida
 profissional de estudantes, professores, e pesquisadores do país,
-e se tornou padrão nacional no meio científico.
+e tornando-se padrão nacional no meio científico para consulta sobre a
+produção científica dos referidos profissionais.
 
 Contudo, após a criação do captcha para o acesso aos currículos Lattes,
-extrair os referidos dados se tornou uma tarefa árdua. Com o intuito de
-auxiliar na obtenção destes dados, o `pyLattes` foi desenvolvido.
+extrair dados dos currículos se tornou uma tarefa árdua, pois todas vez
+que pretende-se acessar um currículo, torna-se necessário passar pelo
+captcha.  Com o intuito de auxiliar na obtenção destes dados, o
+`pyLattes` foi desenvolvido. 
 
 ## O que faz
 
 Extração, compilação, e organização dos dados dos currículos da
 plataforma *Lattes* em arquivos de texto, e geração de um relátório
 simplificado, que proporcionam agilidade para a geração de informação.
+
+## Notas
+
+> O pyLattes não tem vínculo com o CNPq. Este programa computacional
+> é fruto de um esforço (independente) realizado com o objetivo de dar
+> suporte às rotinas de análise de dados cadastradas nos Currículos
+> Lattes (publicamente disponíveis).
 
 ## Instalação
 
@@ -73,14 +83,7 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 ## Observações
 
 Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os
-arquivos do diretório `csv_prdoucao**.
-
-## Notas
-
-> O scriptLattes não tem vínculo com o CNPq. Este programa computacional
-> é fruto de um esforço (independente) realizado com o objetivo de dar
-> suporte às rotinas de análise de dados cadastradas nos Currículos
-> Lattes (publicamente disponíveis).
+arquivos do diretório `csv_prdoucap`.
 
 ## Desenvolvimento
 
