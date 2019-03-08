@@ -73,7 +73,7 @@ diretório `xlm_zip`, *NÃO DESCOMPACTE OS ARQUIVOS*.
 4. Abra o arquivo `config.txt` com um editor de texto e altere o que for
 necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
-5. Acesse o diretório `LATTES_SCRAPER` pelo terminal e digite:
+5. Acesse o diretório `pyLattes-master` pelo terminal e digite:
 
 ```python pyLattes.py```
 
