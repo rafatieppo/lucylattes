@@ -50,7 +50,7 @@ pip3 install networkx
 ## Como executar o programa
 
 1. Descompacte o arquivo `.zip` obtido em
-[https://github.com/rafatieppo/LATTES_SCRAPER](https://github.com/rafatieppo/LATTES_SCRAPER)
+[https://github.com/rafatieppo/pyLattes](https://github.com/rafatieppo/pyLattes)
 em um diretório de sua preferência. 
 
 2. Abra o arquivo `list_id_name.txt` com um editor de texto, leias as
@@ -64,7 +64,8 @@ diretório `xlm_zip`, *NÃO DESCOMPACTE OS ARQUIVOS*.
 necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 5. Acesse o diretório `LATTES_SCRAPER` pelo terminal e digite:
-`python pyLattes.py`
+
+```python pyLattes.py```
 
 6. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
 `relatório`, basta acessar com um navegador (Chrome ou Firefox).
