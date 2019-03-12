@@ -211,6 +211,7 @@ def getrelatorio():
 
     # lista de publicacoes em periodicos
     htmlfile.write('<h2>Relação de artigos em periódicos</h2> \n')
+    htmlfile.write('<ol class="custom-counter">')
     for idd in range(len(dfpaper_uniq)):
         pap = dfpaper_uniq.iloc[idd, 0]
         pap_yi = dfpaper_uniq.iloc[idd, 1]
@@ -223,6 +224,7 @@ def getrelatorio():
                        str(pap_jo) + ', <b>' + str(pap_qu) + '</b>. ' + str(pap_au))
         htmlfile.write('\n </i>' + '\n')
         htmlfile.write('</li>' + '\n \n')
+    htmlfile.write('</ol> \n')
     # artig completo periodico por qualis para cada pesquisador
     htmlfile.write('<a name="prodporpesq"></a>' + '\n \n')
     htmlfile.write(
