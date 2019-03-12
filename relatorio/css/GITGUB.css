@@ -184,6 +184,25 @@ ol ol ol {
   list-style-type: lower-alpha;
 }
 
+.custom-counter {
+    margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
+}
+.custom-counter li {
+    counter-increment: step-counter;
+}
+.custom-counter li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 80%;
+    background-color: rgb(200,200,200);
+    color: black;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
 dd {
   margin-left: 0;
 }

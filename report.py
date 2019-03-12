@@ -9,7 +9,7 @@ import glob
 import re
 import matplotlib.pyplot as plt
 import matplotlib.style as style
-# style.available
+style.available
 style.use('fivethirtyeight')
 from tabulate import tabulate
 
@@ -147,27 +147,37 @@ def getrelatorio():
     # Projetos de Extensao do Grupo
     htmlfile.write('<a name="projexte"></a>' + '\n \n')
     htmlfile.write('<h1>Projetos de extensão</h1> \n')
+    htmlfile.write('<ol class="custom-counter">')
     for idd in range(len(dfppe_uniq_ext)):
         proj = dfppe_uniq_ext.iloc[idd, 0]
         proj_yi = dfppe_uniq_ext.iloc[idd, 1]
+        proj_yf = dfppe_uniq_ext.iloc[idd, 2]
+        proj_au = dfppe_uniq_ext.iloc[idd, 4]
         htmlfile.write('<li>' + '\n')
         htmlfile.write('<i>' + '\n')
         htmlfile.write('<u>' + str(proj) + '</u>. início: <u>' +
-                       str(proj_yi) + '</u>')
+                       str(proj_yi) + '</u>.' + ' fim: <u> ' + str(proj_yf)
+                       + '.</u> ' + '<i>' + proj_au + '</i>.')
         htmlfile.write('\n </i>' + '\n')
         htmlfile.write('</li>' + '\n \n')
+    htmlfile.write('</ol>')
     # Projetos de Pesquisa
     htmlfile.write('<a name="projpesq"></a>' + '\n \n')
     htmlfile.write('<h1>Projetos de pesquisa</h1> \n')
+    htmlfile.write('<ol class="custom-counter">')
     for idd in range(len(dfppe_uniq_pesq)):
         proj = dfppe_uniq_pesq.iloc[idd, 0]
         proj_yi = dfppe_uniq_pesq.iloc[idd, 1]
+        proj_yf = dfppe_uniq_pesq.iloc[idd, 2]
+        proj_au = dfppe_uniq_pesq.iloc[idd, 4]
         htmlfile.write('<li>' + '\n')
         htmlfile.write('<i>' + '\n')
         htmlfile.write('<u>' + str(proj) + '</u>. início: <u>' +
-                       str(proj_yi) + '</u>')
+                       str(proj_yi) + '</u>' + ' fim: <u> ' + str(proj_yf)
+                       + '.</u> ' + '<i>' + proj_au + '</i>.')
         htmlfile.write('\n </i>' + '\n')
         htmlfile.write('</li>' + '\n \n')
+    htmlfile.write('</ol>')
     # Publicacao em periodicos
     htmlfile.write('<a name="pubperiod"></a>' + '\n \n')
     htmlfile.write('<h1>Publicação em periódicos</h1> \n')
@@ -252,4 +262,12 @@ def getrelatorio():
         'TITLE'].size().unstack().reset_index(drop=False)
     acpq_pesq = acpq_pesq.fillna(0)
     acpq_pesq.to_csv('./relatorio/extrato_periodico_autorqualis.csv')
-    print('O arquivo extrato_periodico_autorqualis.csv foi gerado na pasta relatorio')
+    print('------------------------------------------------------------')
+    print('AVISOS')
+    print('------------------------------------------------------------')
+    print('Este programa é um software livre; você pode redistribui-lo e/ou modifica-lo dentro dos termos da Licença Pública Geral GNU. Verifique o arquivo LICENSE.txt ')
+    print('- Os resultados estão sujeitos a falhas devido a inconsistencias no preenchimento dos CVs Lattes')
+    print('- O arquivo extrato_periodico_autorqualis.csv foi gerado na pasta relatorio')
+    print('- O arquivo relatorio_producao.html foi gerado na pasta relatorio')
+    print('- Em caso de erro do script abra um chamado em https://github.com/rafatieppo/lucyLattes')
+    print('------------------------------------------------------------')

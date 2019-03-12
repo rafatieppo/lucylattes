@@ -135,7 +135,7 @@ def getgrapho():
         diclabel[lsid_uniq[i]] = x.iloc[0, 1]
     # ------------------------------------------------------------
     # Grapho
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(12, 9.5))
     G = nx.Graph()
     for i in range(len(lsid)):
         G.add_edge(lsid[i],

@@ -18,12 +18,13 @@ from bs4 import BeautifulSoup
 import re
 import zipfile
 
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-# import matplotlib.style as style
+import glob
+import re
+import matplotlib.pyplot as plt
+import matplotlib.style as style
 # style.available
-# style.use('fivethirtyeight')
-# sns.set_style('whitegrid')
+style.use('fivethirtyeight')
+from tabulate import tabulate
 
 # ------------------------------------------------------------
 # lendo a lista dos IDs e nome dos pesquisadores

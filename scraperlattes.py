@@ -565,7 +565,7 @@ def getperiod(zipname):
                     ls_allauthororder.append(cc)
                     if fullname == nca:
                         ls_authororder.append(ncao)
-                        print(fullname + ' ' + ncao)
+                        # print(fullname + ' ' + ncao)
                     # print(cc)
                 ls_per_authors.append(ls_allauthors)
                 ls_per_authororder.append(ls_allauthororder)

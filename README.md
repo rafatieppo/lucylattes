@@ -1,4 +1,4 @@
-# pyLattes
+# lucyLattes
 
 ## Motivação
 
@@ -11,7 +11,7 @@ Contudo, após a criação do captcha para o acesso aos currículos Lattes,
 extrair dados dos currículos se tornou uma tarefa árdua, pois todas vez
 que pretende-se acessar um currículo, torna-se necessário passar pelo
 captcha.  Com o intuito de auxiliar na obtenção destes dados, o
-`pyLattes` foi desenvolvido. 
+`lucyLattes` foi desenvolvido. 
 
 ## O que faz
 
@@ -21,10 +21,20 @@ simplificado, que proporcionam agilidade para a geração de informação.
 
 ## Notas
 
-> O pyLattes não tem vínculo com o CNPq. Este programa computacional
+> O lucyLattes não tem vínculo com o CNPq. Este programa computacional
 > é fruto de um esforço (independente) realizado com o objetivo de dar
 > suporte às rotinas de análise de dados cadastradas nos Currículos
 > Lattes (publicamente disponíveis).
+
+Este programa é um software livre; você pode redistribui-lo e/ou
+modifica-lo dentro dos termos da Licença Pública Geral
+GNU. **Verifique** o arquivo **LICENSE.txt** . 
+
+Este programa é distribuído na esperança que possa ser util, mas SEM
+NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
+MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
+**LICENSE.txt** . 
+
 
 ## Instalação
 
@@ -75,7 +85,7 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 5. Acesse o diretório `pyLattes-master` pelo terminal e digite:
 
-```python pyLattes.py```
+```python lucyLattes.py```
 
 6. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
 `relatório`, basta acessar com um navegador (Chrome ou Firefox).
@@ -98,13 +108,6 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
 
-- DONE Relatório em `.html` [100%]
-  - [X] Relação de pesquisadores, cidade, estado, link lattes;
-  - [X] Lista de projetos de pesquisa e extensão;
-  - [X] Síntese de artigos publicados em periódicos;
-  - [X] Gráficos por período e por qualis;
-  - [X] Extrato de produção por pesquisador;
-
 - TODO Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[75%] 
   - [X] os projetos de pesquisa e extensão;
   - [X] cursos de curta duração;
@@ -119,7 +122,19 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] Capturar as atividades dos projetos de extensão;
   - [ ] Gerar um `.json` file para cada currículo;
 
+- DONE Relatório em `.html` [71%]
+  - [X] Relação de pesquisadores, cidade, estado, link lattes;
+  - [X] Lista de projetos de pesquisa e extensão;
+  - [X] Síntese de artigos publicados em periódicos;
+  - [X] Gráficos dos periódicos por período e por qualis;
+  - [X] Extrato de produção por pesquisador;
+  - [ ] relação de livros
+  - [ ] relação de orientações
+
 ## Histórico
+
+### Mon 2019-03-11 21:30:46 -04
+- No relatório as produções foram enumeradas. Avisos foram inseridos após a finalização dos processos.
 
 ### Thu 2019-03-07 21:16:25 -04
 - o método de verificação da ordem de autoria do paper foi melhorado, a ordem é obtida direto do lattes.
@@ -158,7 +173,7 @@ projeto, ano de início, e integrantes, etc
 - `scraperlattes.py`: contém as funções que extraem as informações
 necessárias e geram os `.csv`;
 - `readidlist.py`: faz a leitura da lista que contém o **id** dos pesquisadores ;
-- `pyLattes.py`: funciona como o executável;
+- `lucyLattes.py`: funciona como o executável;
 - `config.txt`: configurações para funcionamento do script;
 - `tidydf.py`: organiza os `DataFrame`;
 - `report.py`: gerador do relatório;
@@ -175,6 +190,4 @@ Brazilian Computer Society, vol. 15, n. 4, páginas 31--39, 2009.
 - Rafael Tieppo
 - rafaeltieppo@yahoo.com.br
 - https://rafatieppo.github.io/
-
-
 
