@@ -32,7 +32,7 @@ from tabulate import tabulate
 from readidlist import readIdList
 df_idlist = readIdList()
 # df_idlist
-len(df_idlist)
+# len(df_idlist)
 
 # ------------------------------------------------------------
 # carregar funções

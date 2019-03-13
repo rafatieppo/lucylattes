@@ -52,6 +52,7 @@ Se vc usar *UBUNTU 18*
 ```sudo apt-get install python3```
 
 ```sudo apt-get install python3-pip```
+
 ```sudo apt-get install python3-tk```
 
 - Caso não tenha as bibliotecas *Python* instaladas executar no
@@ -60,7 +61,6 @@ terminal:
 ```
 pip3 install pandas
 pip3 install numpy
-pip3 install os
 pip3 install requests
 pip3 install beautifulsoup4
 pip3 install matplotlib
@@ -87,7 +87,7 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 5. Acesse o diretório `pyLattes-master` pelo terminal e digite:
 
-```python lucyLattes.py```
+```python3 lucyLattes.py```
 
 6. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
 `relatório`, basta acessar com um navegador (Chrome ou Firefox).

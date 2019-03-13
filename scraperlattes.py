@@ -18,6 +18,7 @@ import zipfile
 def getprojpesqext(zipname):
     # lendo do zipfile
     # zipname = '3275865819287843.zip'
+    #zipname = '0452113881423529.zip'
     zipfilepath = './xlm_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')

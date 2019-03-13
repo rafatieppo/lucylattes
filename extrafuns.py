@@ -14,3 +14,6 @@ import re
 
 
 def ss(x): return str(x)
+
+
+def ff(x): return float(x)

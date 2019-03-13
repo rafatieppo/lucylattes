@@ -40,8 +40,25 @@ def getrelatorio():
                                header=0)
     # filtrando o ano
     # projetos
+    dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
+    num99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99]
+    if len(num99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: ' + str(len(num99)) + 'projetos sem ano inicial')
+        print('------------------------------------------------------------')
+    dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].apply(ff)
     dfppe_uniq = dfppe_uniq[(dfppe_uniq['YEAR_INI'] >= yyi)]
+    # ------------------------------------------------------------
     # periodicos
+    dfpaper['YEAR'] = dfpaper['YEAR'].replace('VAZIO', -99)
+    dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].replace('VAZIO', -99)
+    num99 = dfpaper[dfpaper['YEAR'] == -99]
+    if len(num99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: ' + str(len(num99)) + 'artigos sem ano de publicacao')
+        print('------------------------------------------------------------')
+    dfpaper['YEAR'] = dfpaper['YEAR'].apply(ff)
+    dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].apply(ff)
     dfpaper = dfpaper[(dfpaper['YEAR'] >= yyi) & (dfpaper['YEAR'] <= yyf)]
     dfpaper_uniq = dfpaper_uniq[(dfpaper_uniq['YEAR']
                                  >= yyi) & (dfpaper_uniq['YEAR'] <= yyf)]
@@ -110,7 +127,7 @@ def getrelatorio():
     lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
     dffullname = pd.DataFrame()
     for i in range(len(lscsv_fullname)):
-        a = pd.read_csv(lscsv_fullname[i], header=0)
+        a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
         dffullname = dffullname.append(a, ignore_index=False)
     # passando ID para string, para poder comparar com dfpaper
     dfpaper['ID'] = dfpaper['ID'].apply(ss)
@@ -239,13 +256,13 @@ def getrelatorio():
         t = t.groupby(['FULL_NAME', 'YEAR', 'QUALIS'])[
             'TITLE'].size().reset_index(drop=False)
         tot = t['TITLE'].sum()
-        print(tot)
+        # print(tot)
         htmlfile.write(dffullname.iloc[idd, 1])
         htmlfile.write(': produção total = ')
         htmlfile.write(str(tot))
         htmlfile.write('\n')
         # print(b.head())
-        print(tabulate(b.head(), headers="keys", tablefmt='markdown'))
+        # print(tabulate(b.head(), headers="keys", tablefmt='markdown'))
         mm = (tabulate(b, headers="keys", tablefmt='html'))
         htmlfile.write(str(mm))
         htmlfile.write('\n <hr> \n')

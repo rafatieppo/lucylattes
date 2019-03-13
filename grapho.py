@@ -23,7 +23,7 @@ from extrafuns import *
 def getgrapho():
     # lendo a lista dos IDs e nome dos pesquisadores
     df_idlist = readIdList()
-    df_idlist['ID_LATTES'] = df_idlist['ID_LATTES'].apply(ss)
+    # df_idlist['ID_LATTES'] = df_idlist['ID_LATTES'].apply(ss)
     config_file = open('./config.txt', 'r')
     yyi = config_file.readlines()[5].split(':')[1]
     yyi = yyi.rstrip('\n')
@@ -45,12 +45,30 @@ def getgrapho():
                           header=0)
     dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
                                header=0)
+    # paper uniq
     dfpaper['ID'] = dfpaper['ID'].apply(ss)
     dfpaper_uniq['ID'] = dfpaper_uniq['ID'].apply(ss)
     # filtrando o ano
     # projetos
+    dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
+    num99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99]
+    if len(num99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: ' + str(len(num99)) + 'projetos sem ano inicial')
+        print('------------------------------------------------------------')
+    dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].apply(ff)
     dfppe_uniq = dfppe_uniq[(dfppe_uniq['YEAR_INI'] >= yyi)]
+    # ------------------------------------------------------------
     # periodicos
+    dfpaper['YEAR'] = dfpaper['YEAR'].replace('VAZIO', -99)
+    dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].replace('VAZIO', -99)
+    num99 = dfpaper[dfpaper['YEAR'] == -99]
+    if len(num99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: ' + str(len(num99)) + 'artigos sem ano de publicacao')
+        print('------------------------------------------------------------')
+    dfpaper['YEAR'] = dfpaper['YEAR'].apply(ff)
+    dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].apply(ff)
     dfpaper = dfpaper[(dfpaper['YEAR'] >= yyi) & (dfpaper['YEAR'] <= yyf)]
     dfpaper_uniq = dfpaper_uniq[(dfpaper_uniq['YEAR']
                                  >= yyi) & (dfpaper_uniq['YEAR'] <= yyf)]
@@ -68,7 +86,7 @@ def getgrapho():
     # df com nome completo, sobrenome e id
     dffullname = pd.DataFrame()
     for i in range(len(lscsv_fullname)):
-        a = pd.read_csv(lscsv_fullname[i], header=0)
+        a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
         dffullname = dffullname.append(a, ignore_index=False)
     # passando ID para string, para poder comparar com dfpaper
     dffullname['ID'] = dffullname['ID'].apply(ss)
@@ -78,7 +96,7 @@ def getgrapho():
     lsid_tocompare = []
     lsinter_qtd = []
     for m in range(len(df_idlist)):
-        idd = df_idlist.iloc[m, 0]
+        idd = str(df_idlist.iloc[m, 0])
         lname = dffullname[dffullname['ID'] == idd]
         lname = lname.iloc[0, 1]
         lname = lname.upper()
@@ -117,7 +135,7 @@ def getgrapho():
                               'IDD_COMP': lsid_tocompare,
                               'WEIGHT': lsinter_qtd})
     # DANGER ATTENTION
-    #dfinterac.to_csv('test.csv', index=False)
+    # dfinterac.to_csv('test.csv', index=False)
     # eliminando linhas sem interacao
     indexremove = []
     for i in range(len(lsid)):
@@ -127,12 +145,6 @@ def getgrapho():
         del lsid[index]
         del lsid_tocompare[index]
         del lsinter_qtd[index]
-    # labels para grapho
-    lsid_uniq = np.unique(lsid)
-    diclabel = {}
-    for i in range(len(lsid_uniq)):
-        x = df_idlist[df_idlist['ID_LATTES'] == lsid_uniq[i]]
-        diclabel[lsid_uniq[i]] = x.iloc[0, 1]
     # ------------------------------------------------------------
     # Grapho
     plt.figure(figsize=(12, 9.5))
@@ -163,6 +175,14 @@ def getgrapho():
                            node_shape='o',
                            node_color=node_colours,
                            alpha=0.7)
+    # labels
+    nn = list(G.nodes)
+    diclabel = {}
+    for i in range(len(nn)):
+        x = df_idlist[df_idlist['ID_LATTES'] == nn[i]]
+        xid = x.iloc[0, 0]
+        xname = x.iloc[0, 1]
+        diclabel[str(xid)] = xname
     # edges
     nx.draw_networkx_edges(G, pos,  # edgelist=lsinter_qtd,
                            width=1, edge_color='orange')
@@ -172,7 +192,7 @@ def getgrapho():
     plt.axis('off')
     plt.tight_layout()
     plt.savefig('./relatorio/figures/grapho.png')
-    # plt.show()
+    plt.show()
 
 # ------------------------------------------------------------
 # ------------------------------------------------------------
