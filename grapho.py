@@ -192,7 +192,7 @@ def getgrapho():
     plt.axis('off')
     plt.tight_layout()
     plt.savefig('./relatorio/figures/grapho.png')
-    plt.show()
+    # plt.show()
 
 # ------------------------------------------------------------
 # ------------------------------------------------------------

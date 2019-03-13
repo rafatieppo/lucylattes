@@ -28,14 +28,14 @@ simplificado, que proporcionam agilidade para a geração de informação.
 > suporte às rotinas de análise de dados cadastradas nos Currículos
 > Lattes (publicamente disponíveis).
 
-Este programa é um software livre; você pode redistribui-lo e/ou
-modifica-lo dentro dos termos da Licença Pública Geral
-GNU. **Verifique** o arquivo **LICENSE.txt** . 
+> Este programa é um software livre; você pode redistribui-lo e/ou
+> modifica-lo dentro dos termos da Licença Pública Geral
+> GNU. **Verifique** o arquivo **LICENSE.txt** . 
 
-Este programa é distribuído na esperança que possa ser util, mas SEM
-NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
-MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
-**LICENSE.txt** . 
+> Este programa é distribuído na esperança que possa ser util, mas SEM
+> NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
+> MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
+> **LICENSE.txt** . 
 
 
 ## Instalação
@@ -72,7 +72,7 @@ pip3 install tabulate
 ## Como executar o programa
 
 1. Descompacte o arquivo `.zip` obtido em
-[https://github.com/rafatieppo/pyLattes](https://github.com/rafatieppo/pyLattes)
+[https://github.com/rafatieppo/lucyLattes](https://github.com/rafatieppo/lucyLattes)
 em um diretório de sua preferência. 
 
 2. Abra o arquivo `list_id_name.txt` com um editor de texto, leias as
@@ -95,7 +95,7 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 ## Observações
 
 Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os
-arquivos do diretório `csv_prdoucap`.
+arquivos do diretório `csv_producao`.
 
 ## Desenvolvimento
 
