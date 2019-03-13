@@ -1,5 +1,7 @@
 # lucyLattes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
+
 ## Motivação
 
 O CNPq por meio do currículo Lattes agrega dados do registro da vida
@@ -50,6 +52,7 @@ Se vc usar *UBUNTU 18*
 ```sudo apt-get install python3```
 
 ```sudo apt-get install python3-pip```
+```sudo apt-get install python3-tk```
 
 - Caso não tenha as bibliotecas *Python* instaladas executar no
 terminal:
@@ -59,12 +62,11 @@ pip3 install pandas
 pip3 install numpy
 pip3 install os
 pip3 install requests
-pip3 install BeautifulSoup
-pip3 install re
-pip3 install zipfile
-pip3 install glob
-pip3 install matplotlib.pyplot
+pip3 install beautifulsoup4
+pip3 install matplotlib
 pip3 install networkx
+pip3 install lxml
+pip3 install tabulate
 ```
 
 ## Como executar o programa
