@@ -29,6 +29,12 @@ def getrelatorio():
     yyf = yyf.strip(' ')
     yyf = float(yyf)
     config_file.close()
+    config_file = open('./config.txt', 'r')
+    qualqualis = config_file.readlines()[4].split(':')[1]
+    qualqualis = qualqualis.rstrip('\n')
+    qualqualis = qualqualis.strip(' ')
+    qualqualis = str(qualqualis)
+    config_file.close()
     # ------------------------------------------------------------
     # importadando os data frames gerados pelo gettidy
     # ------------------------------------------------------------
@@ -41,10 +47,10 @@ def getrelatorio():
     # filtrando o ano
     # projetos
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
-    num99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99]
-    if len(num99) >= 1:
+    ppenum99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99].reset_index(drop=True)
+    if len(ppenum99) >= 1:
         print('------------------------------------------------------------')
-        print('ATENCAO: ' + str(len(num99)) + 'projetos sem ano inicial')
+        print('ATENCAO: \n' + str(len(ppenum99)) + 'projetos sem ano inicial')
         print('------------------------------------------------------------')
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].apply(ff)
     dfppe_uniq = dfppe_uniq[(dfppe_uniq['YEAR_INI'] >= yyi)]
@@ -52,10 +58,11 @@ def getrelatorio():
     # periodicos
     dfpaper['YEAR'] = dfpaper['YEAR'].replace('VAZIO', -99)
     dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].replace('VAZIO', -99)
-    num99 = dfpaper[dfpaper['YEAR'] == -99]
-    if len(num99) >= 1:
+    pernum99 = dfpaper[dfpaper['YEAR'] == -99].reset_index(drop=True)
+    if len(pernum99) >= 1:
         print('------------------------------------------------------------')
-        print('ATENCAO: ' + str(len(num99)) + 'artigos sem ano de publicacao')
+        print('ATENCAO: \n' + str(len(pernum99)) +
+              'artigos sem ano de publicacao')
         print('------------------------------------------------------------')
     dfpaper['YEAR'] = dfpaper['YEAR'].apply(ff)
     dfpaper_uniq['YEAR'] = dfpaper_uniq['YEAR'].apply(ff)
@@ -266,13 +273,42 @@ def getrelatorio():
         mm = (tabulate(b, headers="keys", tablefmt='html'))
         htmlfile.write(str(mm))
         htmlfile.write('\n <hr> \n')
+
+    if len(ppenum99) >= 1:
+        htmlfile.write('<b style="color:red;"> ATENCAO:\n ' + str(len(ppenum99)) +
+                       'projetos sem ano inicial</b>\n')
+        for tt in range(len(ppenum99)):
+            htmlfile.write('\n <li>' + ppenum99.iloc[tt, 0] + '\n </li>')
+        htmlfile.write('<hr> \n')
+    if len(pernum99) >= 1:
+        htmlfile.write('b style="color:red;"> ATENCAO:\n ' + str(len(pernum99)) +
+                       'projetos sem ano inicial</n>\n')
+        for tt in range(len(pernum99)):
+            htmlfile.write('\n <li>' + pernum99.iloc[tt, 0] + '\n </li>')
+        htmlfile.write('<hr> \n')
+
+    htmlfile.write('<b>AVISOS</b>:\n ')
+    htmlfile.write(
+        '<li>Arquivo para classificacao qualis utilizado: <code>' + qualqualis + '</code >')
+    htmlfile.write('<li>Este programa é um software livre; você pode redistribui-lo e/ou modifica-lo dentro dos termos da Licença Pública Geral GNU. Verifique o arquivo LICENSE.txt</li> \n')
+    htmlfile.write(
+        '<li>Os resultados estão sujeitos a falhas devido a inconsistencias no preenchimento dos CVs Lattes</li>\n')
+    htmlfile.write(
+        '<li>Em caso de erro do script abra um chamado no <a href="https://github.com/rafatieppo/lucyLattes">repositório lucyLattes</a>  </li>\n')
+    htmlfile.write(
+        '<li>O arquivo extrato_periodico_autorqualis.csv foi gerado na pasta relatorio</li>\n')
+    htmlfile.write(
+        '<li>O arquivo relatorio_producao.html foi gerado na pasta relatorio</li>\n')
+    htmlfile.write(
+        '<li>Caso precise citar é possível usar o DOI: 10.5281/zenodo.2591748</li>\n')
+    htmlfile.write('<br> <br> <br>')
     htmlfile.write('<footer> \n')
     htmlfile.write(
         'Relatório gerado por scriptLattesRT v1.0. Os resultados estão sujeitos a falhas devido a inconsistências no preenchimento dos CVs Lattes.')
     htmlfile.write('\n <br>')
     htmlfile.write('Para maiores informações acesse o repositório: ')
     htmlfile.write(
-        '<a href="https://github.com/rafatieppo/LATTES_SCRAPER">repositório scriptLattesRT </a> \n <br> \n')
+        '<a href="https://github.com/rafatieppo/lucyLattes">https://github.com/rafatieppo/lucyLattes</a> \n <br> \n')
     htmlfile.write('</footer> \n')
     htmlfile.close()
     # ------------------------------------------------------------
@@ -284,7 +320,8 @@ def getrelatorio():
     print('------------------------------------------------------------')
     print('AVISOS')
     print('------------------------------------------------------------')
-    print('Este programa é um software livre; você pode redistribui-lo e/ou modifica-lo dentro dos termos da Licença Pública Geral GNU. Verifique o arquivo LICENSE.txt ')
+    print('- Arquivo para classificacao qualis utilizado: ' + qualqualis)
+    print('- Este programa é um software livre; você pode redistribui-lo e/ou modifica-lo dentro dos termos da Licença Pública Geral GNU. Verifique o arquivo LICENSE.txt ')
     print('- Os resultados estão sujeitos a falhas devido a inconsistencias no preenchimento dos CVs Lattes')
     print('- Em caso de erro do script abra um chamado em https://github.com/rafatieppo/lucyLattes')
     print('- O arquivo extrato_periodico_autorqualis.csv foi gerado na pasta relatorio')
