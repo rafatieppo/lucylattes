@@ -874,7 +874,7 @@ def getnomecompleto(zipname):
         ls_update = []
         for i in range(len(cv)):
             # definindo atualizacao
-            cvdata = str(cv[0])
+            cvdata = str(cv[i])
             result = re.search('data-atualizacao=\"(.*)\" hora-atualizacao',
                                cvdata)
             if result is None:
@@ -884,7 +884,7 @@ def getnomecompleto(zipname):
                 upd = str(cc[0:2]) + '-' + \
                     str(cc[2:4]) + '-' + str(cc[4:])
                 cc = upd
-                print(cc)
+                # print(cc)
                 ls_update.append(cc)
             dg = cv[i].find_all('dados-gerais')
             # VERIFICANDO se ha dados gerais
@@ -936,6 +936,8 @@ def getnomecompleto(zipname):
             # VERIFICANDO se ha resumo
             if len(rescv) == 0:
                 print('Resumo cv nao encontrados para', zipname)
+                cc = 'VAZIO'
+                ls_abstrac.append(cc)
             else:
                 for j in range(len(rescv)):
                     # definindo resumo
