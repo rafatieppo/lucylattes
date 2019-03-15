@@ -37,24 +37,25 @@ def gettidydf():
     for i in range(len(lscsv_ppe)):
         a = pd.read_csv(lscsv_ppe[i], header=0)
         dfppe = dfppe.append(a, ignore_index=False)
-        id = lscsv_ppe[i].split('_')[1].split('/')[1]
-        idrep = np.repeat(id, len(a['PROJ']))
-        print(id, len(a['PROJ']))
+        iid = str(lscsv_ppe[i].split('_')[1].split('/')[1])
+        idrep = np.repeat(iid, len(a['PROJ']))
+        # print(iid, len(a['PROJ']))
         lsid.append(idrep)
     dfppe['ID'] = np.concatenate(lsid)
     lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
     len(lscsv_fullname)
-    # df com nome completo, sobrenome e id
+    # df com nome completo, sobrenome e iid
     dffullname = pd.DataFrame()
     for i in range(len(lscsv_fullname)):
-        a = pd.read_csv(lscsv_fullname[i], header=0)
+        a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
         dffullname = dffullname.append(a, ignore_index=False)
         # passando ID para string, para poder comparar com dfpaper
+        # cancelei a ss() pq o read_csv do a esta com dtype='str
     dffullname['ID'] = dffullname['ID'].apply(ss)
     dfppe = pd.merge(dfppe, dffullname, on='ID')
     dffullname = dffullname.reset_index(drop=True)
     # processo para excluir PROJETOS repetido busca o sobrenome do autor no
-    # dffullname por meio do id lattes. divide a coluna autores do
+    # dffullname por meio do iid lattes. divide a coluna autores do
     # paper. verifica a ordem do sobrenome no author_split
     lsauthor_order = []
     order = -99
@@ -93,24 +94,25 @@ def gettidydf():
     for i in range(len(lscsv_paper)):
         a = pd.read_csv(lscsv_paper[i], header=0)
         dfpaper = dfpaper.append(a, ignore_index=False)
-        id = lscsv_paper[i].split('_')[1].split('/')[1]
-        idrep = np.repeat(id, len(a['TITLE']))
-        print(id, len(a['TITLE']))
+        iid = str(lscsv_paper[i].split('_')[1].split('/')[1])
+        idrep = np.repeat(iid, len(a['TITLE']))
+        # print(iid, len(a['TITLE']))
         lsid.append(idrep)
     dfpaper['ID'] = np.concatenate(lsid)
     lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
     len(lscsv_fullname)
-    # df com nome completo, sobrenome e id
+    # df com nome completo, sobrenome e iid
     dffullname = pd.DataFrame()
     for i in range(len(lscsv_fullname)):
-        a = pd.read_csv(lscsv_fullname[i], header=0)
+        a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
         dffullname = dffullname.append(a, ignore_index=False)
-    # passando ID para string, para poder comparar com dfpaper
-    dffullname['ID'] = dffullname['ID'].apply(ss)
+    # passando IID para string, para poder comparar com dfpaper
+    # cancelei a ss() pq o read_csv do a esta com dtype='str
+    # dffullname['ID'] = dffullname['ID'].apply(ss)
     dfpaper = pd.merge(dfpaper, dffullname, on='ID')
     dffullname = dffullname.reset_index(drop=True)
     # processo para excluir PAPER repetido busca o sobrenome do autor no
-    # dffullname por meio do id lattes. divide a coluna autores do
+    # dffullname por meio do iid lattes. divide a coluna autores do
     # paper.
     # atual: a ordem já vem no dfpaper
     # antiga: verifica a ordem do sobrenome no author_split

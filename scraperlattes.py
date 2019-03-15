@@ -24,6 +24,9 @@ def getprojpesqext(zipname):
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
+    # ttfile = open('tt.xml', 'w')
+    # ttfile.write(soup.prettify())
+    # ttfile.close()
     # extrair todas as atividades profissionais
     ap = soup.find_all('atuacao-profissional')
     # VERIFICANDO se ha atuacao profissional
@@ -868,7 +871,21 @@ def getnomecompleto(zipname):
         ls_state = []
         ls_citado = []
         ls_abstrac = []
+        ls_update = []
         for i in range(len(cv)):
+            # definindo atualizacao
+            cvdata = str(cv[0])
+            result = re.search('data-atualizacao=\"(.*)\" hora-atualizacao',
+                               cvdata)
+            if result is None:
+                cc = 'VAZIO'
+            else:
+                cc = result.group(1)
+                upd = str(cc[0:2]) + '-' + \
+                    str(cc[2:4]) + '-' + str(cc[4:])
+                cc = upd
+                print(cc)
+                ls_update.append(cc)
             dg = cv[i].find_all('dados-gerais')
             # VERIFICANDO se ha dados gerais
             if len(dg) == 0:
@@ -937,7 +954,8 @@ def getnomecompleto(zipname):
                                     'CITADO': ls_citado,
                                     'CITY': ls_city,
                                     'STATE': ls_state,
-                                    'RESUME': ls_abstrac})
+                                    'RESUME': ls_abstrac,
+                                    'UPDATE': ls_update})
         latid = zipname.split('.')[0]
         pathfilename = str('./csv_producao/' + latid + '_fullname'  '.csv')
         df_fullname.to_csv(pathfilename, index=False)

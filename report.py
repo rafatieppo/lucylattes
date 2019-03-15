@@ -36,14 +36,14 @@ def getrelatorio():
     qualqualis = str(qualqualis)
     config_file.close()
     # ------------------------------------------------------------
-    # importadando os data frames gerados pelo gettidy
+    # importando os data frames gerados pelo gettidy
     # ------------------------------------------------------------
     dfppe_uniq = pd.read_csv('./csv_producao/projetos_uniq.csv',
-                             header=0)
+                             header=0, dtype='str')
     dfpaper = pd.read_csv('./csv_producao/periodicos_all.csv',
-                          header=0)
+                          header=0, dtype='str')
     dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
-                               header=0)
+                               header=0, dtype='str')
     # filtrando o ano
     # projetos
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
@@ -106,7 +106,8 @@ def getrelatorio():
     plt.tight_layout()
     plt.savefig('./relatorio/figures/period_year_qualis.png')
     # plt.show()
-    # iniciando o html
+    # ------------------------------------------------------------
+    # INICIANDO o html
     htmlfile = open('./relatorio/relatorio_producao.html', 'w')
     htmlfile.write('<!DOCTYPE html> \n ')
     htmlfile.write('<head> \n ')
@@ -137,8 +138,8 @@ def getrelatorio():
         a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
         dffullname = dffullname.append(a, ignore_index=False)
     # passando ID para string, para poder comparar com dfpaper
-    dfpaper['ID'] = dfpaper['ID'].apply(ss)
-    dffullname['ID'] = dffullname['ID'].apply(ss)
+    # dfpaper['ID'] = dfpaper['ID'].apply(ss)
+    # dffullname['ID'] = dffullname['ID'].apply(ss)
     # dfpaper = pd.merge(dfpaper, dffullname, on='ID')
     dffullname = dffullname.reset_index(drop=True)
     for idd in range(len(dffullname)):
@@ -264,15 +265,35 @@ def getrelatorio():
             'TITLE'].size().reset_index(drop=False)
         tot = t['TITLE'].sum()
         # print(tot)
-        htmlfile.write(dffullname.iloc[idd, 1])
-        htmlfile.write(': produção total = ')
+        htmlfile.write('<b>' + dffullname.iloc[idd, 1] + '</b> <br>')
+        htmlfile.write('- produção total = ')
         htmlfile.write(str(tot))
-        htmlfile.write('\n')
+        htmlfile.write('\n <br> \n')
+        # ------------------------------------------------------------
+        htmlfile.write('- ')
+        latteslink = 'http://lattes.cnpq.br/' + str(dffullname.iloc[idd, 0])
+        htmlfile.write('<a href="' + latteslink + '">' +
+                       latteslink + '</a> ')
+        lattesupda = str(dffullname.iloc[idd, 7])
+        htmlfile.write('(atualizado em: ' +
+                       lattesupda + ') <br> <br>')
         # print(b.head())
         # print(tabulate(b.head(), headers="keys", tablefmt='markdown'))
         mm = (tabulate(b, headers="keys", tablefmt='html'))
         htmlfile.write(str(mm))
         htmlfile.write('\n <hr> \n')
+        # ------------------------------------------------------------
+
+    gg = dfpaper
+    gg = gg.groupby(['FULL_NAME', 'QUALIS'])[
+        'TITLE'].size().unstack().reset_index(drop=False)
+    gg.fillna(0, inplace=True)
+    gg['TOTAL'] = gg.sum(axis=1)
+    ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+    # print(ggt)
+    htmlfile.write(
+        '<h2> Resumo da produção do grupo </h2> \n <br> \n')
+    htmlfile.write(ggt + '\n <br> \n <br> \n')
 
     if len(ppenum99) >= 1:
         htmlfile.write('<b style="color:red;"> ATENCAO:\n ' + str(len(ppenum99)) +

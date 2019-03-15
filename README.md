@@ -135,6 +135,12 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Histórico
 
+### Fri 2019-03-15 16:45:33 -04
+- Problema no ids que inciavam com o zero foram corrigudos. O relatório
+foi melhorado com adicao de link lattes na producao individual, um
+extrato do grupo foi adicionado no final. Avisos para PPE e PAPERS sem
+ano foram adicionados.
+
 ### Mon 2019-03-11 21:30:46 -04
 - No relatório as produções foram enumeradas. Avisos foram inseridos após a finalização dos processos.
 
