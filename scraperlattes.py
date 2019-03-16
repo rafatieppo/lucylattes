@@ -19,7 +19,7 @@ def getprojpesqext(zipname):
     # lendo do zipfile
     # zipname = '3275865819287843.zip'
     #zipname = '0452113881423529.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -142,7 +142,7 @@ def getprojpesqext(zipname):
 
 def getprodtec(zipname):
     # lendo do zipfile
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -219,7 +219,7 @@ def getprodtec(zipname):
 def getorient(zipname):
     # lendo do zipfile
     # zipname = '1292986021348016.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -423,7 +423,7 @@ def getorient(zipname):
 def getperiod(zipname):
     # lendo do zipfile
     #zipname = '3275865819287843.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -617,7 +617,7 @@ def getperiod(zipname):
 def getlivro(zipname):
     # lendo do zipfile
     # zipname = '1292986021348016.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -734,7 +734,7 @@ def getlivro(zipname):
 def getcapit(zipname):
     # lendo do zipfile
     # zipname = '1292986021348016.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
@@ -852,7 +852,7 @@ def getcapit(zipname):
 def getnomecompleto(zipname):
     # lendo do zipfile
     # zipname = '3275865819287843.zip'
-    zipfilepath = './xlm_zip' + '/' + str(zipname)
+    zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',

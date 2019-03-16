@@ -80,7 +80,7 @@ instruções no arquivo e faça as alterações necessárias. Salve e feche o
 arquivo. 
 
 3. Faça o dowload dos *curriculos Lattes* desejados e copie todos no
-diretório `xlm_zip`, *NÃO DESCOMPACTE OS ARQUIVOS*.
+diretório `xml_zip`, *NÃO DESCOMPACTE OS ARQUIVOS*.
 
 4. Abra o arquivo `config.txt` com um editor de texto e altere o que for
 necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
@@ -165,15 +165,15 @@ reatório.
 
 ### Wed 2019-02-13 21:16:25 -04 
 - função para capturar os periódicos com qualis foi concluída, os
-arquivos `.xlm` foram movidos para a pasta `xlm_zip`. 
+arquivos `.xml` foram movidos para a pasta `xml_zip`. 
 
 ### Tue 2019-02-12 21:16:25 -04
-- os arquivos `.xlm` são lidos diretamente do arquivo `.zip`. Foi criado
+- os arquivos `.xml` são lidos diretamente do arquivo `.zip`. Foi criado
 um arquivo **lista** no formato `.csv`, neste arquivo deve conter o
 **id** *Lattes* de cada pesquisador e seus respectivo nome. 
 
 ### Sat 2019-01-26 21:16:25 -03
-- do arquivo xlm do lattes é possível extrair o nome do projeto, tipo do
+- do arquivo `.xml` do lattes é possível extrair o nome do projeto, tipo do
 projeto, ano de início, e integrantes, etc 
 
 ## Arquivos
