@@ -38,6 +38,8 @@ def getrelatorio():
     # ------------------------------------------------------------
     # importando os data frames gerados pelo gettidy
     # ------------------------------------------------------------
+    dfppe_all = pd.read_csv('./csv_producao/projetos_all.csv',
+                            header=0, dtype='str')
     dfppe_uniq = pd.read_csv('./csv_producao/projetos_uniq.csv',
                              header=0, dtype='str')
     dfpaper = pd.read_csv('./csv_producao/periodicos_all.csv',
@@ -45,7 +47,17 @@ def getrelatorio():
     dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
                                header=0, dtype='str')
     # filtrando o ano
-    # projetos
+    # projetos ALL
+    dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].replace('VAZIO', -99)
+    ppenum99 = dfppe_all[dfppe_all['YEAR_INI'] == -99].reset_index(drop=True)
+    if len(ppenum99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: \n' + str(len(ppenum99)) + 'projetos sem ano inicial')
+        print('------------------------------------------------------------')
+    dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].apply(ff)
+    dfppe_all = dfppe_all[(dfppe_all['YEAR_INI'] >= yyi)]
+
+    # projetos unique
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
     ppenum99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99].reset_index(drop=True)
     if len(ppenum99) >= 1:
@@ -253,8 +265,46 @@ def getrelatorio():
     # artig completo periodico por qualis para cada pesquisador
     htmlfile.write('<a name="prodporpesq"></a>' + '\n \n')
     htmlfile.write(
-        '<h2>Produção individual de periódicos por ano e qualis</h2> \n')
+        '<h2>Produção individual de projetos e periódicos por ano e qualis </h2> \n')
     for idd in range(len(dffullname)):
+        # full name and link lattes
+        htmlfile.write('<b><u>' + dffullname.iloc[idd, 1] + '</u></b> <br>')
+        latteslink = 'http://lattes.cnpq.br/' + str(dffullname.iloc[idd, 0])
+        htmlfile.write('- ' + '<a href="' + latteslink + '">' +
+                       latteslink + '</a> ')
+        lattesupda = str(dffullname.iloc[idd, 7])
+        htmlfile.write('(atualizado em: ' +
+                       lattesupda + ') <br> <br>')
+        # projetos de pesquisa como coord
+        pp_idd = dfppe_all[(dfppe_all['NATUREZA'] ==
+                            'PESQUISA')].reset_index(drop=True)
+        pp_idd = pp_idd[pp_idd['ID'] == str(
+            dffullname.iloc[idd, 0])].reset_index(drop=True)
+        # pp_idd = pp_idd[pp_idd['ID']
+        #                 == str(1292986021348016)].reset_index(drop=True)
+        count_pp_coord = 0
+        lscount_pp_coord = []
+        for ppi in range(len(pp_idd)):
+            mm = pp_idd.iloc[ppi, 5]
+            mm = mm.strip('[')
+            mm = mm.strip(']')
+            mm = mm.replace("'", "")
+            mm = mm.split(',')
+            mm = mm[0]
+            mm = mm.strip()
+            # print(mm)
+            if mm == 'SIM':
+                count_pp_coord = count_pp_coord + 1
+                lscount_pp_coord.append(ppi)
+        count_pp_integ = len(pp_idd) - count_pp_coord
+        htmlfile.write(
+            '<li>' + 'total de projetos de pesquisa como coordenador: ' + str(count_pp_coord) + '</li>\n')
+        # for ppii in range(len(lscount_pp_coord)):
+        #     projname = pp_idd.iloc[lscount_pp_coord[ppii], 0]
+        #     htmlfile.write('-' + str(projname + '\n <br> \n'))
+        htmlfile.write(
+            '<li>' + 'total de projetos de pesquisa como integrante: ' + str(count_pp_integ) + '</li>\n')
+        # artigos
         b = dfpaper[dfpaper['ID'] == dffullname.iloc[idd, 0]]
         b = b.groupby(['FULL_NAME', 'YEAR', 'QUALIS'])[
             'TITLE'].size().unstack().reset_index(drop=False)
@@ -265,18 +315,10 @@ def getrelatorio():
             'TITLE'].size().reset_index(drop=False)
         tot = t['TITLE'].sum()
         # print(tot)
-        htmlfile.write('<b>' + dffullname.iloc[idd, 1] + '</b> <br>')
-        htmlfile.write('- produção total = ')
-        htmlfile.write(str(tot))
-        htmlfile.write('\n <br> \n')
-        # ------------------------------------------------------------
-        htmlfile.write('- ')
-        latteslink = 'http://lattes.cnpq.br/' + str(dffullname.iloc[idd, 0])
-        htmlfile.write('<a href="' + latteslink + '">' +
-                       latteslink + '</a> ')
-        lattesupda = str(dffullname.iloc[idd, 7])
-        htmlfile.write('(atualizado em: ' +
-                       lattesupda + ') <br> <br>')
+
+        htmlfile.write('<li>produção total de artigos = ' +
+                       str(tot) + '</li>\n <br> \n')
+
         # print(b.head())
         # print(tabulate(b.head(), headers="keys", tablefmt='markdown'))
         mm = (tabulate(b, headers="keys", tablefmt='html'))
@@ -292,7 +334,7 @@ def getrelatorio():
     ggt = (tabulate(gg, headers="keys", tablefmt='html'))
     # print(ggt)
     htmlfile.write(
-        '<h2> Resumo da produção do grupo </h2> \n <br> \n')
+        '<h2> Resumo da produção de artigos em periódicos do grupo </h2> \n <br> \n')
     htmlfile.write(ggt + '\n <br> \n <br> \n')
 
     if len(ppenum99) >= 1:

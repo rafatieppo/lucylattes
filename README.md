@@ -2,6 +2,10 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
+## Última atualização
+
+*Mon 2019-03-18 23:49:11 -04*
+
 ## Motivação
 
 O CNPq por meio do currículo Lattes agrega dados do registro da vida
@@ -134,6 +138,11 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] relação de orientações
 
 ## Histórico
+
+### Mon 2019-03-18 23:49:11 -04
+
+- Melhorias no relatório com indicação de total de projetos como
+coordenador e integrantes.
 
 ### Fri 2019-03-15 16:45:33 -04
 - Problema no ids que inciavam com o zero foram corrigudos. O relatório

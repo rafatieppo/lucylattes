@@ -4,4 +4,3 @@
 # Insira o nome ABREVIADO do pesquisador
 ID_LATTES,NAME,GROUP
 3275865819287843,RafaelT,agro
-
