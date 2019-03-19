@@ -33,7 +33,7 @@ simplificado, que proporcionam agilidade para a geração de informação.
 > Lattes (publicamente disponíveis).
 
 > Este programa é um software livre; você pode redistribui-lo e/ou
-> modifica-lo dentro dos termos da Licença Pública Geral
+> modificá-lo dentro dos termos da Licença Pública Geral
 > GNU. **Verifique** o arquivo **LICENSE.txt** . 
 
 > Este programa é distribuído na esperança que possa ser util, mas SEM
