@@ -141,8 +141,8 @@ extensão) organizando os dados em um `DataFrame`;
 
 ### Mon 2019-03-18 23:49:11 -04
 
-- Melhorias no relatório com indicação de total de projetos como
-coordenador e integrantes.
+- Melhorias no relatório com indicação do número total de projetos como
+coordenador e integrante.
 
 ### Fri 2019-03-15 16:45:33 -04
 - Problema no ids que inciavam com o zero foram corrigudos. O relatório
