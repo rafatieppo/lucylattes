@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Mon 2019-03-18 23:49:11 -04*
+*Sat 2019-03-23 18:24:31 -04*
 
 ## Motivação
 
@@ -138,6 +138,11 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] relação de orientações
 
 ## Histórico
+
+## Sat 2019-03-23 18:24:31 -04
+
+- No relatório, caso tenha ocorrência de pesquisadore que possuem
+interação em periódicos, uma lista com o nome dos mesmos é adicionada.
 
 ### Mon 2019-03-18 23:49:11 -04
 

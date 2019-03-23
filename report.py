@@ -244,6 +244,20 @@ def getrelatorio():
     htmlfile.write(
         '<figcaption>Grafo de colaboração entre pesquisadores apenas em artigos</figcaption>\n')
     htmlfile.write('</figure> \n')
+    htmlfile.write('\n <br> \n \n')
+
+    # Lista de profissionais sem interacao em periodicos
+    dfnointer_period = pd.read_csv('./csv_producao/periodicos_nointer.csv',
+                                   sep=',', header=0)
+    if len(dfnointer_period) > 0:
+        htmlfile.write(
+            '<b><i>Não foi possível localizar interações em periódicos para os seguintes pesquisadores: </i></b><br> \n')
+        htmlfile.write('<ul>')
+        for i in range(len(dfnointer_period)):
+            name = dfnointer_period.iloc[i, 0]
+            htmlfile.write('<b style="color:gray;"> <li>' +
+                           name + '</li> </b> \n')
+        htmlfile.write('\n </ul> \n <br> \n')
     htmlfile.write('\n <hr> \n \n')
 
     # lista de publicacoes em periodicos

@@ -134,6 +134,19 @@ def getgrapho():
     dfinterac = pd.DataFrame({'IDD': lsid,
                               'IDD_COMP': lsid_tocompare,
                               'WEIGHT': lsinter_qtd})
+    # data frame para profissionais sem interacao em periodicos
+    lsnointer_period = []
+    for m in range(len(df_idlist)):
+        aano = dfinterac[dfinterac['IDD'] == df_idlist.iloc[m, 0]]
+        aasum = aano['WEIGHT'].sum()
+        if aasum == 0:
+            nointer = dffullname[dffullname['ID'] ==
+                                 df_idlist.iloc[m, 0]].reset_index(drop=True)
+            nointer = nointer.iloc[0, 1]
+            lsnointer_period.append(nointer)
+    dfnointerac = pd.DataFrame({'NOME': lsnointer_period})
+    dfnointerac.to_csv('./csv_producao/periodicos_nointer.csv',
+                       index=False, sep=',')
     # DANGER ATTENTION
     # dfinterac.to_csv('test.csv', index=False)
     # eliminando linhas sem interacao
