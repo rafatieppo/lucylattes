@@ -139,7 +139,9 @@ def getgrapho():
     for m in range(len(df_idlist)):
         aano = dfinterac[dfinterac['IDD'] == df_idlist.iloc[m, 0]]
         aasum = aano['WEIGHT'].sum()
-        if aasum == 0:
+        aano_a = dfinterac[dfinterac['IDD_COMP'] == df_idlist.iloc[m, 0]]
+        aasum_a = aano_a['WEIGHT'].sum()
+        if aasum == 0 and aasum_a == 0:
             nointer = dffullname[dffullname['ID'] ==
                                  df_idlist.iloc[m, 0]].reset_index(drop=True)
             nointer = nointer.iloc[0, 1]
@@ -170,7 +172,8 @@ def getgrapho():
     # colors for nodes
     colours = ['#5a7d9a', 'red', 'green', 'yellow',
                'gray', 'orange', 'blue', 'magenta',
-               '#00555a', '#f7d560', 'cyan']
+               '#00555a', '#f7d560', 'cyan',  '#b6b129',
+               '#a1dd72', '#d49acb', '#d4a69a', '#977e93']
     lsgroup_uniq = df_idlist['GROUP'].unique()
     dic_colours = {}
     for i in range(len(lsgroup_uniq)):
@@ -200,7 +203,7 @@ def getgrapho():
     nx.draw_networkx_edges(G, pos,  # edgelist=lsinter_qtd,
                            width=1, edge_color='orange')
     # labels
-    nx.draw_networkx_labels(G, pos, labels=diclabel, font_size=14,
+    nx.draw_networkx_labels(G, pos, labels=diclabel, font_size=16,
                             font_family='sans-serif')
     plt.axis('off')
     plt.tight_layout()
