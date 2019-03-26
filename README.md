@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-03-23 18:24:31 -04*
+*Tue 2019-03-26 09:50:02 -04*
 
 ## Motivação
 
@@ -141,8 +141,9 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Sat 2019-03-23 18:24:31 -04
 
-- No relatório, caso tenha ocorrência de pesquisadore que possuem
-interação em periódicos, uma lista com o nome dos mesmos é adicionada.
+- No relatório, caso tenha ocorrência de pesquisadores que não possuam
+interação em periódicos, uma lista com o nome dos mesmos é
+adicionada. Melhoria na disposição do grafo, relatório aprimorado.
 
 ### Mon 2019-03-18 23:49:11 -04
 

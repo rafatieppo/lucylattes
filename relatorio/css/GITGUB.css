@@ -126,6 +126,15 @@ hr:after {
   content: "";
 }
 
+h0{
+  margin-top: 1px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+
 h1,
 h2,
 h3,

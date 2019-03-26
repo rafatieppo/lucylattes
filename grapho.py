@@ -168,7 +168,7 @@ def getgrapho():
         G.add_edge(lsid[i],
                    lsid_tocompare[i],
                    weight=lsinter_qtd[0])
-    pos = nx.spring_layout(G)
+    pos = nx.spring_layout(G, 1.75)
     # colors for nodes
     colours = ['#5a7d9a', 'red', 'green', 'yellow',
                'gray', 'orange', 'blue', 'magenta',

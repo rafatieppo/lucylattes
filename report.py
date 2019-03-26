@@ -125,12 +125,17 @@ def getrelatorio():
     htmlfile.write('<head> \n ')
     htmlfile.write(
         '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  \n')
-    htmlfile.write(' <title>Lattes Relatorio</title> \n')
+    htmlfile.write(' <title>lucyLattes Relatorio</title> \n')
     htmlfile.write(
         '<link rel="stylesheet" href="./css/GITGUB.css" type="text/css" /> \n </head> \n')
     htmlfile.write('</head> \n ')
     htmlfile.write('<body> \n')
     # quick sumario
+    htmlfile.write('<h0 class="title">Relatório de Produção</h0> \n <br>\n')
+    htmlfile.write('<small>Gerado por <i>lucyLattes.py</i>' + ' ' +
+                   '<a href="https://github.com/rafatieppo/lucyLattes">https://github.com/rafatieppo/lucyLattes</a></small> \n <br> \n')
+    htmlfile.write(
+        '<a href="https://doi.org/10.5281/zenodo.2591748"> <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg" alt="DOI"> </a>')
     htmlfile.write('<h1 class="title">Sumário</h1> \n')
     htmlfile.write('<a href="#team">Equipe</a> \n <br>')
     htmlfile.write('<a href="#resprod">Resumo da produção</a> \n <br>')
