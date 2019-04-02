@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Tue 2019-03-26 09:50:02 -04*
+*Tue 2019-04-02 10:34:17 -04*
 
 ## Motivação
 
@@ -114,10 +114,11 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
 
-- TODO Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[75%] 
+- TODO Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[80%] 
   - [X] os projetos de pesquisa e extensão;
   - [X] cursos de curta duração;
   - [X] publicações em periódico com qualis, revista;
+  - [X] publicações de livros e capítulos;
   - [ ] orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
 
 - TODO Grafo de interação entre pesquisadores [33%]
@@ -128,16 +129,23 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] Capturar as atividades dos projetos de extensão;
   - [ ] Gerar um `.json` file para cada currículo;
 
-- DONE Relatório em `.html` [71%]
+- DONE Relatório em `.html` [85%]
   - [X] Relação de pesquisadores, cidade, estado, link lattes;
   - [X] Lista de projetos de pesquisa e extensão;
   - [X] Síntese de artigos publicados em periódicos;
   - [X] Gráficos dos periódicos por período e por qualis;
   - [X] Extrato de produção por pesquisador;
-  - [ ] relação de livros
+  - [X] relação de livros
   - [ ] relação de orientações
 
 ## Histórico
+
+## Tue 2019-04-02 10:34:17 -04
+
+- Insirido no relatório publicação de livros e capítulos (gráficos e
+listas). Na produção individual também insirido o número de livros e
+capítulos. No resumo da produção foi inserido o número de profissionais
+que formam a equipe.
 
 ## Sat 2019-03-23 18:24:31 -04
 
@@ -151,7 +159,7 @@ adicionada. Melhoria na disposição do grafo, relatório aprimorado.
 coordenador e integrante.
 
 ### Fri 2019-03-15 16:45:33 -04
-- Problema no ids que inciavam com o zero foram corrigudos. O relatório
+- Problema no ids que inciavam com o zero foram corrigidos. O relatório
 foi melhorado com adicao de link lattes na producao individual, um
 extrato do grupo foi adicionado no final. Avisos para PPE e PAPERS sem
 ano foram adicionados. Corrigido para resumo gerado automaticamente pelo Lattes.

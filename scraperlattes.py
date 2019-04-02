@@ -622,6 +622,29 @@ def getlivro(zipname):
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
+    # capturando nome completo para ordem de autoria
+    cv = soup.find_all('curriculo-vitae')
+    if len(cv) == 0:
+        print('curriculo vitae nao encontrado para', zipname)
+    else:
+        # listas para armazenamento de dados producao tecnica
+        for i in range(len(cv)):
+            dg = cv[i].find_all('dados-gerais')
+            # VERIFICANDO se ha dados gerais
+            if len(dg) == 0:
+                print('Dados gerais nao encontrados para', zipname)
+            else:
+                for j in range(len(dg)):
+                    # definindo nome completo
+                    gendata = str(dg[j])
+                    result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    fullname = cc
+    # ------------------------------------------------------------
     # extrair todas as producoes livros e capitulos
     livscaps = soup.find_all('livros-e-capitulos')
     # VERIFICANDO se ha livros e capitulos
@@ -641,6 +664,7 @@ def getlivro(zipname):
             ls_liv_edit = []
             ls_liv_authors = []
             ls_liv_authororder = []
+            ls_liv_orders = []
             # a partir de cada livro capitulo publicado extrair inf de interesse
             for i in range(len(livpuborg)):
                 # dados basicos do livro
@@ -688,6 +712,7 @@ def getlivro(zipname):
                 aut = livpuborg[i].find_all('autores')
                 ls_allauthors = []
                 ls_allauthororder = []
+                ls_authororder = []
                 for j in range(len(aut)):
                     auth = str(aut[j])
                     result = re.search(
@@ -697,6 +722,7 @@ def getlivro(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        nca = result.group(1)  # nomecompletoautor
                     ls_allauthors.append(cc)
                     # print(cc)
                     # order de autoria
@@ -707,10 +733,15 @@ def getlivro(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        ncao = result.group(1)
                     ls_allauthororder.append(cc)
+                    if fullname == nca:
+                        ls_authororder.append(ncao)
+                        # print(fullname + ' ' + ncao)
                     # print(cc)
                 ls_liv_authors.append(ls_allauthors)
                 ls_liv_authororder.append(ls_allauthororder)
+                ls_liv_orders.append(ls_authororder)
                 # print(cc)
             # DataFrame livros publicados
             df_livro = pd.DataFrame({'TITLE': ls_liv_title,
@@ -718,7 +749,8 @@ def getlivro(zipname):
                                      'LANG': ls_liv_lang,
                                      'EDITORA': ls_liv_edit,
                                      'AUTHOR': ls_liv_authors,
-                                     'ORDER': ls_liv_authororder})
+                                     'ORDER': ls_liv_authororder,
+                                     'ORDER_OK': ls_liv_orders})
             latid = zipname.split('.')[0]
             pathfilename = str('./csv_producao/' + latid + '_livro'  '.csv')
             df_livro.to_csv(pathfilename, index=False)
@@ -739,6 +771,29 @@ def getcapit(zipname):
     lattesxmldata = archive.open('curriculo.xml')
     soup = BeautifulSoup(lattesxmldata, 'lxml',
                          from_encoding='ISO-8859-1')
+    # capturando nome completo para ordem de autoria
+    cv = soup.find_all('curriculo-vitae')
+    if len(cv) == 0:
+        print('curriculo vitae nao encontrado para', zipname)
+    else:
+        # listas para armazenamento de dados producao tecnica
+        for i in range(len(cv)):
+            dg = cv[i].find_all('dados-gerais')
+            # VERIFICANDO se ha dados gerais
+            if len(dg) == 0:
+                print('Dados gerais nao encontrados para', zipname)
+            else:
+                for j in range(len(dg)):
+                    # definindo nome completo
+                    gendata = str(dg[j])
+                    result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
+                                       gendata)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    fullname = cc
+    # ------------------------------------------------------------
     # extrair todas as producoes livros e capitulos
     livscaps = soup.find_all('livros-e-capitulos')
     # VERIFICANDO se ha livros e capitulos
@@ -758,6 +813,7 @@ def getcapit(zipname):
             ls_cap_edit = []
             ls_cap_authors = []
             ls_cap_authororder = []
+            ls_cap_orders = []
             # a partir de cada livro capitulo publicado extrair inf de interesse
             for i in range(len(cappuborg)):
                 # dados basicos do livro
@@ -806,6 +862,7 @@ def getcapit(zipname):
                 ls_allauthors = []
                 ls_allauthororder = []
                 ls_allorders = []
+                ls_authororder = []
                 for j in range(len(aut)):
                     auth = str(aut[j])
                     result = re.search(
@@ -815,6 +872,7 @@ def getcapit(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        nca = result.group(1)  # nomecompletoautora
                     ls_allauthors.append(cc)
                     # print(cc)
                     # order de autoria
@@ -825,10 +883,15 @@ def getcapit(zipname):
                         cc = 'VAZIO'
                     else:
                         cc = result.group(1)
+                        ncao = result.group(1)
                     ls_allauthororder.append(cc)
+                    if fullname == nca:
+                        ls_authororder.append(ncao)
+                        # print(fullname + ' ' + ncao)
                     # print(cc)
                 ls_cap_authors.append(ls_allauthors)
                 ls_cap_authororder.append(ls_allauthororder)
+                ls_cap_orders.append(ls_authororder)
                 # print(cc)
             # DataFrame livros publicados
             df_capit = pd.DataFrame({'TITLE': ls_cap_title,
@@ -836,7 +899,8 @@ def getcapit(zipname):
                                      'LANG': ls_cap_lang,
                                      'EDITORA': ls_cap_edit,
                                      'AUTHOR': ls_cap_authors,
-                                     'ORDER': ls_cap_authororder})
+                                     'ORDER': ls_cap_authororder,
+                                     'ORDER_OK': ls_cap_orders})
             latid = zipname.split('.')[0]
             pathfilename = str('./csv_producao/' + latid + '_capitulo'  '.csv')
             df_capit.to_csv(pathfilename, index=False)

@@ -46,6 +46,15 @@ def getrelatorio():
                           header=0, dtype='str')
     dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
                                header=0, dtype='str')
+    dfbooks = pd.read_csv('./csv_producao/livros_all.csv',
+                          header=0, dtype='str')
+    dfbooks_uniq = pd.read_csv('./csv_producao/livros_uniq.csv',
+                               header=0, dtype='str')
+    dfchapters = pd.read_csv('./csv_producao/capitulos_all.csv',
+                             header=0, dtype='str')
+    dfchapters_uniq = pd.read_csv('./csv_producao/capitulos_uniq.csv',
+                                  header=0, dtype='str')
+
     # filtrando o ano
     # projetos ALL
     dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].replace('VAZIO', -99)
@@ -56,7 +65,6 @@ def getrelatorio():
         print('------------------------------------------------------------')
     dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].apply(ff)
     dfppe_all = dfppe_all[(dfppe_all['YEAR_INI'] >= yyi)]
-
     # projetos unique
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].replace('VAZIO', -99)
     ppenum99 = dfppe_uniq[dfppe_uniq['YEAR_INI'] == -99].reset_index(drop=True)
@@ -66,6 +74,7 @@ def getrelatorio():
         print('------------------------------------------------------------')
     dfppe_uniq['YEAR_INI'] = dfppe_uniq['YEAR_INI'].apply(ff)
     dfppe_uniq = dfppe_uniq[(dfppe_uniq['YEAR_INI'] >= yyi)]
+
     # ------------------------------------------------------------
     # periodicos
     dfpaper['YEAR'] = dfpaper['YEAR'].replace('VAZIO', -99)
@@ -81,6 +90,41 @@ def getrelatorio():
     dfpaper = dfpaper[(dfpaper['YEAR'] >= yyi) & (dfpaper['YEAR'] <= yyf)]
     dfpaper_uniq = dfpaper_uniq[(dfpaper_uniq['YEAR']
                                  >= yyi) & (dfpaper_uniq['YEAR'] <= yyf)]
+
+    # ------------------------------------------------------------
+    # livros
+    dfbooks['YEAR'] = dfbooks['YEAR'].replace('VAZIO', -99)
+    dfbooks_uniq['YEAR'] = dfbooks_uniq['YEAR'].replace('VAZIO', -99)
+    booknum99 = dfbooks[dfbooks['YEAR'] == -99].reset_index(drop=True)
+    if len(booknum99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: \n' + str(len(booknum99)) +
+              ' livros sem ano de publicacao')
+        print('------------------------------------------------------------')
+    dfbooks['YEAR'] = dfbooks['YEAR'].apply(ff)
+    dfbooks_uniq['YEAR'] = dfbooks_uniq['YEAR'].apply(ff)
+    dfbooks = dfbooks[(dfbooks['YEAR'] >= yyi) & (dfbooks['YEAR'] <= yyf)]
+    dfbooks_uniq = dfbooks_uniq[(dfbooks_uniq['YEAR']
+                                 >= yyi) & (dfbooks_uniq['YEAR'] <=
+                                            yyf)]
+
+    # ------------------------------------------------------------
+    # capitulos
+    dfchapters['YEAR'] = dfchapters['YEAR'].replace('VAZIO', -99)
+    dfchapters_uniq['YEAR'] = dfchapters_uniq['YEAR'].replace('VAZIO', -99)
+    chapnum99 = dfchapters[dfchapters['YEAR'] == -99].reset_index(drop=True)
+    if len(chapnum99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: \n' + str(len(chapnum99)) +
+              ' capítulos sem ano de publicacao')
+        print('------------------------------------------------------------')
+    dfchapters['YEAR'] = dfchapters['YEAR'].apply(ff)
+    dfchapters_uniq['YEAR'] = dfchapters_uniq['YEAR'].apply(ff)
+    dfchapters = dfchapters[(dfchapters['YEAR'] >= yyi)
+                            & (dfchapters['YEAR'] <= yyf)]
+    dfchapters_uniq = dfchapters_uniq[(dfchapters_uniq['YEAR']
+                                       >= yyi) & (dfchapters_uniq['YEAR'] <= yyf)]
+
     # ------------------------------------------------------------
     # ordenando por ano (crescente)
     dfppe_uniq_pesq = dfppe_uniq[dfppe_uniq['NATUREZA'] == 'PESQUISA']
@@ -88,12 +132,19 @@ def getrelatorio():
     dfppe_uniq_ext = dfppe_uniq[dfppe_uniq['NATUREZA'] == 'EXTENSAO']
     dfppe_uniq_ext = dfppe_uniq_ext.sort_values(['YEAR_INI'])
     dfpaper_uniq = dfpaper_uniq.sort_values(['YEAR'])
+    dfbooks_uniq = dfbooks_uniq.sort_values(['YEAR'])
+    dfchapters_uniq = dfchapters_uniq.sort_values(['YEAR'])
     # ------------------------------------------------------------
-    # Descritivo do numero de proj pesq e ext
+    # Descritivo do numero de proj pesq e ext // livros
     pp = dfppe_uniq_pesq.groupby(['YEAR_INI'])['PROJ'].size().reset_index()
     pp_tot = pp['PROJ'].sum()
     ppe = dfppe_uniq_ext.groupby(['YEAR_INI'])['PROJ'].size().reset_index()
     ppe_tot = ppe['PROJ'].sum()
+    liv = dfbooks_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
+    liv_tot = liv['TITLE'].sum()
+    chap = dfchapters_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
+    chap_tot = chap['TITLE'].sum()
+
     # ------------------------------------------------------------
     # GRAFICO artig completo periodico
     acp = dfpaper_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
@@ -119,6 +170,30 @@ def getrelatorio():
     plt.savefig('./relatorio/figures/period_year_qualis.png')
     # plt.show()
     # ------------------------------------------------------------
+    # GRAFICO livros
+    livp = dfbooks_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
+    plt.figure(figsize=(9, 5))
+    plt.bar(x=livp['YEAR'], height=livp['TITLE'])
+    plt.title('Livros  %i - %i' % (yyi, yyf))
+    plt.xlabel('Ano')
+    plt.ylabel('Número de livros')
+    plt.yticks(np.arange(0, livp['TITLE'].max() + 10, 5))
+    plt.tight_layout()
+    plt.savefig('./relatorio/figures/livros_dep_year.png')
+    # plt.show()
+    # ------------------------------------------------------------
+    # GRAFICO capitulos
+    capp = dfchapters_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
+    plt.figure(figsize=(9, 5))
+    plt.bar(x=capp['YEAR'], height=capp['TITLE'])
+    plt.title('Capítulos %i - %i' % (yyi, yyf))
+    plt.xlabel('Ano')
+    plt.ylabel('Número de capítulos')
+    plt.yticks(np.arange(0, capp['TITLE'].max() + 10, 5))
+    plt.tight_layout()
+    plt.savefig('./relatorio/figures/capitulos_dep_year.png')
+    # plt.show()
+
     # INICIANDO o html
     htmlfile = open('./relatorio/relatorio_producao.html', 'w')
     htmlfile.write('<!DOCTYPE html> \n ')
@@ -141,6 +216,7 @@ def getrelatorio():
     htmlfile.write('<a href="#resprod">Resumo da produção</a> \n <br>')
     htmlfile.write('<a href="#projexte">Projetos de extensão</a> \n <br>')
     htmlfile.write('<a href="#projpesq">Projetos de pesquisa</a> \n <br>')
+    htmlfile.write('<a href="#pubbookchap">Livros e capítulos</a> \n <br>')
     htmlfile.write('<a href="#pubperiod">Artigos em periódicos</a> \n <br>')
     htmlfile.write(
         '<a href="#prodporpesq">Extrato de periódicos por integrante</a> \n <br>')
@@ -179,10 +255,18 @@ def getrelatorio():
     htmlfile.write('<hr> \n')
     htmlfile.write('<a name="resprod"></a>' + '\n \n')
     htmlfile.write('<h1>Resumo da Produção</h1> \n')
+    htmlfile.write('Período avaliado: ' + str(int(yyi)) +
+                   ' - ' + str(int(yyf)) + '\n <br> \n')
+    htmlfile.write('Número de membros na equipe: ' +
+                   (str(len(dffullname)) + '\n <br> \n'))
     htmlfile.write('Número de projetos de extensão: ' +
                    (str(ppe_tot) + '\n <br> \n'))
     htmlfile.write('Número de projetos de pesquisa: ' +
                    (str(pp_tot) + '\n <br> \n'))
+    htmlfile.write('Livros publicados: ' +
+                   (str(liv_tot) + '\n <br> \n'))
+    htmlfile.write('Capítulos publicados: ' +
+                   (str(chap_tot) + '\n <br> \n'))
     htmlfile.write('Artigos completos publicados em periódicos: ' +
                    (str(acp_tot) + '\n <br> \n'))
     htmlfile.write('\n <hr> \n \n')
@@ -220,6 +304,66 @@ def getrelatorio():
         htmlfile.write('\n </i>' + '\n')
         htmlfile.write('</li>' + '\n \n')
     htmlfile.write('</ol>')
+    # Publicacao livros e capitulos
+    htmlfile.write('<a name="pubbookchap"></a>' + '\n \n')
+    htmlfile.write('<h1>Publicação de livros e capítulos</h1> \n')
+    # Grafico de livros publicados por ano
+    htmlfile.write('<h2>Produção de livros por ano</h2> \n')
+    htmlfile.write('<figure> \n')
+    htmlfile.write('<img src="./figures/livros_dep_year.png" alt="" ')
+    htmlfile.write('width = "560" height = "auto" >\n')
+    htmlfile.write('<figcaption>Número de livros por ano.</figcaption>\n')
+    htmlfile.write('</figure> \n')
+    htmlfile.write('\n <hr> \n \n')
+    # Grafico de capitulos publicados por ano
+    htmlfile.write('<h2>Produção de capítulos por ano</h2> \n')
+    htmlfile.write('<figure> \n')
+    htmlfile.write('<img src="./figures/capitulos_dep_year.png" alt="" ')
+    htmlfile.write('width = "560" height = "auto" >\n')
+    htmlfile.write('<figcaption>Número de capítulos por ano.</figcaption>\n')
+    htmlfile.write('</figure> \n')
+    htmlfile.write('\n <hr> \n \n')
+
+    # Resumo da producao de livros do GRUPO
+    gg = dfbooks
+    gg['YEAR'] = gg['YEAR'].apply(iint)
+    gg = gg.groupby(['FULL_NAME', 'YEAR'])[
+        'TITLE'].size().unstack().reset_index(drop=False)
+    gg.fillna(0, inplace=True)
+    gg['TOTAL'] = gg.sum(axis=1)
+    ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+    # print(ggt)
+    htmlfile.write(
+        '<h2> Resumo da produção de livros do grupo ' + str(int(yyi)) + '-' + str(int(yyf)) + '</h2> \n <br> \n')
+    htmlfile.write(ggt + '\n <br> \n <br> \n')
+
+    if len(booknum99) >= 1:
+        htmlfile.write('<b style="color:red;"> ATENCAO:\n ' + str(len(booknum99)) +
+                       'projetos sem ano inicial</b>\n')
+        for tt in range(len(booknum99)):
+            htmlfile.write('\n <li>' + booknum99.iloc[tt, 0] + '\n </li>')
+        htmlfile.write('<hr> \n')
+
+    # Resumo da producao de capitulos do GRUPO
+    gg = dfchapters
+    gg['YEAR'] = gg['YEAR'].apply(iint)
+    gg = gg.groupby(['FULL_NAME', 'YEAR'])[
+        'TITLE'].size().unstack().reset_index(drop=False)
+    gg.fillna(0, inplace=True)
+    gg['TOTAL'] = gg.sum(axis=1)
+    ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+    # print(ggt)
+    htmlfile.write(
+        '<h2> Resumo da produção de capítulos do grupo ' + str(int(yyi)) + '-' + str(int(yyf)) + '</h2> \n <br> \n')
+    htmlfile.write(ggt + '\n <br> \n <br> \n')
+
+    if len(chapnum99) >= 1:
+        htmlfile.write('<b style="color:red;"> ATENCAO:\n ' + str(len(chapnum99)) +
+                       'projetos sem ano inicial</b>\n')
+        for tt in range(len(chapnum99)):
+            htmlfile.write('\n <li>' + chapnum99.iloc[tt, 0] + '\n </li>')
+        htmlfile.write('<hr> \n')
+
     # Publicacao em periodicos
     htmlfile.write('<a name="pubperiod"></a>' + '\n \n')
     htmlfile.write('<h1>Publicação em periódicos</h1> \n')
@@ -284,7 +428,7 @@ def getrelatorio():
     # artig completo periodico por qualis para cada pesquisador
     htmlfile.write('<a name="prodporpesq"></a>' + '\n \n')
     htmlfile.write(
-        '<h2>Produção individual de projetos e periódicos por ano e qualis </h2> \n')
+        '<h2>Produção individual de projetos e periódicos por ano e qualis ' + str(int(yyi)) + '-' + str(int(yyf)) + '</h2> \n')
     for idd in range(len(dffullname)):
         # full name and link lattes
         htmlfile.write('<b><u>' + dffullname.iloc[idd, 1] + '</u></b> <br>')
@@ -323,6 +467,22 @@ def getrelatorio():
         #     htmlfile.write('-' + str(projname + '\n <br> \n'))
         htmlfile.write(
             '<li>' + 'total de projetos de pesquisa como integrante: ' + str(count_pp_integ) + '</li>\n')
+        # livros
+        t = dfbooks[dfbooks['ID'] == dffullname.iloc[idd, 0]]
+        t = t.groupby(['FULL_NAME', 'YEAR'])[
+            'TITLE'].size().reset_index(drop=False)
+        tot = t['TITLE'].sum()
+        # print(tot)
+        htmlfile.write('<li>produção total de livros = ' +
+                       str(tot) + '</li>\n')
+        # capitulos
+        t = dfchapters[dfchapters['ID'] == dffullname.iloc[idd, 0]]
+        t = t.groupby(['FULL_NAME', 'YEAR'])[
+            'TITLE'].size().reset_index(drop=False)
+        tot = t['TITLE'].sum()
+        # print(tot)
+        htmlfile.write('<li>produção total de capítulos = ' +
+                       str(tot) + '</li>\n')
         # artigos
         b = dfpaper[dfpaper['ID'] == dffullname.iloc[idd, 0]]
         b = b.groupby(['FULL_NAME', 'YEAR', 'QUALIS'])[
@@ -334,10 +494,8 @@ def getrelatorio():
             'TITLE'].size().reset_index(drop=False)
         tot = t['TITLE'].sum()
         # print(tot)
-
         htmlfile.write('<li>produção total de artigos = ' +
                        str(tot) + '</li>\n <br> \n')
-
         # print(b.head())
         # print(tabulate(b.head(), headers="keys", tablefmt='markdown'))
         mm = (tabulate(b, headers="keys", tablefmt='html'))
@@ -353,7 +511,7 @@ def getrelatorio():
     ggt = (tabulate(gg, headers="keys", tablefmt='html'))
     # print(ggt)
     htmlfile.write(
-        '<h2> Resumo da produção de artigos em periódicos do grupo </h2> \n <br> \n')
+        '<h2> Resumo da produção de artigos em periódicos do grupo ' + str(int(yyi)) + '-' + str(int(yyf)) + '</h2> \n <br> \n')
     htmlfile.write(ggt + '\n <br> \n <br> \n')
 
     if len(ppenum99) >= 1:
@@ -364,7 +522,7 @@ def getrelatorio():
         htmlfile.write('<hr> \n')
     if len(pernum99) >= 1:
         htmlfile.write('b style="color:red;"> ATENCAO:\n ' + str(len(pernum99)) +
-                       'projetos sem ano inicial</n>\n')
+                       'periódicos sem ano</n>\n')
         for tt in range(len(pernum99)):
             htmlfile.write('\n <li>' + pernum99.iloc[tt, 0] + '\n </li>')
         htmlfile.write('<hr> \n')

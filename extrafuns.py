@@ -17,3 +17,6 @@ def ss(x): return str(x)
 
 
 def ff(x): return float(x)
+
+
+def iint(x): return int(x)

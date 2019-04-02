@@ -142,3 +142,85 @@ def gettidydf():
     dfpaper_uniq.to_csv(pathfilename, index=False)
     print(pathfilename, ' gravado com',
           len(dfpaper_uniq['TITLE']), ' artigos')
+
+    # ------------------------------------------------------------
+    # Producao bibliografica LIVROS
+    # ------------------------------------------------------------
+    # df com todos os periodicos
+    lscsv_book = glob.glob('./csv_producao/*livro.csv')
+    if len(lscsv_book) < 1:
+        print('Producao de livros nao encontrada')
+    else:
+        dfbook = pd.DataFrame()
+        lsid = []
+        for i in range(len(lscsv_book)):
+            a = pd.read_csv(lscsv_book[i], header=0)
+            dfbook = dfbook.append(a, ignore_index=False)
+            iid = str(lscsv_book[i].split('_')[1].split('/')[1])
+            idrep = np.repeat(iid, len(a['TITLE']))
+            # print(iid, len(a['TITLE']))
+            lsid.append(idrep)
+        dfbook['ID'] = np.concatenate(lsid)
+        lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
+        len(lscsv_fullname)
+        # df com nome completo, sobrenome e iid
+        dffullname = pd.DataFrame()
+        for i in range(len(lscsv_fullname)):
+            a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
+            dffullname = dffullname.append(a, ignore_index=False)
+            # passando IID para string, para poder comparar com dfbook
+            # cancelei a ss() pq o read_csv do a esta com dtype='str
+            # dffullname['ID'] = dffullname['ID'].apply(ss)
+        dfbook = pd.merge(dfbook, dffullname, on='ID')
+        dffullname = dffullname.reset_index(drop=True)
+        dfbook_uniq = dfbook.sort_values(['ORDER_OK'])
+        dfbook_uniq.drop_duplicates(['TITLE'], inplace=True)
+        pathfilename = str('./csv_producao/livros_all.csv')
+        dfbook.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfbook['TITLE']), ' artigos')
+        pathfilename = str('./csv_producao/livros_uniq.csv')
+        dfbook_uniq.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfbook_uniq['TITLE']), ' livros')
+
+    # ------------------------------------------------------------
+    # Producao bibliografica CAPITULOS
+    # ------------------------------------------------------------
+    # df com todos os periodicos
+    lscsv_chapter = glob.glob('./csv_producao/*capitulo.csv')
+    if len(lscsv_chapter) < 1:
+        print('Producao de capitulos nao encontrada')
+    else:
+        dfchapter = pd.DataFrame()
+        lsid = []
+        for i in range(len(lscsv_chapter)):
+            a = pd.read_csv(lscsv_chapter[i], header=0)
+            dfchapter = dfchapter.append(a, ignore_index=False)
+            iid = str(lscsv_chapter[i].split('_')[1].split('/')[1])
+            idrep = np.repeat(iid, len(a['TITLE']))
+            # print(iid, len(a['TITLE']))
+            lsid.append(idrep)
+        dfchapter['ID'] = np.concatenate(lsid)
+        lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
+        len(lscsv_fullname)
+        # df com nome completo, sobrenome e iid
+        dffullname = pd.DataFrame()
+        for i in range(len(lscsv_fullname)):
+            a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
+            dffullname = dffullname.append(a, ignore_index=False)
+        # passando IID para string, para poder comparar com dfchapter
+        # cancelei a ss() pq o read_csv do a esta com dtype='str
+        # dffullname['ID'] = dffullname['ID'].apply(ss)
+        dfchapter = pd.merge(dfchapter, dffullname, on='ID')
+        dffullname = dffullname.reset_index(drop=True)
+        dfchapter_uniq = dfchapter.sort_values(['ORDER_OK'])
+        dfchapter_uniq.drop_duplicates(['TITLE'], inplace=True)
+        pathfilename = str('./csv_producao/capitulos_all.csv')
+        dfchapter.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfchapter['TITLE']), ' artigos')
+        pathfilename = str('./csv_producao/capitulos_uniq.csv')
+        dfchapter_uniq.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfchapter_uniq['TITLE']), ' livros')
