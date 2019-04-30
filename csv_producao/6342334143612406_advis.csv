@@ -1,0 +1,56 @@
+YEAR,NATURE,INSTITUTION,COURSE,STUDENT,TYPE,SPONSOR
+2012,Dissertação de mestrado,Fundação Universidade do Estado de Mato Grosso,Mestrado em Educação,André Luiz Borges Milhomem,ORIENTADOR_PRINCIPAL,NAO
+2013,Dissertação de mestrado,Fundação Universidade do Estado de Mato Grosso,Mestrado em Educação,Roseli Fereira Lima,ORIENTADOR_PRINCIPAL,SIM
+2014,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Educação,Cristiana de Campos Silva,ORIENTADOR_PRINCIPAL,NAO
+2014,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Educação,Graciele Marques dos Santos,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,EDUCAÇÃO,Dinairan Dantas Souza,ORIENTADOR_PRINCIPAL,SIM
+2016,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Educação,Marilza Jiacomini Rubinho Vaz,ORIENTADOR_PRINCIPAL,NAO
+2016,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Educação,Haroldo Borges,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,EDUCAÇÃO,Edileuza da Silva Oliveira,ORIENTADOR_PRINCIPAL,NAO
+2017,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Educação,Luana Elky Brito,ORIENTADOR_PRINCIPAL,SIM
+2004,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Sirlei Aparecida de Brito Oliveira,ORIENTADOR_PRINCIPAL,NAO
+2004,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Jânia Lúcia dos Santos,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Turismo,Ivor Prolo,CO_ORIENTADOR,NAO
+2007,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Lindalva Conceição Barbosa,CO_ORIENTADOR,NAO
+2007,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Licenciatura em História,Ozilda Rodrigues Ribeiro,CO_ORIENTADOR,NAO
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Walnice Gomes Cardoso,CO_ORIENTADOR,SIM
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Licenciatura em História,Ana rita Pereira de Arruda e Silva,CO_ORIENTADOR,SIM
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Matemática,Joelisane Ribeiro da Silva,CO_ORIENTADOR,SIM
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Walnice Gomes Cardoso,CO_ORIENTADOR,SIM
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Lucilene Ribeiro de Carvalho,CO_ORIENTADOR,NAO
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Matemática,Joelisane da Silva Ribeiro,CO_ORIENTADOR,SIM
+2008,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Licenciatura em História,Ana Rita Pereira de Arruda e Silva,CO_ORIENTADOR,SIM
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Tânia da Silva Dantas,CO_ORIENTADOR,NAO
+2009,INICIACAO_CIENTIFICA,Fundação Universidade do Estado de Mato Grosso,Pedagogia,Cristiana de Campos Silva,CO_ORIENTADOR,SIM
+2010,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Rosilda dos Santos,CO_ORIENTADOR,NAO
+2010,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Weverson Marcio Moraes dos Passos,CO_ORIENTADOR,NAO
+2011,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,História,Juarez Francisco Chuve de Jesus,CO_ORIENTADOR,SIM
+2011,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Maria Erenilda da Silva,CO_ORIENTADOR,NAO
+2011,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Karla Santana da Silva,CO_ORIENTADOR,NAO
+2011,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Gleiciela Carmem Fornazari,CO_ORIENTADOR,NAO
+2011,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Verônica Moreno Machado,CO_ORIENTADOR,NAO
+2011,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Rute Coluna Taques,CO_ORIENTADOR,NAO
+2011,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagogia,ANA LUIZA DE ARAUJO DA SILVA,CO_ORIENTADOR,SIM
+2011,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Agronomia,EDILEUSON GALVAO ALEIXO,CO_ORIENTADOR,SIM
+2011,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagogia,Liliane Durão Gomes,CO_ORIENTADOR,SIM
+2011,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Licenciatura em Computação,Ricelli Justino dos Reis,CO_ORIENTADOR,SIM
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Suzely Paizano Neves,CO_ORIENTADOR,NAO
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Agronomia,Ediléuson Galvão Aleixo,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagoiga,Ana Luiza de Araújo Silva,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagogia,Janiely Naves,CO_ORIENTADOR,SIM
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Mayara Priscila Brauna,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Crisitiane Santana de Arruda,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Nayanna Medeiros Martos,CO_ORIENTADOR,NAO
+2013,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Ângela Maria Camargo de Souza,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Elaine Silva Faria,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagogia,Valquiria Vieira da Silva,CO_ORIENTADOR,SIM
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Amanda da Silva Freitas,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Catarina Carvalho da Silva,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Geize Rodrigues de Miranda,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Maria Aparecida Francisco,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Sueli Aparecida de Oliveira Scandiani,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagoiga,Cristiane Leite Ribeiro,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Valquíria Vieira da Silva,CO_ORIENTADOR,NAO
+2017,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Graciele Magalhães da Silva,CO_ORIENTADOR,NAO
+2017,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Rodolfo Cláudio da Cruz,CO_ORIENTADOR,NAO
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Pedagogia,Liliane Durão Gomes,CO_ORIENTADOR,SIM

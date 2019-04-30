@@ -68,7 +68,7 @@ def getprojpesqext(zipname):
                         # print(cc)
                         # definindo o ano inicial
                         # result = re.search('ano-inicio=\"(.*)\" data-certificacao', proj)
-                        result = re.search('ano-inicio="(.*)" da',
+                        result = re.search('ano-inicio="(.*)" data-certificacao',
                                            proj)
                         if result is None:
                             cc = 'VAZIO'

@@ -1,0 +1,82 @@
+YEAR,NATURE,INSTITUTION,COURSE,STUDENT,TYPE,SPONSOR
+2012,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Línguística,"Balbinot, Adelita",ORIENTADOR_PRINCIPAL,SIM
+2012,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,"Santos, Cibeli S.",ORIENTADOR_PRINCIPAL,NAO
+2012,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,"Fernandes, Fernanda S.",ORIENTADOR_PRINCIPAL,SIM
+2012,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Maria Marta Lino de Oliveira Silva,ORIENTADOR_PRINCIPAL,NAO
+2013,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Enilce Pereira de Souza Gil,ORIENTADOR_PRINCIPAL,NAO
+2013,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Evelin Mara Cáceres Dan,ORIENTADOR_PRINCIPAL,NAO
+2014,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Lucélia Leite da Silva,ORIENTADOR_PRINCIPAL,NAO
+2014,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Verônica da Silva Albuquerque,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Patrícia Aparecida da Silva,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Ana Claudia de Moraes Salles,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Andréia Garcia de Souza,ORIENTADOR_PRINCIPAL,SIM
+2015,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Welliton Martins Bindandi,ORIENTADOR_PRINCIPAL,SIM
+2016,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Línguística,Lídia Garcia de Faria,ORIENTADOR_PRINCIPAL,NAO
+2016,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Línguística,Suellen Catherine da Silva Santos,ORIENTADOR_PRINCIPAL,NAO
+2012,Dissertação de mestrado,Universidade do Estado de Mato Grosso,Mestrado em Linguística,Maria Marta Lino de Oliveira e Silva,ORIENTADOR_PRINCIPAL,NAO
+2005,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Ladice Trindade Silva,CO_ORIENTADOR,NAO
+2005,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Suelem Ribeiro Pinto,CO_ORIENTADOR,NAO
+2005,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Cleiton Dalbem de Souza,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Ednéia Regenir da Silva,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Jandira Rodrigues da Silva Mendes,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Marily Campos de Morais Ferreira,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Sandra de Lima Longhi,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Yara Benedita Atala,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Maria Isabel Gonçalves de Arruda,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Enfermagem,Larissa de Almeida Rézio,CO_ORIENTADOR,NAO
+2006,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Direito,Cibeli Simões dos Santos,CO_ORIENTADOR,NAO
+2007,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Informática,Rosiane Marques Sales,CO_ORIENTADOR,NAO
+2007,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,Universidade do Estado de Mato Grosso,Letras,Rosângela Rosa de Araújo Rodrigues,CO_ORIENTADOR,NAO
+2007,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,Universidade do Estado de Mato Grosso,Letras,Vanilda de Jesus Oliveira,CO_ORIENTADOR,NAO
+2007,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,Universidade do Estado de Mato Grosso,Letras,Terezinha Souza de Oliveira,CO_ORIENTADOR,NAO
+2007,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,Universidade do Estado de Mato Grosso,Letras,Andréia Lemes Lustig,CO_ORIENTADOR,NAO
+2007,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,Universidade do Estado de Mato Grosso,Letras,Marlene Queiroz de Mendes Teles,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Dinilsa de Figueiredo Alves,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Elói Caetano,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Jairo José da Silva,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Direito,Thaís Galindo da Silva,CO_ORIENTADOR,NAO
+2008,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,VAZIO,Gestão Organizacional em Segurança Pública,Afonso dos Santos,CO_ORIENTADOR,NAO
+2008,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,VAZIO,Gestão Organizacional em Segurança Pública,Clarindo Alves de Castro,CO_ORIENTADOR,NAO
+2008,MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO,VAZIO,Gestão Organizacional em Segurança Pública,Joelson Geraldo Sampaio,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Pedagogia,Cíntia Marques Andreatti Pareira,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Regiane Leite Murji,CO_ORIENTADOR,NAO
+2008,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Eliane Pereira de Aguiar,CO_ORIENTADOR,NAO
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Eliane Pereira de Aguiar,CO_ORIENTADOR,NAO
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Emilson de Campos Almeida,CO_ORIENTADOR,NAO
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Bruna Jaqueline Carvalho da Silva,CO_ORIENTADOR,NAO
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Aparecida Mendes Barbalho,CO_ORIENTADOR,NAO
+2009,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Jane Cristine Sales Duarte,CO_ORIENTADOR,NAO
+2010,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Selma Dorriguette de Oliveira,CO_ORIENTADOR,SIM
+2010,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Marcos José de Souza,CO_ORIENTADOR,NAO
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,"Patrícia Aparecida da Silva,",CO_ORIENTADOR,NAO
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Wellinton Martins Bindandi,CO_ORIENTADOR,NAO
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Leonardo Pereira Souto,CO_ORIENTADOR,NAO
+2012,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Cássia Gonçalves Ramos,CO_ORIENTADOR,NAO
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras,Ana Claudia de Moraes Salles,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras,Dayaline de Alencar Carvalho,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras,Elda Cintra Leite,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras,Landara Anne Melo Zinhani,CO_ORIENTADOR,SIM
+2012,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras,Zirlei Carvalho Ramos,CO_ORIENTADOR,SIM
+2013,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras - Inglês,Andreia Garcia de Souza,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Dayaline de Alencar Carvalho,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Evandro Monezi Benevides,CO_ORIENTADOR,SIM
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Manuely Regina de Almeida Antoniassi,CO_ORIENTADOR,SIM
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Alcilene Câmara de Almeida,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Gabriella Duarte dos Reis,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Lenna Mayara Rodrigues de Barros,CO_ORIENTADOR,NAO
+2013,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Elda Cintra Leite,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras - Inglês,Leonardo Pereira Souto,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras - Inglês,Andreia Garcia de Souza,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Inglês,Wellington Marques da Silveira,CO_ORIENTADOR,SIM
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Ana Claudia de Moraes Salles,CO_ORIENTADOR,SIM
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Dayaline de Alencar Carvalho,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Maria Emanoeli dos Santos,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Poliani Aparecida Otil da Silva,CO_ORIENTADOR,NAO
+2014,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Suzana Garcia de Faria,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Keila Delsiele de Souza Santos,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Daniel Genuíno,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Wellington Marques da Silveira,CO_ORIENTADOR,SIM
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Darianny Karla Santos Cunha,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Elaine Wagner,CO_ORIENTADOR,NAO
+2015,TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO,Universidade do Estado de Mato Grosso,Letras,Lucinéia Ferreira da Silvav,CO_ORIENTADOR,NAO
+2014,INICIACAO_CIENTIFICA,Universidade do Estado de Mato Grosso,Letras - Português e Inglês,Wellington Marques da Silveira,CO_ORIENTADOR,SIM
