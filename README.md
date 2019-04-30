@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Tue 2019-04-02 10:34:17 -04*
+*Tue 2019-04-30 15:01:59 -04*
 
 ## Motivação
 
@@ -139,6 +139,10 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] relação de orientações
 
 ## Histórico
+
+## Tue 2019-04-02 10:34:17 -04
+
+- No `scrapper.py` para *ppe* os limites de seleção foram melhorados.
 
 ## Tue 2019-04-02 10:34:17 -04
 
