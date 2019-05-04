@@ -1,70 +1,24 @@
-,FULL_NAME,YEAR,A2,B1,B2,B3,B4,B5,C ,XX
-0,Antonio Eustáquio de Moura,2010.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-1,Aparecido de Assis,2014.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-2,Dimas Santana Souza Neves,2012.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-3,Elizeth Gonzaga dos Santos Lima,2010.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0
-4,Elizeth Gonzaga dos Santos Lima,2011.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-5,Elizeth Gonzaga dos Santos Lima,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-6,Elizeth Gonzaga dos Santos Lima,2014.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,2.0
-7,Elizeth Gonzaga dos Santos Lima,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-8,Elizeth Gonzaga dos Santos Lima,2018.0,1.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0
-9,Graciela Constantino,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0
-10,Graciela Constantino,2014.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-11,Heloisa Salles Gentil,2010.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-12,Heloisa Salles Gentil,2011.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-13,Heloisa Salles Gentil,2012.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
-14,Heloisa Salles Gentil,2013.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-15,Heloisa Salles Gentil,2014.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-16,Heloisa Salles Gentil,2015.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-17,Heloisa Salles Gentil,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0
-18,Ilma Ferreira Machado,2010.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0
-19,Ilma Ferreira Machado,2011.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
-20,Ilma Ferreira Machado,2013.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
-21,Ilma Ferreira Machado,2014.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0
-22,Ilma Ferreira Machado,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0
-23,Ilma Ferreira Machado,2017.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,3.0
-24,Ilma Ferreira Machado,2018.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,2.0
-25,Irton Milanesi,2011.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-26,Irton Milanesi,2012.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
-27,Irton Milanesi,2014.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,1.0
-28,Irton Milanesi,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-29,Josiane Magalhães,2010.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-30,Josiane Magalhães,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-31,Josiane Magalhães,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-32,Josiane Magalhães,2014.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-33,Josiane Magalhães,2015.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3.0
-34,Josiane Magalhães,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-35,Josiane Magalhães,2017.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-36,João de Deus dos Santos,2019.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
-37,Laudemir Luiz Zart,2010.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-38,Laudemir Luiz Zart,2013.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
-39,Laudemir Luiz Zart,2017.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,1.0
-40,Ligia Cappi Manzini,2014.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-41,Marcelo Luis Grassi Beck,2018.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-42,Maria do Horto Salles Tiellet,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-43,Maria do Horto Salles Tiellet,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-44,Maria do Horto Salles Tiellet,2015.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0
-45,Maria do Horto Salles Tiellet,2017.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0
-46,Maria do Horto Salles Tiellet,2018.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-47,Maria do Horto Salles Tiellet,2019.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-48,Maritza Maciel Castrillon Maldonado,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-49,Maritza Maciel Castrillon Maldonado,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
-50,Maritza Maciel Castrillon Maldonado,2015.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0
-51,Maritza Maciel Castrillon Maldonado,2016.0,0.0,0.0,2.0,0.0,0.0,2.0,1.0,0.0
-52,Maritza Maciel Castrillon Maldonado,2017.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0,1.0
-53,Maritza Maciel Castrillon Maldonado,2018.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-54,Maritza Maciel Castrillon Maldonado,2019.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
-55,Maurecilde Lemes da Silva Santana,2012.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-56,Olimpia Maluf Souza,2010.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
-57,Olimpia Maluf Souza,2012.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
-58,Olimpia Maluf Souza,2013.0,0.0,2.0,1.0,1.0,0.0,2.0,0.0,1.0
-59,Olimpia Maluf Souza,2014.0,0.0,1.0,4.0,0.0,0.0,0.0,0.0,0.0
-60,Olimpia Maluf Souza,2015.0,0.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0
-61,Olimpia Maluf Souza,2016.0,0.0,0.0,1.0,1.0,0.0,0.0,0.0,0.0
-62,Olimpia Maluf Souza,2017.0,0.0,0.0,2.0,0.0,0.0,0.0,1.0,0.0
-63,Olimpia Maluf Souza,2018.0,0.0,0.0,0.0,1.0,0.0,4.0,0.0,0.0
-64,Rinalda Bezerra Carlos,2012.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0.0
-65,Rinalda Bezerra Carlos,2018.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
-66,Rosalva Pereira de Alencar,2015.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-67,Rosalva Pereira de Alencar,2016.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0
-68,Rosalva Pereira de Alencar,2017.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+,FULL_NAME,YEAR,A1,A2,B1,B2,B3,B4,B5,C ,XX
+0,José Roberto Rambo,2012.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0
+1,José Roberto Rambo,2013.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+2,José Roberto Rambo,2014.0,0.0,0.0,0.0,0.0,0.0,0.0,5.0,0.0,0.0
+3,José Roberto Rambo,2015.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,0.0,0.0
+4,José Roberto Rambo,2016.0,0.0,0.0,0.0,0.0,0.0,1.0,4.0,0.0,0.0
+5,José Roberto Rambo,2017.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+6,José Roberto Rambo,2018.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+7,Rafael Cesar Tieppo,2010.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0
+8,Rafael Cesar Tieppo,2011.0,0.0,0.0,1.0,0.0,0.0,0.0,2.0,0.0,0.0
+9,Rafael Cesar Tieppo,2012.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+10,Rafael Cesar Tieppo,2014.0,0.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+11,Rafael Cesar Tieppo,2017.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0
+12,Rafael Cesar Tieppo,2018.0,0.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,1.0
+13,Rafael Cesar Tieppo,2019.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+14,Rivanildo Dallacort,2010.0,0.0,0.0,6.0,0.0,0.0,0.0,2.0,0.0,0.0
+15,Rivanildo Dallacort,2011.0,1.0,2.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0
+16,Rivanildo Dallacort,2012.0,0.0,1.0,4.0,2.0,1.0,0.0,8.0,0.0,0.0
+17,Rivanildo Dallacort,2013.0,0.0,0.0,8.0,4.0,4.0,0.0,7.0,0.0,1.0
+18,Rivanildo Dallacort,2014.0,0.0,0.0,3.0,3.0,2.0,1.0,6.0,0.0,0.0
+19,Rivanildo Dallacort,2015.0,0.0,0.0,3.0,2.0,2.0,1.0,9.0,0.0,0.0
+20,Rivanildo Dallacort,2016.0,0.0,0.0,1.0,2.0,4.0,2.0,4.0,1.0,1.0
+21,Rivanildo Dallacort,2017.0,0.0,0.0,5.0,1.0,0.0,0.0,4.0,1.0,0.0
+22,Rivanildo Dallacort,2018.0,0.0,1.0,1.0,0.0,2.0,0.0,1.0,0.0,3.0

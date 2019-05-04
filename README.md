@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Tue 2019-04-30 15:01:59 -04*
+*Sat 2019-05-04 09:25:13 -04*
 
 ## Motivação
 
@@ -139,6 +139,12 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] relação de orientações
 
 ## Histórico
+
+## Sat 2019-05-04 09:25:13 -04
+
+- Houve tentantiva de melhorar a extracao do resumo (`scrapper.py`), mas
+sem sucesso. A mensagem para os resumos nao capturados foi alterada
+para: *Nao foi possivel extrair o resumo*. 
 
 ## Tue 2019-04-02 10:34:17 -04
 

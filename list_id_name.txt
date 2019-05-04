@@ -4,3 +4,5 @@
 # Insira o nome ABREVIADO do pesquisador
 ID_LATTES,NAME,GROUP
 3275865819287843,RafaelT,agro
+1292986021348016,Rivanildo,agro
+8190371175828378,Rambo,agro
