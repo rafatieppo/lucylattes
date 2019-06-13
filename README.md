@@ -41,13 +41,20 @@ simplificado, que proporcionam agilidade para a geração de informação.
 > MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
 > **LICENSE.txt** . 
 
+## Como usar 
+
+Inicialmente recomenda-se a leitura dos próximos tópicos (*Instalação* e *Como
+executar o programa*). 
+
+Uma explicação com maiores detalhes pode ser encontrada no seguinte
+endereço: [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
 
 ## Instalação
 
 - Requerimentos:
     - Sistema operacional Linux;
     - Python 3 ou superior;
-    - Navegador para visualizar relatório
+    - Navegador (Firefox ou Chorme) para visualizar relatório.
 
 - Se não possuir *Python3* ou superior instalado executar no terminal: 
 
@@ -100,6 +107,19 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os
 arquivos do diretório `csv_producao`.
+
+## Gostou?
+
+- Nos de uma estrela clicando na estrela no topo da página (lado direito)
+- Deixe um comentário no [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
+- Vc pode doar um cafém via Paypal ;)
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="68LAA9FZLABUQ" />
+<input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Faça doações com o botão do PayPal" />
+<img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
+</form>
 
 ## Desenvolvimento
 
