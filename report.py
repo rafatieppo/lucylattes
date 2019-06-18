@@ -54,7 +54,8 @@ def getrelatorio():
                              header=0, dtype='str')
     dfchapters_uniq = pd.read_csv('./csv_producao/capitulos_uniq.csv',
                                   header=0, dtype='str')
-
+    dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
+                           header=0, dtype='str')
     # filtrando o ano
     # projetos ALL
     dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].replace('VAZIO', -99)
@@ -126,6 +127,20 @@ def getrelatorio():
                                        >= yyi) & (dfchapters_uniq['YEAR'] <= yyf)]
 
     # ------------------------------------------------------------
+    # orientacoes
+    dfadvise['YEAR'] = dfadvise['YEAR'].replace('VAZIO', -99)
+    chapnum99 = dfadvise[dfadvise['YEAR'] == -99].reset_index(drop=True)
+    if len(chapnum99) >= 1:
+        print('------------------------------------------------------------')
+        print('ATENCAO: \n' + str(len(chapnum99)) +
+              ' orientacoes sem ano de publicacao')
+        print('------------------------------------------------------------')
+    dfadvise['YEAR'] = dfadvise['YEAR'].apply(ff)
+    dfadvise = dfadvise[(dfadvise['YEAR'] >= yyi)
+                        & (dfadvise['YEAR'] <= yyf)]
+
+    # ------------------------------------------------------------
+
     # ordenando por ano (crescente)
     dfppe_uniq_pesq = dfppe_uniq[dfppe_uniq['NATUREZA'] == 'PESQUISA']
     dfppe_uniq_pesq = dfppe_uniq_pesq.sort_values(['YEAR_INI'])
@@ -134,6 +149,7 @@ def getrelatorio():
     dfpaper_uniq = dfpaper_uniq.sort_values(['YEAR'])
     dfbooks_uniq = dfbooks_uniq.sort_values(['YEAR'])
     dfchapters_uniq = dfchapters_uniq.sort_values(['YEAR'])
+    dfadvise = dfadvise.sort_values(['YEAR'])
     # ------------------------------------------------------------
     # Descritivo do numero de proj pesq e ext // livros
     pp = dfppe_uniq_pesq.groupby(['YEAR_INI'])['PROJ'].size().reset_index()
@@ -144,6 +160,9 @@ def getrelatorio():
     liv_tot = liv['TITLE'].sum()
     chap = dfchapters_uniq.groupby(['YEAR'])['TITLE'].size().reset_index()
     chap_tot = chap['TITLE'].sum()
+    advi = dfadvise.groupby(['NATURE'])['STUDENT'].size().reset_index()
+    advi_tot = advi['STUDENT'].sum()
+    advi.columns = ['NATUREZA', 'QTD']
 
     # ------------------------------------------------------------
     # GRAFICO artig completo periodico
@@ -268,7 +287,12 @@ def getrelatorio():
     htmlfile.write('Capítulos publicados: ' +
                    (str(chap_tot) + '\n <br> \n'))
     htmlfile.write('Artigos completos publicados em periódicos: ' +
-                   (str(acp_tot) + '\n <br> \n'))
+                   (str(acp_tot) + '\n <br> <br> \n'))
+    htmlfile.write('Orientações:' + '\n <br>')
+    for oo in range(len(advi)):
+        htmlfile.write(str(advi.iloc[oo, 0]).lower() +
+                       ': ' + str(advi.iloc[oo, 1]) + '\n <br>')
+    # htmlfile.write(str(advi))
     htmlfile.write('\n <hr> \n \n')
     # Projetos de Extensao do Grupo
     htmlfile.write('<a name="projexte"></a>' + '\n \n')
@@ -461,18 +485,26 @@ def getrelatorio():
                 lscount_pp_coord.append(ppi)
         count_pp_integ = len(pp_idd) - count_pp_coord
         htmlfile.write(
-            '<li>' + 'total de projetos de pesquisa como coordenador: ' + str(count_pp_coord) + '</li>\n')
+            '<li>' + 'total de projetos de pesquisa como coordenador = ' + str(count_pp_coord) + '</li>\n')
         # for ppii in range(len(lscount_pp_coord)):
         #     projname = pp_idd.iloc[lscount_pp_coord[ppii], 0]
         #     htmlfile.write('-' + str(projname + '\n <br> \n'))
         htmlfile.write(
-            '<li>' + 'total de projetos de pesquisa como integrante: ' + str(count_pp_integ) + '</li>\n')
+            '<li>' + 'total de projetos de pesquisa como integrante = ' + str(count_pp_integ) + '</li>\n')
+        # ------------------------------------------------------------
+        # orientacoes
+        t = dfadvise[dfadvise['ID'] == dffullname.iloc[idd, 0]]
+        t = t.groupby(['NATURE'])['STUDENT'].size().reset_index()
+        htmlfile.write('<li>Orientações: \n <br> \n ' + '</li>\n')
+        for oo in range(len(t)):
+            htmlfile.write(str(t.iloc[oo, 0]).lower() +
+                           ' = ' + str(t.iloc[oo, 1]) + '\n <br>\n')
+        # ------------------------------------------------------------
         # livros
         t = dfbooks[dfbooks['ID'] == dffullname.iloc[idd, 0]]
         t = t.groupby(['FULL_NAME', 'YEAR'])[
             'TITLE'].size().reset_index(drop=False)
         tot = t['TITLE'].sum()
-        # print(tot)
         htmlfile.write('<li>produção total de livros = ' +
                        str(tot) + '</li>\n')
         # capitulos
@@ -503,6 +535,23 @@ def getrelatorio():
         htmlfile.write('\n <hr> \n')
         # ------------------------------------------------------------
 
+    # ------------------------------------------------------------
+    # Tabela de orientacoes
+    advgg = dfadvise
+    advgg['NATURE'] = advgg['NATURE'].str.replace('-', ' ')
+    advgg['NATURE'] = advgg['NATURE'].str.replace('_', ' ')
+    advgg = advgg.groupby(['FULL_NAME', 'NATURE'])[
+        'STUDENT'].size().unstack().reset_index(drop=False)
+    advgg.fillna(0, inplace=True)
+    advgg['TOTAL'] = advgg.sum(axis=1)
+    advggt = (tabulate(advgg, headers="keys", tablefmt='html'))
+    htmlfile.write(
+        '<h2> Resumo de orientações do grupo ' + str(int(yyi)) + '-' + str(int(yyf)) + '</h2> \n <br> \n')
+    htmlfile.write(advggt + ' \n')
+    htmlfile.write('<i>Possibilidade da contabilização de co-orientação.<i>')
+
+    # ------------------------------------------------------------
+    # Tabela de producao em periodicos
     gg = dfpaper
     gg = gg.groupby(['FULL_NAME', 'QUALIS'])[
         'TITLE'].size().unstack().reset_index(drop=False)
@@ -544,7 +593,7 @@ def getrelatorio():
     htmlfile.write('<br> <br> <br>')
     htmlfile.write('<footer> \n')
     htmlfile.write(
-        'Relatório gerado por scriptLattesRT v1.0. Os resultados estão sujeitos a falhas devido a inconsistências no preenchimento dos CVs Lattes.')
+        'Relatório gerado por lucyLattes v1.0. Os resultados estão sujeitos a falhas devido a inconsistências no preenchimento dos CVs Lattes.')
     htmlfile.write('\n <br>')
     htmlfile.write('Para maiores informações acesse o repositório: ')
     htmlfile.write(

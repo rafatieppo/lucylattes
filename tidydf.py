@@ -178,7 +178,7 @@ def gettidydf():
         pathfilename = str('./csv_producao/livros_all.csv')
         dfbook.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
-              len(dfbook['TITLE']), ' artigos')
+              len(dfbook['TITLE']), ' livros')
         pathfilename = str('./csv_producao/livros_uniq.csv')
         dfbook_uniq.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
@@ -219,8 +219,43 @@ def gettidydf():
         pathfilename = str('./csv_producao/capitulos_all.csv')
         dfchapter.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
-              len(dfchapter['TITLE']), ' artigos')
+              len(dfchapter['TITLE']), ' capitulos de livros')
         pathfilename = str('./csv_producao/capitulos_uniq.csv')
         dfchapter_uniq.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
-              len(dfchapter_uniq['TITLE']), ' livros')
+              len(dfchapter_uniq['TITLE']), ' capitulos de livros')
+
+    # ------------------------------------------------------------
+    # ORIENTACAO TCC IC MESTRADO DOUTORADO
+    # ------------------------------------------------------------
+    # df com todos os periodicos
+    lscsv_advi = glob.glob('./csv_producao/*advis.csv')
+    if len(lscsv_advi) < 1:
+        print('Orientacao para TCC, IC, MESTRADO ou DOUTORADO nao encontrada')
+    else:
+        dfadvi = pd.DataFrame()
+        lsid = []
+        for i in range(len(lscsv_advi)):
+            a = pd.read_csv(lscsv_advi[i], header=0)
+            dfadvi = dfadvi.append(a, ignore_index=False)
+            iid = str(lscsv_advi[i].split('_')[1].split('/')[1])
+            idrep = np.repeat(iid, len(a['YEAR']))
+            # print(iid, len(a['TITLE']))
+            lsid.append(idrep)
+        dfadvi['ID'] = np.concatenate(lsid)
+        lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
+        # len(lscsv_fullname)
+        # df com nome completo, sobrenome e iid
+        dffullname = pd.DataFrame()
+        for i in range(len(lscsv_fullname)):
+            a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
+            dffullname = dffullname.append(a, ignore_index=False)
+            # passando IID para string, para poder comparar com dfadvi
+            # cancelei a ss() pq o read_csv do a esta com dtype='str
+            # dffullname['ID'] = dffullname['ID'].apply(ss)
+        dfadvi = pd.merge(dfadvi, dffullname, on='ID')
+        dffullname = dffullname.reset_index(drop=True)
+        pathfilename = str('./csv_producao/orientacoes_all.csv')
+        dfadvi.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfadvi['YEAR']), ' orientacoes')

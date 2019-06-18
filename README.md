@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-05-04 09:25:13 -04*
+*Mon 2019-06-17 23:09:13 -04*
 
 ## Motivação
 
@@ -112,7 +112,7 @@ arquivos do diretório `csv_producao`.
 
 - Nos de uma estrela clicando na estrela no topo da página (lado direito)
 - Deixe um comentário no [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
-- Vc pode doar um cafém via Paypal ;)
+- Vc pode doar um café via Paypal ;)
 
 [![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ)
 
@@ -129,12 +129,12 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
 
-- TODO Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[80%] 
+- DONE Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[100%] 
   - [X] os projetos de pesquisa e extensão;
   - [X] cursos de curta duração;
   - [X] publicações em periódico com qualis, revista;
   - [X] publicações de livros e capítulos;
-  - [ ] orientações (tcc, ic, mestrado **FALTA DOUTORADO**);
+  - [X] orientações (tcc, ic, mestrado, doutorado);
 
 - TODO Grafo de interação entre pesquisadores [33%]
   - [X] realiza interações somente entre artigos
@@ -144,16 +144,27 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] Capturar as atividades dos projetos de extensão;
   - [ ] Gerar um `.json` file para cada currículo;
 
-- DONE Relatório em `.html` [85%]
+- DONE Relatório em `.html` [100%]
   - [X] Relação de pesquisadores, cidade, estado, link lattes;
   - [X] Lista de projetos de pesquisa e extensão;
   - [X] Síntese de artigos publicados em periódicos;
   - [X] Gráficos dos periódicos por período e por qualis;
   - [X] Extrato de produção por pesquisador;
   - [X] relação de livros
-  - [ ] relação de orientações
+  - [X] relação de orientações
 
 ## Histórico
+
+## Mon 2019-06-17 23:09:13 -04
+- Organização do arquivo para relação de orientações de cada
+pesquisador. As orientações estão divididas de acordo com a
+classificação do CNPq. No relatório para cada pesquisador há uma síntese
+das orientações, e no final do relatório há uma tabulação com o tipo de
+orientação e quantidade de orientações por pesquisador.
+
+## Thu 2019-06-13 21:23:26 -04
+- Extração da orientação de doutorado concluída ok. Falta realizar o
+relatório de todas as orientações.
 
 ## Sat 2019-05-04 09:25:13 -04
 

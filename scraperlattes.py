@@ -19,6 +19,7 @@ def getprojpesqext(zipname):
     # lendo do zipfile
     # zipname = '3275865819287843.zip'
     # zipname = '8190371175828378.zip'
+    # zipname = '5401789813032087.zip'
     zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
@@ -323,6 +324,88 @@ def getorient(zipname):
                         cc = result.group(1)
                     ls_adv_suppo.append(cc)
                     # print(cc)
+            # ------------------------------------------------------------
+            # extrair orientacoes-concluidas-para-doutorado
+            orienconc_dout = orienconc[0].find_all(
+                'orientacoes-concluidas-para-doutorado')
+            # VERIFICANDO se ha orientacoes  doutorado
+            if len(orienconc_dout) == 0:
+                print(
+                    'Orientacoes concluidas de doutorado nao encontradas para', zipname)
+            else:
+                for i in range(len(orienconc_dout)):
+                    # definindo o nome do curso
+                    dadobasico = orienconc_dout[i].find_all(
+                        'dados-basicos-de-orientacoes-concluidas-para-doutorado')
+                    dadobasico = str(dadobasico)
+                    # ano da orientacao
+                    result = re.search('ano=\"(.*)\" doi',
+                                       dadobasico)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_year.append(cc)
+                    # print(cc)
+                    # natureza da orientacao
+                    result = re.search('natureza=\"(.*)\" pais',
+                                       dadobasico)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_nat.append(cc)
+                    # print(cc)
+                    # detalhes da orientacao ###
+                    detalhe = orienconc_dout[i].find_all(
+                        'detalhamento-de-orientacoes-concluidas-para-doutorado')
+                    detalhe = str(detalhe)
+                    # instituicao da orientacao
+                    result = re.search('nome-da-instituicao=\"(.*)\" nome-do-curso=',
+                                       detalhe)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_inst.append(cc)
+                    # print(cc)
+                    # nome do curso
+                    result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
+                                       detalhe)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_curso.append(cc)
+                    # print(cc)
+                    # nome orientado
+                    result = re.search('nome-do-orientado=\"(.*)\" nome-orgao',
+                                       detalhe)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_student.append(cc)
+                    # print(cc)
+                    # tipo de orientacao
+                    result = re.search('tipo-de-orientacao=\"(.*)\">',
+                                       detalhe)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_type.append(cc)
+                    # print(cc)
+                    # Bolsa
+                    result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
+                                       detalhe)
+                    if result is None:
+                        cc = 'VAZIO'
+                    else:
+                        cc = result.group(1)
+                    ls_adv_suppo.append(cc)
+                    # print(cc)
+        # ------------------------------------------------------------
         # outras orientacoes concluidas
         orienconc_out = op[0].find_all('outras-orientacoes-concluidas')
         # VERIFICANDO se ha outras orientacoes pos
