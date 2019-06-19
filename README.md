@@ -4,6 +4,7 @@
 
  <figure>
   <img src="https://sites.google.com/site/zownloads/home/gifs/20190313_lucy_small.jpg" alt="Lucy" width="150px" height="auto">
+  <figcaption>Lucy</figcaption>
 </figure> 
 
 
