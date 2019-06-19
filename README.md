@@ -2,6 +2,11 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
+ <figure>
+  <img src="https://sites.google.com/site/zownloads/home/gifs/20190313_lucy_small.jpg" alt="Lucy" width="150px" height="auto">
+</figure> 
+
+
 ## Última atualização
 
 *Mon 2019-06-17 23:09:13 -04*
@@ -27,15 +32,29 @@ simplificado, que proporcionam agilidade para a geração de informação.
 
 Veja algumas informações geradas:
 
-![Publicações de periódicos por ano](https://sites.google.com/site/zownloads/home/gifs/period_dep_year.png)
+ <figure>
+  <img src="https://sites.google.com/site/zownloads/home/gifs/period_dep_year.png" alt=" ">
+  <figcaption>Publicações de periódicos por ano</figcaption>
+</figure> 
 
-![Publicações de periódicos por qualis](https://sites.google.com/site/zownloads/home/gifs/period_year_qualis.png?attredirects=0)
+ <figure>
+  <img
+  src="https://sites.google.com/site/zownloads/home/gifs/period_year_qualis.png" alt=" ">
+  <figcaption>Publicações de periódicos por qualis</figcaption>
+</figure> 
 
-![Interações entre pesquisadores na publicação de periódicos](https://sites.google.com/site/zownloads/home/gifs/grapho.png)
+ <figure>
+  <img
+  src="https://sites.google.com/site/zownloads/home/gifs/grapho.png" alt=" ">
+  <figcaption>Interações entre pesquisadores na publicação de periódicos</figcaption>
+</figure> 
 
 Além das figuras, algumas tabelas são geradas:
 
-<b><u>Petter Pan</u></b> <br>- <a href="http://lattes.cnpq.br/000000">http://lattes.cnpq.br/000000</a> (atualizado em: 13-12-2018) <br> <br><li>total de projetos de pesquisa como coordenador = 5</li>
+<b><u>Petter Pan</u></b> <br>- <a
+href="http://lattes.cnpq.br/000000">http://lattes.cnpq.br/000000</a> (atualizado em: 13-12-2018) <br>
+
+<li>total de projetos de pesquisa como coordenador = 5</li>
 <li>total de projetos de pesquisa como integrante = 8</li>
 <li>Orientações: 
  <br> 
@@ -49,30 +68,32 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 <li>produção total de livros = 0</li>
 <li>produção total de capítulos = 1</li>
 <li>produção total de artigos = 60</li>
- <br> 
+ <br>
+
 <table>
 <thead>
 <tr><th style="text-align: right;">  </th><th style="text-align: right;">  YEAR</th><th style="text-align: right;">  A2</th><th style="text-align: right;">  B1</th><th style="text-align: right;">  B2</th><th style="text-align: right;">  B3</th><th style="text-align: right;">  B4</th><th style="text-align: right;">  B5</th><th style="text-align: right;">  C </th><th style="text-align: right;">  XX</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align: right;"> 5</td><td style="text-align: right;">  2015</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
-<tr><td style="text-align: right;"> 6</td><td style="text-align: right;">  2016</td><td style="text-align: right;">   0</td><td style="text-align: right;">   3</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">   2</td></tr>
-<tr><td style="text-align: right;"> 7</td><td style="text-align: right;">  2017</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   1</td><td style="text-align: right;">   3</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td></tr>
-<tr><td style="text-align: right;"> 8</td><td style="text-align: right;">  2018</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
+<tr><td style="text-align: right;">  2015</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
+<tr><td style="text-align: right;">  2016</td><td style="text-align: right;">   0</td><td style="text-align: right;">   3</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">   2</td></tr>
+<tr><td style="text-align: right;">  2017</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   1</td><td style="text-align: right;">   3</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td></tr>
+<tr><td style="text-align: right;">  2018</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td><td style="text-align: right;">   0</td></tr>
 </tbody>
 </table>
+<br>
 
-<h5> Resumo da produção de artigos em periódicos do grupo 2010-2019</h5> 
+<p> Resumo da produção de artigos em periódicos do grupo 2010-2019</p> 
  <br> 
 <table>
 <thead>
 <tr><th style="text-align: right;">  </th><th>FULL_NAME                             </th><th style="text-align: right;">  A1</th><th style="text-align: right;">  A2</th><th style="text-align: right;">  B1</th><th style="text-align: right;">  B2</th><th style="text-align: right;">  B3</th><th style="text-align: right;">  B4</th><th style="text-align: right;">  B5</th><th style="text-align: right;">  C </th><th style="text-align: right;">  XX</th><th style="text-align: right;">  TOTAL</th></tr>
 </thead>
 <tbody>
-<tr><td style="text-align: right;"> 1</td><td>Celite     </td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">  19</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   3</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">31</td></tr>
-<tr><td style="text-align: right;"> 2</td><td>Dijon      </td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   8</td><td style="text-align: right;">   4</td><td style="text-align: right;">   3</td><td style="text-align: right;">   2</td><td style="text-align: right;">  22</td><td style="text-align: right;">   1</td><td style="text-align: right;">   1</td><td style="text-align: right;">43</td></tr>
-<tr><td style="text-align: right;"> 8</td><td>Cido       </td><td style="text-align: right;">   0</td><td style="text-align: right;">   8</td><td style="text-align: right;">  15</td><td style="text-align: right;">   3</td><td style="text-align: right;">   9</td><td style="text-align: right;">   1</td><td style="text-align: right;">  10</td><td style="text-align: right;">   3</td><td style="text-align: right;">   1</td><td style="text-align: right;">50</td></tr>
-<tr><td style="text-align: right;">11</td><td>Petter Pan </td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">  20</td><td style="text-align: right;">   2</td><td style="text-align: right;">  18</td><td style="text-align: right;">   3</td><td style="text-align: right;">   6</td><td style="text-align: right;">   1</td><td style="text-align: right;">   9</td><td style="text-align: right;">60</td></tr>
+<tr><td style="text-align: right;"> 0</td><td>Celite     </td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">  19</td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   3</td><td style="text-align: right;">   4</td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">31</td></tr>
+<tr><td style="text-align: right;"> 1</td><td>Dijon      </td><td style="text-align: right;">   0</td><td style="text-align: right;">   2</td><td style="text-align: right;">   8</td><td style="text-align: right;">   4</td><td style="text-align: right;">   3</td><td style="text-align: right;">   2</td><td style="text-align: right;">  22</td><td style="text-align: right;">   1</td><td style="text-align: right;">   1</td><td style="text-align: right;">43</td></tr>
+<tr><td style="text-align: right;"> 2</td><td>Cido       </td><td style="text-align: right;">   0</td><td style="text-align: right;">   8</td><td style="text-align: right;">  15</td><td style="text-align: right;">   3</td><td style="text-align: right;">   9</td><td style="text-align: right;">   1</td><td style="text-align: right;">  10</td><td style="text-align: right;">   3</td><td style="text-align: right;">   1</td><td style="text-align: right;">50</td></tr>
+<tr><td style="text-align: right;"> 3</td><td>Petter Pan </td><td style="text-align: right;">   0</td><td style="text-align: right;">   1</td><td style="text-align: right;">  20</td><td style="text-align: right;">   2</td><td style="text-align: right;">  18</td><td style="text-align: right;">   3</td><td style="text-align: right;">   6</td><td style="text-align: right;">   1</td><td style="text-align: right;">   9</td><td style="text-align: right;">60</td></tr>
 </tbody>
 </table>
  <br> 
