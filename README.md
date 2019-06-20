@@ -2,12 +2,6 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
- <figure>
-  <img src="https://sites.google.com/site/zownloads/home/gifs/20190313_lucy_small.jpg" alt="Lucy" width="150px" height="auto">
-  <figcaption>Lucy</figcaption>
-</figure> 
-
-
 ## Última atualização
 
 *Mon 2019-06-17 23:09:13 -04*
