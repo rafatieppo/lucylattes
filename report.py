@@ -9,6 +9,7 @@ import glob
 import re
 import matplotlib.pyplot as plt
 import matplotlib.style as style
+import sys
 style.available
 style.use('fivethirtyeight')
 from tabulate import tabulate
@@ -56,6 +57,7 @@ def getrelatorio():
                                   header=0, dtype='str')
     dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
                            header=0, dtype='str')
+
     # filtrando o ano
     # projetos ALL
     dfppe_all['YEAR_INI'] = dfppe_all['YEAR_INI'].replace('VAZIO', -99)
@@ -171,6 +173,7 @@ def getrelatorio():
     plt.figure(figsize=(9, 5))
     plt.bar(x=acp['YEAR'], height=acp['TITLE'])
     plt.title('Publicações %i - %i' % (yyi, yyf))
+    plt.xticks(np.arange(yyi, yyf + 1, 1))
     plt.xlabel('Ano')
     plt.ylabel('Número de publicações')
     plt.tight_layout()
@@ -194,6 +197,7 @@ def getrelatorio():
     plt.figure(figsize=(9, 5))
     plt.bar(x=livp['YEAR'], height=livp['TITLE'])
     plt.title('Livros  %i - %i' % (yyi, yyf))
+    plt.xticks(np.arange(yyi, yyf + 1, 1))
     plt.xlabel('Ano')
     plt.ylabel('Número de livros')
     plt.yticks(np.arange(0, livp['TITLE'].max() + 10, 5))
@@ -206,6 +210,7 @@ def getrelatorio():
     plt.figure(figsize=(9, 5))
     plt.bar(x=capp['YEAR'], height=capp['TITLE'])
     plt.title('Capítulos %i - %i' % (yyi, yyf))
+    plt.xticks(np.arange(yyi, yyf + 1, 1))
     plt.xlabel('Ano')
     plt.ylabel('Número de capítulos')
     plt.yticks(np.arange(0, capp['TITLE'].max() + 10, 5))

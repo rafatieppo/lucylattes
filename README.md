@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Mon 2019-06-17 23:09:13 -04*
+*Tue 2019-07-23 07:38:14 -04*
 
 ## Motivação
 
@@ -159,7 +159,12 @@ instruções no arquivo e faça as alterações necessárias. Salve e feche o
 arquivo.
 
 3. Faça o dowload dos *curriculos Lattes* desejados e copie todos no
-diretório `xml_zip`, *NÃO DESCOMPACTE OS ARQUIVOS*.
+diretório `xml_zip`. Para realizar o
+download, acesso o *currículo Lattes* do pesquisador, e no canto
+superior direito clique sobre um botão `XML`, salve o arquivo e NÃO
+altere o nome e nem o formato, *NÃO DESCOMPACTE OS ARQUIVOS*. O nome do
+arquivo é composto por *16* caracteres e a extensão `.zip`,
+e.g. `3275865819287843.zip`. 
 
 4. Abra o arquivo `config.txt` com um editor de texto e altere o que for
 necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
@@ -222,7 +227,13 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de livros
   - [X] relação de orientações
 
-## Histórico
+## Histórico (log)
+
+## Tue 2019-07-23 07:38:14 -04
+- Um código para verificação dos anos em todos os arquivos de produção
+foi desenvolvido (`verify.py`). Se o ano da produção não foi extraído, a
+produção é excluída do arquivo `.csv`. Quando há falha na extração do
+ano, os arquivos são atualizados e salvos.
 
 ## Mon 2019-06-17 23:09:13 -04
 - Organização do arquivo para relação de orientações de cada
@@ -314,12 +325,16 @@ necessárias e geram os `.csv`;
 - `tidydf.py`: organiza os `DataFrame`;
 - `report.py`: gerador do relatório;
 - `grapho.py`: gerador do gráfico com as interações entre os membros.
+- `verify.py`: verifica e corrige extração do anos para as produções.
 
 ## Referências
 
 J. P. Mena-Chalco e R. M. Cesar-Jr. scriptLattes: *An open-source
 knowledge extraction system from the Lattes platform*. Journal of the
 Brazilian Computer Society, vol. 15, n. 4, páginas 31--39, 2009.
+
+Rossum, G. van ( C. voor W. en I. (CWI)). (1995). *Python
+tutorial*. Python (Vol. 206). Amsterdam. 
 
 ## Autor
 

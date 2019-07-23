@@ -44,6 +44,7 @@ from scraperlattes import getperiod
 from scraperlattes import getlivro
 from scraperlattes import getcapit
 from scraperlattes import getnomecompleto
+from verify import getverificacao
 from grapho import getgrapho
 from report import getrelatorio
 
@@ -64,6 +65,7 @@ for nid in range(len(df_idlist)):
     getnomecompleto(zipfilename)
 
 gettidydf()
+getverificacao()
 getgrapho()
 getrelatorio()
 
