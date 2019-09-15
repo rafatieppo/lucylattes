@@ -150,15 +150,21 @@ pip3 install tabulate
 
 ## Como executar o programa
 
-1. Descompacte o arquivo `.zip` que pode ser obtido em
-[https://github.com/rafatieppo/lucyLattes/archive/master.zip](https://github.com/rafatieppo/lucyLattes/archive/master.zip)
-em um diretório de sua preferência. 
+1. Faça o Download do arquivo `.zip` que contém o `lucyLattes`. Antes do
+dowload, caso queira, vc pode pode ajudar com quanto quiser para manter
+o projeto:
 
-2. Na pasta descompactada, abra o arquivo `list_id_name.txt` com um editor de texto, leias as
+[![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ)
+
+Download aqui: [https://github.com/rafatieppo/lucyLattes/archive/master.zip](https://github.com/rafatieppo/lucyLattes/archive/master.zip)
+
+2. Descompacte o arquivo `.zip` que pode ser obtido em um diretório de sua preferência. 
+
+3. Na pasta descompactada, abra o arquivo `list_id_name.txt` com um editor de texto, leias as
 instruções no arquivo e faça as alterações necessárias. Salve e feche o
 arquivo.
 
-3. Faça o dowload dos *curriculos Lattes* desejados e copie todos no
+4. Faça o dowload dos *curriculos Lattes* desejados e copie todos no
 diretório `xml_zip`. Para realizar o
 download, acesso o *currículo Lattes* do pesquisador, e no canto
 superior direito clique sobre um botão `XML`, salve o arquivo e NÃO
@@ -166,14 +172,14 @@ altere o nome e nem o formato, *NÃO DESCOMPACTE OS ARQUIVOS*. O nome do
 arquivo é composto por *16* caracteres e a extensão `.zip`,
 e.g. `3275865819287843.zip`. 
 
-4. Abra o arquivo `config.txt` com um editor de texto e altere o que for
+5. Abra o arquivo `config.txt` com um editor de texto e altere o que for
 necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
-5. Acesse o diretório descompactado pelo terminal e digite:
+6. Acesse o diretório descompactado pelo terminal e digite:
 
 ```python3 lucyLattes.py```
 
-6. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
+7. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
 `relatório`, basta acessar com um navegador (Chrome ou Firefox**.
 
 ## Observações
@@ -186,9 +192,6 @@ arquivos do diretório `csv_producao`.
 
 - Nos de uma estrela clicando na estrela no topo da página (lado direito)
 - Deixe um comentário no [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
-- Vc pode doar um café via Paypal ;)
-
-[![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ)
 
 ## Desenvolvimento
 
