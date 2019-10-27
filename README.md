@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Tue 2019-07-23 07:38:14 -04*
+*Sun 2019-10-27 10:40:52 -04*
 
 ## Motivação
 
@@ -184,7 +184,7 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 ## Observações
 
-**Atenção**
+**Atenção**, **Atenção**, **Atenção**.
 Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os
 arquivos do diretório `csv_producao`.
 
@@ -222,7 +222,7 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] Gerar um `.json` file para cada currículo;
 
 - DONE Relatório em `.html` [100%]
-  - [X] Relação de pesquisadores, cidade, estado, link lattes;
+  - [X] Relação de pesquisadores, cidade, estado, link lattes, lattes atualização;
   - [X] Lista de projetos de pesquisa e extensão;
   - [X] Síntese de artigos publicados em periódicos;
   - [X] Gráficos dos periódicos por período e por qualis;
@@ -231,6 +231,12 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de orientações
 
 ## Histórico (log)
+
+## Sun 2019-10-27 10:40:52 -04
+- Melhoria no código de verificação (`verify.py`). Quando um arquivo
+`.csv` de produção é solicitado e o mesmo não foi gerado por falta de
+produção nos currículos, um aviso é emitido na tela e uma observação é
+impressa no relatório (`report.py`).
 
 ## Tue 2019-07-23 07:38:14 -04
 - Um código para verificação dos anos em todos os arquivos de produção
