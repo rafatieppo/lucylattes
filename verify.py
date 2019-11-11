@@ -24,7 +24,7 @@ def getverificacao():
     try:
         dfppe_all = pd.read_csv('./csv_producao/projetos_all.csv',
                                 header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao de proj. pesq ou ext. \n' +
@@ -54,7 +54,7 @@ def getverificacao():
     try:
         dfppe_uniq = pd.read_csv('./csv_producao/projetos_uniq.csv',
                                  header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao de proj. pesq ou ext. uniq \n' +
@@ -77,7 +77,7 @@ def getverificacao():
     try:
         dfpaper = pd.read_csv('./csv_producao/periodicos_all.csv',
                               header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com periodicos all \n' +
@@ -106,7 +106,7 @@ def getverificacao():
     try:
         dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
                                    header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com periodicos unique \n' +
@@ -128,7 +128,7 @@ def getverificacao():
     try:
         dfbooks = pd.read_csv('./csv_producao/livros_all.csv',
                               header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao livros all \n' +
@@ -157,7 +157,7 @@ def getverificacao():
     try:
         dfbooks_uniq = pd.read_csv('./csv_producao/livros_uniq.csv',
                                    header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao de livros unique \n' +
@@ -179,7 +179,7 @@ def getverificacao():
     try:
         dfchapters = pd.read_csv('./csv_producao/capitulos_all.csv',
                                  header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao de capitulos all \n' +
@@ -208,7 +208,7 @@ def getverificacao():
     try:
         dfchapters_uniq = pd.read_csv('./csv_producao/capitulos_uniq.csv',
                                       header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com producao de capitulos unique \n' +
@@ -230,7 +230,7 @@ def getverificacao():
     try:
         dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
                                header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Nao ha arquivo com orientacoes \n' +

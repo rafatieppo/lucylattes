@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sun 2019-10-27 10:40:52 -04*
+*Mon 2019-11-11 19:14:11 -04*
 
 ## Motivação
 
@@ -231,6 +231,12 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de orientações
 
 ## Histórico (log)
+
+## Mon 2019-11-11 19:14:11 -04
+- Melhoria no código de verify (`verify.py`). Método `IOError` foi
+substituído por `OSError, IOError`. In 3.3, IOError became an alias for
+OSError, and FileNotFoundError is a subclass of OSError. [PEP
+3151](http://www.python.org/dev/peps/pep-3151/).
 
 ## Sun 2019-10-27 10:40:52 -04
 - Melhoria no código de verificação (`verify.py`). Quando um arquivo
