@@ -324,7 +324,7 @@ def getrelatorio():
         '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  \n')
     htmlfile.write(' <title>lucyLattes Relatorio</title> \n')
     htmlfile.write(
-        '<link rel="stylesheet" href="./css/GITGUB.css" type="text/css" /> \n </head> \n')
+        '<link rel="stylesheet" href="./css/gitgub.css" type="text/css" /> \n </head> \n')
     htmlfile.write('</head> \n ')
     htmlfile.write('<body> \n')
     # quick sumario
@@ -363,7 +363,10 @@ def getrelatorio():
         htmlfile.write(dffullname.iloc[idd, 1])
         htmlfile.write('<br>')
         htmlfile.write('<b>Nascimento: </b>')
-        htmlfile.write(dffullname.iloc[idd, 4])
+        if pd.isna(dffullname.iloc[idd, 4]):
+            htmlfile.write('no city')
+        else:
+            htmlfile.write(dffullname.iloc[idd, 4])
         htmlfile.write(' - ')
         htmlfile.write(str(dffullname.iloc[idd, 5]))
         htmlfile.write('<br>')

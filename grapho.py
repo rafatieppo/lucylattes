@@ -172,8 +172,13 @@ def getgrapho():
     # colors for nodes
     colours = ['#5a7d9a', 'red', 'green', 'yellow',
                'gray', 'orange', 'blue', 'magenta',
-               '#00555a', '#f7d560', 'cyan',  '#b6b129',
-               '#a1dd72', '#d49acb', '#d4a69a', '#977e93']
+               '#00555a', '#f7d560', 'cyan',    '#b6b129',
+               '#a1dd72', '#d49acb', '#d4a69a', '#977e93',
+               '#a3cc72', '#c60acb', '#d4b22a', '#255e53',
+               '#77525a', '#c7d511', '#c4c22b', '#c9b329',
+               '#c8dd22', '#f75acb', '#b1a40a', '#216693',
+               '#b1cd32', '#b33acb', '#c9a32b', '#925e11',
+               '#c5dd39', '#d04205', '#d8a82a', '#373e29']
     lsgroup_uniq = df_idlist['GROUP'].unique()
     dic_colours = {}
     for i in range(len(lsgroup_uniq)):
