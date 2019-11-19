@@ -50,7 +50,7 @@ def getrelatorio():
     try:
         dfppe_all = pd.read_csv('./csv_producao/projetos_all.csv',
                                 header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com producao de proj. pesq ou ext. \n' +
@@ -74,7 +74,7 @@ def getrelatorio():
     try:
         dfppe_uniq = pd.read_csv('./csv_producao/projetos_uniq.csv',
                                  header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com producao de proj. pesq ou ext. uniq \n' +
@@ -107,7 +107,7 @@ def getrelatorio():
     try:
         dfpaper = pd.read_csv('./csv_producao/periodicos_all.csv',
                               header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com periódico all \n' +
@@ -130,7 +130,7 @@ def getrelatorio():
     try:
         dfpaper_uniq = pd.read_csv('./csv_producao/periodicos_uniq.csv',
                                    header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         html_print_paper_uniq = 'NO'
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
@@ -174,7 +174,7 @@ def getrelatorio():
     try:
         dfbooks = pd.read_csv('./csv_producao/livros_all.csv',
                               header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com livros all \n' +
@@ -197,7 +197,7 @@ def getrelatorio():
     try:
         dfbooks_uniq = pd.read_csv('./csv_producao/livros_uniq.csv',
                                    header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com livros unique \n' +
@@ -232,7 +232,7 @@ def getrelatorio():
     try:
         dfchapters = pd.read_csv('./csv_producao/capitulos_all.csv',
                                  header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com capitulos all \n' +
@@ -257,7 +257,7 @@ def getrelatorio():
     try:
         dfchapters_uniq = pd.read_csv('./csv_producao/capitulos_uniq.csv',
                                       header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com capitulos unique \n' +
@@ -291,7 +291,7 @@ def getrelatorio():
     try:
         dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
                                header=0, dtype='str')
-    except IOError:
+    except (OSError, IOError):
         print('------------------------------------------------------------\n' +
               'ATENCAO \n' +
               'Não há arquivo com orientacoes \n' +
