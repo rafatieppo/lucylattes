@@ -4,7 +4,9 @@
 
 ## Última atualização
 
-*Sat 2019-11-23 06:12:56 -04*, verifique os logs [aqui](#Logs).
+*Sat 2019-11-23 06:12:56 -04*, verifique os logs [aqui](#Logs). <a href="#logss">aqui</a>
+
+
 
 ## Motivação
 
@@ -231,7 +233,7 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de orientações
 
 ## Logs 
-
+<a name="logss"></a> 
 
 ### Sat 2019-11-23 06:12:56 -04
 - Havia um erro na leitura dos anos de início dos projetos, qdo a
