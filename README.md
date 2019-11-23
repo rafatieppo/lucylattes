@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#histório-log">aqui</a>.
+*Sat 2019-11-23 06:12:56 -04*, verifique os logs [aqui](#Logs).
 
 ## Motivação
 
@@ -230,7 +230,7 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de livros
   - [X] relação de orientações
 
-## Histórico (log) 
+## Logs 
 
 
 ### Sat 2019-11-23 06:12:56 -04
