@@ -31,20 +31,18 @@ def getverificacao():
               '------------------------------------------------------------')
     else:
         lsind = []
-        for i in range(len(dfppe_all['YEAR_INI'])):
+        for i in range(len(dfppe_all['PROJ'])):
             si = dfppe_all.iloc[i, 1]
-            try:
-                int(si)
-                si = int(si)
-            except ValueError:
+            if pd.isna(si):
                 print('------------------------------------------------------------\n' +
                       'ATENCAO \n' +
                       'Impossível extrair ANO para o projeto \n' +
                       str(dfppe_all.iloc[i, 0]) + ' \n do pesquisador: ' +
                       str(dfppe_all.iloc[i, 7]) + '... PROJETO EXCLUIDO \n'
                       '------------------------------------------------------------')
-                # sys.exit("Verique o lattes do autor")
                 lsind.append(i)
+            else:
+                si = int(float(si))
         dfppe_all.drop(lsind, axis=0, inplace=True)
         dfppe_all.reset_index()
         pathfilename = str('./csv_producao/projetos_all.csv')

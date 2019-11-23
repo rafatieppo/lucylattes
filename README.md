@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Mon 2019-11-11 19:14:11 -04*
+*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#logs">aqui</a>.
 
 ## Motivação
 
@@ -230,7 +230,14 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de livros
   - [X] relação de orientações
 
-## Histórico (log)
+## Histórico (log) 
+<a href="#logs">
+
+## Sat 2019-11-23 06:12:56 -04
+- Havia um erro na leitura dos anos de início dos projetos, qdo a
+passava-se a variável (ANO) de `str` para `int` em alguns casos a
+variável continha uma casa decimal (e.g. 2010.0), impossibilitando
+deixar o número inteiro em um único passo. 
 
 ## Mon 2019-11-11 19:14:11 -04
 - Melhoria no código de verify (`verify.py`). Método `IOError` foi
