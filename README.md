@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-11-23 06:12:56 -04*, verifique os logs [aqui](#Logs). <a href="#logss">aqui</a>
+*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 
 
