@@ -4,7 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#logs">aqui</a>.
+*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#histório-log">aqui</a>.
 
 ## Motivação
 
@@ -231,61 +231,61 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de orientações
 
 ## Histórico (log) 
-<a href="#logs">
 
-## Sat 2019-11-23 06:12:56 -04
+
+### Sat 2019-11-23 06:12:56 -04
 - Havia um erro na leitura dos anos de início dos projetos, qdo a
 passava-se a variável (ANO) de `str` para `int` em alguns casos a
 variável continha uma casa decimal (e.g. 2010.0), impossibilitando
 deixar o número inteiro em um único passo. 
 
-## Mon 2019-11-11 19:14:11 -04
+### Mon 2019-11-11 19:14:11 -04
 - Melhoria no código de verify (`verify.py`). Método `IOError` foi
 substituído por `OSError, IOError`. In 3.3, IOError became an alias for
 OSError, and FileNotFoundError is a subclass of OSError. [PEP
 3151](http://www.python.org/dev/peps/pep-3151/).
 
-## Sun 2019-10-27 10:40:52 -04
+### Sun 2019-10-27 10:40:52 -04
 - Melhoria no código de verificação (`verify.py`). Quando um arquivo
 `.csv` de produção é solicitado e o mesmo não foi gerado por falta de
 produção nos currículos, um aviso é emitido na tela e uma observação é
 impressa no relatório (`report.py`).
 
-## Tue 2019-07-23 07:38:14 -04
+### Tue 2019-07-23 07:38:14 -04
 - Um código para verificação dos anos em todos os arquivos de produção
 foi desenvolvido (`verify.py`). Se o ano da produção não foi extraído, a
 produção é excluída do arquivo `.csv`. Quando há falha na extração do
 ano, os arquivos são atualizados e salvos.
 
-## Mon 2019-06-17 23:09:13 -04
+### Mon 2019-06-17 23:09:13 -04
 - Organização do arquivo para relação de orientações de cada
 pesquisador. As orientações estão divididas de acordo com a
 classificação do CNPq. No relatório para cada pesquisador há uma síntese
 das orientações, e no final do relatório há uma tabulação com o tipo de
 orientação e quantidade de orientações por pesquisador.
 
-## Thu 2019-06-13 21:23:26 -04
+### Thu 2019-06-13 21:23:26 -04
 - Extração da orientação de doutorado concluída ok. Falta realizar o
 relatório de todas as orientações.
 
-## Sat 2019-05-04 09:25:13 -04
+### Sat 2019-05-04 09:25:13 -04
 
 - Houve tentantiva de melhorar a extracao do resumo (`scrapper.py`), mas
 sem sucesso. A mensagem para os resumos nao capturados foi alterada
 para: *Nao foi possivel extrair o resumo*. 
 
-## Tue 2019-04-02 10:34:17 -04
+### Tue 2019-04-02 10:34:17 -04
 
 - No `scrapper.py` para *ppe* os limites de seleção foram melhorados.
 
-## Tue 2019-04-02 10:34:17 -04
+### Tue 2019-04-02 10:34:17 -04
 
 - Insirido no relatório publicação de livros e capítulos (gráficos e
 listas). Na produção individual também insirido o número de livros e
 capítulos. No resumo da produção foi inserido o número de profissionais
 que formam a equipe.
 
-## Sat 2019-03-23 18:24:31 -04
+### Sat 2019-03-23 18:24:31 -04
 
 - No relatório, caso tenha ocorrência de pesquisadores que não possuam
 interação em periódicos, uma lista com o nome dos mesmos é
