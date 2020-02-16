@@ -19,7 +19,7 @@ def getprojpesqext(zipname):
     # lendo do zipfile
     # zipname = '3275865819287843.zip'
     # zipname = '8190371175828378.zip'
-    # zipname = '5401789813032087.zip'
+    # zipname = '5859946324646438.zip'
     zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
@@ -998,7 +998,7 @@ def getcapit(zipname):
 
 def getnomecompleto(zipname):
     # lendo do zipfile
-    # zipname = '3275865819287843.zip'
+    # zipname = '5859946324646438.zip'
     zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
@@ -1089,8 +1089,8 @@ def getnomecompleto(zipname):
                 for j in range(len(rescv)):
                     # definindo resumo
                     abstdata = str(rescv[j])
-                    result = re.search('texto-resumo-cv-rh=\"(.*)\" texto-resumo-cv-rh-en',
-                                       abstdata)
+                    result = re.search('texto-resumo-cv-rh=\"(.*)\" texto-resumo-cv-rh-en=',
+                                       abstdata, re.DOTALL)
                     if result is None:
                         cc = 'Nao foi possivel extrair o resumo'
                     else:

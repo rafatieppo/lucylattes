@@ -4,8 +4,7 @@
 
 ## Última atualização
 
-*Sat 2019-11-23 06:12:56 -04*, verifique os logs <a href="#logss">aqui</a>.
-
+*Sun 2020-02-16 10:20:46 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 
 ## Motivação
@@ -234,6 +233,12 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Sun 2020-02-16 10:20:46 -04
+
+- No resumo do pesquisador, para alguns casos, ocorria falha na captura
+do texto. Possivelmente em função de "/n" no decorrer do texto. Este
+problema foi resolvido com melhoria na `regex`.
 
 ### Sat 2019-11-23 06:12:56 -04
 - Havia um erro na leitura dos anos de início dos projetos, qdo a
