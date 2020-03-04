@@ -9,7 +9,7 @@ import os
 import requests
 import re
 import zipfile
-
+from extrafuns import fun_result
 # ------------------------------------------------------------
 # projetos de pesquisa institucionalizados / FAP
 # ------------------------------------------------------------
@@ -61,24 +61,19 @@ def getprojpesqext(zipname):
                         proj = str(ppe[k])
                         result = re.search('nome-do-projeto=\"(.*)\" nome-do-projeto-i',
                                            proj)
-                        if result is None:
-                            cc = 'VAZIO'
-                        else:
-                            cc = result.group(1)
+                        cc = fun_result(result)
                         ls_proj.append(cc)
                         # print(cc)
                         # definindo o ano inicial
                         # result = re.search('ano-inicio=\"(.*)\" data-certificacao', proj)
                         result = re.search('ano-inicio="(.*)" data-certificacao',
                                            proj)
-                        if result is None:
-                            cc = 'VAZIO'
-                        else:
-                            cc = result.group(1)
+                        cc = fun_result(result)
                         ls_yini.append(cc)
                         # definindo o ano final
                         result = re.search('ano-fim="(.*)" ano-inicio',
                                            proj)
+                        cc = fun_result(result)
                         if result is None:
                             cc = 'VAZIO'
                         else:
@@ -89,10 +84,7 @@ def getprojpesqext(zipname):
                         # definindo a natureza
                         result = re.search(
                             'natureza=\"(.*)\" nome-coordenador', proj)
-                        if result is None:
-                            cc = 'VAZIO'
-                        else:
-                            cc = result.group(1)
+                        cc = fun_result(result)
                         ls_natu.append(cc)
                         # Integrante do projeto
                         ep = ppe[k].find_all('equipe-do-projeto')
@@ -105,18 +97,12 @@ def getprojpesqext(zipname):
                                 result = re.search(
                                     'nome-completo=\"(.*)\" nome-para-citacao',
                                     integ)
-                                if result is None:
-                                    cc = 'VAZIO'
-                                else:
-                                    cc = result.group(1)
+                                cc = fun_result(result)
                                 ls_allintproj.append(cc)
                         # definindo se é coordenador SIM ou NAO
                                 result = re.search(
                                     'responsavel=\"(.*)\" nome-completo', integ)
-                                if result is None:
-                                    cc = 'VAZIO'
-                                else:
-                                    cc = result.group(1)
+                                cc = fun_result(result)
                                 ls_allcoordsn.append(cc)
                                 # print(ls_allintproj)
                                 # print(ls_allcoordsn)
@@ -171,20 +157,14 @@ def getprodtec(zipname):
                     curso = str(ccdm[j])
                     result = re.search('titulo=\"(.*)\" titulo-ingl',
                                        curso)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_curscd_name.append(cc)
                     # print(cc)
                     # definindo o ano do curso
                     curso = str(ccdm[j])
                     result = re.search('ano=\"(.*)\" doi',
                                        curso)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_curscd_year.append(cc)
                     # print(cc)
                     # Integrante do curso
@@ -195,10 +175,7 @@ def getprodtec(zipname):
                         result = re.search(
                             'nome-completo-do-autor=\"(.*)\" nome-para-citacao',
                             autor)
-                        if result is None:
-                            cc = 'VAZIO'
-                        else:
-                            cc = result.group(1)
+                        cc = fun_result(result)
                         ls_all_autor.append(cc)
                     # print(ls_all_autor)
                     ls_curscd_integ.append(ls_all_autor)
@@ -260,19 +237,13 @@ def getorient(zipname):
                     # ano da orientacao
                     result = re.search('ano=\"(.*)\" doi',
                                        dadobasico)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_year.append(cc)
                     # print(cc)
                     # natureza da orientacao
                     result = re.search('natureza=\"(.*)\" pais',
                                        dadobasico)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_nat.append(cc)
                     # print(cc)
                     # detalhes da orientacao ###
@@ -282,46 +253,31 @@ def getorient(zipname):
                     # instituicao da orientacao
                     result = re.search('nome-da-instituicao=\"(.*)\" nome-do-curso=',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_inst.append(cc)
                     # print(cc)
                     # nome do curso
                     result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_curso.append(cc)
                     # print(cc)
                     # nome orientado
                     result = re.search('nome-do-orientado=\"(.*)\" nome-orgao',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_student.append(cc)
                     # print(cc)
                     # tipo de orientacao
                     result = re.search('tipo-de-orientacao=\"(.*)\">',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_type.append(cc)
                     # print(cc)
                     # Bolsa
                     result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_suppo.append(cc)
                     # print(cc)
             # ------------------------------------------------------------
@@ -341,19 +297,13 @@ def getorient(zipname):
                     # ano da orientacao
                     result = re.search('ano=\"(.*)\" doi',
                                        dadobasico)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_year.append(cc)
                     # print(cc)
                     # natureza da orientacao
                     result = re.search('natureza=\"(.*)\" pais',
                                        dadobasico)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_nat.append(cc)
                     # print(cc)
                     # detalhes da orientacao ###
@@ -363,46 +313,31 @@ def getorient(zipname):
                     # instituicao da orientacao
                     result = re.search('nome-da-instituicao=\"(.*)\" nome-do-curso=',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_inst.append(cc)
                     # print(cc)
                     # nome do curso
                     result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_curso.append(cc)
                     # print(cc)
                     # nome orientado
                     result = re.search('nome-do-orientado=\"(.*)\" nome-orgao',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_student.append(cc)
                     # print(cc)
                     # tipo de orientacao
                     result = re.search('tipo-de-orientacao=\"(.*)\">',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_type.append(cc)
                     # print(cc)
                     # Bolsa
                     result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
                                        detalhe)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_adv_suppo.append(cc)
                     # print(cc)
         # ------------------------------------------------------------
@@ -419,19 +354,13 @@ def getorient(zipname):
                 # ano da orientacao
                 result = re.search('ano=\"(.*)\" doi',
                                    dadobasico)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_year.append(cc)
                 # print(cc)
                 # natureza da orientacao
                 result = re.search('natureza=\"(.*)\" pais',
                                    dadobasico)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_nat.append(cc)
                 # print(cc)
                 # detalhes da orientacao ######
@@ -441,46 +370,31 @@ def getorient(zipname):
                 # instituicao da orientacao
                 result = re.search('nome-da-instituicao=\"(.*)\" nome-do-curso=',
                                    detalhe)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_inst.append(cc)
                 # print(cc)
                 # nome do curso
                 result = re.search('nome-do-curso=\"(.*)\" nome-do-curso-ingles',
                                    detalhe)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_curso.append(cc)
                 # print(cc)
                 # nome orientado
                 result = re.search('nome-do-orientado=\"(.*)\" numero-de-paginas',
                                    detalhe)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_student.append(cc)
                 # print(cc)
                 # tipo de orientacao
                 result = re.search('tipo-de-orientacao-concluida=\"(.*)\">',
                                    detalhe)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_type.append(cc)
                 # print(cc)
                 # Bolsa
                 result = re.search('flag-bolsa=\"(.*)\" nome-da-agencia',
                                    detalhe)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_adv_suppo.append(cc)
                 # print(cc)
             # DataFrame orientacoes
@@ -528,10 +442,7 @@ def getperiod(zipname):
                     gendata = str(dg[j])
                     result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     fullname = cc
     # ------------------------------------------------------------
     # extrair todas as producoes bibliograficas
@@ -568,37 +479,25 @@ def getperiod(zipname):
                 # definindo o nome do paper
                 result = re.search('titulo-do-artigo=\"(.*)\" titulo-do-artigo-i',
                                    paperdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_per_title.append(cc)
                 # print(cc)
                 # definindo ano do paper
                 result = re.search('ano-do-artigo=\"(.*)\" doi',
                                    paperdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_per_year.append(cc)
                 # print(cc)
                 # definindo doi do paper
                 result = re.search('doi=\"(.*)\" flag-divulgacao-c',
                                    paperdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_per_doi.append(cc)
                 # print(cc)
                 # definindo idioma do paper
                 result = re.search('idioma=\"(.*)\" meio-de-divulgacao=',
                                    paperdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_per_lang.append(cc)
                 # print(cc)
                 # detalhamento do paper
@@ -607,10 +506,7 @@ def getperiod(zipname):
                 # definindo titulo do periodico
                 result = re.search('titulo-do-periodico-ou-revista=\"(.*)\" volume',
                                    paperdt)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_per_journal.append(cc)
                 # print(cc)
                 # definindo issn
@@ -722,10 +618,7 @@ def getlivro(zipname):
                     gendata = str(dg[j])
                     result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     fullname = cc
     # ------------------------------------------------------------
     # extrair todas as producoes livros e capitulos
@@ -756,28 +649,19 @@ def getlivro(zipname):
                 # definindo o nome do livro
                 result = re.search('titulo-do-livro=\"(.*)\" titulo-do-livro-i',
                                    livrodb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_liv_title.append(cc)
                 # print(cc)
                 # definindo ano do livro
                 result = re.search('ano=\"(.*)\" doi',
                                    livrodb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_liv_year.append(cc)
                 # print(cc)
                 # definindo idioma do livro
                 result = re.search('idioma=\"(.*)\" meio-de-divulgacao=',
                                    livrodb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_liv_lang.append(cc)
                 # detalhamento do livro
                 ddl = livpuborg[i].find_all('detalhamento-do-livro')
@@ -785,10 +669,7 @@ def getlivro(zipname):
                 # definindo editora
                 result = re.search('nome-da-editora=\"(.*)\" volume',
                                    livrodt)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_liv_edit.append(cc)
                 # print(cc)
                 # autores do livro
@@ -871,10 +752,7 @@ def getcapit(zipname):
                     gendata = str(dg[j])
                     result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     fullname = cc
     # ------------------------------------------------------------
     # extrair todas as producoes livros e capitulos
@@ -905,28 +783,19 @@ def getcapit(zipname):
                 # definindo o nome do capitulo
                 result = re.search('titulo-do-capitulo-do-livro=\"(.*)\" titulo-do-capi',
                                    capitdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_cap_title.append(cc)
                 # print(cc)
                 # definindo ano do livro
                 result = re.search('ano=\"(.*)\" doi',
                                    capitdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_cap_year.append(cc)
                 # print(cc)
                 # definindo idioma do livro
                 result = re.search('idioma=\"(.*)\" meio-de-divulgacao=',
                                    capitdb)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_cap_lang.append(cc)
                 # detalhamento do livro
                 ddc = cappuborg[i].find_all('detalhamento-do-capitulo')
@@ -934,10 +803,7 @@ def getcapit(zipname):
                 # definindo editora
                 result = re.search('nome-da-editora=\"(.*)\" numero-da-edicao-r',
                                    capitdt)
-                if result is None:
-                    cc = 'VAZIO'
-                else:
-                    cc = result.group(1)
+                cc = fun_result(result)
                 ls_cap_edit.append(cc)
                 # print(cc)
                 # autores do livro
@@ -1043,10 +909,7 @@ def getnomecompleto(zipname):
                     gendata = str(dg[j])
                     result = re.search('nome-completo=\"(.*)\" nome-em-citacoes',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_name_full.append(cc)
                     lastname = cc.split(' ')[-1]
                     ls_name_last.append(lastname)
@@ -1056,28 +919,19 @@ def getnomecompleto(zipname):
                     gendata = str(dg[j])
                     result = re.search('cidade-nascimento=\"(.*)\" data-faleci',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_city.append(cc)
                     # definindo estado
                     gendata = str(dg[j])
                     result = re.search('uf-nascimento=\"(.*)\"><res',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_state.append(cc)
                     # definindo nome em citacoes
                     gendata = str(dg[j])
                     result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" pais-de-nacional',
                                        gendata)
-                    if result is None:
-                        cc = 'VAZIO'
-                    else:
-                        cc = result.group(1)
+                    cc = fun_result(result)
                     ls_citado.append(cc)
             rescv = cv[i].find_all('resumo-cv')
             # VERIFICANDO se ha resumo
