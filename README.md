@@ -155,7 +155,9 @@ pip3 install tabulate
 dowload, caso queira, vc pode pode ajudar com quanto quiser para manter
 o projeto:
 
-[![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ)
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img border="0" alt="" src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" width="150">
+
+[//]: [![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ**
 
 Download aqui: [https://github.com/rafatieppo/lucyLattes/archive/master.zip](https://github.com/rafatieppo/lucyLattes/archive/master.zip)
 
@@ -207,6 +209,13 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
 
+- TODO Gerar índices utilizados pela CAPES para avaliação de PPG [80%]
+  - [X] Índice de Orientação (IndOri) 
+  - [X] Índice de discentes autores (IndAut)
+  - [X] Índice de produtos com autoria discente (IndDis)
+  - [X] Índice de Produtividade referente a artigos científicos do Programa (IndProdArt) 
+  - [ ] Validação
+  
 - DONE Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[100%] 
   - [X] os projetos de pesquisa e extensão;
   - [X] cursos de curta duração;
@@ -214,13 +223,12 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] publicações de livros e capítulos;
   - [X] orientações (tcc, ic, mestrado, doutorado);
 
-- TODO Grafo de interação entre pesquisadores [33%]
+- TODO Grafo de interação entre pesquisadores [40%]
   - [X] realiza interações somente entre artigos
   - [X] como **observação**, deve-se atentar que os integrantes que não possuem interação(s) não aparecem no grafo.
   - [ ] Verificar as interações nos projetos de pesquisa e extensão;
   - [ ] Calcular o peso das interações dos membros no grafo;
   - [ ] Capturar as atividades dos projetos de extensão;
-  - [ ] Gerar um `.json` file para cada currículo;
 
 - DONE Relatório em `.html` [100%]
   - [X] Relação de pesquisadores, cidade, estado, link lattes, lattes atualização;
@@ -233,6 +241,23 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Tue 2020-03-24 02:36:07 -04
+
+- Foi implementado o cálculo de indicadores para os quadriênios (a
+partir de 2013). Os indicadores inseridos foram *Índice de discentes
+autores* e *Índice de produtos com autoria discente*. Ambos são
+disponibilizados no relatório. Caso não seja desejado a geração dos
+indicadores, no arquivo `config.txt` é possível desabilitar esta função.
+
+
+### Thu 2020-03-12 05:01:05 -04
+
+- Foi implementado o cálculo de indicadores para os quadriênios (a
+partir de 2013). Os indicadores inseridos foram *Índice de orientação do
+grupo* e *Índice de produção de artigo*. Ambos são disponibilizados no
+relatório. Caso não seja desejado a geração dos indicadores, no arquivo
+`config.txt` é possível desabilitar esta função.
 
 ### Sun 2020-02-16 10:20:46 -04
 
