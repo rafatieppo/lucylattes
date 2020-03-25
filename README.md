@@ -95,6 +95,11 @@ trabalho_de_conclusao_de_curso_graduacao = 23
  <br> 
 
 
+<p><b>INDICADORES CAPES</b></p>
+
+
+
+
 ## Notas
 
 > O lucyLattes não tem vínculo com o CNPq. Este programa computacional
