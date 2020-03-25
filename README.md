@@ -94,11 +94,11 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
  <br> 
 
-<p><b>Indicadores CAPES</b></p> 
+<p><b>INDICADORES CAPES</b></p> 
  <br> 
+
 <p><b>Índice de orientação do grupo</b><p>
 <br> 
-
 <table> 
 <thead>
 <tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDORI</th><th>INDORI_CLASSIFICACAO  </th></tr>
@@ -140,40 +140,6 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 <br> 
 <br> 
 
-
-<p><b>Indicador de distribuição dos docentes permanentes por faixa de IndProd</b></p>
-<br> 
-<p><i>Classificação dos pesquisadores por quadriênio</i></p><br>
-<table>
-<thead>
-<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th>FULL_NAME                     </th><th style="text-align: right;">  INDPRODART</th><th>CLASSIF  </th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td>Jose  </td><td style="text-align: right;">    0.53    </td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 1</td><td>2013-2016   </td><td>Maria </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
-<tr><td style="text-align: right;"> 2</td><td>2013-2016   </td><td>Peter </td><td style="text-align: right;">    0.386667</td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 3</td><td>2013-2016   </td><td>Rafae </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
-<tr><td style="text-align: right;"> 4</td><td>2013-2016   </td><td>Thiago </td><td style="text-align: right;">    0.553333</td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 5</td><td>2017-2020   </td><td>Jose  </td><td style="text-align: right;">    0.773333</td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 6</td><td>2017-2020   </td><td>Maria </td><td style="text-align: right;">    0.295   </td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 7</td><td>2017-2020   </td><td>Peter </td><td style="text-align: right;">    0.24    </td><td>FRACO    </td></tr>
-<tr><td style="text-align: right;"> 8</td><td>2017-2020   </td><td>Rafael </td><td style="text-align: right;">    0.17    </td><td>FRACO    </td></tr>
-<tr><td style="text-align: right;"> 9</td><td>2017-2020   </td><td>Thiago </td><td style="text-align: right;">    0.346667</td><td>REGULAR  </td></tr>
-</tbody>
-</table>
-<br> 
-
-<p><i>Indicador DistIndProdDP</i></p><br>
-<table>
-<thead>
-<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  DISTINDPRODDP</th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">             60</td></tr>
-<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">             60</td></tr>
-</tbody>
-</table>
-<br>
 
 ## Notas
 
