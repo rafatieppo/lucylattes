@@ -110,36 +110,6 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 
-<p><b>Índice de produção de artigo</b></p>
-<br> 
-<table>
-<thead>
-<tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDPRODART</th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td style="text-align: right;">            2013</td><td style="text-align: right;">            2016</td><td style="text-align: right;">     1.4975 </td></tr>
-<tr><td style="text-align: right;"> 1</td><td style="text-align: right;">            2017</td><td style="text-align: right;">            2020</td><td style="text-align: right;">     1.64667</td></tr>
-</tbody>
-</table>
-<br> 
-
-<p><b>Índice de autoria discente</b></p>
-<br> 
-<i>Considera apenas produção em periódicos </i><br>
-<table>
-<thead>
-<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  INDOUT</th><th style="text-align: right;">  INDIS</th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">0.848485</td><td style="text-align: right;">3.12121</td></tr>
-<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">0.789474</td><td style="text-align: right;">2.47368</td></tr>
-</tbody>
-</table>
-<br> 
-<i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com autoria discente</i>
-<br> 
-<br> 
-
 
 ## Notas
 
