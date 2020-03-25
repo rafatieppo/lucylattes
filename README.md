@@ -99,16 +99,6 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 
 <p><b>Índice de orientação do grupo</b><p>
 <br> 
-<table> 
-<thead>
-<tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDORI</th><th>INDORI_CLASSIFICACAO  </th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td style="text-align: right;">            2013</td><td style="text-align: right;">            2016</td><td style="text-align: right;">     1.4</td><td>MUITO_BOM             </td></tr>
-<tr><td style="text-align: right;"> 1</td><td style="text-align: right;">            2017</td><td style="text-align: right;">            2020</td><td style="text-align: right;">     1  </td><td>BOM                   </td></tr>
-</tbody>
-</table>
-<br> 
 
 
 ## Notas
