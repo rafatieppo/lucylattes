@@ -174,23 +174,21 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br>
 
-
-
 ## Notas
 
-> O lucyLattes não tem vínculo com o CNPq. Este programa computacional
-> é fruto de um esforço (independente) realizado com o objetivo de dar
-> suporte às rotinas de análise de dados cadastradas nos Currículos
-> Lattes (publicamente disponíveis).
+O lucyLattes não tem vínculo com o CNPq. Este programa computacional
+é fruto de um esforço (independente) realizado com o objetivo de dar
+suporte às rotinas de análise de dados cadastradas nos Currículos
+Lattes (publicamente disponíveis).
 
-> Este programa é um software livre; você pode redistribui-lo e/ou
-> modificá-lo dentro dos termos da Licença Pública Geral
-> GNU. **Verifique** o arquivo **LICENSE.txt** . 
+Este programa é um software livre; você pode redistribui-lo e/ou
+modificá-lo dentro dos termos da Licença Pública Geral
+GNU. **Verifique** o arquivo **LICENSE.txt** . 
 
-> Este programa é distribuído na esperança que possa ser útil, mas SEM
-> NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
-> MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
-> **LICENSE.txt** . 
+Este programa é distribuído na esperança que possa ser útil, mas SEM
+NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
+MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
+**LICENSE.txt** . 
 
 ## Como usar 
 
