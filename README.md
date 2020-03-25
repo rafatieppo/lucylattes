@@ -94,6 +94,84 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
  <br> 
 
+<p><b>Indicadores CAPES</b></p> 
+ <br> 
+<p> Índice de orientação do grupo</p> 
+<br> 
+
+<table> 
+<thead>
+<tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDORI</th><th>INDORI_CLASSIFICACAO  </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td style="text-align: right;">            2013</td><td style="text-align: right;">            2016</td><td style="text-align: right;">     1.4</td><td>MUITO_BOM             </td></tr>
+<tr><td style="text-align: right;"> 1</td><td style="text-align: right;">            2017</td><td style="text-align: right;">            2020</td><td style="text-align: right;">     1  </td><td>BOM                   </td></tr>
+</tbody>
+</table>
+<br> 
+
+<p> Índice de produção de artigo</p> 
+ <br> 
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDPRODART</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td style="text-align: right;">            2013</td><td style="text-align: right;">            2016</td><td style="text-align: right;">     1.4975 </td></tr>
+<tr><td style="text-align: right;"> 1</td><td style="text-align: right;">            2017</td><td style="text-align: right;">            2020</td><td style="text-align: right;">     1.64667</td></tr>
+</tbody>
+</table>
+<br> 
+
+<p> Índice de autoria discente</p> 
+ <br> 
+<i>Considera apenas produção em periódicos </i><br><br><table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  INDOUT</th><th style="text-align: right;">  INDIS</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">0.848485</td><td style="text-align: right;">3.12121</td></tr>
+<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">0.789474</td><td style="text-align: right;">2.47368</td></tr>
+</tbody>
+</table>
+<br> 
+<i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com
+ autoria discente</i>
+<br>
+
+<p> Indicador de distribuição dos docentes permanentes por faixa de IndProd</p> 
+ <br> 
+<i>Classificação dos pesquisadores por quadriênio</i><br><br><table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th>FULL_NAME                     </th><th style="text-align: right;">  INDPRODART</th><th>CLASSIF  </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td>Jose  </td><td style="text-align: right;">    0.53    </td><td>REGULAR  </td></tr>
+<tr><td style="text-align: right;"> 1</td><td>2013-2016   </td><td>Maria </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
+<tr><td style="text-align: right;"> 2</td><td>2013-2016   </td><td>Peter </td><td style="text-align: right;">    0.386667</td><td>REGULAR  </td></tr>
+<tr><td style="text-align: right;"> 3</td><td>2013-2016   </td><td>Rafael </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
+<tr><td style="text-align: right;"> 4</td><td>2013-2016   </td><td>Thiago </td><td style="text-align: right;">    0.553333</td><td>REGULAR  </td></tr>
+<tr><td style="text-align: right;"> 5</td><td>2017-2020   </td><td>Jose  </td><td style="text-align: right;">    0.773333</td><td>REGULAR  </td></tr>
+<tr><td style="text-align: right;"> 6</td><td>2017-2020   </td><td>Maria </td><td style="text-align: right;">    0.295   </td><td>REGULAR  </td></tr>
+<tr><td style="text-align: right;"> 7</td><td>2017-2020   </td><td>Peter </td><td style="text-align: right;">    0.24    </td><td>FRACO    </td></tr>
+<tr><td style="text-align: right;"> 8</td><td>2017-2020   </td><td>Rafael </td><td style="text-align: right;">    0.17    </td><td>FRACO    </td></tr>
+<tr><td style="text-align: right;"> 9</td><td>2017-2020   </td><td>Thiago </td><td style="text-align: right;">    0.346667</td><td>REGULAR  </td></tr>
+</tbody>
+</table>
+ <br> 
+
+<i>Indicador DistIndProdDP</i><br><br>
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  DISTINDPRODDP</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">             60</td></tr>
+<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">             60</td></tr>
+</tbody>
+</table>
+<br>
+
 ## Notas
 
 > O lucyLattes não tem vínculo com o CNPq. Este programa computacional
@@ -105,7 +183,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 > modificá-lo dentro dos termos da Licença Pública Geral
 > GNU. **Verifique** o arquivo **LICENSE.txt** . 
 
-> Este programa é distribuído na esperança que possa ser util, mas SEM
+> Este programa é distribuído na esperança que possa ser útil, mas SEM
 > NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
 > MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
 > **LICENSE.txt** . 
@@ -129,11 +207,12 @@ blog: [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucy
 
 Se vc usar *UBUNTU 18*
 
-```sudo apt-get install python3```
+```
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo apt-get install python3-tk
+```
 
-```sudo apt-get install python3-pip```
-
-```sudo apt-get install python3-tk```
 
 - Caso não tenha as bibliotecas *Python* instaladas executar no
 terminal:
@@ -147,7 +226,7 @@ pip3 install matplotlib
 pip3 install networkx
 pip3 install lxml
 pip3 install tabulate
-```
+``` 
 
 ## Como executar o programa
 
@@ -180,10 +259,10 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 6. Acesse o diretório descompactado pelo terminal e digite:
 
-```python3 lucyLattes.py```
+`python3 lucyLattes.py`
 
 7. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
-`relatório`, basta acessar com um navegador (Chrome ou Firefox**.
+`relatório`, basta acessar com um navegador (Chrome ou Firefox).
 
 ## Observações
 
@@ -241,6 +320,96 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Tue 2020-03-24 22:12:01 -04
+
+- Duas melhorias siginificativas foram realizadas. Uma é a melhoria
+do relatório. A outra a implementação do indicadores CAPES. Segue método
+de cálculo:
+
+Por padrão os indicadores CAPES estão desativados, caso queira ativar
+deve-se editar o arquivo `config.txt`.
+
+1. Índice de Orientação (IndOri)
+
+$$IndOri = \frac{(A + 2B)}{DP}$$
+
+Avalia as defesas com orientação de docentes permanentes (DP) do
+programa. A análise leva em consideração o tempo recomendado de
+titulação, sendo 24 meses para mestrados (A) e 48 meses para doutorado
+(B). O indicador é calculado para cada ano e depois calculada a média
+para o quadriênio.
+
+2. Índice de discentes autores (IndAut)
+
+$$IndAut = \frav{E}{F}$$
+
+Avalia a proporção de discentes autores (E) em relação ao total de
+discentes do programa. Foram considerados para o cálculo de E, os
+discentes e egressos até cinco anos quando autores de artigos, livros,
+capítulos, trabalho completo em anais e produção técnica (sem
+apresentação de trabalho). Cabe destacar que a prática de geração de
+produtos intelectuais após a conclusão do curso é comum; portanto, este
+indicador tem, como denominador (F), todo o corpo discente do ano em
+avaliação mais os egressos dos últimos 5 anos que publicaram no referido
+ano.
+
+3. Índice de produtos com autoria discente (IndDis) 
+
+$$IndDis = \frac{G}{F}$$
+
+Avalia a quantidade de produtos intelectuais (artigos, livros,
+capítulos, trabalhos completos em anais e produção técnica - excluindo
+apresentação de trabalho) de autoria discente ou de egressos até 5 anos,
+em relação ao total de discentes do programa (G). O denominador leva em
+consideração todo o corpo discente do ano em avaliação mais egressos dos
+últimos 5 anos que publicaram no referido ano (F).
+
+4. Índice de Produtividade referente a artigos científicos do Programa (IndProdArt) (OK)
+
+$$IndProdArt = \frac{(1 \times A1 + 0,85 \times A2 + 0,7 \times B1 + 0,55 \times B2 + 0,4 \times B3 + 0,25 \times B4 + 0,1 \times B5)}{DP}$$
+
+Avalia toda a produção intelectual do programa no formato de artigo
+científico, sendo que a participação de um docente permanente como autor
+é condição obrigatória para validar a produção. Os pesos de cada produto
+foram atribuídos previamente por meio da avaliação dos periódicos
+científicos - Sistema Qualis Periódicos. De acordo com os estratos
+atribuídos, os pontos são contabilizados e divididos pelo total de
+docentes permanentes do programa. O cálculo é anual, sendo realizada a
+média para o quadriênio posteriormente. Cabe destacar que a pontuação
+obtida por um programa é o somatório dos pontos obtidos em todos os
+estratos (A1 até B5). Porém, os pontos obtidos pelo somatório dos
+estratos B4 e B5, não podem ultrapassar 20% do total de pontos do
+ano. Assim, valores percentuais superiores a 20\% são glosados.
+
+5. Indicador de distribuição dos docentes permanentes por faixa de IndProd (%DistIndProdDP) 
+
+$$DistIndProdDP = DPMB + DPB + DPR$$
+
+Nesse caso, calcula-se o IndProd para cada docente permanente e
+posteriormente os docentes são distribuídos conforme as faixas
+apresentadas para o IndProd. Feito isso, calculou-se o percentual de
+docentes permanentes (DP) classificados em cada faixa (MB = muito bom, B
+= bom, R = regular e F/D = fraco / deficiente) em relação ao corpo
+docente permanente total. O somatório dos percentuais das faixas MB, B e
+R permite avaliar o equilíbrio na distribuição da produção docente.
+
+Referências: Ministério da Educação Coordenação de Aperfeiçoamento de
+Pessoal de Nível Superior Diretoria de Avaliação. Relatório de Avaliação
+área Interdisciplinar.
+
+```
+if IndProd < 0.15:
+    classif = 'DEFICIENTE'
+elif IndProd >= 0.15 and IndProd <= 0.29:
+    classif = 'FRACO'
+elif IndProd > 0.29 and IndProd <= 0.79:
+    classif = 'REGULAR'
+elif IndProd > 0.79 and IndProd <= 1.19:
+    classif = 'BOM'
+else:
+    classif = 'MUITO_BOM'
+```
 
 ### Tue 2020-03-24 02:36:07 -04
 
@@ -380,6 +549,8 @@ necessárias e geram os `.csv`;
 - `report.py`: gerador do relatório;
 - `grapho.py`: gerador do gráfico com as interações entre os membros.
 - `verify.py`: verifica e corrige extração do anos para as produções.
+- `extrafuns.py`: funções de apoio para minimizar a poluição do código
+- `index_capes.py`:  calcula os indicadores CAPES
 
 ## Referências
 
