@@ -94,12 +94,6 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
  <br> 
 
-<p><b>INDICADORES CAPES</b></p> 
- <br> 
-
-<p><b>Índice de orientação do grupo</b><p>
-<br> 
-
 
 ## Notas
 
