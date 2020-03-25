@@ -96,7 +96,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 
 <p><b>Indicadores CAPES</b></p> 
  <br> 
-<b> Índice de orientação do grupo</b> 
+<p><b>Índice de orientação do grupo</b><p>
 <br> 
 
 <table> 
@@ -110,8 +110,8 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 
-<b> Índice de produção de artigo</b> 
- <br> 
+<p><b>Índice de produção de artigo</b></p>
+<br> 
 <table>
 <thead>
 <tr><th style="text-align: right;">  </th><th style="text-align: right;">  QUADRIENIO_INI</th><th style="text-align: right;">  QUADRIENIO_FIM</th><th style="text-align: right;">  INDPRODART</th></tr>
@@ -123,21 +123,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 
-<b> Índice de autoria discente</b> 
- <br> 
-<i>Considera apenas produção em periódicos </i><br>
-<table>
-<thead>
-<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  INDOUT</th><th style="text-align: right;">  INDIS</th></tr>
-</thead>
-<tbody>
-<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">0.848485</td><td style="text-align: right;">3.12121</td></tr>
-<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">0.789474</td><td style="text-align: right;">2.47368</td></tr>
-</tbody>
-</table>
-<br> 
-
-<b> Índice de autoria discente</b> 
+<p><b>Índice de autoria discente</b></p>
 <br> 
 <i>Considera apenas produção em periódicos </i><br>
 <table>
@@ -150,15 +136,14 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </tbody>
 </table>
 <br> 
-<i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com
-autoria discente</i>
+<i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com autoria discente</i>
 <br> 
 <br> 
 
 
-<b> Indicador de distribuição dos docentes permanentes por faixa de IndProd</b> 
+<p><b>Indicador de distribuição dos docentes permanentes por faixa de IndProd</b></p>
 <br> 
-<i>Classificação dos pesquisadores por quadriênio</i><br>
+<p><i>Classificação dos pesquisadores por quadriênio</i></p><br>
 <table>
 <thead>
 <tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th>FULL_NAME                     </th><th style="text-align: right;">  INDPRODART</th><th>CLASSIF  </th></tr>
@@ -178,7 +163,7 @@ autoria discente</i>
 </table>
 <br> 
 
-<i>Indicador DistIndProdDP</i><br><br>
+<p><i>Indicador DistIndProdDP</i></p><br>
 <table>
 <thead>
 <tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  DISTINDPRODDP</th></tr>
