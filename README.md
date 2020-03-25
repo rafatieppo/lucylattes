@@ -96,7 +96,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 
 <p><b>Indicadores CAPES</b></p> 
  <br> 
-<p> Índice de orientação do grupo</p> 
+<b> Índice de orientação do grupo</b> 
 <br> 
 
 <table> 
@@ -110,7 +110,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 
-<p> Índice de produção de artigo</p> 
+<b> Índice de produção de artigo</b> 
  <br> 
 <table>
 <thead>
@@ -123,9 +123,24 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 
-<p> Índice de autoria discente</p> 
+<b> Índice de autoria discente</b> 
  <br> 
-<i>Considera apenas produção em periódicos </i><br><br><table>
+<i>Considera apenas produção em periódicos </i><br>
+<table>
+<thead>
+<tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  INDOUT</th><th style="text-align: right;">  INDIS</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td style="text-align: right;">0.848485</td><td style="text-align: right;">3.12121</td></tr>
+<tr><td style="text-align: right;"> 1</td><td>2017-2020   </td><td style="text-align: right;">0.789474</td><td style="text-align: right;">2.47368</td></tr>
+</tbody>
+</table>
+<br> 
+
+<b> Índice de autoria discente</b> 
+<br> 
+<i>Considera apenas produção em periódicos </i><br>
+<table>
 <thead>
 <tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th style="text-align: right;">  INDOUT</th><th style="text-align: right;">  INDIS</th></tr>
 </thead>
@@ -136,12 +151,15 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 </table>
 <br> 
 <i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com
- autoria discente</i>
-<br>
+autoria discente</i>
+<br> 
+<br> 
 
-<p> Indicador de distribuição dos docentes permanentes por faixa de IndProd</p> 
- <br> 
-<i>Classificação dos pesquisadores por quadriênio</i><br><br><table>
+
+<b> Indicador de distribuição dos docentes permanentes por faixa de IndProd</b> 
+<br> 
+<i>Classificação dos pesquisadores por quadriênio</i><br>
+<table>
 <thead>
 <tr><th style="text-align: right;">  </th><th>QUADRIENIO  </th><th>FULL_NAME                     </th><th style="text-align: right;">  INDPRODART</th><th>CLASSIF  </th></tr>
 </thead>
@@ -149,7 +167,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 <tr><td style="text-align: right;"> 0</td><td>2013-2016   </td><td>Jose  </td><td style="text-align: right;">    0.53    </td><td>REGULAR  </td></tr>
 <tr><td style="text-align: right;"> 1</td><td>2013-2016   </td><td>Maria </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
 <tr><td style="text-align: right;"> 2</td><td>2013-2016   </td><td>Peter </td><td style="text-align: right;">    0.386667</td><td>REGULAR  </td></tr>
-<tr><td style="text-align: right;"> 3</td><td>2013-2016   </td><td>Rafael </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
+<tr><td style="text-align: right;"> 3</td><td>2013-2016   </td><td>Rafae </td><td style="text-align: right;">    0.21    </td><td>FRACO    </td></tr>
 <tr><td style="text-align: right;"> 4</td><td>2013-2016   </td><td>Thiago </td><td style="text-align: right;">    0.553333</td><td>REGULAR  </td></tr>
 <tr><td style="text-align: right;"> 5</td><td>2017-2020   </td><td>Jose  </td><td style="text-align: right;">    0.773333</td><td>REGULAR  </td></tr>
 <tr><td style="text-align: right;"> 6</td><td>2017-2020   </td><td>Maria </td><td style="text-align: right;">    0.295   </td><td>REGULAR  </td></tr>
@@ -158,7 +176,7 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 <tr><td style="text-align: right;"> 9</td><td>2017-2020   </td><td>Thiago </td><td style="text-align: right;">    0.346667</td><td>REGULAR  </td></tr>
 </tbody>
 </table>
- <br> 
+<br> 
 
 <i>Indicador DistIndProdDP</i><br><br>
 <table>
