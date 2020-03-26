@@ -245,3 +245,4 @@ def getgrapho():
 #                         font_size=14, font_family='sans-serif')
 # plt.axis('off')
 # plt.show()
+# ------------------------------------------------------------

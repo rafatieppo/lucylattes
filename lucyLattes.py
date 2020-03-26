@@ -4,6 +4,7 @@
 # https://rafatieppo.github.io/
 # 16-01-2019
 # LATTES Scraper
+# @rafatieppo
 # ======================================================================
 
 # ------------------------------------------------------------
@@ -23,6 +24,10 @@ from scraperlattes import getorient
 from scraperlattes import getprodtec
 from scraperlattes import getprojpesqext
 from readidlist import readIdList
+from index_capes import capes_indprodart
+from index_capes import capes_indori
+from index_capes import capes_indautdis
+from index_capes import capes_distindproddp
 from tabulate import tabulate
 import pandas as pd
 import numpy as np
@@ -31,7 +36,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import zipfile
-
 import glob
 import re
 import matplotlib.pyplot as plt
@@ -60,4 +64,21 @@ for nid in range(len(df_idlist)):
 gettidydf()
 getverificacao()
 getgrapho()
+
+# Gerar indicadores qualis ou nao
+config_file = open('./config.txt', 'r')
+run_indcapes = config_file.readlines()[7].split(':')[1]
+run_indcapes = run_indcapes.rstrip('\n')
+run_indcapes = run_indcapes.strip(' ')
+run_indcapes = int(run_indcapes)
+run_indcapes
+config_file.close()
+if run_indcapes == 1:
+    capes_indori()
+    capes_indprodart()
+    capes_indautdis()
+    capes_distindproddp()
+else:
+    print("Indicadores capes para PPG nao foram gerados")
+
 getrelatorio()

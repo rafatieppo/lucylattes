@@ -315,6 +315,62 @@ def getrelatorio():
         advi = dfadvise.groupby(['NATURE'])['STUDENT'].size().reset_index()
         advi_tot = advi['STUDENT'].sum()
         advi.columns = ['NATUREZA', 'QTD']
+
+    # ------------------------------------------------------------
+    # dfindicadores qualis indice de orientacao do grupo
+    try:
+        dfind_capes_indori = pd.read_csv('./csv_producao/capesindex_indori.csv',
+                                         header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Não há arquivo com com indicador capes orientados por quadrienios  \n' +
+              '------------------------------------------------------------')
+        html_print_indori = 'NO'
+    else:
+        html_print_indori = 'YES'
+
+    # ------------------------------------------------------------
+    # dfindicadores qualis indice produtividade de artigos
+    try:
+        dfind_capes_indprodart = pd.read_csv('./csv_producao/capesindex_indprodart.csv',
+                                             header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Não há arquivo com com indicador capes orientados por quadrienios  \n' +
+              '------------------------------------------------------------')
+        html_print_indprodart = 'NO'
+    else:
+        html_print_indprodart = 'YES'
+
+    # ------------------------------------------------------------
+    # dfindicadores qualis indice autoria discente
+    try:
+        dfind_capes_indautdis = pd.read_csv('./csv_producao/capesindex_indautdis.csv',
+                                            header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Não há arquivo com com indicador capes indice autoria discente  \n' +
+              '------------------------------------------------------------')
+        html_print_indautdis = 'NO'
+    else:
+        html_print_indautdis = 'YES'
+    # ------------------------------------------------------------
+    # Indic distrib dos doce perman por faixa de IndProd
+    try:
+        dfind_capes_distindproddp = pd.read_csv('./csv_producao/capesindex_distindproddp_doce.csv',
+                                                header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Não há indicador capes de Ind. de distrib. dos docentes permanentes por faixa de IndProd  \n' +
+              '------------------------------------------------------------')
+        html_print_distindproddp = 'NO'
+    else:
+        html_print_distindproddp = 'YES'
+
     # ------------------------------------------------------------
     # INICIANDO o html DANGER ATTENTION PAREI AQUI
     htmlfile = open('./relatorio/relatorio_producao.html', 'w')
@@ -342,6 +398,7 @@ def getrelatorio():
     htmlfile.write('<a href="#pubperiod">Artigos em periódicos</a> \n <br>')
     htmlfile.write(
         '<a href="#prodporpesq">Extrato de periódicos por integrante</a> \n <br>')
+    htmlfile.write('<a href="#indcapes">Indicadores CAPES</a> \n <br>')
     # Equipe
     htmlfile.write('<a name="team"></a>' + '\n \n')
     htmlfile.write('<h1 class="title">Equipe</h1> \n')
@@ -410,7 +467,7 @@ def getrelatorio():
     htmlfile.write('<a name="projexte"></a>' + '\n \n')
     htmlfile.write('<h1>Projetos de extensão</h1> \n')
     if html_print_ppe_uniq == 'NO':
-        htmlfile.write('Não há projetos de extensão \n')
+        htmlfile.write('Não há projetos de extensão <br>\n')
     else:
         htmlfile.write('<ol class="custom-counter">')
         for idd in range(len(dfppe_uniq_ext)):
@@ -430,7 +487,7 @@ def getrelatorio():
     htmlfile.write('<a name="projpesq"></a>' + '\n \n')
     htmlfile.write('<h1>Projetos de pesquisa</h1> \n')
     if html_print_paper_all == 'NO':
-        htmlfile.write('Não há projetos de pesquisa \n')
+        htmlfile.write('Não há projetos de pesquisa <br>\n')
     else:
         htmlfile.write('<ol class="custom-counter">')
         for idd in range(len(dfppe_uniq_pesq)):
@@ -450,7 +507,7 @@ def getrelatorio():
     htmlfile.write('<a name="pubbookchap"></a>' + '\n \n')
     htmlfile.write('<h1>Publicação de livros e capítulos</h1> \n')
     if html_print_books_uniq == 'NO':
-        htmlfile.write('Não há livros publicados \n')
+        htmlfile.write('Não há livros publicados <br>\n')
     else:
         # Grafico de livros publicados por ano
         htmlfile.write('<h2>Produção de livros por ano</h2> \n')
@@ -491,7 +548,7 @@ def getrelatorio():
 
     # Resumo da producao de capitulos do GRUPO
     if html_print_chapter_uniq == 'NO':
-        htmlfile.write('Não há capítulos publicados \n')
+        htmlfile.write('Não há capítulos publicados <br>\n')
     else:
         gg = dfchapters
         gg['YEAR'] = gg['YEAR'].apply(iint)
@@ -516,7 +573,7 @@ def getrelatorio():
     htmlfile.write('<a name="pubperiod"></a>' + '\n \n')
     htmlfile.write('<h1>Publicação em periódicos</h1> \n')
     if html_print_paper_uniq == 'NO':
-        htmlfile.write('Não há artigos em periódicos publicados \n')
+        htmlfile.write('Não há artigos em periódicos publicados <br>\n')
     else:
         # Grafico de producao de periodicos por ano
         htmlfile.write('<h2>Produção de periódicos por ano</h2> \n')
@@ -540,7 +597,7 @@ def getrelatorio():
     # Grafico de interacao no grupos APENAS em artigos
     if html_print_paper_uniq == 'NO':
         htmlfile.write(
-            'Não foi possivel gerar interação entre pesquisadores \n')
+            'Não foi possivel gerar interação entre pesquisadores <br>\n')
     else:
         htmlfile.write('<h2>Interação entre pesquisadores</h2> \n')
         htmlfile.write('<figure> \n')
@@ -595,7 +652,7 @@ def getrelatorio():
                        lattesupda + ') <br> <br>')
         if html_print_ppe_all == 'NO':
             htmlfile.write(
-                'Não há projetos de pesquisa \n')
+                'Não há projetos de pesquisa <br>\n')
         else:
             # projetos de pesquisa como coord
             pp_idd = dfppe_all[(dfppe_all['NATUREZA'] ==
@@ -629,7 +686,7 @@ def getrelatorio():
         # ------------------------------------------------------------
         # orientacoes
         if html_print_advi == 'NO':
-            htmlfile.write('Não há orientacoes \n')
+            htmlfile.write('Não há orientacoes <br>\n')
         else:
             t = dfadvise[dfadvise['ID'] == dffullname.iloc[idd, 0]]
             t = t.groupby(['NATURE'])['STUDENT'].size().reset_index()
@@ -640,7 +697,7 @@ def getrelatorio():
         # ------------------------------------------------------------
         # livros
         if html_print_books_all == 'NO':
-            htmlfile.write('Não há livros \n')
+            htmlfile.write('Não há livros <br>\n')
         else:
             t = dfbooks[dfbooks['ID'] == dffullname.iloc[idd, 0]]
             t = t.groupby(['FULL_NAME', 'YEAR'])[
@@ -685,7 +742,7 @@ def getrelatorio():
     # ------------------------------------------------------------
     # Tabela de orientacoes
     if html_print_advi == 'NO':
-        htmlfile.write('Não há orientacoes \n')
+        htmlfile.write('Não há orientacoes <br>\n')
     else:
         advgg = dfadvise
         advgg['NATURE'] = advgg['NATURE'].str.replace('-', ' ')
@@ -704,7 +761,7 @@ def getrelatorio():
     # ------------------------------------------------------------
     # Tabela de producao em periodicos
     if html_print_paper_all == 'NO':
-        htmlfile.write('Não há publicacao em periódico \n')
+        htmlfile.write('Não há publicacao em periódico <br>\n')
     else:
         gg = dfpaper
         gg = gg.groupby(['FULL_NAME', 'QUALIS'])[
@@ -733,6 +790,94 @@ def getrelatorio():
                 htmlfile.write('\n <li>' + pernum99.iloc[tt, 0] + '\n </li>')
             htmlfile.write('<hr> \n')
 
+    # ------------------------------------------------------------
+    # Tabela de indicadores qualis
+    # ------------------------------------------------------------
+    htmlfile.write('<a name="indcapes"></a>' + '\n \n')
+    htmlfile.write('<h1 class="title">Indicadores CAPES</h1> \n')
+    # ------------------------------------------------------------
+    ls_ppgs = fun_ppgs()
+    name_ppg = fun_nomeppg()
+    htmlfile.write(
+        'Para saber o método de cálculo dos índices consulte <a href="https://rafatieppo.github.io/lucylattes/">https://rafatieppo.github.io/lucylattes/</a>' + '.<br>' + '\n \n')
+    htmlfile.write(
+        'Os seguintes PPGs foram econtrados nos curriculos dos pesquisadores: ' + str(ls_ppgs) + '.<br>' + '\n \n')
+    htmlfile.write('O PPG avaliado foi: <b>' +
+                   str(name_ppg) + '</b><br>\n')
+    # ------------------------------------------------------------
+    # Indicador qualis indori
+    if html_print_indori == 'NO':
+        htmlfile.write(
+            'Não há indicador capes de índice de orientação do grupo <br>\n')
+    else:
+        gg = dfind_capes_indori
+        ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+        htmlfile.write(
+            '<h2> Índice de orientação (IndOri)' + '</h2> \n <br> \n')
+        htmlfile.write('<p> Avalia as defesas com orientação de docentes permanentes(DP) do programa. O indicador é calculado para cada ano e depois calculada a média para o quadriênio </p>\n')
+        htmlfile.write(ggt + '\n <br> \n <br> \n')
+        htmlfile.write('<p><i> Para que a orientação possa ser contabiliza, no cadastro de orientações do currículo Lattes do pesquisador, o nome do PPG da orientação deve ser idêntico ao PPG avaliado. Maísculas e minúsculas NÃO diferem. </i></p><br><br>\n')
+    # ------------------------------------------------------------
+    # Indicador qualis indprodart
+    if html_print_indori == 'NO':
+        htmlfile.write(
+            'Não há indicador capes de índice de produção de artigo do grupo<br>\n')
+    else:
+        gg = dfind_capes_indprodart
+        ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+        # print(ggt)
+        htmlfile.write('<h2> Índice de Produtividade referente a artigos ' +
+                       'científicos (IndProdArt)' + '</h2> \n <br> \n')
+        htmlfile.write('<p> Avalia toda a produção intelectual do programa no formato de artigo científico, sendo que a participação de um docente permanente como autor é condição obrigatória para validar a produção. </p>\n')
+        htmlfile.write(ggt + '\n <br> \n <br> \n')
+
+    # ------------------------------------------------------------
+    # Indicador qualis indautdis
+    if html_print_indautdis == 'NO':
+        htmlfile.write(
+            'Não há indicador capes de índice de produção de artigo do grupo<br>\n')
+    else:
+        gg = dfind_capes_indautdis
+        ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+        # print(ggt)
+        htmlfile.write(
+            '<h2> Índice de autoria discente' + '</h2> \n <br> \n')
+        htmlfile.write('<p>Índice de discentes autores (IndAut):Avalia a proporção de discentes autores (E) em relação ao total de discentes do programa. Foram considerados para o cálculo de E, os discentes e egressos até cinco anos quando autores de artigos. </p>\n')
+        htmlfile.write('<p>Índice de produtos com autoria discente (IndDis): Avalia a quantidade de produtos intelectuais (artigos) de autoria discente ou de egressos até 5 anos, em relação ao total de discentes do programa (G).  </p>\n')
+        htmlfile.write(
+            '<i>Considera apenas produção em periódicos </i><br><br>\n')
+        htmlfile.write(ggt + '\n <br> \n <br> \n')
+        htmlfile.write(
+            '<i>INDAUT: Índice de discentes autores, INDDIS: Índice de produtos com autoria discente</i>')
+
+    # ------------------------------------------------------------
+    # Indicador qualis distindproddp
+    if html_print_distindproddp == 'NO':
+        htmlfile.write(
+            'Não há indicador capes de Ind. de distrib. dos docentes permanentes por faixa de IndProd <br>\n')
+    else:
+        gg = dfind_capes_distindproddp
+        ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+        # print(ggt)
+        htmlfile.write(
+            '<h2> Indicador de distribuição dos docentes permanentes por faixa de IndProd (DistIndProdDP)' + '</h2> \n <br> \n')
+        htmlfile.write('<p>Nesse caso, calcula-se o IndProd para cada docente permanente e posteriormente os docentes são distribuídos conforme as faixas apresentadas para o IndProd. Feito isso, calcula-se o percentual de docentes permanentes (DP) classificados em cada faixa (MB, B, R e F/D) em relação ao corpo docente permanente total. O somatório dos percentuais das faixas MB, B e R permite avaliar o equilíbrio na distribuição da produção docente. </p>\n')
+        htmlfile.write(
+            '<i>Classificação dos pesquisadores por quadriênio</i><br><br>')
+        htmlfile.write(ggt + '\n <br> \n <br> \n')
+        # imprimir tabela com resultuda do grupo
+        dfind_capes_distindproddp = pd.read_csv('./csv_producao/capesindex_distindproddp.csv',
+                                                header=0, dtype='str')
+        gg = dfind_capes_distindproddp
+        ggt = (tabulate(gg, headers="keys", tablefmt='html'))
+        # print(ggt)
+        htmlfile.write(
+            '<i>Indicador DistIndProdDP</i><br><br>')
+        htmlfile.write(ggt + '\n <br> \n <br> \n')
+
+        htmlfile.write('<hr> \n')
+
+    # ------------------------------------------------------------
     # Gostou?
     htmlfile.write('<b>GOSTOU ?</b>\n')
     htmlfile.write(
@@ -742,7 +887,7 @@ def getrelatorio():
         '<li> Deixe um comentário <a href="https://rafatieppo.github.io/post/2019_03_13_lucylattes/"> Blog</a></li>\n')
     htmlfile.write(
         '<li> Caso queira, vc pode pode ajudar com quanto quiser para manter o projeto:  </li>\n')
-    htmlfile.write('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ"><img border="0" alt="" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif"></a>\n<br><br>\n')
+    htmlfile.write('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img border="0" alt="" src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" width="150"> </a>\n <br> <br>\n')
     htmlfile.write('<b>AVISOS</b>:\n ')
     htmlfile.write(
         '<li>Arquivo para classificacao qualis utilizado: <code>' + qualqualis + '</code >')
@@ -760,11 +905,11 @@ def getrelatorio():
     htmlfile.write('<br> <br> <br>')
     htmlfile.write('<footer> \n')
     htmlfile.write(
-        'Relatório gerado por lucyLattes v1.0. Os resultados estão sujeitos a falhas devido a inconsistências no preenchimento dos CVs Lattes.')
+        'Relatório gerado por lucyLattes v1.1 Os resultados estão sujeitos a falhas devido a inconsistências no preenchimento dos CVs Lattes.')
     htmlfile.write('\n <br>')
     htmlfile.write('Para maiores informações acesse: ')
     htmlfile.write(
-        '<a href="https://rafatieppo.github.io/lucyLattes/">https://rafatieppo.github.io/lucyLattes/</a> \n <br> \n')
+        '<a href="https://rafatieppo.github.io/lucylattes/">https://rafatieppo.github.io/lucylattes/</a> \n <br> \n')
     htmlfile.write('</footer> \n')
     htmlfile.close()
     # ------------------------------------------------------------

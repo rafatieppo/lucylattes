@@ -1,11 +1,13 @@
 # lucyLattes
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
 ## Última atualização
 
-*Sun 2020-02-16 10:20:46 -04*, verifique os logs <a href="#logss">aqui</a>.
-
+- Versão 1.1
+- *Thu 2020-03-26 07:17:31 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -290,12 +292,12 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
 
-- TODO Gerar índices utilizados pela CAPES para avaliação de PPG [80%]
+- TODO Gerar índices utilizados pela CAPES para avaliação de PPG [100%]
   - [X] Índice de Orientação (IndOri) 
   - [X] Índice de discentes autores (IndAut)
   - [X] Índice de produtos com autoria discente (IndDis)
   - [X] Índice de Produtividade referente a artigos científicos do Programa (IndProdArt) 
-  - [ ] Validação
+  - [X] Validação
   
 - DONE Salva em pasta específica arquivos `.csv` individuais para cada pesquisador[100%] 
   - [X] os projetos de pesquisa e extensão;
@@ -312,27 +314,28 @@ extensão) organizando os dados em um `DataFrame`;
   - [ ] Capturar as atividades dos projetos de extensão;
 
 - DONE Relatório em `.html` [100%]
-  - [X] Relação de pesquisadores, cidade, estado, link lattes, lattes atualização;
-  - [X] Lista de projetos de pesquisa e extensão;
-  - [X] Síntese de artigos publicados em periódicos;
-  - [X] Gráficos dos periódicos por período e por qualis;
-  - [X] Extrato de produção por pesquisador;
+  - [X] relação de pesquisadores, cidade, estado, link lattes, lattes atualização;
+  - [X] lista de projetos de pesquisa e extensão;
+  - [X] síntese de artigos publicados em periódicos;
+  - [X] gráficos dos periódicos por período e por qualis;
+  - [X] extrato de produção por pesquisador;
   - [X] relação de livros
   - [X] relação de orientações
+  - [X] indicadores CAPES
 
 ## Logs 
 <a name="logss"></a> 
 
-### Tue 2020-03-24 22:12:01 -04
+### Thu 2020-03-26 07:17:31 -04
 
 - Duas melhorias siginificativas foram realizadas. Uma é a melhoria
 do relatório. A outra a implementação do indicadores CAPES. Segue método
 de cálculo:
 
-Por padrão os indicadores CAPES estão desativados, caso queira ativar
+Por padrão os indicadores CAPES estão habilitados, caso queira desabilitar
 deve-se editar o arquivo `config.txt`.
 
-1. Índice de Orientação (IndOri)
+**1** Índice de Orientação (IndOri)
 
 $$IndOri = \frac{(A + 2B)}{DP}$$
 
@@ -342,7 +345,7 @@ titulação, sendo 24 meses para mestrados (A) e 48 meses para doutorado
 (B). O indicador é calculado para cada ano e depois calculada a média
 para o quadriênio.
 
-2. Índice de discentes autores (IndAut)
+**3** Índice de discentes autores (IndAut)
 
 $$IndAut = \frav{E}{F}$$
 
@@ -356,7 +359,7 @@ indicador tem, como denominador (F), todo o corpo discente do ano em
 avaliação mais os egressos dos últimos 5 anos que publicaram no referido
 ano.
 
-3. Índice de produtos com autoria discente (IndDis) 
+**4** Índice de produtos com autoria discente (IndDis) 
 
 $$IndDis = \frac{G}{F}$$
 
@@ -367,7 +370,7 @@ em relação ao total de discentes do programa (G). O denominador leva em
 consideração todo o corpo discente do ano em avaliação mais egressos dos
 últimos 5 anos que publicaram no referido ano (F).
 
-4. Índice de Produtividade referente a artigos científicos do Programa (IndProdArt) (OK)
+**5** Índice de Produtividade referente a artigos científicos do Programa (IndProdArt)
 
 $$IndProdArt = \frac{(1 \times A1 + 0,85 \times A2 + 0,7 \times B1 + 0,55 \times B2 + 0,4 \times B3 + 0,25 \times B4 + 0,1 \times B5)}{DP}$$
 
@@ -384,7 +387,7 @@ estratos (A1 até B5). Porém, os pontos obtidos pelo somatório dos
 estratos B4 e B5, não podem ultrapassar 20% do total de pontos do
 ano. Assim, valores percentuais superiores a 20\% são glosados.
 
-5. Indicador de distribuição dos docentes permanentes por faixa de IndProd (%DistIndProdDP) 
+**14** Indicador de distribuição dos docentes permanentes por faixa de IndProd (%DistIndProdDP) 
 
 $$DistIndProdDP = DPMB + DPB + DPR$$
 
@@ -397,8 +400,7 @@ docente permanente total. O somatório dos percentuais das faixas MB, B e
 R permite avaliar o equilíbrio na distribuição da produção docente.
 
 Referências: Ministério da Educação Coordenação de Aperfeiçoamento de
-Pessoal de Nível Superior Diretoria de Avaliação. Relatório de Avaliação
-área Interdisciplinar.
+Pessoal de Nível Superior Diretoria de Avaliação.
 
 ```
 if IndProd < 0.15:
