@@ -347,7 +347,7 @@ para o quadriênio.
 
 **3** Índice de discentes autores (IndAut)
 
-$$IndAut = \frav{E}{F}$$
+$$IndAut = \frac{E}{F}$$
 
 Avalia a proporção de discentes autores (E) em relação ao total de
 discentes do programa. Foram considerados para o cálculo de E, os
