@@ -402,7 +402,7 @@ R permite avaliar o equilíbrio na distribuição da produção docente.
 Referências: Ministério da Educação Coordenação de Aperfeiçoamento de
 Pessoal de Nível Superior Diretoria de Avaliação.
 
-```
+```python
 if IndProd < 0.15:
     classif = 'DEFICIENTE'
 elif IndProd >= 0.15 and IndProd <= 0.29:
