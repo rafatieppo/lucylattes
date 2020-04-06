@@ -2,16 +2,17 @@
 # packages
 # ------------------------------------------------------------
 # ------------------------------------------------------------
+from extrafuns import *
 import numpy as np
 import pandas as pd
 import os
 import glob
 import re
+import platform
+
 # ------------------------------------------------------------
 # Funcoes
 # ------------------------------------------------------------
-
-from extrafuns import *
 
 
 def gettidydf():
@@ -27,6 +28,8 @@ def gettidydf():
     yyf = yyf.strip(' ')
     yyf = float(yyf)
     config_file.close()
+    # verificando sistema
+    plat_sys = platform.system()
     # ------------------------------------------------------------
     # Projetos de pesquisa e extensão
     # ------------------------------------------------------------
@@ -37,9 +40,9 @@ def gettidydf():
     for i in range(len(lscsv_ppe)):
         a = pd.read_csv(lscsv_ppe[i], header=0)
         dfppe = dfppe.append(a, ignore_index=False)
-        iid = str(lscsv_ppe[i].split('_')[1].split('/')[1])
+        iid = fun_idd_unixwind(plat_sys, lscsv_ppe, i)
+        #iid = str(lscsv_ppe[i].split('_')[1].split('/')[1])
         idrep = np.repeat(iid, len(a['PROJ']))
-        # print(iid, len(a['PROJ']))
         lsid.append(idrep)
     dfppe['ID'] = np.concatenate(lsid)
     lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
@@ -94,9 +97,9 @@ def gettidydf():
     for i in range(len(lscsv_paper)):
         a = pd.read_csv(lscsv_paper[i], header=0)
         dfpaper = dfpaper.append(a, ignore_index=False)
-        iid = str(lscsv_paper[i].split('_')[1].split('/')[1])
+        iid = fun_idd_unixwind(plat_sys, lscsv_paper, i)
+        # iid = str(lscsv_paper[i].split('_')[1].split('/')[1])
         idrep = np.repeat(iid, len(a['TITLE']))
-        # print(iid, len(a['TITLE']))
         lsid.append(idrep)
     dfpaper['ID'] = np.concatenate(lsid)
     lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
@@ -156,9 +159,9 @@ def gettidydf():
         for i in range(len(lscsv_book)):
             a = pd.read_csv(lscsv_book[i], header=0)
             dfbook = dfbook.append(a, ignore_index=False)
-            iid = str(lscsv_book[i].split('_')[1].split('/')[1])
+            iid = fun_idd_unixwind(plat_sys, lscsv_book, i)
+            # iid = str(lscsv_book[i].split('_')[1].split('/')[1])
             idrep = np.repeat(iid, len(a['TITLE']))
-            # print(iid, len(a['TITLE']))
             lsid.append(idrep)
         dfbook['ID'] = np.concatenate(lsid)
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
@@ -197,9 +200,9 @@ def gettidydf():
         for i in range(len(lscsv_chapter)):
             a = pd.read_csv(lscsv_chapter[i], header=0)
             dfchapter = dfchapter.append(a, ignore_index=False)
-            iid = str(lscsv_chapter[i].split('_')[1].split('/')[1])
+            iid = fun_idd_unixwind(plat_sys, lscsv_chapter, i)
+            # iid = str(lscsv_chapter[i].split('_')[1].split('/')[1])
             idrep = np.repeat(iid, len(a['TITLE']))
-            # print(iid, len(a['TITLE']))
             lsid.append(idrep)
         dfchapter['ID'] = np.concatenate(lsid)
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
@@ -238,9 +241,9 @@ def gettidydf():
         for i in range(len(lscsv_advi)):
             a = pd.read_csv(lscsv_advi[i], header=0)
             dfadvi = dfadvi.append(a, ignore_index=False)
-            iid = str(lscsv_advi[i].split('_')[1].split('/')[1])
+            iid = fun_idd_unixwind(plat_sys, lscsv_advi, i)
+            # iid = str(lscsv_advi[i].split('_')[1].split('/')[1])
             idrep = np.repeat(iid, len(a['YEAR']))
-            # print(iid, len(a['TITLE']))
             lsid.append(idrep)
         dfadvi['ID'] = np.concatenate(lsid)
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')

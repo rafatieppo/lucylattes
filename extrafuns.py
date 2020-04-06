@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import glob
 import re
-
+import platform
 # ------------------------------------------------------------
 # Funcoes gerais
 # ------------------------------------------------------------
@@ -33,6 +33,16 @@ def fun_result(x):
 def fun_uppercase(x):
     x = x.upper()
     return x
+
+
+def fun_idd_unixwind(psys, lscsv, count):
+    if psys == 'Windows':
+        sp = str(lscsv[count].split('_')[1].split('//')[1])
+    else:
+        sp = str(lscsv[count].split('_')[1].split('/')[1])
+    return sp
+
+
 # ------------------------------------------------------------
 # Funcoes index capes
 # ------------------------------------------------------------

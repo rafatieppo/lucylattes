@@ -7,7 +7,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Thu 2020-03-26 07:17:31 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Mon 2020-04-06 04:36:45 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -203,13 +203,13 @@ blog: [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucy
 ## Instalação
 
 - Requerimentos:
-    - Sistema operacional Linux;
+    - Sistema operacional Linux ou com base Unix (preferencialmente), ou ainda Windows;
     - Python 3 ou superior;
     - Navegador (Firefox ou Chorme) para visualizar relatório.
 
 - Se não possuir *Python3* ou superior instalado executar no terminal: 
 
-Se vc usar *UBUNTU 18*
+Se vc usar *DEBIAN, UBUNTU ou derivados*
 
 ```
 sudo apt-get install python3
@@ -217,9 +217,17 @@ sudo apt-get install python3-pip
 sudo apt-get install python3-tk
 ```
 
+Se vc usar *Windows*
 
-- Caso não tenha as bibliotecas *Python* instaladas executar no
-terminal:
+Acesse
+[https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/)
+e instale a versão do `Python 3`, basta seguir as instruções. **Não esqueça de instalar o PIP**.
+
+Para todos os sistemas operacionais (Linux, MACOS, Windows, Solaris,
+etc) são necesssários as mesmas bibliotecas. Para instalar as
+bibliotecas em amientes Linux acesse o **Terminal**. Caso seja usuário
+`Windows`, acess o `prompt do DOS` ou o `PowerShell`. Posteriormente
+basta digitar:
 
 ```
 pip3 install pandas
@@ -263,7 +271,17 @@ necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 6. Acesse o diretório descompactado pelo terminal e digite:
 
+- Se for em ambiente `Linux`:
+
 `python3 lucyLattes.py`
+
+- Se for em ambiente `Windows`
+
+`py lucyLattes.py`
+
+ou 
+
+`py -3 lucyLattes.py`
 
 7. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
 `relatório`, basta acessar com um navegador (Chrome ou Firefox).
@@ -325,6 +343,11 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Mon 2020-04-06 04:36:45 -04
+
+- Devido à solicitações de usuários `Windows`, foi implementado funções
+para possibilitar o `lucyLattes` rodar em sistema operacional `Windows`. 
 
 ### Thu 2020-03-26 07:17:31 -04
 
