@@ -37,7 +37,7 @@ def fun_uppercase(x):
 
 def fun_idd_unixwind(psys, lscsv, count):
     if psys == 'Windows':
-        sp = str(lscsv[count].split('_')[1].split('//')[1])
+        sp = str(lscsv[count].split('_')[1].split('\\')[1])
     else:
         sp = str(lscsv[count].split('_')[1].split('/')[1])
     return sp
