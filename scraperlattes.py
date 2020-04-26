@@ -886,6 +886,7 @@ def getnomecompleto(zipname):
         ls_citado = []
         ls_abstrac = []
         ls_update = []
+        ls_address_enterp = []
         for i in range(len(cv)):
             # definindo atualizacao
             cvdata = str(cv[i])
@@ -935,6 +936,7 @@ def getnomecompleto(zipname):
                     cc = fun_result(result)
                     ls_citado.append(cc)
             rescv = cv[i].find_all('resumo-cv')
+            address = cv[i].find_all('endereco')
             # VERIFICANDO se ha resumo
             if len(rescv) == 0:
                 print('Resumo cv nao encontrados para', zipname)
@@ -951,6 +953,29 @@ def getnomecompleto(zipname):
                     else:
                         cc = result.group(1)
                     ls_abstrac.append(cc)
+            # VERIFICANDO se ha endereco
+            if len(address) == 0:
+                print('Endereco nao encontrado para', zipname)
+                cc = 'VAZIO'
+                ls_address_enterp.append(cc)
+            else:
+                for j in range(len(address)):
+                    # verificando se ha endereco profissional
+                    address_prof = address[j].find_all('endereco-profissional')
+                    if len(address_prof) == 0:
+                        print('Endereco profissional nao encontrado para', zipname)
+                        cc == 'VAZIO'
+                        ls_address_enterp.append(cc)
+                    else:
+                        # definindo endereco
+                        addressdata = str(address_prof[0])
+                        result = re.search('nome-instituicao-empresa=\"(.*)\" nome-orgao=',
+                                           addressdata, re.DOTALL)
+                        if result is None:
+                            cc = 'Nao foi possivel extrair o endereco profissional'
+                        else:
+                            cc = result.group(1)
+                            ls_address_enterp.append(cc)
         # DataFrame nome completo e sobrenome
         df_fullname = pd.DataFrame({'ID': ls_name_id,
                                     'FULL_NAME': ls_name_full,
@@ -959,7 +984,8 @@ def getnomecompleto(zipname):
                                     'CITY': ls_city,
                                     'STATE': ls_state,
                                     'RESUME': ls_abstrac,
-                                    'UPDATE': ls_update})
+                                    'UPDATE': ls_update,
+                                    'ADDRESS_ENTERP': ls_address_enterp})
         latid = zipname.split('.')[0]
         pathfilename = str('./csv_producao/' + latid + '_fullname'  '.csv')
         df_fullname.to_csv(pathfilename, index=False)

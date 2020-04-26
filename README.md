@@ -7,7 +7,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Mon 2020-04-06 04:36:45 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Sun 2020-04-26 10:46:26 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -344,13 +344,17 @@ extensão) organizando os dados em um `DataFrame`;
 ## Logs 
 <a name="logss"></a> 
 
-### Mon 2020-04-06 04:36:45 -04
+### Sun 2020-04-26 10:46:26 -04
+- Inserido no relatório o local de trabalho do pesquisador (conforme
+  informado no Lattes). 
 
+### Mon 2020-04-06 04:36:45 -04
 - Devido à solicitações de usuários `Windows`, foi implementado funções
-para possibilitar o `lucyLattes` rodar em sistema operacional `Windows`. 
+para possibilitar o `lucyLattes` rodar em sistema operacional
+`Windows`. Salienta-se a necessidade de mais testes, acredito que faverá
+problemas com unicode no arquivo `config.txt`.
 
 ### Thu 2020-03-26 07:17:31 -04
-
 - Duas melhorias siginificativas foram realizadas. Uma é a melhoria
 do relatório. A outra a implementação do indicadores CAPES. Segue método
 de cálculo:
@@ -439,16 +443,13 @@ else:
 ```
 
 ### Tue 2020-03-24 02:36:07 -04
-
 - Foi implementado o cálculo de indicadores para os quadriênios (a
 partir de 2013). Os indicadores inseridos foram *Índice de discentes
 autores* e *Índice de produtos com autoria discente*. Ambos são
 disponibilizados no relatório. Caso não seja desejado a geração dos
 indicadores, no arquivo `config.txt` é possível desabilitar esta função.
 
-
 ### Thu 2020-03-12 05:01:05 -04
-
 - Foi implementado o cálculo de indicadores para os quadriênios (a
 partir de 2013). Os indicadores inseridos foram *Índice de orientação do
 grupo* e *Índice de produção de artigo*. Ambos são disponibilizados no

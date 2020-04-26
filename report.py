@@ -424,8 +424,14 @@ def getrelatorio():
             htmlfile.write('no city')
         else:
             htmlfile.write(dffullname.iloc[idd, 4])
-        htmlfile.write(' - ')
-        htmlfile.write(str(dffullname.iloc[idd, 5]))
+            htmlfile.write(' - ')
+            htmlfile.write(str(dffullname.iloc[idd, 5]))
+        htmlfile.write('<br>')
+        htmlfile.write('<b>Instituição: </b>')
+        if pd.isna(dffullname.iloc[idd, 8]):
+            htmlfile.write('não informado')
+        else:
+            htmlfile.write(dffullname.iloc[idd, 8])
         htmlfile.write('<br>')
         htmlfile.write('<b>Resumo: </b>')
         htmlfile.write(str(dffullname.iloc[idd, 6]))

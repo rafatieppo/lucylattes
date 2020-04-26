@@ -6,4 +6,4 @@ arquivo qualis : qualis_agrarias_periodicos_2016.csv
 ano inicial para tabulacao de dados : 2010
 ano final para tabulacao de dados : 2019
 calcular indicadores capes 1 para sim 0 para nao : 1
-nome programa pós graduação : Engenharia de Sistemas Agrícolas
+nome programa pós graduação : ENGENHARIA DE SISTEMAS AGRÍCOLAS
