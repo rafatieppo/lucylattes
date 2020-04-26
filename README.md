@@ -346,7 +346,10 @@ extensão) organizando os dados em um `DataFrame`;
 
 ### Sun 2020-04-26 10:46:26 -04
 - Inserido no relatório o local de trabalho do pesquisador (conforme
-  informado no Lattes). 
+  informado no Lattes). Foi adicionada a correcao de `Tue 2019-07-23
+  07:38:14 -04` a condicao de *VAZIO* para o ano inicial dos
+  projetos se não constar o ano inicial do projeto o mesmo é excluído
+  (uma msg é impressa na tela).
 
 ### Mon 2020-04-06 04:36:45 -04
 - Devido à solicitações de usuários `Windows`, foi implementado funções

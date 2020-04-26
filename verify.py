@@ -33,12 +33,13 @@ def getverificacao():
         lsind = []
         for i in range(len(dfppe_all['PROJ'])):
             si = dfppe_all.iloc[i, 1]
-            if pd.isna(si):
+            if pd.isna(si) or si == 'VAZIO':
                 print('------------------------------------------------------------\n' +
                       'ATENCAO \n' +
                       'Impossível extrair ANO para o projeto \n' +
                       str(dfppe_all.iloc[i, 0]) + ' \n do pesquisador: ' +
-                      str(dfppe_all.iloc[i, 7]) + '... PROJETO EXCLUIDO \n'
+                      str(dfppe_all.iloc[i, 7]) + '... PROJETO EXCLUIDO \n' +
+                      str('ano inicial do projeto nao declarado \n') +
                       '------------------------------------------------------------')
                 lsind.append(i)
             else:
