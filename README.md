@@ -1,13 +1,12 @@
-# lucyLattes
-
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+# lucyLattes
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
 ## Última atualização
 
 - Versão 1.1
-- *Sun 2020-04-26 10:46:26 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Mon 2020-04-27 19:48:37 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -344,9 +343,14 @@ extensão) organizando os dados em um `DataFrame`;
 ## Logs 
 <a name="logss"></a> 
 
+### Mon 2020-04-27 19:48:37 -04
+- No arquivo `verify.py` foi adicionada a verificacao para as
+orientações (nome do curso) seguindo a mesma lógica dos periódicos
+(YEAR). 
+
 ### Sun 2020-04-26 10:46:26 -04
 - Inserido no relatório o local de trabalho do pesquisador (conforme
-  informado no Lattes). Foi adicionada a correcao de `Tue 2019-07-23
+  informado no Lattes). Foi adicionada na correcao de `Tue 2019-07-23
   07:38:14 -04` a condicao de *VAZIO* para o ano inicial dos
   projetos se não constar o ano inicial do projeto o mesmo é excluído
   (uma msg é impressa na tela).

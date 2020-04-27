@@ -225,7 +225,7 @@ def getverificacao():
         pathfilename = str('./csv_producao/capitulos_uniq.csv')
         dfchapters_uniq.to_csv(pathfilename, index=False)
     # ------------------------------------------------------------
-    # dfadvise
+    # dfadvise FOR YEAR
     try:
         dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
                                header=0, dtype='str')
@@ -242,6 +242,35 @@ def getverificacao():
                 int(si)
             except ValueError:
                 lsind.append(i)
+        dfadvise.drop(lsind, axis=0, inplace=True)
+        dfadvise.reset_index()
+        pathfilename = str('./csv_producao/orientacoes_all.csv')
+        dfadvise.to_csv(pathfilename, index=False)
+    # ------------------------------------------------------------
+    # dfadvise COURSE NAME
+    try:
+        dfadvise = pd.read_csv('./csv_producao/orientacoes_all.csv',
+                               header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Nao ha arquivo com orientacoes \n' +
+              '------------------------------------------------------------')
+    else:
+        lsind = []
+        for i in range(len(dfadvise['COURSE'])):
+            si = dfadvise.iloc[i, 3]
+            if pd.isna(si) or si == 'VAZIO':
+                print('------------------------------------------------------------\n' +
+                      'ATENCAO \n' +
+                      'Impossível NOME CURSO para orientacao de \n' +
+                      str(dfadvise.iloc[i, 4]) + ' \n do pesquisador: ' +
+                      str(dfadvise.iloc[i, 8]) + '... PROJETO EXCLUIDO \n' +
+                      str('ano inicial do projeto nao declarado \n') +
+                      '------------------------------------------------------------')
+                lsind.append(i)
+            else:
+                si = str(si)
         dfadvise.drop(lsind, axis=0, inplace=True)
         dfadvise.reset_index()
         pathfilename = str('./csv_producao/orientacoes_all.csv')
