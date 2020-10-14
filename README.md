@@ -6,7 +6,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Mon 2020-04-27 19:48:37 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Wed 2020-10-14 15:20:22 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -342,6 +342,9 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Wed 2020-10-14 15:20:22 -04
+- Disponibilização do arquivo qualis geral 2019 para avaliação dos artigos.
 
 ### Mon 2020-04-27 19:48:37 -04
 - No arquivo `verify.py` foi adicionada a verificacao para as
