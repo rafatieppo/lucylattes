@@ -991,3 +991,132 @@ def getnomecompleto(zipname):
         df_fullname.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
               len(df_fullname['ID']), 'nomes completos')
+
+
+# ------------------------------------------------------------
+# Disciplinas ministradas
+# ------------------------------------------------------------
+
+
+def getdiscip(zipname):
+    # lendo do zipfile
+    # zipname = '3275865819287843.zip'
+    # zipname = '8190371175828378.zip'
+    # zipname = '5859946324646438.zip'
+    zipfilepath = './xml_zip' + '/' + str(zipname)
+    archive = zipfile.ZipFile(zipfilepath, 'r')
+    lattesxmldata = archive.open('curriculo.xml')
+    soup = BeautifulSoup(lattesxmldata, 'lxml',
+                         from_encoding='ISO-8859-1')
+    # ttfile = open('tt.xml', 'w')
+    # ttfile.write(soup.prettify())
+    # ttfile.close()
+    # extrair todas as atividades profissionais
+    ap = soup.find_all('atuacao-profissional')
+    # VERIFICANDO se ha atuacao profissional
+    if len(ap) == 0:
+        print('Atuacao profissional nao encontrada para', zipname)
+    else:
+        # listas para armazenamento de dados PROJETOS PESQ e EXT
+        ls_inst = []
+        ls_yini = []
+        ls_yfin = []
+        ls_mini = []
+        ls_mfin = []
+        ls_curs = []
+        ls_tipo = []
+        ls_disc = []
+        for i in range(len(ap)):
+            instit = re.search('nome-instituicao=\"(.*)\" sequencia-atividade',
+                               str(ap[i]))
+            instit = fun_result(instit)
+            app = ap[i].find_all('atividades-de-ensino')
+            # a partir das atividades de participacao em projeto, filtra-se todos os
+            # projeto de pesquisa que contem os projetos de ext e pesq que ocorreu
+            # na instituicao
+            # VERIFICANDO se ha participacao em projeto
+            if len(app) == 0:
+                print(
+                    'Atividades de ensino não encontrada para ', zipname)
+            else:
+                for j in range(len(app)):
+                    ens = app[j].find_all('ensino')
+                    if len(ens) == 0:
+                        print(
+                            'ensino não encontrado para ', zipname)
+                    else:
+                        for k in range(len(ens)):
+                            # registrando instituicao
+                            ls_inst.append(instit)
+                            # definindo o ano ini
+                            aten = str(ens[k])
+                            result = re.search('ano-inicio=\"(.*)\" codigo-curso',
+                                               aten)
+                            cc = fun_result(result)
+                            ls_yini.append(cc)
+                            # definindo mes inicial
+                            result = re.search('mes-inicio="(.*)" nome-curso=',
+                                               aten)
+                            cc = fun_result(result)
+                            ls_mini.append(cc)
+                            # definindo o ano final
+                            result = re.search('ano-fim="(.*)" ano-inicio',
+                                               aten)
+                            cc = fun_result(result)
+                            if result is None:
+                                cc = 'VAZIO'
+                            else:
+                                cc = result.group(1)
+                            if cc == '':
+                                cc = 'ATUAL'
+                            # definindo o mes final
+                            result = re.search('mes-fim="(.*)" mes-inicio',
+                                               aten)
+                            cc = fun_result(result)
+                            ls_yfin.append(cc)
+                            if result is None:
+                                cc = 'VAZIO'
+                            else:
+                                cc = result.group(1)
+                            if cc == '':
+                                cc = 'ATUAL'
+                            ls_mfin.append(cc)
+                            # definindo o curso
+                            result = re.search('nome-curso=\"(.*)\" nome-curso-i',
+                                               aten)
+                            cc = fun_result(result)
+                            ls_curs.append(cc)
+                            # definindo o tipo
+                            result = re.search('tipo-ensino=\"(.*)\"\>\<',
+                                               aten)
+                            cc = fun_result(result)
+                            ls_tipo.append(cc)
+                            # definindo disciplinas
+                            ensdisc = ens[k].find_all('disciplina')
+                            if len(ensdisc) == 0:
+                                print('nao ha discip nesta ativ ensino ', zipname)
+                            else:
+                                ls_dis = []
+                                for kk in range(len(ensdisc)):
+                                    dis = str(ensdisc[kk])
+                                    result = re.search(
+                                        '=\"\d\"\>(.*)\<\/disciplina', dis)
+                                    cc = fun_result(result)
+                                    ls_dis.append(cc)
+                            ls_disc.append(ls_dis)
+                            # ------------------------------------------------------------
+        # DataFrame para os dados
+        df_ens = pd.DataFrame({'INSTITUTION': ls_inst,
+                               'YEAR_INI':  ls_yini,
+                               'YEAR_FIN':  ls_yfin,
+                               'MONTH_INI': ls_mfin,
+                               'MONTH_FIN': ls_mfin,
+                               'COURSE':    ls_curs,
+                               'TYPE':      ls_tipo,
+                               'DISC': ls_disc
+                               })
+        latid = zipname.split('.')[0]
+        pathfilename = str('./csv_producao/' + latid + '_ensdisc.csv')
+        df_ens.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(df_ens['YEAR_FIN']), ' atividades de ensino')

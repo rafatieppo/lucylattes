@@ -23,6 +23,7 @@ from scraperlattes import getperiod
 from scraperlattes import getorient
 from scraperlattes import getprodtec
 from scraperlattes import getprojpesqext
+from scraperlattes import getdiscip
 from readidlist import readIdList
 from index_capes import capes_indprodart
 from index_capes import capes_indori
@@ -60,6 +61,7 @@ for nid in range(len(df_idlist)):
     getlivro(zipfilename)
     getcapit(zipfilename)
     getnomecompleto(zipfilename)
+    getdiscip(zipfilename)
 
 gettidydf()
 getverificacao()

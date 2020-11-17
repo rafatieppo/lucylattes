@@ -1,14 +1,17 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+import platform
+import re
+import glob
+import os
+import pandas as pd
+import numpy as np
+from extrafuns import *
+
 # ------------------------------------------------------------
 # packages
 # ------------------------------------------------------------
 # ------------------------------------------------------------
-from extrafuns import *
-import numpy as np
-import pandas as pd
-import os
-import glob
-import re
-import platform
 
 # ------------------------------------------------------------
 # Funcoes
