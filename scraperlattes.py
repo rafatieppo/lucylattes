@@ -1115,6 +1115,7 @@ def getdiscip(zipname):
                                'TYPE':      ls_tipo,
                                'DISC': ls_disc
                                })
+        df_ens.sort_values(['YEAR_INI'], axis=0, inplace=True)
         latid = zipname.split('.')[0]
         pathfilename = str('./csv_producao/' + latid + '_ensdisc.csv')
         df_ens.to_csv(pathfilename, index=False)

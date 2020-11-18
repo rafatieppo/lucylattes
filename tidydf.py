@@ -265,3 +265,38 @@ def gettidydf():
         dfadvi.to_csv(pathfilename, index=False)
         print(pathfilename, ' gravado com',
               len(dfadvi['YEAR']), ' orientacoes')
+
+    # ------------------------------------------------------------
+    # ENSINO DISCIPLINAS
+    # ------------------------------------------------------------
+    # df com todos os periodicos
+    lscsv_ensdisc = glob.glob('./csv_producao/*ensdisc.csv')
+    if len(lscsv_ensdisc) < 1:
+        print('Disciplinas para ensino nao encontrada')
+    else:
+        dfensdis = pd.DataFrame()
+        lsid = []
+        for i in range(len(lscsv_ensdisc)):
+            a = pd.read_csv(lscsv_ensdisc[i], header=0)
+            dfensdis = dfensdis.append(a, ignore_index=False)
+            iid = fun_idd_unixwind(plat_sys, lscsv_ensdisc, i)
+            # iid = str(lscsv_ensdisc[i].split('_')[1].split('/')[1])
+            idrep = np.repeat(iid, len(a['YEAR_INI']))
+            lsid.append(idrep)
+        dfensdis['ID'] = np.concatenate(lsid)
+        lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
+        # len(lscsv_fullname)
+        # df com nome completo, sobrenome e iid
+        dffullname = pd.DataFrame()
+        for i in range(len(lscsv_fullname)):
+            a = pd.read_csv(lscsv_fullname[i], header=0, dtype='str')
+            dffullname = dffullname.append(a, ignore_index=False)
+            # passando IID para string, para poder comparar com dfensdis
+            # cancelei a ss() pq o read_csv do a esta com dtype='str
+            # dffullname['ID'] = dffullname['ID'].apply(ss)
+        dfensdis = pd.merge(dfensdis, dffullname, on='ID')
+        dffullname = dffullname.reset_index(drop=True)
+        pathfilename = str('./csv_producao/ensdisc_all.csv')
+        dfensdis.to_csv(pathfilename, index=False)
+        print(pathfilename, ' gravado com',
+              len(dfensdis['YEAR_INI']), ' periodos de disciplinas')
