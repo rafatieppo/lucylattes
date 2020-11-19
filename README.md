@@ -6,7 +6,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Wed 2020-10-14 15:20:22 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Wed 2020-11-18 20:18:21 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -342,6 +342,10 @@ extensão) organizando os dados em um `DataFrame`;
 
 ## Logs 
 <a name="logss"></a> 
+
+### Wed 2020-11-18 20:18:21 -04
+- Extração das disciplinas em atividades de ensino. Disciplinas listadas
+por pesquisador no relatório.
 
 ### Wed 2020-10-14 15:20:22 -04
 - Disponibilização do arquivo qualis geral 2019 para avaliação dos artigos.

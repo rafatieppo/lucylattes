@@ -317,6 +317,35 @@ def getrelatorio():
         advi.columns = ['NATUREZA', 'QTD']
 
     # ------------------------------------------------------------
+    # ------------------------------------------------------------
+    # ------------------------------------------------------------
+    # dfensidisc
+    try:
+        dfensidi = pd.read_csv('./csv_producao/ensdisc_all.csv',
+                               header=0, dtype='str')
+    except (OSError, IOError):
+        print('------------------------------------------------------------\n' +
+              'ATENCAO \n' +
+              'Não há arquivo com disciplinas e ensino \n' +
+              '------------------------------------------------------------')
+        html_print_ensidi = 'NO'
+    else:
+        html_print_ensidi = 'YES'
+        dfensidi['YEAR_INI'] = dfensidi['YEAR_INI'].replace('VAZIO', -99)
+        chapnum99 = dfensidi[dfensidi['YEAR_INI']
+                             == -99].reset_index(drop=True)
+        if len(chapnum99) >= 1:
+            print('------------------------------------------------------------')
+            print('ATENCAO: \n' + str(len(chapnum99)) +
+                  ' disciplinas sem ano inicial')
+            print('------------------------------------------------------------')
+        # filtrando ano
+        dfensidi['YEAR_INI'] = dfensidi['YEAR_INI'].apply(ff)
+        dfensidi = dfensidi[(dfensidi['YEAR_INI'] >= yyi)
+                            & (dfensidi['YEAR_INI'] <= yyf)]
+        dfensidi = dfensidi.sort_values(['YEAR_INI'])
+
+    # ------------------------------------------------------------
     # dfindicadores qualis indice de orientacao do grupo
     try:
         dfind_capes_indori = pd.read_csv('./csv_producao/capesindex_indori.csv',
@@ -656,6 +685,25 @@ def getrelatorio():
         lattesupda = str(dffullname.iloc[idd, 7])
         htmlfile.write('(atualizado em: ' +
                        lattesupda + ') <br> <br>')
+
+        # ------------------------------------------------------------ ensino
+        if html_print_ensidi == 'NO':
+            htmlfile.write(
+                'Não disciplinas em ensino <br>\n')
+        else:
+            # disciplinas em ensino
+            pp_idd = dfensidi[dfensidi['ID'] == str(
+                dffullname.iloc[idd, 0])].reset_index(drop=True)
+            pp_idd.drop(['ID', 'FULL_NAME', 'LAST_NAME',
+                         'CITADO', 'CITY', 'STATE', 'RESUME',
+                         'UPDATE', 'ADDRESS_ENTERP'],
+                        axis=1, inplace=True)
+            mm = (tabulate(pp_idd, headers="keys", tablefmt='html'))
+            htmlfile.write('<b>Disciplinas em atividades de ensino</b><br>')
+            htmlfile.write(str(mm))
+        htmlfile.write('\n <br> \n')
+
+        # ------------------------------------------------------------ okokok
         if html_print_ppe_all == 'NO':
             htmlfile.write(
                 'Não há projetos de pesquisa <br>\n')
@@ -682,6 +730,7 @@ def getrelatorio():
                     count_pp_coord = count_pp_coord + 1
                     lscount_pp_coord.append(ppi)
             count_pp_integ = len(pp_idd) - count_pp_coord
+            htmlfile.write('<b>Compilação da produção</b><br>')
             htmlfile.write(
                 '<li>' + 'total de projetos de pesquisa como coordenador = ' + str(count_pp_coord) + '</li>\n')
             # for ppii in range(len(lscount_pp_coord)):
