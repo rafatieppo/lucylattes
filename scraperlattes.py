@@ -469,6 +469,7 @@ def getperiod(zipname):
             ls_per_authors = []
             ls_per_authororder = []
             ls_per_orders = []
+            ls_jcr = []
             # A partir do grupo de artigos publicados extrair os artigos
             # publicados
             artpub = artspubs[0].find_all('artigo-publicado')
@@ -571,6 +572,25 @@ def getperiod(zipname):
                     cc = result.iloc[0, 2]
                 ls_per_qualis.append(cc)
                 # print(cc)
+            # JCR
+            df_jcr = pd.read_csv('jcr_factor.csv', sep=',',
+                                 header=0, dtype='str')
+            for k in range(len(ls_per_issn)):
+                issnclean = str(ls_per_issn[k])
+                issnclean = str(issnclean.replace('-', ''))
+                result = df_jcr[df_jcr['ISSN_A']
+                                == issnclean].reset_index(drop=True)
+                if len(result) == 0:
+                    result = df_jcr[df_jcr['ISSN_B']
+                                    == issnclean].reset_index(drop=True)
+                    if len(result) == 0:
+                        cc = -99
+                    else:
+                        cc = result.iloc[0, 7]
+                else:
+                    cc = result.iloc[0, 7]
+                ls_jcr.append(cc)
+                # print(cc)
             # DataFrame periodicos
             df_papers = pd.DataFrame({'TITLE': ls_per_title,
                                       'YEAR': ls_per_year,
@@ -578,6 +598,7 @@ def getperiod(zipname):
                                       'LANG': ls_per_lang,
                                       'JOURNAL': ls_per_journal,
                                       'QUALIS': ls_per_qualis,
+                                      'JCR': ls_jcr,
                                       'ISSN': ls_per_issn,
                                       'AUTHOR': ls_per_authors,
                                       'ORDER': ls_per_authororder,
