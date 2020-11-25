@@ -339,9 +339,15 @@ extensão) organizando os dados em um `DataFrame`;
   - [X] relação de livros
   - [X] relação de orientações
   - [X] indicadores CAPES
+  - [X] indicadores JCR
 
 ## Logs 
 <a name="logss"></a> 
+
+### Wed 2020-11-17 23:13:05 -04
+- Fator JCR dos artigos foi inserido no relatório *Relação de artigos em
+periódicos*. Os dados são oriundos de uma lista compilada a partir do
+scimago e do site JCR. 
 
 ### Wed 2020-11-18 20:18:21 -04
 - Extração das disciplinas em atividades de ensino. Disciplinas listadas
