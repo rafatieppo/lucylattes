@@ -6,7 +6,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Wed 2020-11-18 20:18:21 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Thu 2021-01-14 17:18:11 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -467,7 +467,7 @@ else:
     classif = 'MUITO_BOM'
 ```
 
-### Tue 2020-03-24 02:36:07 -04
+### Thu 2021-01-14 17:18:11 -04
 - Foi implementado o cálculo de indicadores para os quadriênios (a
 partir de 2013). Os indicadores inseridos foram *Índice de discentes
 autores* e *Índice de produtos com autoria discente*. Ambos são
