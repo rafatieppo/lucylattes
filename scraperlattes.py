@@ -598,11 +598,11 @@ def getperiod(zipname):
                                       'LANG': ls_per_lang,
                                       'JOURNAL': ls_per_journal,
                                       'QUALIS': ls_per_qualis,
-                                      'JCR': ls_jcr,
                                       'ISSN': ls_per_issn,
                                       'AUTHOR': ls_per_authors,
                                       'ORDER': ls_per_authororder,
-                                      'ORDER_OK': ls_per_orders})
+                                      'ORDER_OK': ls_per_orders,
+                                      'JCR': ls_jcr})
             latid = zipname.split('.')[0]
             pathfilename = str('./csv_producao/' + latid + '_period'  '.csv')
             df_papers.to_csv(pathfilename, index=False)

@@ -345,6 +345,11 @@ extensão) organizando os dados em um `DataFrame`;
 <a name="logss"></a> 
 
 ### Wed 2020-11-17 23:13:05 -04
+- Correção no gráfico de interação. Ao inserir o JCR uma coluna foi
+deslocada, e por consequência a interação entre os autores não estava
+sendo realziada corretamente.
+
+### Wed 2020-11-17 23:13:05 -04
 - Fator JCR dos artigos foi inserido no relatório *Relação de artigos em
 periódicos*. Os dados são oriundos de uma lista compilada a partir do
 scimago e do site JCR. 

@@ -112,7 +112,7 @@ def getgrapho():
             # removendo caract desnecessarios
             interac = 0
             for o in range(len(dd)):
-                authors = dd.iloc[o, 7].upper()
+                authors = dd['AUTHOR'].iloc[o].upper()
                 authors = authors.replace('[', '')
                 authors = authors.replace(']', '')
                 authors = authors.replace("'", '')

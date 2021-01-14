@@ -664,8 +664,8 @@ def getrelatorio():
         pap_yi = dfpaper_uniq.iloc[idd, 1]
         pap_jo = dfpaper_uniq.iloc[idd, 4]
         pap_qu = dfpaper_uniq.iloc[idd, 5]
-        pap_jc = round(float(dfpaper_uniq.iloc[idd, 6]), 1)
-        pap_au = dfpaper_uniq.iloc[idd, 8]
+        pap_jc = round(float(dfpaper_uniq['JCR'].iloc[idd]), 1)
+        pap_au = dfpaper_uniq['AUTHOR'].iloc[idd]
         htmlfile.write('<li>' + '\n')
         htmlfile.write('<i>' + '\n')
         htmlfile.write('<u>' + str(pap) + '</u>. ano: <u>' + str(pap_yi) + '</u>, ' +
