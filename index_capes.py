@@ -240,7 +240,7 @@ def capes_indautdis():
                     # print(ia.upper(), '---', df_period_all.iloc[ib, 7])
                     zdis = ls_disc_period[ia].split(' ')[-1]
                     zdoc = ls_doce_period[ia].split(' ')[-1]
-                    zaut = df_period_all.iloc[ib, 7]
+                    zaut = df_period_all['AUTHOR'].iloc[ib]
                     if zdis in zaut and zdoc in zaut:
                         period_count += 1
                 disc_type_prod = 'periodico'
