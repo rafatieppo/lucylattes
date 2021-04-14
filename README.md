@@ -1,4 +1,8 @@
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+# Custom Update 04-14-21
+Update enconding open(file) to work properly on windows
+
+change all `config_file = open('./config.txt', 'r')` to `config_file = open('./config.txt', 'r', encoding='utf-8')`
+
 # lucyLattes
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
