@@ -24,13 +24,13 @@ def getgrapho():
     # lendo a lista dos IDs e nome dos pesquisadores
     df_idlist = readIdList()
     # df_idlist['ID_LATTES'] = df_idlist['ID_LATTES'].apply(ss)
-    config_file = open('./config.txt', 'r')
+    config_file = open('./config.txt', 'r', encoding='utf-8')
     yyi = config_file.readlines()[5].split(':')[1]
     yyi = yyi.rstrip('\n')
     yyi = yyi.strip(' ')
     yyi = float(yyi)
     config_file.close()
-    config_file = open('./config.txt', 'r')
+    config_file = open('./config.txt', 'r', encoding='utf-8')
     yyf = config_file.readlines()[6].split(':')[1]
     yyf = yyf.rstrip('\n')
     yyf = yyf.strip(' ')

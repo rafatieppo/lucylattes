@@ -68,7 +68,7 @@ getverificacao()
 getgrapho()
 
 # Gerar indicadores qualis ou nao
-config_file = open('./config.txt', 'r')
+config_file = open('./config.txt', 'r', encoding='utf-8')
 run_indcapes = config_file.readlines()[7].split(':')[1]
 run_indcapes = run_indcapes.rstrip('\n')
 run_indcapes = run_indcapes.strip(' ')
