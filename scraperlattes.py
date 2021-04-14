@@ -556,7 +556,7 @@ def getperiod(zipname):
                 ls_per_authororder.append(ls_allauthororder)
                 ls_per_orders.append(ls_authororder)
             # Qualis file
-            config_file = open('./config.txt', 'r')
+            config_file = open('./config.txt', 'r', encoding='utf-8')
             qf = config_file.readlines()[4].split(':')[1]
             qf = qf.rstrip('\n')
             qf = qf.strip(' ')
