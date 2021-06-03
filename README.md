@@ -6,7 +6,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Thu 2021-01-14 17:18:11 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Thu 2021-06-03 09:38:11 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -466,6 +466,10 @@ elif IndProd > 0.79 and IndProd <= 1.19:
 else:
     classif = 'MUITO_BOM'
 ```
+
+### Thu 2021-06-03 09:38:11 -04
+
+- No arquivo `report.py` foi inserido uma condição para verficar o sistema operacional. Se for Windows o `relatorio_producao.html` terá `charset=ISO-8859-1`, se for Linux `charset=utf-8`.
 
 ### Thu 2021-01-14 17:18:11 -04
 - Foi implementado o cálculo de indicadores para os quadriênios (a

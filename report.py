@@ -11,6 +11,7 @@ import glob
 import re
 import matplotlib.pyplot as plt
 import matplotlib.style as style
+import platform
 import sys
 style.available
 style.use('fivethirtyeight')
@@ -405,8 +406,14 @@ def getrelatorio():
     htmlfile = open('./relatorio/relatorio_producao.html', 'w')
     htmlfile.write('<!DOCTYPE html> \n ')
     htmlfile.write('<head> \n ')
-    htmlfile.write(
-        '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  \n')
+    # verificando sistema
+    plat_sys = platform.system()
+    if plat_sys == 'Windows':
+        htmlfile.write(
+            '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />  \n')
+    else:
+        htmlfile.write(
+            '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  \n')
     htmlfile.write(' <title>lucyLattes Relatorio</title> \n')
     htmlfile.write(
         '<link rel="stylesheet" href="./css/gitgub.css" type="text/css" /> \n </head> \n')
