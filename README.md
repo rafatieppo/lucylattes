@@ -6,7 +6,7 @@
 ## Última atualização
 
 - Versão 1.1
-- *Thu 2021-06-03 09:38:11 -04*, verifique os logs <a href="#logss">aqui</a>.
+- *Thu 2021-06-03 14:39:22 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -344,7 +344,10 @@ extensão) organizando os dados em um `DataFrame`;
 ## Logs 
 <a name="logss"></a> 
 
-### Thu 2021-01-14 17:18:11 -04
+### Thu 2021-06-03 14:39:22 -04
+- Criada função para remover os arquivos `.csv` gerados na pasta `csv_producao`
+
+### Thu 2021-06-03 11:18:11 -04
 - Correção no gráfico de interação. Ao inserir o JCR uma coluna foi
 deslocada, e por consequência a interação entre os autores não estava
 sendo realziada corretamente. 
