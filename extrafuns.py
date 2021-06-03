@@ -51,7 +51,8 @@ def fun_idd_unixwind(psys, lscsv, count):
 
 
 def fun_nomeppg():
-    config_file = open('./config.txt', 'r')
+    # config_file = open('./config.txt', 'r')
+    config_file = open('./config.txt', 'r', encoding='utf-8')
     name_ppg = config_file.readlines()[8].split(':')[1]
     name_ppg = name_ppg.rstrip('\n')
     name_ppg = name_ppg.strip(' ')

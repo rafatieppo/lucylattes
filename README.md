@@ -347,7 +347,8 @@ extensão) organizando os dados em um `DataFrame`;
 ### Thu 2021-01-14 17:18:11 -04
 - Correção no gráfico de interação. Ao inserir o JCR uma coluna foi
 deslocada, e por consequência a interação entre os autores não estava
-sendo realziada corretamente.
+sendo realziada corretamente. 
+- Conforme sugestão do [https://github.com/rickkk856](https://github.com/rickkk856) ao ler o arquivo `config.txt` adicionou-se a opção `encoding='utf-8'`.
 
 ### Wed 2020-11-18 23:13:05 -04
 - Fator JCR dos artigos foi inserido no relatório *Relação de artigos em
