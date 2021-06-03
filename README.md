@@ -222,9 +222,9 @@ Acesse
 [https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/)
 e instale a versão do `Python 3`, basta seguir as instruções. **Não esqueça de instalar o PIP**.
 
-Para todos os sistemas operacionais (Linux, MACOS, Windows, Solaris,
+Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris,
 etc) são necesssários as mesmas bibliotecas. Para instalar as
-bibliotecas em amientes Linux acesse o **Terminal**. Caso seja usuário
+bibliotecas em ambientes Linux acesse o **Terminal**. Caso seja usuário
 `Windows`, acess o `prompt do DOS` ou o `PowerShell`. Posteriormente
 basta digitar:
 
@@ -249,9 +249,9 @@ o projeto:
 
 [//]: [![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ**
 
-Download aqui: [https://github.com/rafatieppo/lucyLattes/archive/master.zip](https://github.com/rafatieppo/lucyLattes/archive/master.zip)
+Download aqui: [https://rafatieppo.github.io/lucylattes/](https://rafatieppo.github.io/lucylattes/). Escolha a opção `.zip` ou `.tar` para fazer o download dos aquivos.
 
-2. Descompacte o arquivo `.zip` que pode ser obtido em um diretório de sua preferência. 
+2. Descompacte o arquivo `.zip` que pode em um diretório de sua preferência. 
 
 3. Na pasta descompactada, abra o arquivo `list_id_name.txt` com um editor de texto, leias as
 instruções no arquivo e faça as alterações necessárias. Salve e feche o
