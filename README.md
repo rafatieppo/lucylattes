@@ -10,22 +10,13 @@
 
 ## Motivação
 
-O CNPq por meio do currículo Lattes agrega dados do registro da vida
-profissional de estudantes, professores, e pesquisadores do país,
-e tornando-se padrão nacional no meio científico para consulta sobre a
-produção científica dos referidos profissionais.
+O CNPq por meio do currículo Lattes agrega dados do registro da vida profissional de estudantes, professores, e pesquisadores do país, e tornando-se padrão nacional no meio científico para consulta sobre a produção científica dos referidos profissionais.
 
-Contudo, após a criação do captcha para o acesso aos currículos Lattes,
-extrair dados dos currículos se tornou uma tarefa árdua, pois todas vez
-que pretende-se acessar um currículo, torna-se necessário passar pelo
-captcha.  Com o intuito de auxiliar na obtenção destes dados, o
-`lucyLattes` foi desenvolvido. 
+Contudo, após a criação do captcha para o acesso aos currículos Lattes, extrair dados dos currículos se tornou uma tarefa árdua, pois todas vez que pretende-se acessar um currículo, torna-se necessário passar pelo captcha.  Com o intuito de auxiliar na obtenção destes dados, o `lucyLattes` foi desenvolvido.
 
 ## O que faz
 
-Extração, compilação, e organização dos dados dos currículos da
-plataforma *Lattes* em arquivos de texto, e geração de um relátório
-simplificado, que proporcionam agilidade para a geração de informação.
+Extração, compilação, e organização dos dados dos currículos da plataforma *Lattes* em arquivos de texto, e geração de um relátório simplificado, que proporcionam agilidade para a geração de informação.
 
 Veja algumas informações geradas:
 
@@ -177,27 +168,17 @@ trabalho_de_conclusao_de_curso_graduacao = 23
 
 ## Notas
 
-> O lucyLattes não tem vínculo com o CNPq. Este programa computacional
-> é fruto de um esforço (independente) realizado com o objetivo de dar
-> suporte às rotinas de análise de dados cadastradas nos Currículos
-> Lattes (publicamente disponíveis).
+> O lucyLattes não tem vínculo com o CNPq. Este programa computacional é fruto de um esforço (independente) realizado com o objetivo de dar suporte às rotinas de análise de dados cadastradas nos Currículos Lattes (publicamente disponíveis).
 
-> Este programa é um software livre; você pode redistribui-lo e/ou
-> modificá-lo dentro dos termos da Licença Pública Geral
-> GNU. **Verifique** o arquivo **LICENSE.txt** . 
+> Este programa é um software livre; você pode redistribui-lo e/ou modificá-lo dentro dos termos da Licença Pública Geral GNU. **Verifique** o arquivo **LICENSE.txt** .
 
-> Este programa é distribuído na esperança que possa ser útil, mas SEM
-> NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer
-> MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo
-> **LICENSE.txt** . 
+>Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo **LICENSE.txt** .
 
 ## Como usar 
 
-Inicialmente recomenda-se a leitura dos próximos tópicos (*Instalação* e *Como
-executar o programa*). 
+Inicialmente recomenda-se a leitura dos próximos tópicos (*Instalação* e *Como executar o programa*).
 
-Posteriormente, se achar necessário, há uma explicação mais detalhada no
-blog: [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
+Posteriormente, se achar necessário, há uma explicação mais detalhada no blog: [Blog - post LucyLattes](https://rafatieppo.github.io/post/2019_03_13_lucylattes/)
 
 ## Instalação
 
@@ -218,15 +199,9 @@ sudo apt-get install python3-tk
 
 Se vc usar *Windows*
 
-Acesse
-[https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/)
-e instale a versão do `Python 3`, basta seguir as instruções. **Não esqueça de instalar o PIP**.
+Acesse [https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/) e instale a versão do `Python 3`, basta seguir as instruções. **Não esqueça de instalar o PIP**.
 
-Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris,
-etc) são necesssários as mesmas bibliotecas. Para instalar as
-bibliotecas em ambientes Linux acesse o **Terminal**. Caso seja usuário
-`Windows`, acess o `prompt do DOS` ou o `PowerShell`. Posteriormente
-basta digitar:
+Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris, etc) são necesssários as mesmas bibliotecas. Para instalar as bibliotecas em ambientes Linux acesse o **Terminal**. Caso seja usuário `Windows`, acess o `prompt do DOS` ou o `PowerShell`. Posteriormente basta digitar:
 
 ```
 pip3 install pandas
@@ -245,28 +220,23 @@ pip3 install tabulate
 dowload, caso queira, vc pode pode ajudar com quanto quiser para manter
 o projeto:
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img border="0" alt="" src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" width="150">
+- via Paypal
 
-[//]: [![paypal](https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ**
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" alt="" border="0" width="150"/> </a>
+
+- via Pix
+
+<img src="./pics/bank_pix_qrcode_2021_06_03_15_08.png" alt="" width="150">
 
 Download aqui: [https://rafatieppo.github.io/lucylattes/](https://rafatieppo.github.io/lucylattes/). Escolha a opção `.zip` ou `.tar` para fazer o download dos aquivos.
 
 2. Descompacte o arquivo `.zip` que pode em um diretório de sua preferência. 
 
-3. Na pasta descompactada, abra o arquivo `list_id_name.txt` com um editor de texto, leias as
-instruções no arquivo e faça as alterações necessárias. Salve e feche o
-arquivo.
+3. Na pasta descompactada, abra o arquivo `list_id_name.txt` com um editor de texto, leias as instruções no arquivo e faça as alterações necessárias. Salve e feche o arquivo.
 
-4. Faça o dowload dos *curriculos Lattes* desejados e copie todos no
-diretório `xml_zip`. Para realizar o
-download, acesso o *currículo Lattes* do pesquisador, e no canto
-superior direito clique sobre um botão `XML`, salve o arquivo e NÃO
-altere o nome e nem o formato, *NÃO DESCOMPACTE OS ARQUIVOS*. O nome do
-arquivo é composto por *16* caracteres e a extensão `.zip`,
-e.g. `3275865819287843.zip`. 
+4. Faça o dowload dos *curriculos Lattes* desejados e copie todos no diretório `xml_zip`. Para realizar o download, acesso o *currículo Lattes* do pesquisador, e no canto superior direito clique sobre um botão `XML`, salve o arquivo e NÃO altere o nome e nem o formato, *NÃO DESCOMPACTE OS ARQUIVOS*. O nome do arquivo é composto por *16* caracteres e a extensão `.zip`, e.g. `3275865819287843.zip`. 
 
-5. Abra o arquivo `config.txt` com um editor de texto e altere o que for
-necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
+5. Abra o arquivo `config.txt` com um editor de texto e altere o que for necessário. Somente edite à direita do símbolo ":" Salve e feche o arquivo.
 
 6. Acesse o diretório descompactado pelo terminal e digite:
 
@@ -282,14 +252,18 @@ ou
 
 `py -3 lucyLattes.py`
 
-7. Se tudo ocorreu corretamente, um relatório foi gerado no diretório
-`relatório`, basta acessar com um navegador (Chrome ou Firefox).
+7. Se tudo ocorreu corretamente, um relatório foi gerado no diretório `relatório`, basta acessar com um navegador (Chrome ou Firefox).
 
 ## Observações
 
+<strike>
 **Atenção**, **Atenção**, **Atenção**.
-Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os
-arquivos do diretório `csv_producao`.
+</strike>
+
+<strike>
+Sempre que editar o arquivo `list_id_name.txt` **APAGUE** todos os arquivos do diretório `csv_producao`.
+</strike>
+Não é mais necessário. Uma função foi adicionada para remover os aquivos.
 
 ## Gostou?
 
@@ -308,6 +282,7 @@ extensão) organizando os dados em um `DataFrame`;
 - DONE Capturar produção em periódicos;
 - DONE Associar produção em periódico com capes qualis;
 - DONE Gerar um arquivo `.csv` com o extrato de produção na pasta relatório;
+- DONE Remover arquivos `csv` da pasta `csv_producao`;
 
 - TODO Gerar índices utilizados pela CAPES para avaliação de PPG [100%]
   - [X] Índice de Orientação (IndOri) 

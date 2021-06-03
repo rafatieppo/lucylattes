@@ -950,11 +950,16 @@ def getrelatorio():
     htmlfile.write(
         '<li>Acesse <a href="https://github.com/rafatieppo/lucyLattes">repositório lucyLattes</a> ' +
         'e nos de uma estrela clicando na estrela no topo da página(lado direito)</li>\n')
+    htmlfile.write('<ul> \n')
     htmlfile.write(
-        '<li> Deixe um comentário <a href="https://rafatieppo.github.io/post/2019_03_13_lucylattes/"> Blog</a></li>\n')
-    htmlfile.write(
-        '<li> Caso queira, vc pode pode ajudar com quanto quiser para manter o projeto:  </li>\n')
+        '<li> Caso queira, vc pode pode ajudar com quanto quiser para manter o projeto via PayPal:  </li>\n')
     htmlfile.write('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img border="0" alt="" src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" width="150"> </a>\n <br> <br>\n')
+    htmlfile.write(
+        '<li> ou via Pix</li> \n')
+    htmlfile.write(
+        '<img border="0" alt="" src="../pics/bank_pix_qrcode_2021_06_03_15_08.png" width="150">')
+    htmlfile.write(
+        '<br> \n')
     htmlfile.write('<b>AVISOS</b>:\n ')
     htmlfile.write(
         '<li>Arquivo para classificacao qualis utilizado: <code>' + qualqualis + '</code >')
