@@ -60,6 +60,8 @@ def gettidydf():
         # passando ID para string, para poder comparar com dfpaper
         # cancelei a ss() pq o read_csv do a esta com dtype='str
     dffullname['ID'] = dffullname['ID'].apply(ss)
+    dffullname.to_csv('./csv_producao/fullname_all.csv',
+                      sep=',', index=False)
     dfppe = pd.merge(dfppe, dffullname, on='ID')
     dffullname = dffullname.reset_index(drop=True)
     # processo para excluir PROJETOS repetido busca o sobrenome do autor no

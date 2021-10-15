@@ -887,7 +887,7 @@ def getcapit(zipname):
 
 def getnomecompleto(zipname):
     # lendo do zipfile
-    # zipname = '5859946324646438.zip'
+    # zipname = '3275865819287843.zip'
     zipfilepath = './xml_zip' + '/' + str(zipname)
     archive = zipfile.ZipFile(zipfilepath, 'r')
     lattesxmldata = archive.open('curriculo.xml')
@@ -954,9 +954,11 @@ def getnomecompleto(zipname):
                     ls_state.append(cc)
                     # definindo nome em citacoes
                     gendata = str(dg[j])
-                    result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" pais-de-nacional',
+                    result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" orcid-id',
                                        gendata)
+                    result
                     cc = fun_result(result)
+                    cc
                     ls_citado.append(cc)
                     # definindo ORCID
                     gendata = str(dg[j])
