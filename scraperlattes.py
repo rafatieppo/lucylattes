@@ -906,6 +906,7 @@ def getnomecompleto(zipname):
         ls_city = []
         ls_state = []
         ls_citado = []
+        ls_orcid = []
         ls_abstrac = []
         ls_update = []
         ls_address_enterp = []
@@ -957,6 +958,13 @@ def getnomecompleto(zipname):
                                        gendata)
                     cc = fun_result(result)
                     ls_citado.append(cc)
+                    # definindo ORCID
+                    gendata = str(dg[j])
+                    result = re.search('orcid-id=\"(.*)\" pais-de-nacionali',
+                                       gendata)
+                    cc = fun_result(result)
+                    ls_orcid.append(cc)
+
             rescv = cv[i].find_all('resumo-cv')
             address = cv[i].find_all('endereco')
             # VERIFICANDO se ha resumo
@@ -1007,7 +1015,8 @@ def getnomecompleto(zipname):
                                     'STATE': ls_state,
                                     'RESUME': ls_abstrac,
                                     'UPDATE': ls_update,
-                                    'ADDRESS_ENTERP': ls_address_enterp})
+                                    'ADDRESS_ENTERP': ls_address_enterp,
+                                    'ORCID': ls_orcid})
         latid = zipname.split('.')[0]
         pathfilename = str('./csv_producao/' + latid + '_fullname'  '.csv')
         df_fullname.to_csv(pathfilename, index=False)
