@@ -21,19 +21,19 @@ Extração, compilação, e organização dos dados dos currículos da plataform
 Veja algumas informações geradas:
 
  <figure>
-  <img src="https://sites.google.com/site/zownloads/home/gifs/period_dep_year.png" alt=" ">
+  <img src="https://rafatieppo.github.io/post/pics/20190313_period_dep_year.png" alt=" ">
   <figcaption>Publicações de periódicos por ano</figcaption>
 </figure> 
 
  <figure>
   <img
-  src="https://sites.google.com/site/zownloads/home/gifs/period_year_qualis.png" alt=" ">
+  src="https://rafatieppo.github.io/post/pics/20190313_period_year_qualis.png" alt=" ">
   <figcaption>Publicações de periódicos por qualis</figcaption>
 </figure> 
 
  <figure>
   <img
-  src="https://sites.google.com/site/zownloads/home/gifs/grapho.png" alt=" ">
+  src="https://rafatieppo.github.io/post/pics/20190313_period_year_qualis.png" alt=" ">
   <figcaption>Interações entre pesquisadores na publicação de periódicos</figcaption>
 </figure> 
 
@@ -446,8 +446,10 @@ else:
     classif = 'MUITO_BOM'
 ```
 
-### Thu 2021-06-03 09:38:11 -04
+### Fri 2021-10-15 15:22:54 -04
+- Geracao de um novo arquivo com dados de todos os pesquisadores e extracao do ORCID
 
+### Thu 2021-06-03 09:38:11 -04
 - No arquivo `report.py` foi inserido uma condição para verficar o sistema operacional. Se for Windows o `relatorio_producao.html` terá `charset=ISO-8859-1`, se for Linux `charset=utf-8`.
 
 ### Thu 2021-01-14 17:18:11 -04
