@@ -556,8 +556,8 @@ def getperiod(zipname):
                 ls_per_authororder.append(ls_allauthororder)
                 ls_per_orders.append(ls_authororder)
             # Qualis file
-            # config_file = open('./config.txt', 'r')
-            config_file = open('./config.txt', 'r', encoding='utf-8')
+            config_file = open('./config.txt', 'r')
+            # config_file = open('./config.txt', 'r', encoding='utf-8')
             qf = config_file.readlines()[4].split(':')[1]
             qf = qf.rstrip('\n')
             qf = qf.strip(' ')
@@ -804,8 +804,9 @@ def getcapit(zipname):
                 dbc = cappuborg[i].find_all('dados-basicos-do-capitulo')
                 capitdb = str(dbc)
                 # definindo o nome do capitulo
-                result = re.search('titulo-do-capitulo-do-livro=\"(.*)\" titulo-do-capi',
-                                   capitdb)
+                result = re.search(
+                    'titulo-do-capitulo-do-livro=\"(.*)\" titulo-do-capi',
+                    capitdb)
                 cc = fun_result(result)
                 ls_cap_title.append(cc)
                 # print(cc)
@@ -824,8 +825,9 @@ def getcapit(zipname):
                 ddc = cappuborg[i].find_all('detalhamento-do-capitulo')
                 capitdt = str(ddc)
                 # definindo editora
-                result = re.search('nome-da-editora=\"(.*)\" numero-da-edicao-r',
-                                   capitdt)
+                result = re.search(
+                    'nome-da-editora=\"(.*)\" numero-da-edicao-r',
+                    capitdt)
                 cc = fun_result(result)
                 ls_cap_edit.append(cc)
                 # print(cc)
@@ -942,8 +944,9 @@ def getnomecompleto(zipname):
                     ls_name_id.append(idd)
                     # definindo cidade
                     gendata = str(dg[j])
-                    result = re.search('cidade-nascimento=\"(.*)\" data-faleci',
-                                       gendata)
+                    result = re.search(
+                        'cidade-nascimento=\"(.*)\" data-faleci',
+                        gendata)
                     cc = fun_result(result)
                     ls_city.append(cc)
                     # definindo estado
@@ -954,11 +957,10 @@ def getnomecompleto(zipname):
                     ls_state.append(cc)
                     # definindo nome em citacoes
                     gendata = str(dg[j])
-                    result = re.search('nome-em-citacoes-bibliograficas=\"(.*)\" orcid-id',
-                                       gendata)
-                    result
+                    result = re.search(
+                        'nome-em-citacoes-bibliograficas=\"(.*)\" orcid-id',
+                        gendata)
                     cc = fun_result(result)
-                    cc
                     ls_citado.append(cc)
                     # definindo ORCID
                     gendata = str(dg[j])
@@ -1115,8 +1117,9 @@ def getdiscip(zipname):
                                 cc = 'ATUAL'
                             ls_mfin.append(cc)
                             # definindo o curso
-                            result = re.search('nome-curso=\"(.*)\" nome-curso-i',
-                                               aten)
+                            result = re.search(
+                                'nome-curso=\"(.*)\" nome-curso-i',
+                                aten)
                             cc = fun_result(result)
                             ls_curs.append(cc)
                             # definindo o tipo

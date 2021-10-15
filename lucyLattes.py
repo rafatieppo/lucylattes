@@ -86,4 +86,4 @@ else:
     print("Indicadores capes para PPG nao foram gerados")
 
 getrelatorio()
-# removeCsvProducao()
+removeCsvProducao()
