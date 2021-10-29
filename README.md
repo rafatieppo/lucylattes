@@ -222,7 +222,7 @@ o projeto:
 
 - via Paypal
 
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" alt="" border="0" width="150"/> </a>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://rafatieppo.github.io/post/pics/20190313_logo_rt_donate.png" alt="" border="0" width="150"/> </a>
 
 - via Pix
 
