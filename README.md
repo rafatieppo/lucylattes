@@ -224,10 +224,6 @@ o projeto:
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://rafatieppo.github.io/post/pics/20190313_logo_rt_donate.png" alt="" border="0" width="150"/> </a>
 
-- via Pix
-
-<img src="./pics/bank_pix_qrcode_2021_06_03_15_08.png" alt="" width="150">
-
 Download aqui: [https://rafatieppo.github.io/lucylattes/](https://rafatieppo.github.io/lucylattes/). Escolha a opção `.zip` ou `.tar` para fazer o download dos aquivos.
 
 2. Descompacte o arquivo `.zip` que pode em um diretório de sua preferência. 

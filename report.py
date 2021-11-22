@@ -955,10 +955,6 @@ def getrelatorio():
         '<li> Caso queira, vc pode pode ajudar com quanto quiser para manter o projeto via PayPal:  </li>\n')
     htmlfile.write('<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img border="0" alt="" src="https://sites.google.com/site/zownloads/home/gifs/logo_rt_donate.png" width="150"> </a>\n <br> <br>\n')
     htmlfile.write(
-        '<li> ou via Pix</li> \n')
-    htmlfile.write(
-        '<img border="0" alt="" src="../pics/bank_pix_qrcode_2021_06_03_15_08.png" width="150">')
-    htmlfile.write(
         '<br> \n')
     htmlfile.write('<b>AVISOS</b>:\n ')
     htmlfile.write(
