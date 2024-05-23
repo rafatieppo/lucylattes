@@ -5,7 +5,7 @@
 ## Última atualização
 
 - Versão v1.0.0
-- *Sat 2024-05-23 18:34:23 -04* verifique os logs <a href="#logss">aqui</a>.
+- *Thu 2024-05-23 18:34:23 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
