@@ -4,8 +4,8 @@
 
 ## Última atualização
 
-- Versão 2.0
-- *Sat 2024-05-19 10:06:21 -04* verifique os logs <a href="#logss">aqui</a>.
+- Versão v1.0.0
+- *Sat 2024-05-23 18:34:23 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
