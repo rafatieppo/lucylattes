@@ -1,6 +1,0 @@
-INSTITUTION,YEAR_INI,YEAR_FIN,MONTH_INI,MONTH_FIN,COURSE,TYPE,DISC
-Lks Escola Técnica,2005,7,7,7,,OUTRO,['Máquinas I']
-Universidade do Estado de Mato Grosso,2007,09,09,09,Agronomia,GRADUACAO,['Topografia e Geoprocessamento']
-Universidade do Estado de Mato Grosso,2007,03,03,03,Agronomia,GRADUACAO,"['Construções Rurais', 'Topografia']"
-Universidade do Estado de Mato Grosso,2010,12,12,12,Agronomia,GRADUACAO,"['Cálculo Aplicado', 'Construções Rurais', 'Máquinas e Mecanização Agrícola']"
-Universidade do Estado de Mato Grosso,2015,,ATUAL,ATUAL,Agronomia,GRADUACAO,"['Geoprocessamento', 'Máquinas Agrícolas', 'Mecanização Agrícola']"
