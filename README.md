@@ -13,7 +13,7 @@ O CNPq por meio do currículo Lattes agrega dados do registro da vida profission
 
 Contudo, após a criação do captcha para o acesso aos currículos Lattes, extrair dados dos currículos se tornou uma tarefa árdua, pois todas vez que pretende-se acessar um currículo, torna-se necessário passar pelo captcha.  Com o intuito de auxiliar na obtenção destes dados, o `lucyLattes` foi desenvolvido.
 
-Com o intuito de melhorar a extração dos dados, e reduzir a possibilidade de erros de execução, a **versão 2.0** foi desenvolvida. As principais mudanças estão na lógica de extração dos dados, organização dos arquivos e novos relatórios. 
+Com o intuito de melhorar a extração dos dados, e reduzir a possibilidade de erros de execução, a versão **v1.0.0** foi desenvolvida. As principais mudanças estão na lógica de extração dos dados, organização dos arquivos e novos relatórios. 
 
 ## O que faz
 
