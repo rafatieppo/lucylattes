@@ -5,7 +5,7 @@
 
 ## Última atualização
 
-- Versão 1.1
+- Versão v0.1.5 - **DESCONTINUADA**
 - *Thu 2021-06-03 14:39:22 -04*, verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
