@@ -1,0 +1,35 @@
+from resources.getworksevents_minidom import getworksevents
+from resources.read_set_config import configSetup
+from resources.unzip_xml import unzip_xml
+from resources.getminidom_xmlfile import getminidom_xmlfile
+from resources.getencoding_minidom import getencoding_minidom
+from resources.getgeneraldata_minidom import getgeneraldata
+from resources.getresearchextproj_minidom import getresearchextproj
+from resources.getworksevents_minidom import getworksevents
+from resources.getpapers_minidom import getpapers
+from resources.getbooks_minidom import getbooks
+from resources.getchapters_minidom import getchapters
+from resources.getadiv_minidom import getadv
+from resources.getadivrunning_minidom import getadvrunn
+from resources.getteaching_minidom import getteaching
+from resources.getshortcourses_minidom import getshortcourse
+from resources.read_list_from_txt import read_jcr_qls
+from resources.tidydata_csv import tidydata_ppe
+from resources.tidydata_csv import tidydata_worksevents
+from resources.tidydata_csv import tidydata_papers
+from resources.tidydata_csv import tidydata_books
+from resources.tidydata_csv import tidydata_chapters
+from resources.tidydata_csv import tidydata_advising
+from resources.tidydata_csv import tidydata_advisingrunn
+from resources.tidydata_csv import tidydata_teaching
+from resources.tidydata_csv import tidydata_fullname
+
+from resources.tidydata_uniq_titles import clean_titles
+from resources.tidydata_uniq_titles import get_uniq_titles
+
+from resources.grapho import grapho_paper
+from resources.report_setup import report_setup_json
+from resources.report import report_write
+from resources.index_hwebsci import getindex_hwebsci
+# from resources.support_functions import run_capes_index
+from resources.removefiles_csvproducao import remove_csv_producao

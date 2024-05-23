@@ -1,0 +1,11 @@
+# nao altere o texto das linhas 1,2,3,4
+# digite o texto sempre em minúsculo sem acento
+# nao use espaço ou acentos no NOME de ARQUIVOS
+# configuracoes iniciam na linha 5
+arquivo qualis : qualis_interdic_periodicos_2020.csv
+ano inicial para tabulacao de dados : 2010
+ano final para tabulacao de dados : 2023
+calcular indicadores capes 1 para sim 0 para nao : 0
+nome programa pós graduação : Ambiente e Sistemas de Produção Agrícola
+calcular indice H WOS 1 para sim 0 para nao : 0
+apagar csv de csv_producao csv_producao_index csv_report 1 para sim 0 para nao : 1
