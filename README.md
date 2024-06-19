@@ -4,8 +4,8 @@
 
 ## Última atualização
 
-- Versão v1.0.0
-- *Thu 2024-05-23 18:34:23 -04* verifique os logs <a href="#logss">aqui</a>.
+- Versão v1.0.1
+- *Wed 2024-06-19 18:57:18 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -295,6 +295,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 
 ## Logs 
 <a name="logss"></a> 
+
+### Wed 2024-06-19 18:57:18 -04
+- From `DADOS-GERAIS` $->$ `FORMACAO-ACADEMICA-TITULACAO` data from `DOUTORADO` was add in `xxx_fullname.csv`
 
 ### Mon 2024-05-20 22:41:04 -04
 - A simple `GUI` was implemented in the file `app_lucyLattes.py`. This `GUI` generates the file `./config_tk.txt` with the settings to run `lucyLattes.py`; Some changes were implemented in the

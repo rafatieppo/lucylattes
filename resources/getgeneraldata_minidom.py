@@ -51,7 +51,20 @@ def getgeneraldata(zipname, minidomdoc):
             'NOME-INSTITUICAO-EMPRESA').value
         enterprise_code = chd_dgerais_chd_endereco_chd_endprof[0] \
             .getAttributeNode('CODIGO-INSTITUICAO-EMPRESA').value
-
+        # child dgerais -> child formacao academ -> child doutorado
+        chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
+            'FORMACAO-ACADEMICA-TITULACAO')
+        chd_dgerais_chd_formacao_chd_doc = chd_dgerais_chd_formacao[0] \
+            .getElementsByTagName('DOUTORADO')
+        dout_inst = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+            'NOME-INSTITUICAO').value
+        dout_curs = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+            'NOME-CURSO').value
+        dout_yini = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+            'ANO-DE-INICIO').value
+        dout_yfin = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+            'ANO-DE-CONCLUSAO').value
+        # output
         df_fullname = pd.DataFrame({'ID': pd.Series(id_lattes),
                                     'FULL_NAME': pd.Series(full_name),
                                     'LAST_NAME': pd.Series(last_name),
@@ -62,7 +75,12 @@ def getgeneraldata(zipname, minidomdoc):
                                     'UPDATE': pd.Series(last_update),
                                     'ADDRESS_ENTERP': pd.Series(enterprise),
                                     'ORCID': pd.Series(orcid),
-                                    'ADDRESS_ENTERP_CODE': pd.Series(enterprise_code)})
+                                    'ADDRESS_ENTERP_CODE': pd.Series(enterprise_code),
+                                    'DOC_INST': pd.Series(dout_inst),
+                                    'DOC_COURSE': pd.Series(dout_curs),
+                                    'DOC_YEAR_INI': pd.Series(dout_yini),
+                                    'DOC_YEAR_FIN': pd.Series(dout_yfin)
+                                    })
 
         pathfilename = str('./csv_producao/' + id_lattes + '_fullname.csv')
         df_fullname.to_csv(pathfilename, index=False)
