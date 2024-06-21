@@ -121,6 +121,7 @@ def grapho_paper():
     #         dfgrapho.drop(lsrow_todrop, inplace=True)
     #         dfgrapho.reset_index(drop=True, inplace=True)
     # drop row with 0 interactions, maybe threre is no interc between rserc
+    dfgrapho.to_csv('./csv_producao/grapho_plot.csv')
     dfgrapho = dfgrapho[dfgrapho['INTERACTION'] != 0]
     dfgrapho.reset_index(drop=True, inplace=True)
 
