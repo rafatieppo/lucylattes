@@ -1,6 +1,6 @@
 2010
 2020
-qualis_interdic_periodicos_2016.csv
+qualis_interdic_periodicos_2020.csv
 Ambiente e Sistemas de Produção Agrícola
 1
 0
