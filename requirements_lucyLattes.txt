@@ -1,16 +1,9 @@
 datetime   
-glob       
-json       
-math       
 matplotlib 
 networkx   
 nltk       
 numpy      
-os         
 pandas     
-re         
 scipy      
 scikit-learn
-string     
-tkinter    
-zipfile    
+tk    
