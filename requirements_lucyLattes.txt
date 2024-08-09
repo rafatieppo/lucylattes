@@ -6,4 +6,5 @@ numpy
 pandas     
 scipy      
 scikit-learn
+tabulate
 tk    
