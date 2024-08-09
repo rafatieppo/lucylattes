@@ -38,34 +38,28 @@ Veja algumas informações geradas:
 
 Inicialmente recomenda-se a leitura dos próximos tópicos (*Instalação* e *Como executar o programa*).
 
-## Instalação
+## Requerimentos:
+  
+- Sistema operacional Linux ou com base Unix (preferencialmente), ou ainda Windows;
+- Python 3.8 ou superior;
+- Navegador (Firefox ou Chromium) para visualizar relatório.
 
-- Requerimentos:
-    - Sistema operacional Linux ou com base Unix (preferencialmente), ou ainda Windows;
-    - Python 3 ou superior;
-    - Navegador (Firefox ou Chromium) para visualizar relatório.
+## Instalação no Linux
 
-### Python
+**Python**
 
-- Se não possuir *Python3* ou superior instalado no *DEBIAN, UBUNTU ou derivados*:
+- Se não possuir *Python3*  ou superior instalado no *DEBIAN, UBUNTU ou derivados*:
 
 ```
 sudo apt-get install python3
 sudo apt-get install python3-pip
 sudo apt-get install python3-tk
 ```
-
-- Se não possuir *Python3* ou superior instalado no *Windows*
-
-Acesse [https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/) e instale a versão do `Python 3`, basta seguir as instruções. **Não esqueça de instalar o PIP**.
-
-Recomenda-se criar um ambiente virtual para instalar os pacotes e executar o `lucyLattes`.
-
-### Ambiente virtual python (virtual environments)
+**Ambiente virtual python** (virtual environments) no Linux
 
 Para saber mais sobre *ambiente virtual* em `Python`, clique aqui [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html). Também fiz um post resumido sobre o assunto [AQUI](https://rafatieppo.github.io/post/2021_07_27_python_env/).
 
-- De modo simplista, se vc usa `Linux`:
+- De modo simplista:
 
 1. Crie uma pasta (diretório) e o ambiente virtual:
 
@@ -90,42 +84,9 @@ rt@rt-av52a:~/.virtualenvs$ source ./teste_venv/bin/activate
 rafatieppo@rt-av52a:~/.virtualenvs$
 ```
 
-- De modo simplista, se vc usa `Windows`:
+**Pacotes Python**
 
-1. Acesse o *Power Shell* como **Administrador** (botão direito) e libere a execução de *Scripts*. Se quiser saber mais [Microsot](https://answers.microsoft.com/pt-br/windows/forum/all/permitir-a-execu%C3%A7%C3%A3o-de-scripts-no/f6b195cf-0be7-46e2-b88c-358c79f78343)
-
-No *Power Shell* digite:
-
-```
-Set-ExecutionPolicy Unrestricted
-```
-
-pressione `S` ou `Y`.
-
-2. Asssumindo que o `Python` já esteja instalado, no *Power Shell* digite:
-
-```
-python -m venv nome_do_meu_ambiente_virtual
-```
-
-3. Ative seu ambiente virtual.
-
-```
-nome_do_meu_ambiente_virtual\Scripts\activate
-```
-
-Pronto, agora é só instalar as bibliotecas com o `pip` e posteriormente executar o `LucyLattes`.
-
-4. Para desativar o ambiente virtual.
-
-```
-(nome_do_meu_ambiente_virtual)C:\Users\Joao\> deactivate
-C:\Users\Joao\>
-```
-
-### Instale os pacotes
-
-Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris, etc) são necesssários as mesmas bibliotecas. Para instalar as bibliotecas em ambientes Linux acesse o **Terminal**, ative o seu ambiente `Python` e instale os pacotes. Caso seja usuário `Windows`, acesse o `PowerShell`. 
+Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris, etc) são necesssários as mesmas bibliotecas. Para instalar as bibliotecas em ambientes Linux acesse o **Terminal**, ative o seu ambiente `Python` e instale os pacotes. 
 
 Posteriormente, com o **ambiente virtual ATIVADO**, instale os pacotes necessários. No arquivo `requirements_lucyLattes.txt` está listado os pacotes necessários. Com o `pip` é possível executar o comando `pip install -r requirements_lucyLattes,txt` , e possivelmente os pacotes serão instalados. Ou ainda, vc pode instalar um pacote por vez.
 
@@ -138,6 +99,72 @@ Collecting numpy
 Installing collected packages: numpy
 Successfully installed numpy-1.21.1
 (teste_venv) rafatieppo@rt-av52a:~/.virtualenvs$
+```
+
+## Instalação no Windows
+
+- Se não possuir *Python3* ou superior instalado no *Windows*
+
+Acesse [https://python.org.br/instalacao-windows/](https://python.org.br/instalacao-windows/) e instale a versão do `Python 3` (versão 3.8 ou superior), basta seguir as instruções. **Não esqueça de instalar o PIP**.
+
+Recomenda-se criar um ambiente virtual para instalar os pacotes e executar o `lucyLattes`.
+
+**Ambiente virtual python** (virtual environments) no Windows
+
+- De modo simplista:
+
+1. Acesse o *Power Shell* como **Administrador** (botão direito) e libere a execução de *Scripts*. Se quiser saber mais [Microsot](https://answers.microsoft.com/pt-br/windows/forum/all/permitir-a-execu%C3%A7%C3%A3o-de-scripts-no/f6b195cf-0be7-46e2-b88c-358c79f78343)
+
+No *Power Shell* digite:
+
+```
+Set-ExecutionPolicy Unrestricted
+```
+
+pressione `S` ou `Y`.
+
+2. Crie uma pasta (diretório) que neste exemplo é denominada `teste_venv`:
+
+```
+C:\Users\Joao\> mkdir teste_venv
+```
+
+3. Crie o ambiente virtual na pasta que foi criada:
+
+```
+C:\Users\Joao\> python3 -m venv ./teste_venv
+```
+
+4. Ative seu ambiente virtual.
+
+```
+C:\Users\Joao\> \teste_venv\Scripts\activate
+```
+
+Pronto, agora é só instalar as bibliotecas com o `pip` e posteriormente executar o `LucyLattes`.
+
+5. Para desativar o ambiente virtual.
+
+```
+(teste_venv) C:\Users\Joao\> deactivate
+C:\Users\Joao\>
+```
+
+**Pacotes Python**
+
+Para todos os sistemas operacionais (Linux, MacOS, Windows, Solaris, etc) são necesssários as mesmas bibliotecas. Para instalar as bibliotecas em ambientes Linux acesse o **Terminal**, ative o seu ambiente `Python` e instale os pacotes. 
+
+Posteriormente, com o **ambiente virtual ATIVADO**, instale os pacotes necessários. No arquivo `requirements_lucyLattes.txt` está listado os pacotes necessários. Com o `pip` é possível executar o comando `pip install -r requirements_lucyLattes,txt` , e possivelmente os pacotes serão instalados. Ou ainda, vc pode instalar um pacote por vez.
+
+```
+(teste_venv) C:\Users\Joao\>  pip install numpy
+Collecting numpy
+  Cache entry deserialization failed, entry ignored
+  Downloading https://files.pythonhosted.org/packages/b8/46/40729c784/numpyx86_64.whl (14.1MB)
+    100% |████████████████████████████████| 14.1MB 128kB/s 
+Installing collected packages: numpy
+Successfully installed numpy-1.21.1
+(teste_venv) C:\Users\Joao\>
 ```
 
 ## Como executar o programa
