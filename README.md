@@ -4,8 +4,8 @@
 
 ## Última atualização
 
-- Versão v1.0.1
-- *Wed 2024-06-19 18:57:18 -04* verifique os logs <a href="#logss">aqui</a>.
+- Versão v1.0.2
+- *Sat 2024-08-10 09:33:11 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -322,6 +322,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 
 ## Logs 
 <a name="logss"></a> 
+
+### Sat 2024-08-10 09:33:11 -04
+- On Windows OS there ware a error from `report_resch_advi_runn_each` function and others functions that generates tables from advising data. The error was in `np.select`. For some reason, `np.select` could not find a math between `cond` and `choice` lists in those functions. I guess the error was a character error, because `cond` list has character like: `ç ã í`. To solve it, in `np.select` the default exit was replaced by `-99`
 
 ### Wed 2024-06-19 18:57:18 -04
 - From `DADOS-GERAIS` $->$ `FORMACAO-ACADEMICA-TITULACAO` data from `DOUTORADO` was add in `xxx_fullname.csv`

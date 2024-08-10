@@ -297,7 +297,7 @@ def report_resch_advi_done_each(idlattes, rep_setup_file):
             'DOUT',
             'MONO-ESP',
             'OUTRA']
-        df['NATURE'] = np.select(cond, choice)
+        df['NATURE'] = np.select(cond, choice, '-99')
         # group by fullname nature
         adv_gbfullname_nature = df.groupby(
             ['INSTITUTION', 'PUPIL', 'NATURE'])['TITLE'].size() \
@@ -307,7 +307,6 @@ def report_resch_advi_done_each(idlattes, rep_setup_file):
         advsum0 = adv_gbfullname_nature.iloc[:, 2:].sum(axis=0).to_list()
         advsum0.insert(0, '-')
         advsum0.insert(0, 'Total')
-        advsum0
         x = pd.DataFrame([np.transpose(advsum0)],
                          columns=list(adv_gbfullname_nature.columns))
         adv_gbfullname_nature = pd.concat([adv_gbfullname_nature, x], axis=0)
@@ -347,7 +346,7 @@ def report_resch_advi_runn_each(idlattes, rep_setup_file):
             'DOUT',
             'MONO-ESP',
             'OUTRA']
-        df['NATURE'] = np.select(cond, choice)
+        df['NATURE'] = np.select(cond, choice, '-99')
         # group by fullname nature
         adv_gbfullname_nature = df.groupby(
             ['INSTITUTION', 'PUPIL', 'NATURE'])['TITLE'].size() \
@@ -685,7 +684,7 @@ def report_resch_advi_done_all(rep_setup_file):
             'DOUT',
             'MONO-ESP',
             'OUTRA']
-        df['NATURE'] = np.select(cond, choice)
+        df['NATURE'] = np.select(cond, choice, '-99')
         # group by fullname nature
         adv_gbfullname_nature = df.groupby(
             ['FULL_NAME', 'NATURE'])['TITLE'].size() \
@@ -733,7 +732,7 @@ def report_resch_advi_runn_all(rep_setup_file):
             'DOUT',
             'MONO-ESP',
             'OUTRA']
-        df['NATURE'] = np.select(cond, choice)
+        df['NATURE'] = np.select(cond, choice, '-99')
         # group by fullname nature
         adv_gbfullname_nature = df.groupby(
             ['FULL_NAME', 'NATURE'])['TITLE'].size() \
