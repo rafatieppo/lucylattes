@@ -3,7 +3,7 @@
 from tabulate import tabulate
 # from resources.support_functions import qualis_file
 from resources.support_functions import pg_name
-from resources.support_functions import yearlimit_forfilter
+from resources.support_functions import yearlimit_forfilter_tk
 from resources.support_functions import report_resch_teach
 from resources.support_functions import report_resch_books
 from resources.support_functions import report_resch_chapters
@@ -34,7 +34,7 @@ def report_write(qf):
     """Generate a report file with tables and plots."""
     # qualqualis = qualis_file()
     qualqualis = qf
-    lsyear_limits = yearlimit_forfilter()
+    lsyear_limits = yearlimit_forfilter_tk()
     yyi, yyf = lsyear_limits[0], lsyear_limits[1]
     with open('./relatorio/report_setup.json', 'r') as jfile:
         rep_setup_file = json.load(jfile)

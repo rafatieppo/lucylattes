@@ -323,6 +323,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 ## Logs 
 <a name="logss"></a> 
 
+### Sun 2024-08-11 09:14:53 -04
+- On `report.py` had an error to filter projetcts, paper, etc. It was because the `report.py` was reading `config.txt` instead `config_tk.txt.` The issues has been solved with a new functions in `support_functions.py`: `yearlimit_forfilter_tk()` , and some changes in `read_set_config.py` class: `configSetup`. The next step is to fix filter in `report.py`. 
+
 ### Sat 2024-08-10 09:33:11 -04
 - On Windows OS there ware a error from `report_resch_advi_runn_each` function and others functions that generates tables from advising data. The error was in `np.select`. For some reason, `np.select` could not find a math between `cond` and `choice` lists in those functions. I guess the error was a character error, because `cond` list has character like: `ç ã í`. To solve it, in `np.select` the default exit was replaced by `-99`
 

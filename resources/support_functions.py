@@ -159,7 +159,7 @@ def list_append_proj_members(team, idw, nn, nn_id, nn_coord):
 
 
 def yearlimit_forfilter():
-    """Return a list with initial and end year to filter data."""
+    """Return a list with init and end year to filter data from confirg.txt"""
     # config_file = open('./config.txt', 'r')
     config_file = open('./config.txt', 'r', encoding='utf-8')
     yearini = config_file.readlines()[5].split(':')[1]
@@ -170,6 +170,25 @@ def yearlimit_forfilter():
     # config_file = open('./config.txt', 'r')
     config_file = open('./config.txt', 'r', encoding='utf-8')
     yearend = config_file.readlines()[6].split(':')[1]
+    yearend = yearend.rstrip('\n')
+    yearend = yearend.strip(' ')
+    yearend = int(yearend)
+    config_file.close()
+    ls_year_iniend = [yearini, yearend]
+    return ls_year_iniend
+
+
+def yearlimit_forfilter_tk():
+    """Return a list with init and end year to filter data from config_tk.txt"""
+    config_file = open('./config_tk.txt', 'r', encoding='utf-8')
+    yearini = config_file.readlines()[0].split(':')[1]
+    yearini = yearini.rstrip('\n')
+    yearini = yearini.strip(' ')
+    yearini = int(yearini)
+    config_file.close()
+    # config_file = open('./config.txt', 'r')
+    config_file = open('./config_tk.txt', 'r', encoding='utf-8')
+    yearend = config_file.readlines()[1].split(':')[1]
     yearend = yearend.rstrip('\n')
     yearend = yearend.strip(' ')
     yearend = int(yearend)

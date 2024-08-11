@@ -95,6 +95,9 @@ def set_configs_tk():
         tk.messagebox.showwarning(title='Atencao',
                                   message='Qualis nao selecionado')
     else:
+        ls_descrip = ['ano inicial:', 'ano final:', 'qualis:',
+                      'pg:', 'apagar csv_producao:',
+                      'calcular indcapes:', 'calcular hwebsci:']
         ls_configs = [str(var_yi.get()), str(var_yf.get()),
                       str(var_qls.rstrip()), str(var_pg.get()),
                       str(var_rm_csv.get()),
@@ -111,8 +114,8 @@ def set_configs_tk():
         tk.messagebox.showinfo(message=msg_vars,
                                title='Confirme:')
         with open('./config_tk.txt', 'w', encoding='UTF-8') as f:
-            for tt in ls_configs:
-                f.write(tt + '\n')
+            for idz in range(len(ls_configs)):
+                f.write(ls_descrip[idz] + ls_configs[idz] + '\n')
             f.close()
         return ls_configs
 

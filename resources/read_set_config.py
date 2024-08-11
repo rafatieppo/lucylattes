@@ -9,10 +9,10 @@ class configSetup:
         config_file = open('./config_tk.txt', 'r', encoding='UTF-8')
         config_lines = list(config_file.readlines())
         config_file.close()
-        self.run_hwebsci = config_lines[6] # .split(':')[1]
-        self.run_indcapes = config_lines[5] # .split(':')[1]
-        self.qf = config_lines[2] #.split(':')[1]
-        self.run_rmcsvfiles = config_lines[4] #.split(':')[1]
+        self.run_hwebsci = config_lines[6].split(':')[1]
+        self.run_indcapes = config_lines[5].split(':')[1]
+        self.qf = config_lines[2].split(':')[1]
+        self.run_rmcsvfiles = config_lines[4].split(':')[1]
 
     def run_capes_index(self):
         """Return 1 or 0 from config.txt to run or not capes index."""
