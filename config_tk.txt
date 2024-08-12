@@ -1,6 +1,6 @@
-ano inicial:2013
-ano final:2023
-qualis:qualis_agrarias_periodicos_2020.csv
+ano inicial:2018
+ano final:2024
+qualis:qualis_interdic_periodicos_2020.csv
 pg:Ambiente e Sistemas de Produção Agrícola
 apagar csv_producao:1
 calcular indcapes:0

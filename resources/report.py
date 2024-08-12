@@ -122,13 +122,15 @@ def report_write(qf):
             './relatorio/csv_report/report_ppe_uniq.csv', header=0, dtype=str)
         dfppe_uniq_ext = dfppe_uniq_ext[dfppe_uniq_ext['NATURE'] == 'EXTENSAO']
         if len(dfppe_uniq_ext) > 1:
-            dfppe_uniq_ext.reset_index(inplace=True, drop=True)
-            dfppe_uniq_ext['YEAR'] = dfppe_uniq_ext['YEAR'].apply(
-                lambda x: int(x))
-            dfppe_uniq_ext['YEAR_FIN'] = dfppe_uniq_ext['YEAR_FIN'].apply(
-                lambda x: int(x))
-            dfppe_uniq_ext.sort_values(['YEAR'], inplace=True)
-            dfppe_uniq_ext.reset_index(inplace=True, drop=True)
+            dfppe_uniq_ext = (
+                dfppe_uniq_ext
+                .reset_index()
+                .assign(YEAR=lambda df_: df_['YEAR'].apply(int))
+                .assign(YEAR_FIN=lambda df_: df_['YEAR_FIN'].apply(int))
+                .query('YEAR >= @yyi and YEAR_FIN <= @yyf')
+                .sort_values(['YEAR'])
+                .reset_index()
+                )
             htmlfile.write('<ol class="custom-counter">')
             for idx in range(len(dfppe_uniq_ext)):
                 proj = dfppe_uniq_ext['TITLE'].iloc[idx]
@@ -159,13 +161,15 @@ def report_write(qf):
             './relatorio/csv_report/report_ppe_uniq.csv', header=0, dtype=str)
         dfppe_uniq_resch = dfppe_uniq_resch[dfppe_uniq_resch['NATURE'] == 'PESQUISA']
         if len(dfppe_uniq_resch) >= 1:
-            dfppe_uniq_resch.reset_index(inplace=True, drop=True)
-            dfppe_uniq_resch['YEAR'] = dfppe_uniq_resch['YEAR'].apply(
-                lambda x: int(x))
-            dfppe_uniq_resch['YEAR_FIN'] = dfppe_uniq_resch['YEAR_FIN'].apply(
-                lambda x: int(x))
-            dfppe_uniq_resch.sort_values(['YEAR'], inplace=True)
-            dfppe_uniq_resch.reset_index(inplace=True, drop=True)
+            dfppe_uniq_resch = (
+                dfppe_uniq_resch
+                .reset_index()
+                .assign(YEAR=lambda df_: df_['YEAR'].apply(int))
+                .assign(YEAR_FIN=lambda df_: df_['YEAR_FIN'].apply(int))
+                .query('YEAR >= @yyi and YEAR_FIN <= @yyf')
+                .sort_values(['YEAR'])
+                .reset_index()
+                )
             htmlfile.write('<ol class="custom-counter">')
             for idx in range(len(dfppe_uniq_resch)):
                 proj = dfppe_uniq_resch['TITLE'].iloc[idx]
@@ -198,10 +202,14 @@ def report_write(qf):
     if rep_setup_file['books_uniq']['print'] == 'YES':
         dfbooks_uniq = pd.read_csv(
             './relatorio/csv_report/report_books_uniq.csv', header=0, dtype=str)
-        dfbooks_uniq['YEAR'] = dfbooks_uniq['YEAR'].apply(
-            lambda x: int(x))
-        dfbooks_uniq.sort_values(['YEAR'], inplace=True)
-        dfbooks_uniq.reset_index(inplace=True, drop=True)
+        dfbooks_uniq = (
+            dfbooks_uniq
+            .reset_index()
+            .assign(YEAR=lambda df_: df_['YEAR'].apply(int))
+            .query('YEAR >= @yyi and YEAR <= @yyf')
+            .sort_values(['YEAR'])
+            .reset_index()
+            )
         htmlfile.write('<ol class="custom-counter">')
         for idx in range(len(dfbooks_uniq)):
             title = dfbooks_uniq['TITLE'].iloc[idx]
@@ -260,10 +268,14 @@ def report_write(qf):
         dfchaps_uniq = pd.read_csv(
             './relatorio/csv_report/report_chapters_uniq.csv',
             header=0, dtype=str)
-        dfchaps_uniq['YEAR'] = dfchaps_uniq['YEAR'].apply(
-            lambda x: int(x))
-        dfchaps_uniq.sort_values(['YEAR'], inplace=True)
-        dfchaps_uniq.reset_index(inplace=True, drop=True)
+        dfchaps_uniq = (
+            dfchaps_uniq
+            .reset_index()
+            .assign(YEAR=lambda df_: df_['YEAR'].apply(int))
+            .query('YEAR >= @yyi and YEAR <= @yyf')
+            .sort_values(['YEAR'])
+            .reset_index()
+            )
         htmlfile.write('<ol class="custom-counter">')
         for idx in range(len(dfchaps_uniq)):
             title = dfchaps_uniq['TITLE'].iloc[idx]
@@ -327,10 +339,14 @@ def report_write(qf):
         dfpapers_uniq = pd.read_csv(
             './relatorio/csv_report/report_papers_uniq.csv',
             header=0, dtype=str)
-        dfpapers_uniq['YEAR'] = dfpapers_uniq['YEAR'].apply(
-            lambda x: int(x))
-        dfpapers_uniq.sort_values(['YEAR'], inplace=True)
-        dfpapers_uniq.reset_index(inplace=True, drop=True)
+        dfpapers_uniq = (
+            dfpapers_uniq
+            .reset_index()
+            .assign(YEAR=lambda df_: df_['YEAR'].apply(int))
+            .query('YEAR >= @yyi and YEAR <= @yyf')
+            .sort_values(['YEAR'])
+            .reset_index()
+            )
         htmlfile.write('<ol class="custom-counter">')
         for idx in range(len(dfpapers_uniq)):
             title = dfpapers_uniq['TITLE'].iloc[idx]
@@ -745,7 +761,8 @@ def report_write(qf):
     print('- Arquivo para classificacao qualis utilizado: ' + qualqualis + '.')
     print('- Os resultados estão sujeitos a falhas devido a inconsistencias ' +
           'no preenchimento dos CVs Lattes.')
-    print('- O arquivo extrato_periodico_autorqualis.csv foi gerado na ' +
-          'pasta relatorio.')
+    # print('- O arquivo extrato_periodico_autorqualis.csv foi gerado na ' +
+    #       'pasta relatorio.')
     print('- O arquivo relatorio_producao.html foi gerado na pasta relatorio.')
     print('------------------------------------------------------------')
+    print('-- Fim ---- https://github.com/rafatieppo/lucylattes -------')

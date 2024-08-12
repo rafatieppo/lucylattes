@@ -5,7 +5,7 @@
 ## Última atualização
 
 - Versão v1.0.2
-- *Sat 2024-08-10 09:33:11 -04* verifique os logs <a href="#logss">aqui</a>.
+- *Mon 2024-08-12 18:03:21 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -322,6 +322,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 
 ## Logs 
 <a name="logss"></a> 
+
+### Mon 2024-08-12 18:03:21 -04
+- On `relatorio_producao.html` the initial and final period to evaluate the data (projects, papers, ...) was not working. It was because a date fitering function had not been implemented. It was solved and the report period is the same of year (initial / end) input.
 
 ### Sun 2024-08-11 09:14:53 -04
 - On `report.py` had an error to filter projetcts, paper, etc. It was because the `report.py` was reading `config.txt` instead `config_tk.txt.` The issues has been solved with a new functions in `support_functions.py`: `yearlimit_forfilter_tk()` , and some changes in `read_set_config.py` class: `configSetup`. The next step is to fix filter in `report.py`. 

@@ -130,7 +130,8 @@ b2 = tk.Button(root, text="Gravar configuracoes",
                bg=cbg_config)
 b2.grid(row=21, column=1, padx=25, sticky='W')
 b3 = tk.Button(root, text="Quit",
-               command=root.destroy,
+               # command=root.destroy,
+               command=exit,
                bg=cbg_quit, foreground=cfw_quit)
 b3.grid(row=22, column=1, padx=25, sticky='E')
 
