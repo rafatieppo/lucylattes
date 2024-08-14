@@ -14,9 +14,6 @@ def getgeneraldata(zipname, minidomdoc):
             last_update[2:4] + '-' + last_update[4:8]
     if elem_curric_vitae[0].hasChildNodes is not True:
         # curriculo-vitae -> child dgerais
-        # chd_dgerais = elem_curric_vitae[0].childNodes[0]
-        # chd_dgerais = elem_curric_vitae[0].getElementsByTagName(
-        #     'DADOS-GERAIS')
         chd_dgerais = minidomdoc.getElementsByTagName('DADOS-GERAIS')
         chd_dgerais_len = len(chd_dgerais[0].childNodes)
         print('DADOS-GERAIS has ', chd_dgerais_len, ' childs')
@@ -47,23 +44,27 @@ def getgeneraldata(zipname, minidomdoc):
         # child dgerais -> child endereco -> child endereco profissional
         chd_dgerais_chd_endereco_chd_endprof = chd_dgerais_chd_endereco[0] \
             .getElementsByTagName('ENDERECO-PROFISSIONAL')
-        enterprise = chd_dgerais_chd_endereco_chd_endprof[0].getAttributeNode(
-            'NOME-INSTITUICAO-EMPRESA').value
-        enterprise_code = chd_dgerais_chd_endereco_chd_endprof[0] \
-            .getAttributeNode('CODIGO-INSTITUICAO-EMPRESA').value
+        if chd_dgerais_chd_endereco_chd_endprof.length == 0:
+            enterprise = 'Vazio'
+            enterprise_code = 'Vazio'
+        else:
+            enterprise = chd_dgerais_chd_endereco_chd_endprof[0].getAttributeNode(
+                'NOME-INSTITUICAO-EMPRESA').value
+            enterprise_code = chd_dgerais_chd_endereco_chd_endprof[0] \
+                .getAttributeNode('CODIGO-INSTITUICAO-EMPRESA').value
         # child dgerais -> child formacao academ -> child doutorado
-        chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
-            'FORMACAO-ACADEMICA-TITULACAO')
-        chd_dgerais_chd_formacao_chd_doc = chd_dgerais_chd_formacao[0] \
-            .getElementsByTagName('DOUTORADO')
-        dout_inst = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
-            'NOME-INSTITUICAO').value
-        dout_curs = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
-            'NOME-CURSO').value
-        dout_yini = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
-            'ANO-DE-INICIO').value
-        dout_yfin = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
-            'ANO-DE-CONCLUSAO').value
+        # chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
+        #     'FORMACAO-ACADEMICA-TITULACAO')
+        # chd_dgerais_chd_formacao_chd_doc = chd_dgerais_chd_formacao[0] \
+        #     .getElementsByTagName('DOUTORADO')
+        # dout_inst = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+        #     'NOME-INSTITUICAO').value
+        # dout_curs = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+        #     'NOME-CURSO').value
+        # dout_yini = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+        #     'ANO-DE-INICIO').value
+        # dout_yfin = chd_dgerais_chd_formacao_chd_doc[0].getAttributeNode(
+        #     'ANO-DE-CONCLUSAO').value
         # output
         df_fullname = pd.DataFrame({'ID': pd.Series(id_lattes),
                                     'FULL_NAME': pd.Series(full_name),
@@ -76,10 +77,10 @@ def getgeneraldata(zipname, minidomdoc):
                                     'ADDRESS_ENTERP': pd.Series(enterprise),
                                     'ORCID': pd.Series(orcid),
                                     'ADDRESS_ENTERP_CODE': pd.Series(enterprise_code),
-                                    'DOC_INST': pd.Series(dout_inst),
-                                    'DOC_COURSE': pd.Series(dout_curs),
-                                    'DOC_YEAR_INI': pd.Series(dout_yini),
-                                    'DOC_YEAR_FIN': pd.Series(dout_yfin)
+                                    # 'DOC_INST': pd.Series(dout_inst),
+                                    # 'DOC_COURSE': pd.Series(dout_curs),
+                                    # 'DOC_YEAR_INI': pd.Series(dout_yini),
+                                    # 'DOC_YEAR_FIN': pd.Series(dout_yfin)
                                     })
 
         pathfilename = str('./csv_producao/' + id_lattes + '_fullname.csv')
