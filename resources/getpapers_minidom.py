@@ -17,9 +17,9 @@ def getpapers(zipname, minidomdoc, qf):
     len_chd_prodbibliog = len(chd_prodbibliog[0].childNodes)
 
     # child producao bibliografica -> artigos-publicados
-    if len_chd_prodbibliog >= 1:
-        chd_artspubs = chd_prodbibliog[0] \
-            .getElementsByTagName('ARTIGOS-PUBLICADOS')
+    chd_artspubs = chd_prodbibliog[0] \
+        .getElementsByTagName('ARTIGOS-PUBLICADOS')
+    if len_chd_prodbibliog >= 1 and chd_artspubs.length > 0:
         len_chd_artspubs = len(chd_artspubs[0].childNodes)
         if len_chd_artspubs >= 1:
             ls_per_title = []
