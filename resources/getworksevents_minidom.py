@@ -14,10 +14,9 @@ def getworksevents(zipname, minidomdoc):
         .getAttributeNode('NOME-COMPLETO').nodeValue
     # search for producao-blibliografica starts here
     chd_prodbibliog = minidomdoc.getElementsByTagName('PRODUCAO-BIBLIOGRAFICA')
-    len_chd_prodbibliog = len(chd_prodbibliog[0].childNodes)
-
-    # child producao bibliografica -> TRABALHOS-EM-EVENTOS
-    if len_chd_prodbibliog >= 1:
+    if chd_prodbibliog.length > 0:
+        # len_chd_prodbibliog = len(chd_prodbibliog[0].childNodes)
+        # child producao bibliografica -> TRABALHOS-EM-EVENTOS
         chd_worksevents = chd_prodbibliog[0] \
             .getElementsByTagName('TRABALHOS-EM-EVENTOS')
         try:
