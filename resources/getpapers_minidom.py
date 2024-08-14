@@ -14,14 +14,13 @@ def getpapers(zipname, minidomdoc, qf):
         .getAttributeNode('NOME-COMPLETO').nodeValue
     # search for producao-blibliografica starts here
     chd_prodbibliog = minidomdoc.getElementsByTagName('PRODUCAO-BIBLIOGRAFICA')
-    len_chd_prodbibliog = len(chd_prodbibliog[0].childNodes)
-
+    # len_chd_prodbibliog = len(chd_prodbibliog[0].childNodes)
     # child producao bibliografica -> artigos-publicados
-    chd_artspubs = chd_prodbibliog[0] \
-        .getElementsByTagName('ARTIGOS-PUBLICADOS')
-    if len_chd_prodbibliog >= 1 and chd_artspubs.length > 0:
-        len_chd_artspubs = len(chd_artspubs[0].childNodes)
-        if len_chd_artspubs >= 1:
+    if chd_prodbibliog.length > 0:
+        chd_artspubs = chd_prodbibliog[0] \
+            .getElementsByTagName('ARTIGOS-PUBLICADOS')
+        if chd_artspubs.length > 0:
+            len_chd_artspubs = len(chd_artspubs[0].childNodes)
             ls_per_title = []
             ls_per_year = []
             ls_per_doi = []
