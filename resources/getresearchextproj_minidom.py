@@ -10,10 +10,9 @@ def getresearchextproj(zipname, minidomdoc):
     # elem_curric_vitae = minidomdoc.getElementsByTagName('CURRICULO-VITAE')
     id_lattes = str(zipname.split('.')[0])
     chd_atuacprofs = minidomdoc.getElementsByTagName('ATUACOES-PROFISSIONAIS')
-    len_chd_atuacprofs = len(chd_atuacprofs[0].childNodes)
-    len_chd_atuacprofs
+    if chd_atuacprofs.length > 0:
+        len_chd_atuacprofs = len(chd_atuacprofs[0].childNodes)
     # child autuacoes profissionais -> atividades-de-participacao-em-projeto
-    if len_chd_atuacprofs >= 1:
         ls_enterprise = []
         ls_enterprise_code = []
         ls_proj = []
