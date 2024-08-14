@@ -38,26 +38,26 @@ def getshortcourse(zipname, minidomdoc):
                     chd_autores = chd_cursocurtdur[idx] \
                         .getElementsByTagName('AUTORES')
                     ls_scourse_authors_temp = []
-                    ls_scourse_authors_idcnpq_temp = []
+                    # ls_scourse_authors_idcnpq_temp = []
                     for idy in range(chd_autores.length):
                         author = chd_autores[idy].getAttributeNode(
                             'NOME-COMPLETO-DO-AUTOR').nodeValue
-                        autoridcnpq = chd_autores[idy].getAttributeNode(
-                            'NRO-ID-CNPQ').nodeValue
+                        # autoridcnpq = chd_autores[idy].getAttributeNode(
+                            # 'NRO-ID-CNPQ').nodeValue
                         ls_scourse_authors_temp.append(author)
-                        ls_scourse_authors_idcnpq_temp.append(autoridcnpq)
+                        # ls_scourse_authors_idcnpq_temp.append(autoridcnpq)
                     ls_scourse_title.append(title)
                     ls_scourse_year.append(year)
                     ls_scourse_authors.append(ls_scourse_authors_temp)
-                    ls_scourse_authors_idcnpq.append(
-                        ls_scourse_authors_idcnpq_temp)
+                    # ls_scourse_authors_idcnpq.append(
+                        # ls_scourse_authors_idcnpq_temp)
 
                 df_shortcourse = pd.DataFrame({'ID': np.repeat(id_lattes,
                                                                len(ls_scourse_title)),
                                                'COURSE': ls_scourse_title,
                                                'YEAR': ls_scourse_year,
                                                'AUTHOR': ls_scourse_authors,
-                                               'ID_CNPQ': ls_scourse_authors_idcnpq
+                                               # 'ID_CNPQ': ls_scourse_authors_idcnpq
                                                })
                 pathfilename = str('./csv_producao/' +
                                    id_lattes + '_shortcourse.csv')
