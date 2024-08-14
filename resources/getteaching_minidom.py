@@ -10,9 +10,8 @@ def getteaching(zipname, minidomdoc):
     id_lattes = str(zipname.split('.')[0])
     # child autuacoes profissionais
     chd_atuacprofs = minidomdoc.getElementsByTagName('ATUACOES-PROFISSIONAIS')
-    len_chd_atuacprofs = len(chd_atuacprofs[0].childNodes)
-    len_chd_atuacprofs
-    if len_chd_atuacprofs >= 1:
+    if chd_atuacprofs.length > 0:
+        len_chd_atuacprofs = len(chd_atuacprofs[0].childNodes)
         ls_enterprise = []
         ls_enterprise_code = []
         ls_type = []
