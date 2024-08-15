@@ -5,7 +5,7 @@
 ## Última atualização
 
 - Versão v1.0.2
-- *Mon 2024-08-12 18:03:21 -04* verifique os logs <a href="#logss">aqui</a>.
+- *Wed 2024-08-14 20:56:51 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -287,8 +287,11 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 - `./resources/getadvrunning_minidom.py`: write a `.csv` with running advising data from each `.xml`;
 - `./resources/getbooks_minidom.py`: write a `.csv` with books data from each `.xml`;
 - `./resources/getchapters_minidom.py`: write a `.csv` with chapters data from each `.xml`;
-- `./resources/getencoding_minidom`.py: return enconding and version from `.xml`;
-- `./resources/getgeneraldata_minidom`.py: write a `.csv` with dados-gerais from each `.xml`;
+- `./resources/getencoding_minidom.py`: return enconding and version from `.xml`;
+- `./resources/getgeneraldata_minidom.py`: write a `.csv` with dados-gerais from each `.xml`;
+- `./resources/getgeneraldata_grad_minidom.py`: write a `.csv` with formacao-academica graduacao from each `.xml`;
+- `./resources/getgeneraldata_mest_minidom.py`: with formacao-academica mestrado from each `.xml`; 
+- `./resources/getgeneraldata_dout_minidom.py`: with formacao-academica doutorado from each `.xml`;
 - `./resources/getminidom_xmlfile`.py: return a minidom from each `.xml`;
 - `./resources/getpapers_minidom.py`:  write a `.csv` with papers data from each `.xml`;
 - `./resources/getresearchextproj_minidom`.py: write a `.csv` with research and extension projects from each `.xml`;
@@ -323,6 +326,8 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 ## Logs 
 <a name="logss"></a> 
 
+### Wed 2024-08-14 20:56:51 -04
+- new function to get FORMACAO-ACADEMICA-TITULACAO (graduacao mestrado doutorado) were implemented, the output is in `csv_producao`. 
 ### Mon 2024-08-12 18:03:21 -04
 - On `relatorio_producao.html` the initial and final period to evaluate the data (projects, papers, ...) was not working. It was because a date fitering function had not been implemented. It was solved and the report period is the same of year (initial / end) input.
 
