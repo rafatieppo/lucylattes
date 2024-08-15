@@ -42,6 +42,8 @@ def tidydata_ppe():
         # remove all lines with VAZIO title
         df_ppe = df_ppe.query('TITLE != "VAZIO"')
         df_ppe.reset_index(inplace=True, drop=True)
+        df_ppe = df_ppe.query('MEMBERS != "VAZIO"')
+        df_ppe.reset_index(inplace=True, drop=True)
         # drop rows with NaN, or any errors in year column
         df = df_ppe.copy()
         df_ppe = droprow_nullyear(df)
@@ -63,7 +65,11 @@ def tidydata_ppe():
                 if fullname == lsmembers[idy]:
                     memberorder = idy + 1
             lsmemberorder.append(memberorder)
-            lscoordenate.append(lscoordena[memberorder-1])
+            # condicao para 1 pessoal no proj
+            if memberorder == -99:
+                lscoordenate.append(lscoordena[0])
+            else:
+                lscoordenate.append(lscoordena[memberorder-1])
         df_ppe = df_ppe.copy()
         df_ppe['MEMBER_ORDER'] = lsmemberorder
         df_ppe['COORDINATOR'] = lscoordenate
