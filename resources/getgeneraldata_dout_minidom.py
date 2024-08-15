@@ -13,14 +13,14 @@ def getgeneraldata_dout(zipname, minidomdoc):
         chd_dgerais = minidomdoc.getElementsByTagName('DADOS-GERAIS')
         chd_dgerais_len = len(chd_dgerais[0].childNodes)
         print('DADOS-GERAIS has ', chd_dgerais_len, ' childs')
-        # child dgerais -> child formacao academ -> child mestuacao
-        mest_inst, mest_curs, mest_yini, mest_yfin = [], [], [], []
+        # child dgerais -> child formacao academ -> child doutorado
+        dout_inst, dout_curs, dout_yini, dout_yfin = [], [], [], []
         chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
             'FORMACAO-ACADEMICA-TITULACAO')
-        chd_dgerais_chd_formacao_chd_mest = chd_dgerais_chd_formacao[0] \
+        chd_dgerais_chd_formacao_chd_dout = chd_dgerais_chd_formacao[0] \
             .getElementsByTagName('DOUTORADO')
-        if len(chd_dgerais_chd_formacao_chd_mest) > 0:
-            for idx in range(len(chd_dgerais_chd_formacao_chd_mest)):
+        if len(chd_dgerais_chd_formacao_chd_dout) > 0:
+            for idx in range(len(chd_dgerais_chd_formacao_chd_dout)):
                 dout_inst.append(
                     chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
                         'NOME-INSTITUICAO').value)

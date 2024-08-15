@@ -13,7 +13,7 @@ def getgeneraldata_mest(zipname, minidomdoc):
         chd_dgerais = minidomdoc.getElementsByTagName('DADOS-GERAIS')
         chd_dgerais_len = len(chd_dgerais[0].childNodes)
         print('DADOS-GERAIS has ', chd_dgerais_len, ' childs')
-        # child dgerais -> child formacao academ -> child mestuacao
+        # child dgerais -> child formacao academ -> child mestrado
         mest_inst, mest_curs, mest_yini, mest_yfin = [], [], [], []
         chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
             'FORMACAO-ACADEMICA-TITULACAO')
