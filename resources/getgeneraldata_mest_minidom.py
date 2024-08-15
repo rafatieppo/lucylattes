@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def getgeneraldata_grad(zipname, minidomdoc):
+def getgeneraldata_mest(zipname, minidomdoc):
     """Get dados-gerais mestrado from minidom."""
     id_lattes = str(zipname.split('.')[0])
     elem_curric_vitae = minidomdoc.getElementsByTagName('CURRICULO-VITAE')
