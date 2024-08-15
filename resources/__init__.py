@@ -4,6 +4,9 @@ from resources.unzip_xml import unzip_xml
 from resources.getminidom_xmlfile import getminidom_xmlfile
 from resources.getencoding_minidom import getencoding_minidom
 from resources.getgeneraldata_minidom import getgeneraldata
+from resources.getgeneraldata_grad_minidom import getgeneraldata_grad
+from resources.getgeneraldata_mest_minidom import getgeneraldata_mest
+from resources.getgeneraldata_dout_minidom import getgeneraldata_dout
 from resources.getresearchextproj_minidom import getresearchextproj
 from resources.getworksevents_minidom import getworksevents
 from resources.getpapers_minidom import getpapers

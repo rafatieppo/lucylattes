@@ -16,6 +16,7 @@ def run_lucyLattes():
 
     # zipname = '5401789813032087.zip'
     # zipname = '3275865819287843.zip'
+    # zipname = '4144237921330591.zip'
     zipfiles = glob.glob('./xml_zip/*.zip')
     lszip = []
     for idx in range(len(zipfiles)):
@@ -29,6 +30,9 @@ def run_lucyLattes():
         minidomdoc = resources.getminidom_xmlfile(xmlfile)
         resources.getencoding_minidom(zipname, minidomdoc)
         resources.getgeneraldata(zipname, minidomdoc)
+        resources.getgeneraldata_grad(zipname, minidomdoc)
+        resources.getgeneraldata_mest(zipname, minidomdoc)
+        resources.getgeneraldata_dout(zipname, minidomdoc)
         resources.getresearchextproj(zipname, minidomdoc)
         resources.getworksevents(zipname, minidomdoc)
         resources.getpapers(zipname, minidomdoc, qf)
