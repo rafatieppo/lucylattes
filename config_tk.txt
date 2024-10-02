@@ -1,5 +1,5 @@
-ano inicial:2018
-ano final:2024
+ano inicial:2010
+ano final:2020
 qualis:qualis_interdic_periodicos_2020.csv
 pg:Ambiente e Sistemas de Produção Agrícola
 apagar csv_producao:1

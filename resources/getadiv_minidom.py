@@ -176,7 +176,7 @@ def getadv(zipname, minidomdoc):
                         .getAttributeNode('NATUREZA').nodeValue
                     title = chd_advmaster[idx] \
                         .getElementsByTagName(
-                        'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-MESTRADO')[0] \
+                        'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO')[0] \
                         .getAttributeNode('TITULO').nodeValue
                     instit = chd_advposdoc[idx] \
                         .getElementsByTagName(
