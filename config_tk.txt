@@ -1,5 +1,5 @@
-ano inicial:2010
-ano final:2020
+ano inicial:2021
+ano final:2024
 qualis:qualis_interdic_periodicos_2020.csv
 pg:Programa de Pós-Graduação em Engenharia Elétrica - PPGEE/UFMG
 apagar csv_producao:0
