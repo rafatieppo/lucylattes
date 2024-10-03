@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def list_append_proj_r_ext(chd_part_proj, idy,
-                           ls_proj, ls_year_ini, ls_year_end,
+                           ls_proj, ls_proj_seq, ls_year_ini, ls_year_end,
                            ls_nature, ls_enterprise, ls_enterprise_code,
                            enterprise, enterprise_code,
                            ls_members_name, ls_members_id, ls_member_coord):
@@ -18,11 +18,13 @@ def list_append_proj_r_ext(chd_part_proj, idy,
     # -----------------------------------
     if len_ppe <= 0:
         proj = 'VAZIO'
+        proj_seq = 'VAZIO'
         year_ini = 'VAZIO'
         year_ini = 'VAZIO'
         year_end = 'VAZIO'
         nature = 'VAZIO'
         ls_proj.append(proj)
+        ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
         ls_nature.append(nature)
@@ -38,6 +40,8 @@ def list_append_proj_r_ext(chd_part_proj, idy,
     elif len_ppe == 1:
         proj = ppe[0] \
             .getAttributeNode('NOME-DO-PROJETO').nodeValue
+        proj_seq = ppe[0] \
+            .getAttributeNode('SEQUENCIA-PROJETO').nodeValue
         year_ini = ppe[0] \
             .getAttributeNode('ANO-INICIO').nodeValue
         if year_ini == '':
@@ -49,6 +53,7 @@ def list_append_proj_r_ext(chd_part_proj, idy,
         nature = ppe[0] \
             .getAttributeNode('NATUREZA').nodeValue
         ls_proj.append(proj)
+        ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
         ls_nature.append(nature)
@@ -76,6 +81,8 @@ def list_append_proj_r_ext(chd_part_proj, idy,
             # print(idv, '---idv')
             proj = ppe[idv] \
                 .getAttributeNode('NOME-DO-PROJETO').nodeValue
+            proj_seq = ppe[idv] \
+                .getAttributeNode('SEQUENCIA-PROJETO').nodeValue
             # print(proj)
             year_ini = ppe[idv] \
                 .getAttributeNode('ANO-INICIO').nodeValue
@@ -88,6 +95,7 @@ def list_append_proj_r_ext(chd_part_proj, idy,
             nature = ppe[idv] \
                 .getAttributeNode('NATUREZA').nodeValue
             ls_proj.append(proj)
+            ls_proj_seq.append(proj_seq)
             ls_year_ini.append(year_ini)
             ls_year_end.append(year_end)
             ls_nature.append(nature)

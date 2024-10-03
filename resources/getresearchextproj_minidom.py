@@ -16,6 +16,7 @@ def getresearchextproj(zipname, minidomdoc):
         ls_enterprise = []
         ls_enterprise_code = []
         ls_proj = []
+        ls_proj_seq = []
         ls_year_ini = []
         ls_year_end = []
         ls_nature = []
@@ -32,6 +33,7 @@ def getresearchextproj(zipname, minidomdoc):
                 .getElementsByTagName('ATIVIDADES-DE-PARTICIPACAO-EM-PROJETO')
             if chd_part_proj.length == 0:
                 ls_proj.append('VAZIO')
+                ls_proj_seq.append('VAZIO')
                 ls_year_ini.append('VAZIO')
                 ls_year_end.append('VAZIO')
                 ls_nature.append('VAZIO')
@@ -48,12 +50,14 @@ def getresearchextproj(zipname, minidomdoc):
                 len_chd_part_proj = chd_part_proj.length
                 for idy in range(len_chd_part_proj):
                     list_append_proj_r_ext(
-                        chd_part_proj, idy, ls_proj, ls_year_ini, ls_year_end,
+                        chd_part_proj, idy, ls_proj, ls_proj_seq,
+                        ls_year_ini, ls_year_end,
                         ls_nature, ls_enterprise, ls_enterprise_code,
                         enterprise, enterprise_code,
                         ls_members_name, ls_members_id, ls_member_coord)
         df_ppe = pd.DataFrame({'ID': np.repeat(id_lattes, len(ls_proj)),
                                'TITLE': ls_proj,
+                               'PROJ_SEQ': ls_proj_seq,
                                'YEAR': ls_year_ini,
                                'YEAR_FIN': ls_year_end,
                                'NATURE': ls_nature,
