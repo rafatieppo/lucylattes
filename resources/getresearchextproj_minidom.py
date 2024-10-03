@@ -57,7 +57,7 @@ def getresearchextproj(zipname, minidomdoc):
                         ls_members_name, ls_members_id, ls_member_coord)
         df_ppe = pd.DataFrame({'ID': np.repeat(id_lattes, len(ls_proj)),
                                'TITLE': ls_proj,
-                               'PROJ_SEQ': ls_proj_seq,
+                               'SEQ_PROJ': ls_proj_seq,
                                'YEAR': ls_year_ini,
                                'YEAR_FIN': ls_year_end,
                                'NATURE': ls_nature,
