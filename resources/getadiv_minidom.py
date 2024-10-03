@@ -174,7 +174,7 @@ def getadv(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO')[0] \
                         .getAttributeNode('NATUREZA').nodeValue
-                    title = chd_advmaster[idx] \
+                    title = chd_advposdoc[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO')[0] \
                         .getAttributeNode('TITULO').nodeValue
