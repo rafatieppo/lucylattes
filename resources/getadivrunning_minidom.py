@@ -163,7 +163,6 @@ def getadvrunn(zipname, minidomdoc):
                 .getElementsByTagName(
                 'ORIENTACAO-EM-ANDAMENTO-DE-POS-DOUTORADO')
             len_chd_advposdoc = chd_advposdoc.length
-            len_chd_advposdoc
             if len_chd_advposdoc >= 1:
                 for idx in range(len_chd_advposdoc):
                     year = chd_advposdoc[idx] \
