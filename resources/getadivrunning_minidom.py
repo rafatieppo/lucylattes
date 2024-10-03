@@ -17,6 +17,7 @@ def getadvrunn(zipname, minidomdoc):
         chd_advrunn = chd_compdata[0] \
             .getElementsByTagName('ORIENTACOES-EM-ANDAMENTO')
         if chd_advrunn.length >= 1:
+            ls_adv_seq = []
             ls_adv_year = []
             ls_adv_nat = []
             ls_adv_title = []
@@ -36,6 +37,8 @@ def getadvrunn(zipname, minidomdoc):
             len_chd_advmaster
             if len_chd_advmaster >= 1:
                 for idx in range(len_chd_advmaster):
+                    seq = chd_advmaster[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advmaster[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DA-ORIENTACAO-EM-ANDAMENTO-DE-MESTRADO')[0] \
@@ -76,6 +79,7 @@ def getadvrunn(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DA-ORIENTACAO-EM-ANDAMENTO-DE-MESTRADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTADO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -101,6 +105,8 @@ def getadvrunn(zipname, minidomdoc):
             len_chd_advdoc
             if len_chd_advdoc >= 1:
                 for idx in range(len_chd_advdoc):
+                    seq = chd_advdoc[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advdoc[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DA-ORIENTACAO-EM-ANDAMENTO-DE-DOUTORADO')[0] \
@@ -141,6 +147,7 @@ def getadvrunn(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DA-ORIENTACAO-EM-ANDAMENTO-DE-DOUTORADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTANDO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -165,6 +172,8 @@ def getadvrunn(zipname, minidomdoc):
             len_chd_advposdoc = chd_advposdoc.length
             if len_chd_advposdoc >= 1:
                 for idx in range(len_chd_advposdoc):
+                    seq = chd_advposdoc[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advposdoc[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DA-ORIENTACAO-EM-ANDAMENTO-DE-POS-DOUTORADO')[0] \
@@ -205,6 +214,7 @@ def getadvrunn(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DA-ORIENTACAO-EM-ANDAMENTO-DE-POS-DOUTORADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTANDO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -228,9 +238,10 @@ def getadvrunn(zipname, minidomdoc):
                 .getElementsByTagName(
                 'ORIENTACAO-EM-ANDAMENTO-DE-INICIACAO-CIENTIFICA')
             len_chd_advic = chd_advic.length
-            len_chd_advic
             if len_chd_advic >= 1:
                 for idx in range(len_chd_advic):
+                    seq = chd_advic[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advic[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DA-ORIENTACAO-EM-ANDAMENTO-DE-INICIACAO-CIENTIFICA')[0] \
@@ -272,6 +283,7 @@ def getadvrunn(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DA-ORIENTACAO-EM-ANDAMENTO-DE-INICIACAO-CIENTIFICA')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTANDO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -294,9 +306,10 @@ def getadvrunn(zipname, minidomdoc):
                 .getElementsByTagName(
                 'OUTRAS-ORIENTACOES-EM-ANDAMENTO')
             len_chd_advothers = chd_advothers.length
-            len_chd_advothers
             if len_chd_advothers >= 1:
                 for idx in range(len_chd_advothers):
+                    seq = chd_advothers[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advothers[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-OUTRAS-ORIENTACOES-EM-ANDAMENTO')[0] \
@@ -338,6 +351,7 @@ def getadvrunn(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DE-OUTRAS-ORIENTACOES-EM-ANDAMENTO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTANDO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)

@@ -10,13 +10,13 @@ def getadv(zipname, minidomdoc):
     # search for outra-producao starts here
     chd_otherprod = minidomdoc.getElementsByTagName('OUTRA-PRODUCAO')
     len_chd_otherprod = chd_otherprod.length
-    len_chd_otherprod
 
     # child outra-producao -> orientacoes-concluidas
     if len_chd_otherprod >= 1:
         chd_advfinish = chd_otherprod[0] \
             .getElementsByTagName('ORIENTACOES-CONCLUIDAS')
         if chd_advfinish.length >= 1:
+            ls_adv_seq = []
             ls_adv_year = []
             ls_adv_nat = []
             ls_adv_title = []
@@ -33,9 +33,10 @@ def getadv(zipname, minidomdoc):
                 .getElementsByTagName(
                 'ORIENTACOES-CONCLUIDAS-PARA-MESTRADO')
             len_chd_advmaster = chd_advmaster.length
-            len_chd_advmaster
             if len_chd_advmaster >= 1:
                 for idx in range(len_chd_advmaster):
+                    seq = chd_advmaster[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advmaster[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-MESTRADO')[0] \
@@ -76,6 +77,7 @@ def getadv(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DE-ORIENTACOES-CONCLUIDAS-PARA-MESTRADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTADO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -98,9 +100,10 @@ def getadv(zipname, minidomdoc):
                 .getElementsByTagName(
                 'ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO')
             len_chd_advdoc = chd_advdoc.length
-            len_chd_advdoc
             if len_chd_advdoc >= 1:
                 for idx in range(len_chd_advdoc):
+                    seq = chd_advdoc[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advdoc[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO')[0] \
@@ -141,6 +144,7 @@ def getadv(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DE-ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTADO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -166,6 +170,8 @@ def getadv(zipname, minidomdoc):
             len_chd_advposdoc
             if len_chd_advposdoc >= 1:
                 for idx in range(len_chd_advposdoc):
+                    seq = chd_advposdoc[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advposdoc[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO')[0] \
@@ -206,6 +212,7 @@ def getadv(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DE-ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTADO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -228,9 +235,10 @@ def getadv(zipname, minidomdoc):
                 .getElementsByTagName(
                 'OUTRAS-ORIENTACOES-CONCLUIDAS')
             len_chd_advothers = chd_advothers.length
-            len_chd_advothers
             if len_chd_advothers >= 1:
                 for idx in range(len_chd_advothers):
+                    seq = chd_advothers[idx] \
+                        .getAttributeNode('SEQUENCIA-PRODUCAO').nodeValue
                     year = chd_advothers[idx] \
                         .getElementsByTagName(
                         'DADOS-BASICOS-DE-OUTRAS-ORIENTACOES-CONCLUIDAS')[0] \
@@ -271,6 +279,7 @@ def getadv(zipname, minidomdoc):
                         .getElementsByTagName(
                         'DETALHAMENTO-DE-OUTRAS-ORIENTACOES-CONCLUIDAS')[0] \
                         .getAttributeNode('NUMERO-ID-ORIENTADO').nodeValue
+                    ls_adv_seq.append(seq)
                     ls_adv_year.append(year)
                     ls_adv_nat.append(nature)
                     ls_adv_title.append(title)
@@ -289,6 +298,7 @@ def getadv(zipname, minidomdoc):
                       ' has NO OUTRAS-ORIENTACOES-CONCLUIDAS.')
             df_advis = pd.DataFrame({'ID': np.repeat(id_lattes,
                                                      len(ls_adv_title)),
+                                     'SEQ_PROD': ls_adv_seq,
                                      'TITLE': ls_adv_title,
                                      'YEAR': ls_adv_year,
                                      'NATURE': ls_adv_nat,
