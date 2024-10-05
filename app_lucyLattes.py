@@ -15,7 +15,6 @@ cbg_run = '#2a788e'
 cbg_quit = '#440154'
 cfw_quit = '#FFFFFF'
 
-
 # logo
 img = PhotoImage(file='./fig_lucy.png')
 # canvas = tk.Canvas(root, width=120, height=120)
