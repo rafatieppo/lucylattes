@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from resources.paper_qualis import paperqualis
 from resources.paper_jcr import paperjcr
+from resources.support_functions import yearlimit_forfilter_tk
 
 
 def getworksevents(zipname, minidomdoc):
@@ -21,8 +22,9 @@ def getworksevents(zipname, minidomdoc):
             .getElementsByTagName('TRABALHOS-EM-EVENTOS')
         try:
             len_chd_worksevents = len(chd_worksevents[0].childNodes)
-        # print('------------>>>> ', len_chd_worksevents)
+            # print('------------>>>> ', len_chd_worksevents)
             if len_chd_worksevents >= 1:
+                lsyear_limits = yearlimit_forfilter_tk()
                 ls_workevnt_nature = []
                 ls_workevnt_title = []
                 ls_workevnt_year = []
@@ -36,101 +38,108 @@ def getworksevents(zipname, minidomdoc):
                 ls_per_order = []
                 ls_per_idcnpq = []
                 # ls_jcr = []
+                filtered_events=0
                 for idx in range(len_chd_worksevents):
-                    workevnt_nature = chd_worksevents[0].childNodes[idx] \
-                        .getElementsByTagName('DADOS-BASICOS-DO-TRABALHO')[0] \
-                        .getAttributeNode('NATUREZA').nodeValue
-                    title = chd_worksevents[0].childNodes[idx] \
-                        .getElementsByTagName('DADOS-BASICOS-DO-TRABALHO')[0] \
-                        .getAttributeNode('TITULO-DO-TRABALHO').nodeValue
                     year = chd_worksevents[0].childNodes[idx] \
                         .getElementsByTagName('DADOS-BASICOS-DO-TRABALHO')[0] \
                         .getAttributeNode('ANO-DO-TRABALHO').nodeValue
-                    # doi = chd_worksevents[0].childNodes[idx] \
-                    #     .getElementsByTagName('DADOS-BASICOS-DO-ARTIGO')[0] \
-                    #     .getAttributeNode('DOI').nodeValue
-                    # lang = chd_worksevents[0].childNodes[idx] \
-                    #     .getElementsByTagName('DADOS-BASICOS-DO-ARTIGO')[0] \
-                    #     .getAttributeNode('IDIOMA').nodeValue
-                    # journal = chd_worksevents[0].childNodes[idx] \
-                    #     .getElementsByTagName('DETALHAMENTO-DO-ARTIGO')[0] \
-                    #     .getAttributeNode('TITULO-DO-PERIODICO-OU-REVISTA').nodeValue
-                    # issn = chd_worksevents[0].childNodes[idx] \
-                    #     .getElementsByTagName('DETALHAMENTO-DO-ARTIGO')[0] \
-                    #     .getAttributeNode('ISSN').nodeValue
+                    nyear = int(year)
+                    if (nyear >= lsyear_limits[0]) & (nyear <= lsyear_limits[1]) :
+                        filtered_events +=1
+                        workevnt_nature = chd_worksevents[0].childNodes[idx] \
+                            .getElementsByTagName('DADOS-BASICOS-DO-TRABALHO')[0] \
+                            .getAttributeNode('NATUREZA').nodeValue
+                        title = chd_worksevents[0].childNodes[idx] \
+                            .getElementsByTagName('DADOS-BASICOS-DO-TRABALHO')[0] \
+                            .getAttributeNode('TITULO-DO-TRABALHO').nodeValue
+                    
+                        # doi = chd_worksevents[0].childNodes[idx] \
+                        #     .getElementsByTagName('DADOS-BASICOS-DO-ARTIGO')[0] \
+                        #     .getAttributeNode('DOI').nodeValue
+                        # lang = chd_worksevents[0].childNodes[idx] \
+                        #     .getElementsByTagName('DADOS-BASICOS-DO-ARTIGO')[0] \
+                        #     .getAttributeNode('IDIOMA').nodeValue
+                        # journal = chd_worksevents[0].childNodes[idx] \
+                        #     .getElementsByTagName('DETALHAMENTO-DO-ARTIGO')[0] \
+                        #     .getAttributeNode('TITULO-DO-PERIODICO-OU-REVISTA').nodeValue
+                        # issn = chd_worksevents[0].childNodes[idx] \
+                        #     .getElementsByTagName('DETALHAMENTO-DO-ARTIGO')[0] \
+                        #     .getAttributeNode('ISSN').nodeValue
 
-                    # child producao bibliografica -> artigos-publicados -> autores
-                    ls_allauthors = []
-                    ls_allauthororder = []
-                    ls_authororder = []
-                    ls_allidcnpq = []
-                    chd_autores = chd_worksevents[0].childNodes[idx] \
-                        .getElementsByTagName('AUTORES')
-                    len_chd_autores = chd_autores.length
-                    for idy in range(len_chd_autores):
-                        author = chd_autores[idy] \
-                            .getAttributeNode('NOME-COMPLETO-DO-AUTOR').nodeValue
-                        authors_order = chd_autores[idy] \
-                            .getAttributeNode('ORDEM-DE-AUTORIA').nodeValue
-                        idcnpq = chd_autores[idy] \
-                            .getAttributeNode('NRO-ID-CNPQ').nodeValue
-                        ls_allauthors.append(author)
-                        ls_allauthororder.append(authors_order)
-                        ls_allidcnpq.append(idcnpq)
-                        # assign author order
-                        if author == full_name:
-                            ls_authororder.append(authors_order)
-                    ls_workevnt_nature.append(workevnt_nature)
-                    ls_workevnt_title.append(title)
-                    ls_workevnt_year.append(year)
-                    # ls_per_doi.append(doi)
-                    # ls_per_lang.append(lang)
-                    # ls_per_journal.append(journal)
-                    # ls_per_issn.append(issn)
-                    # ls_per_qualis = []
-                    ls_per_authors.append(ls_allauthors)
-                    ls_per_authorsorder.append(ls_allauthororder)
-                    ls_per_order.append(ls_authororder)
-                    ls_per_idcnpq.append(ls_allidcnpq)
-                    # ls_jcr = []
+                        # child producao bibliografica -> artigos-publicados -> autores
+                        ls_allauthors = []
+                        ls_allauthororder = []
+                        ls_authororder = []
+                        ls_allidcnpq = []
+                        chd_autores = chd_worksevents[0].childNodes[idx] \
+                            .getElementsByTagName('AUTORES')
+                        len_chd_autores = chd_autores.length
+                        for idy in range(len_chd_autores):
+                            author = chd_autores[idy] \
+                                .getAttributeNode('NOME-COMPLETO-DO-AUTOR').nodeValue
+                            authors_order = chd_autores[idy] \
+                                .getAttributeNode('ORDEM-DE-AUTORIA').nodeValue
+                            idcnpq = chd_autores[idy] \
+                                .getAttributeNode('NRO-ID-CNPQ').nodeValue
+                            ls_allauthors.append(author)
+                            ls_allauthororder.append(authors_order)
+                            ls_allidcnpq.append(idcnpq)
+                            # assign author order
+                            if author == full_name:
+                                ls_authororder.append(authors_order)
+                        ls_workevnt_nature.append(workevnt_nature)
+                        ls_workevnt_title.append(title)
+                        ls_workevnt_year.append(year)
+                        # ls_per_doi.append(doi)
+                        # ls_per_lang.append(lang)
+                        # ls_per_journal.append(journal)
+                        # ls_per_issn.append(issn)
+                        # ls_per_qualis = []
+                        ls_per_authors.append(ls_allauthors)
+                        ls_per_authorsorder.append(ls_allauthororder)
+                        ls_per_order.append(ls_authororder)
+                        ls_per_idcnpq.append(ls_allidcnpq)
+                        # ls_jcr = []
 
-                # clean ls_per_order - remove brackets and to int
-                # ls_per_order_clean = [int(xx[0]) for xx in ls_per_order]
-                # print(ls_per_order)
-                # to fix a minor issue - after to improve it
-                ls_per_order_clean = []
-                for xx in ls_per_order:
-                    if len(xx) < 1:
-                        rr = 99
-                    else:
-                        rr = int(xx[0])
-                    ls_per_order_clean.append(rr)
+                if filtered_events >= 1:
+                    # clean ls_per_order - remove brackets and to int
+                    # ls_per_order_clean = [int(xx[0]) for xx in ls_per_order]
+                    # print(ls_per_order)
+                    # to fix a minor issue - after to improve it
+                    ls_per_order_clean = []
+                    for xx in ls_per_order:
+                        if len(xx) < 1:
+                            rr = 99
+                        else:
+                            rr = int(xx[0])
+                        ls_per_order_clean.append(rr)
 
                 # set qualis and jcr
                 # ls_per_qualis = paperqualis(ls_per_issn, qf)
                 # ls_per_jcr = paperjcr(ls_per_issn)
-
-                # write file
-                df_workevnt = pd.DataFrame({'ID': np.repeat(id_lattes,
-                                                            len(ls_workevnt_title)),
-                                            'NATURE': ls_workevnt_nature,
-                                            'TITLE': ls_workevnt_title,
-                                            'YEAR': ls_workevnt_year,
-                                            # 'DOI': ls_per_doi,
-                                            # 'LANG': ls_per_lang,
-                                            # 'JOURNAL': ls_per_journal,
-                                            # 'ISSN': ls_per_issn,
-                                            # 'QUALIS': ls_per_qualis,
-                                            # 'JCR': ls_per_jcr,
-                                            'AUTHOR': ls_per_authors,
-                                            'ORDER': ls_per_authorsorder,
-                                            'ORDER_OK': ls_per_order_clean,
-                                            'ID_CNPQ': ls_per_idcnpq
-                                            })
-                pathfilename = str('./csv_producao/' +
-                                   id_lattes + '_worksevents.csv')
-                df_workevnt.to_csv(pathfilename, index=False)
-                print('The file ', pathfilename, ' has been writed.')
+                    # write file
+                    df_workevnt = pd.DataFrame({'ID': np.repeat(id_lattes,
+                                                                len(ls_workevnt_title)),
+                                                'NATURE': ls_workevnt_nature,
+                                                'TITLE': ls_workevnt_title,
+                                                'YEAR': ls_workevnt_year,
+                                                # 'DOI': ls_per_doi,
+                                                # 'LANG': ls_per_lang,
+                                                # 'JOURNAL': ls_per_journal,
+                                                # 'ISSN': ls_per_issn,
+                                                # 'QUALIS': ls_per_qualis,
+                                                # 'JCR': ls_per_jcr,
+                                                'AUTHOR': ls_per_authors,
+                                               'ORDER': ls_per_authorsorder,
+                                                'ORDER_OK': ls_per_order_clean,
+                                               'ID_CNPQ': ls_per_idcnpq
+                                                })
+                    pathfilename = str('./csv_producao/' +
+                                       id_lattes + '_worksevents.csv')
+                    df_workevnt.to_csv(pathfilename, index=False)
+                    print('The file ', pathfilename, ' has been writed.')
+                else:
+                    print('The id Lattes ', id_lattes, ' has NO TRABALHOS-EM-EVENTOS')
         except:
             print('The id Lattes ', id_lattes, ' has NO TRABALHOS-EM-EVENTOS')
     else:
