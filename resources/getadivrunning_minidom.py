@@ -370,6 +370,7 @@ def getadvrunn(zipname, minidomdoc):
                       ' has NO OUTRAS-ORIENTACOES-EM-ANDAMENTO.')
             df_advis = pd.DataFrame({'ID': np.repeat(id_lattes,
                                                      len(ls_adv_title)),
+                                     'SEQ_PROD': ls_adv_seq,
                                      'TITLE': ls_adv_title,
                                      'YEAR': ls_adv_year,
                                      'NATURE': ls_adv_nat,
