@@ -24,8 +24,12 @@ def getgeneraldata(zipname, minidomdoc):
             'NOME-EM-CITACOES-BIBLIOGRAFICAS').nodeValue
         birth_city = chd_dgerais[0].getAttributeNode(
             'CIDADE-NASCIMENTO').nodeValue
+        if birth_city == '' :
+            birth_city = 'NAO INDICADA'
         birth_state = chd_dgerais[0].getAttributeNode(
-            'UF-NASCIMENTO').nodeValue
+            'UF-NASCIMENTO').nodeValue 
+        if birth_state == '' :
+            birth_state = 'NAO INDICADO'
         if chd_dgerais[0].getAttributeNode('ORCID-ID') is None:
             orcid = 'VAZIO'
         else:
