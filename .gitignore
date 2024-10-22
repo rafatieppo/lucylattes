@@ -158,5 +158,5 @@ cython_debug/
 csv_producao/
 relatorio/
 xml_zip/
-
+csv_report/
 
