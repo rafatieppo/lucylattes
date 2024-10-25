@@ -22,12 +22,12 @@ def getgeneraldata(zipname, minidomdoc):
         last_name = full_name.split(' ')[-1]
         citation_names = chd_dgerais[0].getAttributeNode(
             'NOME-EM-CITACOES-BIBLIOGRAFICAS').nodeValue
-        if birth_city is None:
+        if chd_dgerais[0].getAttributeNode('CIDADE-NASCIMENTO') is None:
             birth_city = 'VAZIO'
         else:
             birth_city = chd_dgerais[0].getAttributeNode(
                 'CIDADE-NASCIMENTO').nodeValue
-        if birth_state is None:
+        if chd_dgerais[0].getAttributeNode('UF-NASCIMENTO') is None:
             birth_state = 'VAZIO'
         else:
             birth_state = chd_dgerais[0].getAttributeNode(
