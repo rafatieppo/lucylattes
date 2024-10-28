@@ -285,8 +285,8 @@ def tidydata_advising():
         # df fullname data and merge with df_advis on id
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
         df_fullname = pd.DataFrame()
-        for idx in range(len(lscsv_fullname)):
-            df = pd.read_csv(lscsv_fullname[idx], header=0, dtype='str')
+        for idy in range(len(lscsv_fullname)):
+            df = pd.read_csv(lscsv_fullname[idy], header=0, dtype='str')
             # df_fullname = df_fullname.append(df, ignore_index=False)
             df_fullname = concat_df(df_fullname, df)
         df_fullname.reset_index(inplace=True, drop=True)
@@ -321,8 +321,8 @@ def tidydata_advisingrunn():
         # df fullname data and merge with df_advis on id
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
         df_fullname = pd.DataFrame()
-        for idx in range(len(lscsv_fullname)):
-            df = pd.read_csv(lscsv_fullname[idx], header=0, dtype='str')
+        for idy in range(len(lscsv_fullname)):
+            df = pd.read_csv(lscsv_fullname[idy], header=0, dtype='str')
             # df_fullname = df_fullname.append(df, ignore_index=False)
             df_fullname = concat_df(df_fullname, df)
         df_fullname.reset_index(inplace=True, drop=True)
