@@ -15,7 +15,7 @@ def run_lucyLattes():
     resources.remove_csv_producao()
 
     # zipname = '5401789813032087.zip'
-    zipname = '3275865819287843.zip'
+    # zipname = '3275865819287843.zip'
     # zipname = '4144237921330591.zip'
     zipfiles = glob.glob('./xml_zip/*.zip')
     lszip = []
