@@ -285,8 +285,8 @@ def tidydata_advising():
         # df fullname data and merge with df_advis on id
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
         df_fullname = pd.DataFrame()
-        for idx in range(len(lscsv_fullname)):
-            df = pd.read_csv(lscsv_fullname[idx], header=0, dtype='str')
+        for idy in range(len(lscsv_fullname)):
+            df = pd.read_csv(lscsv_fullname[idy], header=0, dtype='str')
             # df_fullname = df_fullname.append(df, ignore_index=False)
             df_fullname = concat_df(df_fullname, df)
         df_fullname.reset_index(inplace=True, drop=True)
@@ -321,8 +321,8 @@ def tidydata_advisingrunn():
         # df fullname data and merge with df_advis on id
         lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
         df_fullname = pd.DataFrame()
-        for idx in range(len(lscsv_fullname)):
-            df = pd.read_csv(lscsv_fullname[idx], header=0, dtype='str')
+        for idy in range(len(lscsv_fullname)):
+            df = pd.read_csv(lscsv_fullname[idy], header=0, dtype='str')
             # df_fullname = df_fullname.append(df, ignore_index=False)
             df_fullname = concat_df(df_fullname, df)
         df_fullname.reset_index(inplace=True, drop=True)
@@ -402,3 +402,49 @@ def tidydata_fullname():
         df_fullname.to_csv(pathfilename, index=False)
         print(pathfilename, ' writed with ',
               len(df_fullname['ID']), ' fullname')
+
+
+def tidydata_productsppect():
+    """Tidy all productsppect csv files and join it in only one csv - all."""
+    # df fullname
+    lscsv_products = glob.glob('./csv_producao/*ppe_prods_ct.csv')
+    if len(lscsv_products) == 0:
+        print('There is NO any xxxxx_ppe_prods_ct.csv file')
+    else:
+        dfproducts = pd.DataFrame()
+        for idx in range(len(lscsv_products)):
+            df = pd.read_csv(lscsv_products[idx], header=0, dtype='str')
+            # dfproducts = dfproducts.append(df, ignore_index=False)
+            dfproducts = concat_df(dfproducts, df)
+        dfproducts.reset_index(inplace=True, drop=True)
+        # sort by id year ini
+        dfproducts.sort_values(by=['ID'], inplace=True)
+        dfproducts.reset_index(inplace=True, drop=True)
+        # write files
+        pathfilename = str('./csv_producao/ppe_prods_ct_all.csv')
+        dfproducts.to_csv(pathfilename, index=False)
+        print(pathfilename, ' writed with ',
+              len(dfproducts['ID']), 'producoes ct do projeto')
+
+
+def tidydata_productsppeadv():
+    """Tidy all productsppeadv csv files and join it in only one csv - all."""
+    # df fullname
+    lscsv_products = glob.glob('./csv_producao/*ppe_prods_adv.csv')
+    if len(lscsv_products) == 0:
+        print('There is NO any xxxxx_ppe_prods_adv.csv file')
+    else:
+        dfproducts = pd.DataFrame()
+        for idx in range(len(lscsv_products)):
+            df = pd.read_csv(lscsv_products[idx], header=0, dtype='str')
+            # dfproducts = dfproducts.append(df, ignore_index=False)
+            dfproducts = concat_df(dfproducts, df)
+        dfproducts.reset_index(inplace=True, drop=True)
+        # sort by id year ini
+        dfproducts.sort_values(by=['ID'], inplace=True)
+        dfproducts.reset_index(inplace=True, drop=True)
+        # write files
+        pathfilename = str('./csv_producao/ppe_prods_adv_all.csv')
+        dfproducts.to_csv(pathfilename, index=False)
+        print(pathfilename, ' writed with ',
+              len(dfproducts['ID']), 'producoes adv do projeto')

@@ -15,7 +15,7 @@ def run_lucyLattes():
     resources.remove_csv_producao()
 
     # zipname = '5401789813032087.zip'
-    # zipname = '3275865819287843.zip'
+    zipname = '3275865819287843.zip'
     # zipname = '4144237921330591.zip'
     zipfiles = glob.glob('./xml_zip/*.zip')
     lszip = []
@@ -42,6 +42,8 @@ def run_lucyLattes():
         resources.getadvrunn(zipname, minidomdoc)
         resources.getteaching(zipname, minidomdoc)
         resources.getshortcourse(zipname, minidomdoc)
+        resources.getproductsppect(zipname, minidomdoc)
+        resources.getproductsppeadv(zipname, minidomdoc)
 
     resources.tidydata_ppe()
     resources.tidydata_worksevents()
@@ -52,6 +54,8 @@ def run_lucyLattes():
     resources.tidydata_advisingrunn()
     resources.tidydata_teaching()
     resources.tidydata_fullname()
+    resources.tidydata_productsppeadv()
+    resources.tidydata_productsppect()
     resources.grapho_paper()
 
     if turn_hwebsci_index == 1:
