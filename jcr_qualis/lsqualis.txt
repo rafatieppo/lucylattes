@@ -10,6 +10,7 @@ qualis_economia_periodicos_2020.csv
 qualis_educacao_fisica_2016.csv
 qualis_enfermagem_periodicos_2020.csv
 qualis_enfermag_periodicos_2016.csv
+qualis_engiv_periodicos_2020.csv
 qualis_engiii_periodicos_2016.csv
 qualis_engii_periodicos_2020.csv
 qualis_engi_periodicos_2020.csv
