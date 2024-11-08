@@ -1,6 +1,6 @@
 ano inicial:2010
 ano final:2020
-qualis:qualis_ciencamb_periodicos_2020.csv
+qualis:qualis_agrarias_periodicos_2020.csv
 pg:Ambiente e Sistemas de Produção Agrícola
 apagar csv_producao:1
 calcular indcapes:0
