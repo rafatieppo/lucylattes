@@ -10,6 +10,8 @@ import math
 from nltk.cluster.util import cosine_distance
 import scipy
 nltk.download('stopwords')
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 
 def clean_titles(dfdata, col_var):
@@ -36,6 +38,36 @@ def clean_titles(dfdata, col_var):
         text_clean = re.sub(rgex, '', ' '.join(lstitle_nosw))
         lstitles_clean.append(text_clean)
     return lstitles_clean
+
+
+def drop_similar_rows(df, column, threshold):
+    """
+    Define a function to drop similar rows based on cosine similarity threshold.
+    """
+    lstitles_clean = clean_titles(df, column)
+    dfdata = (
+        df
+        .assign(ID_X=np.arange(0, len(df)))
+        .assign(TEXT_CLEAN=lstitles_clean)
+        .sort_values(['ORDER_OK', 'YEAR'], axis=0)
+        .reset_index(drop=True)
+        )
+
+    # Convert the text data to TF-IDF features
+    vectorizer = TfidfVectorizer()
+    tfidf_matrix = vectorizer.fit_transform(dfdata[column])
+    # Compute cosine similarity matrix
+    cosine_sim = cosine_similarity(tfidf_matrix)
+    # Track rows to drop
+    to_drop = set()
+    for i in range(len(cosine_sim)):
+        for j in range(i + 1, len(cosine_sim)):
+            # If similarity is above threshold, mark for dropping
+            if cosine_sim[i, j] > threshold:
+                to_drop.add(j)
+    # Drop rows with high similarity
+    dfdata = dfdata.drop(list(to_drop)).reset_index(drop=True)
+    return dfdata
 
 
 def get_uniq_titles(dfdata, col_var, n, m, cosine_threshold):

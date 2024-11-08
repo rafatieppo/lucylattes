@@ -6,6 +6,7 @@ import re
 from resources.support_functions import droprow_nullyear
 from resources.tidydata_uniq_titles import clean_titles
 from resources.tidydata_uniq_titles import get_uniq_titles
+from resources.tidydata_uniq_titles import drop_similar_rows
 # import platform
 # from resources.support_functions import yearlimit_forfilter
 
@@ -82,7 +83,8 @@ def tidydata_ppe():
         df_ppe['ORDER_OK'] = lsorder
         df_ppe.reset_index(inplace=True, drop=True)
         # drop duplicate projs
-        df_ppe_uniq = get_uniq_titles(df_ppe, 'TITLE', 1, 1, 0.9)
+        # df_ppe_uniq = get_uniq_titles(df_ppe, 'TITLE', 1, 1, 0.9)
+        df_ppe_uniq = drop_similar_rows(df_ppe, 'TITLE', threshold=0.9)
         # sort by id year
         df_ppe.sort_values(by=['ID', 'YEAR'], inplace=True)
         df_ppe.reset_index(inplace=True, drop=True)
@@ -125,7 +127,8 @@ def tidydata_worksevents():
         df_workevnt = droprow_nullyear(df)
         # rm dup paper and verify the owner by author order
         # author order is already done from df_workevnt['ORDER_OK']
-        df_workevnt_uniq = get_uniq_titles(df_workevnt, 'TITLE', 1, 1, 0.9)
+        # df_workevnt_uniq = get_uniq_titles(df_workevnt, 'TITLE', 1, 1, 0.9)
+        df_workevnt_uniq = drop_similar_rows(df_workevnt, 'TITLE', threshold=0.9)
         # sort by id year
         df_workevnt.sort_values(by=['ID', 'YEAR'], inplace=True)
         df_workevnt.reset_index(inplace=True, drop=True)
@@ -168,7 +171,8 @@ def tidydata_papers():
         df_paper = droprow_nullyear(df)
         # rm dup paper and verify the owner by author order
         # author order is already done from df_paper['ORDER_OK']
-        df_paper_uniq = get_uniq_titles(df_paper, 'TITLE', 1, 1, 0.9)
+        # df_paper_uniq = get_uniq_titles(df_paper, 'TITLE', 1, 1, 0.9)
+        df_paper_uniq = drop_similar_rows(df_paper, 'TITLE', threshold=0.9)
         # sort by id year
         df_paper.sort_values(by=['ID', 'YEAR'], inplace=True)
         df_paper.reset_index(inplace=True, drop=True)
@@ -211,7 +215,8 @@ def tidydata_books():
         df_book = droprow_nullyear(df)
         # rm dup paper and verify the owner by author order
         # author order is already done from df_book['ORDER_OK']
-        df_book_uniq = get_uniq_titles(df_book, 'TITLE', 1, 1, 0.9)
+        # df_book_uniq = get_uniq_titles(df_book, 'TITLE', 1, 1, 0.9)
+        df_book_uniq = drop_similar_rows(df_book, 'TITLE', threshold=0.9)
         # sort by id year
         df_book.sort_values(by=['ID', 'YEAR'], inplace=True)
         df_book.reset_index(inplace=True, drop=True)
@@ -254,7 +259,8 @@ def tidydata_chapters():
         df_chap = droprow_nullyear(df)
         # rm dup paper and verify the owner by author order
         # author order is already done from df_chap['ORDER_OK']
-        df_chap_uniq = get_uniq_titles(df_chap, 'TITLE', 1, 1, 0.9)
+        # df_chap_uniq = get_uniq_titles(df_chap, 'TITLE', 1, 1, 0.9)
+        df_chap_uniq = drop_similar_rows(df_chap, 'TITLE', threshold=0.9)
         # sort by id year
         df_chap.sort_values(by=['ID', 'YEAR'], inplace=True)
         df_chap.reset_index(inplace=True, drop=True)
