@@ -3,10 +3,12 @@ import glob
 import re
 import pandas as pd
 import resources
+import time
 
 
 def run_lucyLattes():
     "Run lucyLattes."
+    time_initial = time.time()
     configs = resources.configSetup()
     turn_capes_index = configs.run_capes_index()
     turn_hwebsci_index = configs.run_hwebsci_index()
@@ -80,5 +82,9 @@ def run_lucyLattes():
     else:
         print("Arquivos csv mantidos nas pastas.")
     print()
+
+    time_final = time.time()
+    total_time = time_final - time_initial
+    print('The total time was: {} minutes.'.format(total_time/60))
 
     # ------------------------------------------------------------
