@@ -14,32 +14,49 @@ def getgeneraldata_mest(zipname, minidomdoc):
         chd_dgerais_len = len(chd_dgerais[0].childNodes)
         print('DADOS-GERAIS has ', chd_dgerais_len, ' childs')
         # child dgerais -> child formacao academ -> child mestrado
-        mest_inst, mest_curs, mest_yini, mest_yfin = [], [], [], []
+        lsinst, lscourse, lscour_yini, lscour_yfin = [], [], [], []
         chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
             'FORMACAO-ACADEMICA-TITULACAO')
         chd_dgerais_chd_formacao_chd_mest = chd_dgerais_chd_formacao[0] \
             .getElementsByTagName('MESTRADO')
         if len(chd_dgerais_chd_formacao_chd_mest) > 0:
             for idx in range(len(chd_dgerais_chd_formacao_chd_mest)):
-                mest_inst.append(
-                    chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
-                        'NOME-INSTITUICAO').value)
-                mest_curs.append(
-                    chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
-                        'NOME-CURSO').value)
-                mest_yini.append(
-                    chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
-                        'ANO-DE-INICIO').value)
-                mest_yfin.append(
-                    chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
-                        'ANO-DE-CONCLUSAO').value)
+                instit = chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
+                    'NOME-INSTITUICAO').value
+                if instit == '':
+                    lsinst.append('VAZIO')
+                else:
+                    lsinst.append(instit)
+                course = chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
+                        'NOME-CURSO').value
+                if course == '':
+                    lscourse.append('VAZIO')
+                else:
+                    lscourse.append(course)
+                course_yini = chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
+                        'ANO-DE-INICIO').value
+                if course_yini == '':
+                    lscour_yini.append(0)
+                else:
+                    lscour_yini.append(course_yini)
+                course_yfin = chd_dgerais_chd_formacao_chd_mest[0].getAttributeNode(
+                        'ANO-DE-CONCLUSAO').value
+                if course_yfin == '':
+                    lscour_yfin.append(0)
+                else:
+                    lscour_yfin.append(course_yfin)
+        else:
+            lsinst.append('VAZIO')
+            lscourse.append('VAZIO')
+            lscour_yini.append(0)
+            lscour_yfin.append(0)
         # output
         df_fullname = pd.DataFrame({'ID': list(
-            np.repeat(id_lattes, len(chd_dgerais_chd_formacao_chd_mest))),
-                                    'MEST_INST': mest_inst,
-                                    'MEST_COURSE': mest_curs,
-                                    'MEST_YEAR_INI': mest_yini,
-                                    'MEST_YEAR_FIN': mest_yfin,
+            np.repeat(id_lattes, len(lsinst))),
+                                    'MEST_INST': lsinst,
+                                    'MEST_COURSE': lscourse,
+                                    'MEST_YEAR_INI': lscour_yini,
+                                    'MEST_YEAR_FIN': lscour_yfin,
                                     })
 
         pathfilename = str('./csv_producao/' + id_lattes + '_form_mest.csv')

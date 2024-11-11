@@ -14,32 +14,49 @@ def getgeneraldata_dout(zipname, minidomdoc):
         chd_dgerais_len = len(chd_dgerais[0].childNodes)
         print('DADOS-GERAIS has ', chd_dgerais_len, ' childs')
         # child dgerais -> child formacao academ -> child doutorado
-        dout_inst, dout_curs, dout_yini, dout_yfin = [], [], [], []
+        lsinst, lscourse, lscour_yini, lscour_yfin = [], [], [], []
         chd_dgerais_chd_formacao = chd_dgerais[0].getElementsByTagName(
             'FORMACAO-ACADEMICA-TITULACAO')
         chd_dgerais_chd_formacao_chd_dout = chd_dgerais_chd_formacao[0] \
             .getElementsByTagName('DOUTORADO')
         if len(chd_dgerais_chd_formacao_chd_dout) > 0:
             for idx in range(len(chd_dgerais_chd_formacao_chd_dout)):
-                dout_inst.append(
-                    chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
-                        'NOME-INSTITUICAO').value)
-                dout_curs.append(
-                    chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
-                        'NOME-CURSO').value)
-                dout_yini.append(
-                    chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
-                        'ANO-DE-INICIO').value)
-                dout_yfin.append(
-                    chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
-                        'ANO-DE-CONCLUSAO').value)
+                instit = chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
+                    'NOME-INSTITUICAO').value
+                if instit is None:
+                    lsinst.append('VAZIO')
+                else:
+                    lsinst.append(instit)
+                course = chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
+                        'NOME-CURSO').value
+                if course == '':
+                    lscourse.append('VAZIO')
+                else:
+                    lscourse.append(course)
+                course_yini = chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
+                        'ANO-DE-INICIO').value
+                if course_yini == '':
+                    lscour_yini.append(0)
+                else:
+                    lscour_yini.append(course_yini)
+                course_yfin = chd_dgerais_chd_formacao_chd_dout[0].getAttributeNode(
+                        'ANO-DE-CONCLUSAO').value
+                if course_yfin == '':
+                    lscour_yfin.append(0)
+                else:
+                    lscour_yfin.append(course_yfin)
+        else:
+            lsinst.append('VAZIO')
+            lscourse.append('VAZIO')
+            lscour_yini.append(0)
+            lscour_yfin.append(0)
         # output
         df_fullname = pd.DataFrame({'ID': list(
-            np.repeat(id_lattes, len(chd_dgerais_chd_formacao_chd_dout))),
-                                    'DOUT_INST': dout_inst,
-                                    'DOUT_COURSE': dout_curs,
-                                    'DOUT_YEAR_INI': dout_yini,
-                                    'DOUT_YEAR_FIN': dout_yfin,
+            np.repeat(id_lattes, len(lsinst))),
+                                    'DOUT_INST': lsinst,
+                                    'DOUT_COURSE': lscourse,
+                                    'DOUT_YEAR_INI': lscour_yini,
+                                    'DOUT_YEAR_FIN': lscour_yfin,
                                     })
 
         pathfilename = str('./csv_producao/' + id_lattes + '_form_dout.csv')
