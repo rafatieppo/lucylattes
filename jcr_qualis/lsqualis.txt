@@ -24,3 +24,4 @@ qualis_medicinaii_periodicos_2020.csv
 qualis_saudecoletiva_periodicos_2020.csv
 qualis_servicosocial_periodicos_2020.csv
 qualis_sociologia_periodicos_2020.csv
+qualis_todasareas_periodicos_2020
