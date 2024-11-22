@@ -55,7 +55,7 @@ def drop_similar_rows(df, column, threshold):
 
     # Convert the text data to TF-IDF features
     vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform(dfdata[column])
+    tfidf_matrix = vectorizer.fit_transform(dfdata['TEXT_CLEAN'])
     # Compute cosine similarity matrix
     cosine_sim = cosine_similarity(tfidf_matrix)
     # Track rows to drop
