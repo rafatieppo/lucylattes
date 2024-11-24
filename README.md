@@ -34,6 +34,22 @@ Veja algumas informações geradas:
 
 >Este programa é distribuído na esperança que possa ser útil, mas SEM NENHUMA GARANTIA; sem uma garantia implicita de ADEQUAÇÂO a qualquer MERCADO ou APLICAÇÃO EM PARTICULAR. **Verifique** o arquivo **LICENSE.txt** .
 
+## Gostou?
+
+<p>Espero que o <code>lucyLattes</code> seja útil de alguma forma, dentro do possível estarei melhorando o script na sua funcionalidade.</p>
+<p><img src="https://i.gifer.com/QLRN.gif" alt=""></p>
+
+- Nos de uma estrela clicando na estrela no topo da página (lado direito)
+- Caso queira, sinta-se livre para me pagar um cafézinho. Tudo que faço aqui é uma maneira de retribuir e compartilhar o conhecimento que adquiri ao longo da minha carreira, mas quem sou eu para negar um café, certo? Sua ajuda vai ser convertida para manter os scripts (pagando o provedor, por exemplo). O excedente, será utilizado para comprar café mesmo.
+
+- via Paypal
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://rafatieppo.github.io/post/pics/20190313_logo_rt_donate.png" alt="" border="0" width="150"/> </a>
+
+- via Pix
+
+<img src="./fig_pix_lucy.jpg" alt="">
+
 ## Como usar 
 
 Inicialmente recomenda-se a leitura dos próximos tópicos (*Instalação* e *Como executar o programa*).
@@ -198,25 +214,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 **Atenção**, **Atenção**, **Atenção**.
 </strike>
 
-## Gostou?
-
-<p>Espero que o <code>lucyLattes</code> seja útil de alguma forma, dentro do possível estarei melhorando o script na sua funcionalidade.</p>
-<p><img src="https://i.gifer.com/QLRN.gif" alt=""></p>
-
-- Nos de uma estrela clicando na estrela no topo da página (lado direito)
-- Caso queira, sinta-se livre para me pagar um cafézinho. Tudo que faço aqui é uma maneira de retribuir e compartilhar o conhecimento que adquiri ao longo da minha carreira, mas quem sou eu para negar um café, certo? Sua ajuda vai ser convertida para manter os scripts (pagando o provedor, por exemplo). O excedente, será utilizado para comprar café mesmo.
-
-- via Paypal
-
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68LAA9FZLABUQ" > <img src="https://rafatieppo.github.io/post/pics/20190313_logo_rt_donate.png" alt="" border="0" width="150"/> </a>
-
-- via Pix
-
-<img src="./fig_pix_lucy.jpg" alt="">
-
 ## Development
 
-- TODO DANGER create a exceptio for NO papers found for reseacher.
+- DONE DANGER create a exceptio for NO papers found for reseacher.
 - DONE read `zip` and return a `xml`;
 - DONE create a minidom from `.xml`;
 - DONE a function to return `.xml` encoding and version;
@@ -235,7 +235,7 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
   - [X] tidy script data to join data from all researchers;
   - [X] tidy script to drop NaN, delete broked registers, etc
 
-- TODO Running and config [100%]
+- DONE Running and config [100%]
   - [X] conditional to run or not index-h `getindex_hwebsci()`
   - [X] work on a GUI
 
@@ -253,7 +253,7 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
   - [ ] Índice de Produtividade referente a artigos científicos do Programa (IndProdArt) 
   - [ ] Validação
 
-- DONE Analyze H-index from WOS
+- TODO Analyze H-index from WOS
 
 - TODO Report `.html` [93%]
   - [X] setup file (`report_setup.py`) to report.py;
@@ -326,7 +326,7 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 ## Logs 
 <a name="logss"></a> 
 
-## Fri 2024-11-22 07:00:02 -04 v.1.0.3
+## Fri 2024-11-22 07:00:02 -04 v1.0.3
 - Improvement in the speed to get unique titles in papers, projects, ... around 10x faster
 - A variable to controle processing time, it is printed on terminal.
 - New types of QUALIS CAPES to classify the papers
