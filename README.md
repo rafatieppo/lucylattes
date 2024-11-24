@@ -4,8 +4,8 @@
 
 ## Última atualização
 
-- Versão v1.0.2
-- *Wed 2024-08-14 20:56:51 -04* verifique os logs <a href="#logss">aqui</a>.
+- Versão v1.0.3
+- *Friday 2024-11-22 07:00:02 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -326,8 +326,16 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 ## Logs 
 <a name="logss"></a> 
 
+## Fri 2024-11-22 07:00:02 -04 v.1.0.3
+- Improvement in the speed to get unique titles in papers, projects, ... around 10x faster
+- A variable to controle processing time, it is printed on terminal.
+- New types of QUALIS CAPES to classify the papers
+- Fix the years to filter in report
+- Other minor fixes
+
 ### Wed 2024-08-14 20:56:51 -04
 - new function to get FORMACAO-ACADEMICA-TITULACAO (graduacao mestrado doutorado) were implemented, the output is in `csv_producao`. 
+
 ### Mon 2024-08-12 18:03:21 -04
 - On `relatorio_producao.html` the initial and final period to evaluate the data (projects, papers, ...) was not working. It was because a date fitering function had not been implemented. It was solved and the report period is the same of year (initial / end) input.
 
