@@ -47,6 +47,7 @@ def run_lucyLattes():
         resources.getproductsppect(zipname, minidomdoc)
         resources.getproductsppeadv(zipname, minidomdoc)
 
+    resources.tidydata_fullname()
     resources.tidydata_ppe()
     resources.tidydata_worksevents()
     resources.tidydata_papers()
@@ -54,8 +55,8 @@ def run_lucyLattes():
     resources.tidydata_chapters()
     resources.tidydata_advising()
     resources.tidydata_advisingrunn()
+    resources.tidydata_shortcourse()
     resources.tidydata_teaching()
-    resources.tidydata_fullname()
     resources.tidydata_productsppeadv()
     resources.tidydata_productsppect()
     resources.grapho_paper()

@@ -454,3 +454,46 @@ def tidydata_productsppeadv():
         dfproducts.to_csv(pathfilename, index=False)
         print(pathfilename, ' writed with ',
               len(dfproducts['ID']), 'producoes adv do projeto')
+
+
+def tidydata_shortcourse():
+    """Tidy all short course csv files and join it in only one csv."""
+    # df book
+    lshort_cours = glob.glob('./csv_producao/*_shortcourse.csv')
+    if len(lshort_cours) == 0:
+        print('There is NO any xxxxx_shortcourse.csv file')
+    else:
+        dfshort_cours = pd.DataFrame()
+        for idx in range(len(lshort_cours)):
+            df = pd.read_csv(lshort_cours[idx], header=0, dtype='str')
+            dfshort_cours = concat_df(dfshort_cours, df)
+        dfshort_cours.reset_index(inplace=True, drop=True)
+        # df fullname data and merge with dfshort_cours on id
+        lscsv_fullname = glob.glob('./csv_producao/*fullname.csv')
+        df_fullname = pd.DataFrame()
+        for idx in range(len(lscsv_fullname)):
+            df = pd.read_csv(lscsv_fullname[idx], header=0, dtype='str')
+            df_fullname = concat_df(df_fullname, df)
+        df_fullname.reset_index(inplace=True, drop=True)
+        dfshort_cours = pd.merge(dfshort_cours, df_fullname, on='ID')
+        dfshort_cours.reset_index(inplace=True, drop=True)
+        # drop rows with NaN, or any errors in year column
+        df = dfshort_cours.copy()
+        dfshort_cours = droprow_nullyear(df)
+        # rm dup paper and verify the owner by author order
+        # author order is already done from dfshort_cours['ORDER_OK']
+        # dfshort_cours_uniq = get_uniq_titles(dfshort_cours, 'TITLE', 1, 1, 0.9)
+        # dfshort_cours_uniq = drop_similar_rows(dfshort_cours, 'COURSE', threshold=0.9)
+        # sort by id year
+        dfshort_cours.sort_values(by=['ID', 'YEAR'], inplace=True)
+        dfshort_cours.reset_index(inplace=True, drop=True)
+        # write files
+        pathfilename = str('./csv_producao/shortcourses_all.csv')
+        dfshort_cours.to_csv(pathfilename, index=False)
+        print(pathfilename, ' writed with ',
+              len(dfshort_cours['COURSE']), ' courses')
+        # pathfilename = str('./csv_producao/books_uniq.csv')
+        # dfshort_cours_uniq.to_csv(pathfilename, index=False)
+        # print(pathfilename, ' writed with',
+        #       len(dfshort_cours_uniq['COURSE']), ' courses')
+

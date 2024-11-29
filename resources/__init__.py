@@ -28,6 +28,7 @@ from resources.tidydata_csv import tidydata_papers
 from resources.tidydata_csv import tidydata_ppe
 from resources.tidydata_csv import tidydata_productsppeadv
 from resources.tidydata_csv import tidydata_productsppect
+from resources.tidydata_csv import tidydata_shortcourse
 from resources.tidydata_csv import tidydata_teaching
 from resources.tidydata_csv import tidydata_worksevents
 
