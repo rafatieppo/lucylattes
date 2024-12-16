@@ -7,8 +7,8 @@ import pandas as pd
 
 def list_append_proj_r_ext(chd_part_proj, idy,
                            ls_proj, ls_proj_seq, ls_year_ini, ls_year_end,
-                           ls_nature, ls_enterprise, ls_enterprise_code,
-                           enterprise, enterprise_code,
+                           ls_situation, ls_nature, ls_enterprise,
+                           ls_enterprise_code, enterprise, enterprise_code,
                            ls_members_name, ls_members_id, ls_member_coord):
     """Append lists with data from each research extension project w member."""
     ppe = chd_part_proj[idy] \
@@ -22,11 +22,13 @@ def list_append_proj_r_ext(chd_part_proj, idy,
         year_ini = 'VAZIO'
         year_ini = 'VAZIO'
         year_end = 'VAZIO'
+        situation = 'VAZIO'
         nature = 'VAZIO'
         ls_proj.append(proj)
         ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
+        ls_situation.append(situation)
         ls_nature.append(nature)
         ls_enterprise.append(enterprise)
         ls_enterprise_code.append(enterprise_code)
@@ -50,12 +52,15 @@ def list_append_proj_r_ext(chd_part_proj, idy,
             .getAttributeNode('ANO-FIM').nodeValue
         if year_end == '':
             year_end = 'ATUAL'
+        situation = ppe[0] \
+            .getAttributeNode('SITUACAO').nodeValue
         nature = ppe[0] \
             .getAttributeNode('NATUREZA').nodeValue
         ls_proj.append(proj)
         ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
+        ls_situation.append(situation)
         ls_nature.append(nature)
         ls_enterprise.append(enterprise)
         ls_enterprise_code.append(enterprise_code)
@@ -92,12 +97,15 @@ def list_append_proj_r_ext(chd_part_proj, idy,
                 .getAttributeNode('ANO-FIM').nodeValue
             if year_end == '':
                 year_end = 'ATUAL'
+            situation = ppe[0] \
+                .getAttributeNode('SITUACAO').nodeValue
             nature = ppe[idv] \
                 .getAttributeNode('NATUREZA').nodeValue
             ls_proj.append(proj)
             ls_proj_seq.append(proj_seq)
             ls_year_ini.append(year_ini)
             ls_year_end.append(year_end)
+            ls_situation.append(situation)
             ls_nature.append(nature)
             ls_enterprise.append(enterprise)
             ls_enterprise_code.append(enterprise_code)

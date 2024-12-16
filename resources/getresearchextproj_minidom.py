@@ -19,6 +19,7 @@ def getresearchextproj(zipname, minidomdoc):
         ls_proj_seq = []
         ls_year_ini = []
         ls_year_end = []
+        ls_situation = []
         ls_nature = []
         ls_members_name = []
         ls_members_id = []
@@ -36,6 +37,7 @@ def getresearchextproj(zipname, minidomdoc):
                 ls_proj_seq.append('VAZIO')
                 ls_year_ini.append('VAZIO')
                 ls_year_end.append('VAZIO')
+                ls_situation.append('VAZIO')
                 ls_nature.append('VAZIO')
                 ls_members_name.append('VAZIO')
                 ls_members_id.append('VAZIO')
@@ -51,7 +53,7 @@ def getresearchextproj(zipname, minidomdoc):
                 for idy in range(len_chd_part_proj):
                     list_append_proj_r_ext(
                         chd_part_proj, idy, ls_proj, ls_proj_seq,
-                        ls_year_ini, ls_year_end,
+                        ls_year_ini, ls_year_end, ls_situation,
                         ls_nature, ls_enterprise, ls_enterprise_code,
                         enterprise, enterprise_code,
                         ls_members_name, ls_members_id, ls_member_coord)
@@ -60,6 +62,7 @@ def getresearchextproj(zipname, minidomdoc):
                                'SEQ_PROJ': ls_proj_seq,
                                'YEAR': ls_year_ini,
                                'YEAR_FIN': ls_year_end,
+                               'SITUATION': ls_situation,
                                'NATURE': ls_nature,
                                'MEMBERS': ls_members_name,
                                'COORDENA': ls_member_coord,
