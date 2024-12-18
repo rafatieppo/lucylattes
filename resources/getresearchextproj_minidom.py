@@ -24,6 +24,7 @@ def getresearchextproj(zipname, minidomdoc):
         ls_members_name = []
         ls_members_id = []
         ls_member_coord = []
+        ls_support = []
         for idx in range(len_chd_atuacprofs):
             enterprise = chd_atuacprofs[0].childNodes[idx] \
                 .getAttributeNode('NOME-INSTITUICAO').nodeValue
@@ -42,6 +43,7 @@ def getresearchextproj(zipname, minidomdoc):
                 ls_members_name.append('VAZIO')
                 ls_members_id.append('VAZIO')
                 ls_member_coord.append('VAZIO')
+                ls_support.append('VAZIO')
                 ls_enterprise.append(enterprise)
                 ls_enterprise_code.append(enterprise_code)
                 # print(enterprise, ' has NO atividades-de-participac-em-proj')
@@ -56,7 +58,8 @@ def getresearchextproj(zipname, minidomdoc):
                         ls_year_ini, ls_year_end, ls_situation,
                         ls_nature, ls_enterprise, ls_enterprise_code,
                         enterprise, enterprise_code,
-                        ls_members_name, ls_members_id, ls_member_coord)
+                        ls_members_name, ls_members_id, ls_member_coord,
+                        ls_support)
         df_ppe = pd.DataFrame({'ID': np.repeat(id_lattes, len(ls_proj)),
                                'TITLE': ls_proj,
                                'SEQ_PROJ': ls_proj_seq,
@@ -66,6 +69,7 @@ def getresearchextproj(zipname, minidomdoc):
                                'NATURE': ls_nature,
                                'MEMBERS': ls_members_name,
                                'COORDENA': ls_member_coord,
+                               'SUPPORT': ls_support,
                                'ADDRESS_PPE_ENTERP': ls_enterprise,
                                'ADDRESS_PPE_ENTERP_CODE': ls_enterprise_code})
         pathfilename = str('./csv_producao/' + id_lattes + '_ppe.csv')

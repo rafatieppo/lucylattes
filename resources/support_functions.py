@@ -9,7 +9,8 @@ def list_append_proj_r_ext(chd_part_proj, idy,
                            ls_proj, ls_proj_seq, ls_year_ini, ls_year_end,
                            ls_situation, ls_nature, ls_enterprise,
                            ls_enterprise_code, enterprise, enterprise_code,
-                           ls_members_name, ls_members_id, ls_member_coord):
+                           ls_members_name, ls_members_id, ls_member_coord,
+                           ls_support):
     """Append lists with data from each research extension project w member."""
     ppe = chd_part_proj[idy] \
         .getElementsByTagName('PROJETO-DE-PESQUISA')
@@ -38,7 +39,9 @@ def list_append_proj_r_ext(chd_part_proj, idy,
         ls_members_name.append(nn)
         ls_members_id.append(nn_id)
         ls_member_coord.append(nn_coord)
-
+        finan_name = 'VAZIO'
+        finan_natu = 'VAZIO'
+        ls_support.append([finan_name + '-' + finan_natu])
     elif len_ppe == 1:
         proj = ppe[0] \
             .getAttributeNode('NOME-DO-PROJETO').nodeValue
@@ -77,7 +80,25 @@ def list_append_proj_r_ext(chd_part_proj, idy,
             ls_members_name.append(nn)
             ls_members_id.append(nn_id)
             ls_member_coord.append(nn_coord)
-
+        # child atacoes profs->ativ-de-partic-proj->proj-pesq->financiadores
+        financ = ppe[0].getElementsByTagName('FINANCIADORES-DO-PROJETO')
+        if len(financ) >= 1:
+            sa = []
+            len_chd_financ = financ[0].childNodes.length
+            for idu in range(len_chd_financ):
+                finan_name = financ[0] \
+                    .getElementsByTagName('FINANCIADOR-DO-PROJETO')[idu] \
+                    .getAttributeNode('NOME-INSTITUICAO').nodeValue
+                finan_natu = financ[0] \
+                    .getElementsByTagName('FINANCIADOR-DO-PROJETO')[idu] \
+                    .getAttributeNode('NATUREZA').nodeValue
+                if finan_name == '' or finan_natu == '':
+                    sa.append('VAZIO-VAZIO')
+                else:
+                    sa.append(finan_name + '-' + finan_natu)
+            ls_support.append(sa)
+        else:
+            ls_support.append(['VAZIO-VAZIO'])
     # ---------------------------------
     # --------------------------------
     # if there are 2 or more projects in the same year
@@ -122,40 +143,25 @@ def list_append_proj_r_ext(chd_part_proj, idy,
                 ls_members_name.append(nn)
                 ls_members_id.append(nn_id)
                 ls_member_coord.append(nn_coord)
-            # return ppe
-    # else:
-    #     proj = ppe[0] \
-    #         .getAttributeNode('NOME-DO-PROJETO').nodeValue
-    #     year_ini = ppe[0] \
-    #         .getAttributeNode('ANO-INICIO').nodeValue
-    #     if year_ini == '':
-    #         year_ini = 'VAZIO'
-    #     year_end = ppe[0] \
-    #         .getAttributeNode('ANO-FIM').nodeValue
-    #     if year_end == '':
-    #         year_end = 'ATUAL'
-    #     nature = ppe[0] \
-    #         .getAttributeNode('NATUREZA').nodeValue
-    #     ls_proj.append(proj)
-    #     ls_year_ini.append(year_ini)
-    #     ls_year_end.append(year_end)
-    #     ls_nature.append(nature)
-    #     ls_enterprise.append(enterprise)
-    #     ls_enterprise_code.append(enterprise_code)
-    #     # child atacoes profs->ativ-de-partic-proj->proj-pesq->eqip
-    #     team = ppe[0].getElementsByTagName('EQUIPE-DO-PROJETO')
-    #     len_chd_members = team[0].childNodes.length
-    #     if len_chd_members >= 1:
-    #         nn = []
-    #         nn_id = []
-    #         nn_coord = []
-    #         for idw in range(len_chd_members):
-    #             list_append_proj_members(
-    #                 team, idw, nn, nn_id, nn_coord)
-    #         ls_members_name.append(nn)
-    #         ls_members_id.append(nn_id)
-    #         ls_member_coord.append(nn_coord)
-    #     # return ppe
+            # child atacoes profs->ativ-de-partic-proj->proj-pesq->financiadores
+            financ = ppe[0].getElementsByTagName('FINANCIADORES-DO-PROJETO')
+            if len(financ) >= 1:
+                sa = []
+                len_chd_financ = financ[0].childNodes.length
+                for idu in range(len_chd_financ):
+                    finan_name = financ[0] \
+                        .getElementsByTagName('FINANCIADOR-DO-PROJETO')[idu] \
+                        .getAttributeNode('NOME-INSTITUICAO').nodeValue
+                    finan_natu = financ[0] \
+                        .getElementsByTagName('FINANCIADOR-DO-PROJETO')[idu] \
+                        .getAttributeNode('NATUREZA').nodeValue
+                    if finan_name == '' or finan_natu == '':
+                        sa.append('VAZIO-VAZIO')
+                    else:
+                        sa.append(finan_name + '-' + finan_natu)
+                ls_support.append(sa)
+            else:
+                ls_support.append(['VAZIO-VAZIO'])
 
 
 def list_append_proj_members(team, idw, nn, nn_id, nn_coord):
