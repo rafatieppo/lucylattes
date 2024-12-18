@@ -7,10 +7,10 @@ import pandas as pd
 
 def list_append_proj_r_ext(chd_part_proj, idy,
                            ls_proj, ls_proj_seq, ls_year_ini, ls_year_end,
-                           ls_situation, ls_nature, ls_enterprise,
-                           ls_enterprise_code, enterprise, enterprise_code,
-                           ls_members_name, ls_members_id, ls_member_coord,
-                           ls_support):
+                           ls_situation, ls_nature, ls_description,
+                           ls_enterprise, ls_enterprise_code, enterprise,
+                           enterprise_code, ls_members_name, ls_members_id,
+                           ls_member_coord, ls_support):
     """Append lists with data from each research extension project w member."""
     ppe = chd_part_proj[idy] \
         .getElementsByTagName('PROJETO-DE-PESQUISA')
@@ -25,12 +25,14 @@ def list_append_proj_r_ext(chd_part_proj, idy,
         year_end = 'VAZIO'
         situation = 'VAZIO'
         nature = 'VAZIO'
+        description = 'VAZIO'
         ls_proj.append(proj)
         ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
         ls_situation.append(situation)
         ls_nature.append(nature)
+        ls_description.append(description)
         ls_enterprise.append(enterprise)
         ls_enterprise_code.append(enterprise_code)
         nn = 'VAZIO'
@@ -59,12 +61,15 @@ def list_append_proj_r_ext(chd_part_proj, idy,
             .getAttributeNode('SITUACAO').nodeValue
         nature = ppe[0] \
             .getAttributeNode('NATUREZA').nodeValue
+        description = ppe[0] \
+            .getAttributeNode('DESCRICAO-DO-PROJETO').nodeValue
         ls_proj.append(proj)
         ls_proj_seq.append(proj_seq)
         ls_year_ini.append(year_ini)
         ls_year_end.append(year_end)
         ls_situation.append(situation)
         ls_nature.append(nature)
+        ls_description.append(description)
         ls_enterprise.append(enterprise)
         ls_enterprise_code.append(enterprise_code)
         # child atacoes profs->ativ-de-partic-proj->proj-pesq->eqip
@@ -122,12 +127,15 @@ def list_append_proj_r_ext(chd_part_proj, idy,
                 .getAttributeNode('SITUACAO').nodeValue
             nature = ppe[idv] \
                 .getAttributeNode('NATUREZA').nodeValue
+            description = ppe[0] \
+                .getAttributeNode('DESCRICAO-DO-PROJETO').nodeValue
             ls_proj.append(proj)
             ls_proj_seq.append(proj_seq)
             ls_year_ini.append(year_ini)
             ls_year_end.append(year_end)
             ls_situation.append(situation)
             ls_nature.append(nature)
+            ls_description.append(description)
             ls_enterprise.append(enterprise)
             ls_enterprise_code.append(enterprise_code)
             # child atuacao-prof->ativ-de-partic-proj->proj-pesq->eqip

@@ -21,6 +21,7 @@ def getresearchextproj(zipname, minidomdoc):
         ls_year_end = []
         ls_situation = []
         ls_nature = []
+        ls_description = []
         ls_members_name = []
         ls_members_id = []
         ls_member_coord = []
@@ -40,6 +41,7 @@ def getresearchextproj(zipname, minidomdoc):
                 ls_year_end.append('VAZIO')
                 ls_situation.append('VAZIO')
                 ls_nature.append('VAZIO')
+                ls_description.append('VAZIO')
                 ls_members_name.append('VAZIO')
                 ls_members_id.append('VAZIO')
                 ls_member_coord.append('VAZIO')
@@ -56,8 +58,8 @@ def getresearchextproj(zipname, minidomdoc):
                     list_append_proj_r_ext(
                         chd_part_proj, idy, ls_proj, ls_proj_seq,
                         ls_year_ini, ls_year_end, ls_situation,
-                        ls_nature, ls_enterprise, ls_enterprise_code,
-                        enterprise, enterprise_code,
+                        ls_nature, ls_description, ls_enterprise,
+                        ls_enterprise_code, enterprise, enterprise_code,
                         ls_members_name, ls_members_id, ls_member_coord,
                         ls_support)
         df_ppe = pd.DataFrame({'ID': np.repeat(id_lattes, len(ls_proj)),
@@ -67,6 +69,7 @@ def getresearchextproj(zipname, minidomdoc):
                                'YEAR_FIN': ls_year_end,
                                'SITUATION': ls_situation,
                                'NATURE': ls_nature,
+                               'DESCRIPTION': ls_description,
                                'MEMBERS': ls_members_name,
                                'COORDENA': ls_member_coord,
                                'SUPPORT': ls_support,
