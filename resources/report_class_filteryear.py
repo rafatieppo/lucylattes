@@ -2,7 +2,7 @@
 
 import datetime as dt
 import numpy as np
-from resources.support_functions import yearlimit_forfilter
+from resources.support_functions import yearlimit_forfilter_tk
 from resources.report_setup_dict import report_setup_dict_base
 
 
@@ -17,7 +17,7 @@ class FilterYears:
 
     def column_yearfin(self, df):
         """Filter production by means columns year_fin and year_ini."""
-        lsyear_limits = yearlimit_forfilter()
+        lsyear_limits = yearlimit_forfilter_tk()
         current_year = dt.datetime.today()
         df['YEAR'] = [int(yy) for yy in df['YEAR'].to_list()]
         df['YEAR_FIN'] = [int(current_year.year) if yy ==
@@ -73,7 +73,7 @@ class FilterYears:
 
     def column_year(self, df):
         """Filter production by means column year."""
-        lsyear_limits = yearlimit_forfilter()
+        lsyear_limits = yearlimit_forfilter_tk()
         df['YEAR'] = [int(yy) for yy in df['YEAR'].to_list()]
         df = df[(df['YEAR'] >= lsyear_limits[0]) &
                 (df['YEAR'] <= lsyear_limits[1])]
