@@ -183,6 +183,7 @@ Successfully installed numpy-1.21.1
 (teste_venv) C:\Users\Joao\>
 ```
 
+Fiz um vídeo explicando como instalar e excutar o programa no Windows: [https://youtu.be/L8TFyqXlemM](https://youtu.be/L8TFyqXlemM)
 ## Como executar o programa
 
 1. Faça o Download do arquivo `.zip` que contém o `lucyLattes`. 
