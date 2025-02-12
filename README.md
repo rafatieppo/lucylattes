@@ -185,7 +185,7 @@ Successfully installed numpy-1.21.1
 
 Fiz um vídeo explicando como instalar e excutar o programa no Windows: [https://youtu.be/L8TFyqXlemM](https://youtu.be/L8TFyqXlemM)
 
-https://www.youtube.com/watch?v=<L8TFyqXlemM>
+https://www.youtube.com/watch?v=L8TFyqXlemM
 
 <iframe width="1255" height="706" src="https://www.youtube.com/embed/L8TFyqXlemM" title="lucyLattes - instalação no Windows" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
