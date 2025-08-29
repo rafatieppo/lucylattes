@@ -22,8 +22,9 @@ def run_lucyLattes():
     zipfiles = glob.glob('./xml_zip/*.zip')
     lszip = []
     for idx in range(len(zipfiles)):
-        nl = re.findall('[0-9]', zipfiles[idx])
-        nl = ''.join(nl) + '.zip'
+        nl = zipfiles[idx].split('/')[-1]
+        # nl = re.findall('[0-9]', zipfiles[idx])
+        # nl = ''.join(nl) + '.zip'
         lszip.append(nl)
 
     for zipname in lszip:

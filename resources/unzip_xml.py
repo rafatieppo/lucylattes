@@ -12,6 +12,6 @@ def unzip_xml(zipname):
         xmlFile = archive.open('curriculo.xml')
         print('A xml file from ', zipname, ' has been created.')
     except KeyError:
-        xmlFile = archive.open(zipname.split('.')[0] + '.xml')
+        xmlFile = archive.open(zipname.split('.')[0].split('_')[-1] + '.xml')
         print('A xml file from ', zipname, ' has been created.')
     return xmlFile
