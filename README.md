@@ -2,6 +2,30 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2591748.svg)](https://doi.org/10.5281/zenodo.2591748)
 
+## How to cite
+
+- APA
+
+Tieppo, R. C. (2019). lucyLattes script para a extração e compilação de dados do currículo Lattes [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.2591748
+
+- Chicago
+
+Tieppo, R. C. lucyLattes script para a extração e compilação de dados do currículo Lattes. Zenodo, released March 12, 2019. https://doi.org/10.5281/zenodo.2591748
+
+- BibTex
+
+@software{tieppo_2019_2591748,
+  author       = {Tieppo, Rafael Cesar},
+  title        = {lucyLattes  script  para a extração e compilação
+                   de dados do currículo Lattes
+                  },
+  month        = mar,
+  year         = 2019,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.2591748},
+  url          = {https://doi.org/10.5281/zenodo.2591748},
+}
+
 ## Última atualização
 
 - Versão v1.0.3
