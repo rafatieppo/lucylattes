@@ -14,6 +14,7 @@ Tieppo, R. C. lucyLattes script para a extração e compilação de dados do cur
 
 - BibTex
 
+```
 @software{tieppo_2019_2591748,
   author       = {Tieppo, Rafael Cesar},
   title        = {lucyLattes  script  para a extração e compilação
@@ -25,6 +26,7 @@ Tieppo, R. C. lucyLattes script para a extração e compilação de dados do cur
   doi          = {10.5281/zenodo.2591748},
   url          = {https://doi.org/10.5281/zenodo.2591748},
 }
+```
 
 ## Última atualização
 
