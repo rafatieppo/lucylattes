@@ -30,8 +30,8 @@ Tieppo, R. C. lucyLattes script para a extração e compilação de dados do cur
 
 ## Última atualização
 
-- Versão v1.0.3
-- *Friday 2024-11-22 07:00:02 -04* verifique os logs <a href="#logss">aqui</a>.
+- Versão v1.0.4
+- *Friday 2026-08-26 12:26:06 -04* verifique os logs <a href="#logss">aqui</a>.
 
 ## Motivação
 
@@ -331,6 +331,8 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 - `./resources/grapho.py`: make a plot for interections among researchers;
 - `./resources/index_capes.py`:  calcula os indicadores CAPES;
 - `./resources/paper_jcr.py`: assign jcr score for each paper;
+- `./resources/paper_scimago_sjr.py`: assign sjr score for each paper;
+- `./resources/paper_scimago_sjr_bq.py`: assign best quartile score for each paper;
 - `./resources/paper_qualispy`: assign qualis score for each paper;
 - `./resources/read_list_from_txt.py`: read lines from a `txt` files and returns a `list`.
 - `./resources/removefiles_csvproducao.py`: remove `csv` files in folders `./csv_producao/` `./csv_producao_hindex/`  `./relatorio/csv_report/` ;
@@ -355,6 +357,9 @@ Agora selecione as opções disponíveis, clique em `Gravar configurações`, e 
 
 ## Logs 
 <a name="logss"></a> 
+
+## Sat 2026-08-26 12:26:06 -04 v1.0.4
+- It was implemented a new feature to get *sjr* and *best quartile* from **SCImago** for papers. The **SCImago** source is from august 2026. 
 
 ## Fri 2024-11-22 07:00:02 -04 v1.0.3
 - Improvement in the speed to get unique titles in papers, projects, ... around 10x faster

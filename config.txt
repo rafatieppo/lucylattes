@@ -8,4 +8,4 @@ ano final para tabulacao de dados : 2023
 calcular indicadores capes 1 para sim 0 para nao : 0
 nome programa pós graduação : Ambiente e Sistemas de Produção Agrícola
 calcular indice H WOS 1 para sim 0 para nao : 0
-apagar csv de csv_producao csv_producao_index csv_report 1 para sim 0 para nao : 1
+apagar csv de csv_producao csv_producao_index csv_report 1 para sim 0 para nao : 0

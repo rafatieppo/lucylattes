@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 from resources.paper_qualis import paperqualis
 from resources.paper_jcr import paperjcr
+from resources.paper_scimago_sjr import paper_scimago_sjr
+from resources.paper_scimago_sjr_best_quartile import paper_scimago_sjr_bq
 
 
 def getpapers(zipname, minidomdoc, qf):
@@ -102,6 +104,8 @@ def getpapers(zipname, minidomdoc, qf):
             # set qualis and jcr
             ls_per_qualis = paperqualis(ls_per_issn, qf)
             ls_per_jcr = paperjcr(ls_per_issn)
+            ls_per_scimago_sjr = paper_scimago_sjr(ls_per_issn)
+            ls_per_scimago_sjr_bq = paper_scimago_sjr_bq(ls_per_issn)
 
             # write file
             df_papers = pd.DataFrame({'ID': np.repeat(id_lattes,
@@ -114,6 +118,8 @@ def getpapers(zipname, minidomdoc, qf):
                                       'ISSN': ls_per_issn,
                                       'QUALIS': ls_per_qualis,
                                       'JCR': ls_per_jcr,
+                                      'SJR_SCIMAGO': ls_per_scimago_sjr,
+                                      'BQ_SCIMAGO': ls_per_scimago_sjr_bq,
                                       'AUTHOR': ls_per_authors,
                                       'ORDER': ls_per_authorsorder,
                                       'ORDER_OK': ls_per_order_clean,
