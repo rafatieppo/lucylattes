@@ -9,8 +9,11 @@ def paperqualis(ls_per_issn, qf):
     # qf = qualis_file()
     ls_paperqualis = []
     path_qualis = './jcr_qualis/' + qf
-    df_qualis = pd.read_csv(path_qualis,
-                            header=0, sep='\t')
+    # df_qualis = pd.read_csv(path_qualis,
+    #                         header=0, sep='\t')
+    df_qualis = (pd.read_csv(path_qualis, sep='\t', header=0, dtype='str')
+                 .assign(ISSN=lambda df_: df_['ISSN'].apply(lambda x: str(x).strip()))
+                 )
     for idq in range(len(ls_per_issn)):
         issn = ls_per_issn[idq]
         issn = str(issn[0:4]) + '-' + str(issn[4:])

@@ -6,7 +6,10 @@ import pandas as pd
 def paperjcr(ls_per_issn):
     """Return jcr for papers from a assigned csv."""
     path_jcr = './jcr_qualis/jcr_factor.csv'
-    df_jcr = pd.read_csv(path_jcr, sep=',', header=0, dtype='str')
+    df_jcr = (pd.read_csv(path_jcr, sep=',', header=0, dtype='str')
+              .assign(ISSN_A=lambda df_: df_['ISSN_A'].apply(lambda x: str(x).strip()))
+              .assign(ISSN_B=lambda df_: df_['ISSN_B'].apply(lambda x: str(x).strip()))
+              )
     ls_jcr = []
     for idq in range(len(ls_per_issn)):
         issn = ls_per_issn[idq]
